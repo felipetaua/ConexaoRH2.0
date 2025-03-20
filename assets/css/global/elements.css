@@ -1,0 +1,20 @@
+.btn {
+    text-decoration: none;
+    border: none;
+    border-radius: 32px;
+}
+
+.link {
+    list-style: none;
+    text-decoration: none;
+}
+
+.page {
+    margin:122px;
+}
+
+.input {
+    background-color: var(--grey);
+    border: none;
+    border-radius: 12px;
+}

@@ -1,47 +1,9 @@
 @import url('../pages/index/index.css');
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--font-default);
-}
-
-:root {
-    --font-default:'Poppins', sans-serif;
-    --primary: #2E62C2;
-    --black: #060606;
-    --grey: #D9D9D9;
-    --bg: #E7E7E7;
-    --white:#FFFFFF;
-    --yellow: #E7BD34;
-    --orange: #D6582F;
-    --red: #C62929;
-}
+@import url('../global/variables.css');
+@import url('../global/normalize.css');
+@import url('../global/elements.css');
 
 
-.btn {
-    text-decoration: none;
-    border: none;
-    border-radius: 32px;
-}
-
-.link {
-    list-style: none;
-    text-decoration: none;
-}
-
-.page {
-    margin:122px;
-}
-
-.input {
-    background-color: var(--grey);
-    border: none;
-    border-radius: 12px;
-}
 /*grid de info*/
 .parentGrid {
     display: grid;

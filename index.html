@@ -4,24 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/pages/index/index.css">
-    <script defer src="./js/main.js"></script>
+    <script defer src="./assets/js/pages/index/index.js"></script>
     <title>Conexão RH</title>
 </head>
 <body>
-    <nav>
-        <div class="logo"><img src="" alt="" class="logoEmpresa"><h2>RHConexão</h2></div>
-        <div class="linksNav">
+    <header>
+        <div class="logo"><img src="" alt="" class="logoEmpresa">RHConexão</div>
+        <nav class="linksNav">
             <a href="./pages/ferramentas.html" class="link linkPages">Ferramentas</a>
             <a href="./pages/quemsomos.html" class="link linkPages">Quem Somos</a>
             <a href="./pages/sobre.html" class="link linkPages">Sobre</a>
             <a href="./pages/curadoria" class="link linkPages">Curadoria</a>
-        </div>
-        <div class="btnNav">
+        </nav>
+        <nav class="btnNav">
             <button class="btn actionBtnNav loginNav">Login In</button>
             <button class="btn actionBtnNav SingninNav">Crie sua Conta</button>
-        </div>
-    </nav>
-    <main class="page">
+        </nav>
         <section class="heroSection">
             <div class="cardsFlutuantes">
                 <div class="cardshero"><img src="./assets/images/flutuante-mulher1.png" alt=""></div>
@@ -41,8 +39,16 @@
                 <div class="cardshero"><img src="./assets/images/flutuante-chat6.png"alt=""></div>
             </div>
         </section>
-    </main>
-    <section class="heroCell"></section>
+        <section class="heroCell">
+            <div>
+                <img src="./assets/images/pages/index/celular-1.png" alt="">
+                <img src="./assets/images/pages/index/celular-2.png" alt="">
+                <img src="./assets/images/pages/index/celular-3.png" alt="">
+                <img src="./assets/images/pages/index/celular-4.png" alt="">
+                <img src="./assets/images/pages/index/celular-5.png" alt="">
+            </div>
+        </section>
+    </header>
     <main class="page">
         <section class="funcionalSection">
             <div class="contentFunctional">
@@ -66,7 +72,7 @@
             </div>
         </section>
         <section class="usuariosSections">
-            <div class="cardsUser colaborador">
+            <article class="cardsUser colaborador">
                 <h2>Colaborador</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat in quam nisi facilis suscipit voluptates.</p>
                 <li>
@@ -76,8 +82,8 @@
                 </li>
                 <button class="btn btnUser">Participe</button>
                 <img class="imgUser" src="./assets/images/pessoa-colaborador 1.png" alt="">
-            </div>
-            <div class="cardsUser empregador">
+            </article>
+            <article class="cardsUser empregador">
                 <h2>Empregador</h2>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat in quam nisi facilis suscipit voluptates.</p>
                 <li>
@@ -87,23 +93,20 @@
                 </li>
                 <button class="btn btnUser">Participe</button>
                 <img class="imgUser" src="./assets/images/pessoa-empregador 1.png" alt="">
-            </div>
+            </article>
         </section>
         <section class="depoimentsSection">
             <h1>Depoimentos</h1>
             <div class="scrollDepoiments">
-                <div class="cardsDepoimentos depoimentos1">
-                    <article></article>
-                </div>
-                <div class="cardsDepoimentos depoimentos2"></div>
-                <div class="cardsDepoimentos depoimentos3"></div>
-                <div class="cardsDepoimentos depoimentos4"></div>
-                <div class="cardsDepoimentos depoimentos5"></div>
+                <article class="cardsDepoimentos depoimentos1"></article>
+                <article class="cardsDepoimentos depoimentos2"></article>
+                <article class="cardsDepoimentos depoimentos3"></article>
+                <article class="cardsDepoimentos depoimentos4"></article>
+                <article class="cardsDepoimentos depoimentos5"></article>
             </div>
         </section>
     </main>
     <footer>
-        
         <div class="logo">
             <img src="#" alt="">
             <h1>ConexãoRH </h1>
