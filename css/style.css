@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/*grid de info*/
 .parentGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
