@@ -20,6 +20,20 @@
 }
 
 
+.btn {
+    text-decoration: none;
+    border: none;
+    border-radius: 32px;
+}
+
+.link {
+    list-style: none;
+    text-decoration: none;
+}
+
+.page {
+    margin:122px;
+}
 /*grid de info*/
 .parentGrid {
     display: grid;
