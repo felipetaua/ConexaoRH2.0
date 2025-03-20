@@ -1,12 +1,16 @@
+@import url('../global/variables.css');
+
 .btn {
     text-decoration: none;
     border: none;
     border-radius: 32px;
+    cursor: pointer;
 }
 
 .link {
     list-style: none;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .page {

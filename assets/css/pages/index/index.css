@@ -1,1 +1,5 @@
 @import url('./partials/header.css');
+@import url('./partials/heroSection.css');
+@import url('../../global/elements.css');
+@import url('../../global/normalize.css');
+

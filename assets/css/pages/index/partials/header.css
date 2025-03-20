@@ -1,0 +1,58 @@
+@import url('../../../global/variables.css');
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 47px;
+    
+}
+
+.logo {
+    font-size: 20px;
+}
+
+.nav {
+    align-items: center;
+}
+
+.linkPages {
+    font-size: 16px;
+    margin-right: 35px;
+    color: #747474;
+    transition: ease .5s;
+}
+
+.linkPages:hover {
+    color: #1D1D1D;
+}
+
+.actionBtnNav {
+    font-size: 16px;
+    color: var(--white);
+    
+}
+
+.loginNav {
+    background-color: #b8b8b8;
+    width: 127px;
+    height: 40px;
+    transition: ease .5s;
+}
+
+.loginNav:hover {
+    background-color:var(--gray) ;
+    color: var(--black);
+}
+
+.SingninNav {
+    background-color: var(--primary);
+    width: 160px;
+    height: 40px;
+    transition: ease .5s;
+}
+
+.SingninNav:hover {
+    background-color: #4878d3;
+}
