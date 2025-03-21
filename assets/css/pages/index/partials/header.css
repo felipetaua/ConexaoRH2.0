@@ -5,7 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 47px;
+    margin: 47px 35px 0 35px;
     
 }
 
@@ -19,7 +19,7 @@
 
 .linkPages {
     font-size: 16px;
-    margin-right: 35px;
+    margin: 0 15px 0 15px;
     color: #747474;
     transition: ease .5s;
 }
@@ -50,6 +50,7 @@
     background-color: var(--primary);
     width: 160px;
     height: 40px;
+    margin-left: 25px;
     transition: ease .5s;
 }
 
