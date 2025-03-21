@@ -1,13 +1,26 @@
 @import url('../../../global/variables.css');
 
+.imagensFundo{
+    display: block;
+    position: absolute;
+    z-index: -1;
+}   
 
+.imagensFundo .pessoa{
+    width: 100vw;
+    margin-bottom: -800px;
+}
 
+.imagensFundo .fumaca{
+    width: 100vw;
+    position: relative;
+}
 .heroSection {
     width: 1080px;
     height: 850px;
-    background-image: url('../../../../images/pages/index/backgorund-pessoa.png');
+    /* background-image: url('../../../../images/pages/index/backgorund-pessoa.png');
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     margin: auto;
 }
 
