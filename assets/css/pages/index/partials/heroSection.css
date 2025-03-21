@@ -7,20 +7,18 @@
 }   
 
 .imagensFundo .pessoa{
-    width: 100vw;
-    margin-bottom: -800px;
+    width: 99vw;
+    margin-bottom: -36rem;
+    margin-top: -16rem;
 }
 
 .imagensFundo .fumaca{
-    width: 100vw;
+    width: 99vw;
     position: relative;
 }
 .heroSection {
     width: 1080px;
     height: 850px;
-    /* background-image: url('../../../../images/pages/index/backgorund-pessoa.png');
-    background-position: center;
-    background-repeat: no-repeat; */
     margin: auto;
 }
 
@@ -129,6 +127,7 @@
     height: 60px;
     color: var(--white);
     background-color: var(--orange);
+    border-radius: 32px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;

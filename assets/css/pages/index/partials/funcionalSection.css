@@ -28,7 +28,12 @@
     border-radius: 8px;
 }
 
-.div1 {
+.parentGrid {
+    color: var(--white);
+}
+
+
+.cardOne {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,14 +45,36 @@
     border-radius: 32px;
 }
 
-.div2 {
-    background-image: url('../../../../images/pages/index/background-grid-2.png');
+.cardTwo {
+    background-image: url('../../../../images/pages/index/background-grid-1.png');
     width: 317px;
-    height: 460px;
+    height: 460px;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.parentText{
+    width: 216px;
+    height: 108px;
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #d6d6d6;
+    font-weight: 300;
 }
 
 .parentBtn {
-    
-    border: solid 2px var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: auto; */
+    width: 240px;
+    height: 50px;
+    border-radius: 12px;
+    color: var(--white);
+    background: none;
+    border: 2px solid var(--white);
+    padding: 2px var(--white);
 }
 

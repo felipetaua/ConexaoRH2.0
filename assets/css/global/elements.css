@@ -3,7 +3,11 @@
 .btn {
     text-decoration: none;
     border: none;
-    border-radius: 32px;
+    cursor: pointer;
+}
+
+.btnOutline {
+    text-decoration: none;
     cursor: pointer;
 }
 
