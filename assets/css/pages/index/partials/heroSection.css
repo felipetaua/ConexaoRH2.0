@@ -107,6 +107,10 @@
     margin-bottom: 50px;
 }
 
+.containerBtn {
+    margin: auto;
+}
+
 .actionButtonHero {
     width: 217px;
     height: 60px;
@@ -123,6 +127,8 @@
     height: 42px;
     border-radius: 32px;
     align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .fa-arrow-right-long {
