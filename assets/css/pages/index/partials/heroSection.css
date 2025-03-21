@@ -1,9 +1,111 @@
 @import url('../../../global/variables.css');
 
+.heroSection {
+    margin: 77px 112px 280px 112px;
+}
 
 .cardsHero {
     background-color: aqua;
     width: 80px;
     height: 80px;
     border-radius: 20px;
+}
+
+.cardsFlutuantes {
+    display: block;
+}
+
+.heroGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.floating1 {
+    display: flex;
+    justify-content: end;
+}
+    
+
+.floating2 {
+    margin: 80px 20px 40px 20px;
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.floating3 {
+    display: flex;
+    justify-content: end;
+    grid-column-start: 1;
+    grid-row-start: 3;
+}
+
+.floatingContent {
+    grid-row: span 3 / span 3;
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.floating5 {
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+.floating6 {
+    display: flex;
+    justify-content: end;
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+
+.floating7 {
+    grid-column-start: 3;
+    grid-row-start: 3;
+}
+
+.contentHero {
+    padding: 20px;
+}
+
+.heroTitle {
+    width: 487px;
+    height: 100px;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.heroText {
+    width: 487px;
+    height: 100px;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.actionButtonHero {
+    width: 217px;
+    height: 60px;
+    color: var(--white);
+    background-color: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.circle {
+    background-color: var(--white);
+    width: 47px;
+    height: 42px;
+    border-radius: 32px;
+    align-items: center;
+}
+
+.fa-arrow-right-long {
+    font-size: 16px;
+    color: var(--black);
+    margin: auto ;
+    width: 24px;
+    height: 24px;
 }
