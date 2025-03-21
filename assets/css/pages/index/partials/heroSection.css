@@ -1,6 +1,13 @@
 @import url('../../../global/variables.css');
 
+
+
 .heroSection {
+    width: 1080px;
+    height: 750px;
+    background-image: url('../../../../images/pages/index/backgorund-pessoa.png');
+    background-position: center;
+    background-repeat: no-repeat;
     margin: 77px 112px 280px 112px;
 }
 
@@ -42,6 +49,7 @@
 }
 
 .floatingContent {
+    margin: auto;
     grid-row: span 3 / span 3;
     grid-column-start: 2;
     grid-row-start: 1;
