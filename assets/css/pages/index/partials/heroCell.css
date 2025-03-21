@@ -1,0 +1,19 @@
+.heroCell {
+    margin: auto;
+}
+
+.cellAlign {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.cell1 { margin-top: 70px; }
+
+.cell2 { margin-top: 25px; }
+
+.cell3 { margin-top: 0; }
+
+.cell4 { margin-top: 25px; }
+
+.cell5 { margin-top: 70px }

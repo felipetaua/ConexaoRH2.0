@@ -1,1 +1,6 @@
 @import url('../../../global/variables.css');
+
+.page {
+    background-color: var(--gray);
+    padding:122px;
+}

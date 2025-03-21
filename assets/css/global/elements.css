@@ -13,10 +13,6 @@
     cursor: pointer;
 }
 
-.page {
-    margin:122px;
-}
-
 .input {
     background-color: var(--grey);
     border: none;
