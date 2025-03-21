@@ -1,1 +1,9 @@
 @import url('../../../global/variables.css');
+
+
+.cardsHero {
+    background-color: aqua;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+}
