@@ -5,8 +5,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 15px 35px 16px 35px;
-    
+    margin: 15px 35px 120px 35px;
 }
 
 .logo {
@@ -31,7 +30,7 @@
 .actionBtnNav {
     font-size: 16px;
     color: var(--white);
-    
+    border-radius: 32px;
 }
 
 .loginNav {

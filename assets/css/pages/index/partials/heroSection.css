@@ -1,18 +1,28 @@
 @import url('../../../global/variables.css');
 
+.imagensFundo{
+    display: block;
+    position: absolute;
+    z-index: -1;
+}   
 
+.imagensFundo .pessoa{
+    width: 99vw;
+    margin-bottom: -36rem;
+    margin-top: -16rem;
+}
 
+.imagensFundo .fumaca{
+    width: 99vw;
+    position: relative;
+}
 .heroSection {
     width: 1080px;
-    height: 750px;
-    background-image: url('../../../../images/pages/index/backgorund-pessoa.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    margin: 77px 112px 280px 112px;
+    height: 850px;
+    margin: auto;
 }
 
 .cardsHero {
-    background-color: aqua;
     width: 80px;
     height: 80px;
     border-radius: 20px;
@@ -74,7 +84,7 @@
 
 .contentHero {
     padding: 20px;
-}
+} 
 
 .heroTitle {
     color: #1B2B5C;
@@ -104,7 +114,12 @@
     height: 100px;
     font-size: 20px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
+}
+
+.containerBtn {
+    display: flex;
+    justify-content: center;
 }
 
 .actionButtonHero {
@@ -112,9 +127,15 @@
     height: 60px;
     color: var(--white);
     background-color: var(--orange);
+    border-radius: 32px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    transition: .5s ease;
+}
+
+.actionButtonHero:hover {
+    background-color: rgb(236, 112, 29);
 }
 
 .circle {

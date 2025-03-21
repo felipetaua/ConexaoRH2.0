@@ -1,0 +1,161 @@
+@import url('../../../global/variables.css');
+
+.contentFunctional {
+    width: 490px;
+    height: 110px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 110px;
+}
+
+.functionalTitle {
+    font-size: 32px;
+    color: var(--black);
+}
+
+.funcionalText {
+    color: #696969;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.functionalRow {
+    background-color: #696969;
+    height: 8px;
+    border-radius: 8px;
+}
+
+.parentGrid {
+    color: var(--white);
+}
+
+
+.cardOne {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 322px;
+    height: 200px;
+    background-color: var(--primary);
+    color: var(--white);
+    opacity: 80%;
+    border-radius: 32px;
+}
+
+.cardTwo {
+    background-image: url('../../../../images/pages/index/background-grid-1.png');
+    width: 317px;
+    height: 463px;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.parentTitle {
+    width: 279px;
+    height: 192px;
+    font-size: 32px;
+    text-align: left;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.parentText{
+    width: 280px;
+    height: 182px;
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #d6d6d6;
+    font-weight: 300;
+}
+
+.parentBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: auto; */
+    width: 240px;
+    height: 50px;
+    border-radius: 12px;
+    color: var(--white);
+    background: none;
+    border: 2px solid var(--white);
+    padding: 2px var(--white);
+}
+
+.parentWhiteBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 240px;
+    height: 50px;
+    border-radius: 12px;
+    color: var(--black);
+    background-color: var(--white);
+}
+
+.cardThree {
+    width: 320px;
+    height: 693px;
+    background-image: url('../../../../images/pages/index/background-grid-2.png');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardFour {
+    width: 320px;
+    height: 414px;
+    background-image: url('../../../../images/pages/index/background-grid-3.png');
+}
+
+
+.cardFive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 322px;
+    height: 210px;
+    background-color: var(--orange);
+    color: var(--white);
+    opacity: 70%;
+    border-radius: 32px;
+}
+
+/*grid de info*/
+.parentGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+}
+    
+.cardOne {}
+
+.cardTwo {
+    grid-row: span 2 / span 2;
+    grid-column-start: 1;
+    grid-row-start: 2;
+}
+
+.cardThree {
+    grid-row: span 3 / span 3;
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
+
+.cardFour {
+    grid-row: span 2 / span 2;
+    grid-column-start: 3;
+    grid-row-start: 1;
+}
+
+.cardFive {
+    grid-column-start: 3;
+    grid-row-start: 3;
+}

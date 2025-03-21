@@ -13,7 +13,7 @@
 <body>
     <header class="header">
         <div class="logo">
-            <img src="./assets/images/global/logo.png" alt="" class="logoEmpresa"><i class="fa-solid fa-briefcase"></i> RHConexão
+            <img src="./assets/images/global/logo.png" alt="" class="logoEmpresa"><i class="fa-solid fa-briefcase"></i><h2>RHConexão</h2>
         </div>
         <nav class="nav">
             <div class="linkNav">
@@ -29,7 +29,12 @@
         </div>
     </header>
 
+    <div class="imagensFundo">
+        <img class="pessoa" src="assets/images/pages/index/backgorund-pessoa.png" alt="pessoa" >
+        <img class="fumaca"src="assets/images/pages/index/backgorund-fumaca.png" alt="fumaça">
+    </div>
     <section class="heroSection">
+
         <div class="heroGrid">
             <article class="floating1 cardsFlutuantes">
                 <img class="cardsHero" src="./assets/images/pages/index/flutuante-1.png" alt="">
@@ -44,11 +49,12 @@
             <main class="floatingContent contentHero">
                 <h1 class="heroTitle">Bem-Vindo ao RH Conexão <span class="gradient">2.0</span></h1>
                 <p class="heroText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quam itaque, animi eius quidem inventore ratione et consectetur ut esse.</p>
-                <button class="actionButtonHero btn" href="./pages/#">O que mudou?
-                    <div class="circle"><img src="./assets/icons/icon-arrow-right.png" alt=""></div>
-                </button>
+                <div class="containerBtn">
+                    <button class="actionButtonHero btn" href="./pages/#">O que mudou?
+                        <div class="circle"><img src="./assets/icons/icon-arrow-right.png" alt=""></div>
+                    </button>
+                </div>
             </main>
-
             <article class="floating5 cardsFlutuantes">
                 <img class="cardsHero" src="./assets/images/pages/index/flutuante-4.png" alt="">
             </article>
@@ -60,29 +66,54 @@
             </article>
         </div>
     </section>
+
     <section class="heroCell">
-        <div>
-            <img src="./assets/images/pages/index/celular-1.png" alt="">
-            <img src="./assets/images/pages/index/celular-2.png" alt="">
-            <img src="./assets/images/pages/index/celular-3.png" alt="">
-            <img src="./assets/images/pages/index/celular-4.png" alt="">
-            <img src="./assets/images/pages/index/celular-5.png" alt="">
+        <div class="cellAlign">
+            <div class="cell1">
+                <img src="./assets/images/pages/index/celular-1.png" alt="">
+            </div>
+            <div class="cell2">
+                <img src="./assets/images/pages/index/celular-2.png" alt="">
+            </div>
+            <div class="cell3">
+                <img src="./assets/images/pages/index/celular-3.png" alt="">
+            </div>
+            <div class="cell4">
+                <img src="./assets/images/pages/index/celular-4.png" alt="">
+            </div>
+            <div class="cell5">
+                <img src="./assets/images/pages/index/celular-5.png" alt="">
+            </div>
         </div>
     </section>
 
     <main class="page">
         <section class="funcionalSection">
             <div class="contentFunctional">
-                <h2>Funcionalidades Presentes</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, velit.</p>
-                <hr>
+                <div>
+                    <h2 class="functionalTitle">Funcionalidades Presentes</h2>
+                    <p class="funcionalText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error, velit.</p>
+                    <hr class="functionalRow">
+                </div>
             </div>
             <div class="parentGrid">
-                <div class="div1">1</div>
-                <div class="div2">2</div>
-                <div class="div3">3</div>
-                <div class="div4">4</div>
-                <div class="div5">5</div>
+                <button class="btn cardOne">
+                    <h2>Quem somos?</h2>
+                </button>
+                <article class="cardTwo">
+                    <p class="parentText">Já sabe preencher o seu curriculo?</p>
+                    <button class="parentBtn btnOutline">Conhça como</button>
+                </article>
+                <article class="cardThree">
+                    <h2 class="parentTitle">Ei, você esta com dúvida nos processos de RH?</h2>
+                    <button class="parentWhiteBtn btn">Clique e saiba mais</button>
+                </article>
+                <div class="cardFour">
+                    <p class="parentText">Vagas Disponíveis</p>
+                </div>
+                <button class="cardFive">
+
+                </button>
             </div>
         </section>
         <section class="videosSection">
@@ -92,6 +123,8 @@
                 <video src=""></video>
             </div>
         </section>
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.80/build/spline-viewer.js"></script>
+                    <spline-viewer url="https://prod.spline.design/7f9lLkfFTpGCiytx/scene.splinecode"></spline-viewer>
         <section class="usuariosSections">
             <article class="cardsUser colaborador">
                 <h2>Colaborador</h2>
