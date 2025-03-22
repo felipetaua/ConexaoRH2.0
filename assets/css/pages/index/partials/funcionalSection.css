@@ -30,6 +30,7 @@
 
 .parentGrid {
     color: var(--white);
+    margin-bottom: 110px;
 }
 
 
@@ -39,6 +40,7 @@
     align-items: center;
     width: 322px;
     height: 200px;
+    border-radius: 32px;
     background-color: var(--primary);
     color: var(--white);
     opacity: 80%;
@@ -48,7 +50,8 @@
 .cardTwo {
     background-image: url('../../../../images/pages/index/background-grid-1.png');
     width: 317px;
-    height: 463px;   
+    height: 453px;   
+    border-radius: 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,6 +88,7 @@
     background: none;
     border: 2px solid var(--white);
     padding: 2px var(--white);
+    transition: .5s ease-out;
 }
 
 .parentWhiteBtn {
@@ -96,11 +100,26 @@
     border-radius: 12px;
     color: var(--black);
     background-color: var(--white);
+    transition: .5s ease-out;
+}
+
+.cardTwoBtn:hover {
+    border: 2px solid var(--white);
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.cardThreeBtn:hover {
+    background: none;
+    border: 2px solid var(--white);
+    padding: 2px var(--white);
+    color: var(--white);
 }
 
 .cardThree {
     width: 320px;
     height: 693px;
+    border-radius: 32px;
     background-image: url('../../../../images/pages/index/background-grid-2.png');
     display: flex;
     flex-direction: column;
@@ -111,6 +130,7 @@
 .cardFour {
     width: 320px;
     height: 414px;
+    border-radius: 32px;
     background-image: url('../../../../images/pages/index/background-grid-3.png');
 }
 
@@ -127,15 +147,20 @@
     border-radius: 32px;
 }
 
-/*grid de info*/
+.parentFiveTitle {
+    width: 230px;
+    height: 120px;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+}
+
 .parentGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 20px;
 }
-    
-.cardOne {}
 
 .cardTwo {
     grid-row: span 2 / span 2;

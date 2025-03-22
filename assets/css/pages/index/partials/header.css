@@ -47,8 +47,8 @@
 
 .SingninNav {
     background-color: var(--primary);
-    width: 160px;
-    height: 40px;
+    min-width: 160px;
+    min-height: 40px;
     margin-left: 25px;
     transition: ease .5s;
 }
