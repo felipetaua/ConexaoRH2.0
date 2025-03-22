@@ -127,15 +127,20 @@
     border-radius: 32px;
 }
 
-/*grid de info*/
+.parentFiveTitle {
+    width: 230px;
+    height: 120px;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: left;
+}
+
 .parentGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 20px;
 }
-    
-.cardOne {}
 
 .cardTwo {
     grid-row: span 2 / span 2;
