@@ -10,6 +10,13 @@
 
 .logo {
     font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+.logoEmpresa {
+    height: 80px;
+    width: 80px;
+    font-size: 20px;
 }
 
 .nav {
