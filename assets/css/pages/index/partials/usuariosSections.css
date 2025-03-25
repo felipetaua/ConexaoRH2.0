@@ -1,0 +1,75 @@
+.usuariosSections {
+    
+}
+
+.usuariosSectionsAlign {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 110px;
+}
+
+.cardsUser {
+    width: 494px;
+    height: 810px;
+    border-radius: 32px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.colaborador {
+    background: radial-gradient(circle, rgba(63,64,62,1) 0%, rgba(41,41,41,1) 100%);
+    color: var(--white);
+
+}
+
+.empregador {
+    background: linear-gradient(150deg, rgba(255,255,255,1) 0%, rgba(149,149,149,1) 100%);
+}
+
+.cardUserIntro {
+    margin: 50px 60px 30px 60px;
+}
+
+.cardColabContent {
+    width: 412px;
+    height: 300px;
+}
+
+.cardEmpreContent {
+    width: 420px;
+    height: 300px;
+}
+
+.listVantagens {
+    margin-bottom: 20px;
+}
+
+.cardUserTitle {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.cardUserText {
+    font-size: 24px;
+}
+
+.empregadorText {
+    font-size: 20px;
+}
+
+.btnUser {
+    width: 115px;
+    height: 45px;
+    border-radius: 12px;
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+.imgUser {
+    margin-left: 153px;
+}
