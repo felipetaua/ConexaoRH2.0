@@ -19,6 +19,12 @@
     font-size: 20px;
 }
 
+.headerTitle {
+    font-size: 18px;
+    letter-spacing: .5px;
+    color: var(--blue);
+}
+
 .nav {
     align-items: center;
 }

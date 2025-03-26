@@ -2,6 +2,10 @@
     
 }
 
+.usuarioText {
+    margin-bottom: 25px;
+}
+
 .usuariosSectionsAlign {
     display: flex;
     margin: auto;
@@ -60,6 +64,7 @@
 
 .empregadorText {
     font-size: 20px;
+    margin: 0 0 30px 15px;
 }
 
 .btnUser {
@@ -72,4 +77,10 @@
 
 .imgUser {
     margin-left: 153px;
+}
+
+.contentItem {
+    display: flex;
+    align-items: center;
+    
 }

@@ -41,9 +41,8 @@
     width: 322px;
     height: 200px;
     border-radius: 32px;
-    background-color: var(--primary);
+    background-color: var(--blue-pastel);
     color: var(--white);
-    opacity: 80%;
     border-radius: 32px;
     transition: .5s ease;
 }
@@ -151,9 +150,8 @@
     align-items: center;
     width: 322px;
     height: 210px;
-    background-color: var(--orange);
+    background-color: var(--orange-pastel);
     color: var(--white);
-    opacity: 70%;
     border-radius: 32px;
     transition: .5s ease-out;
 }
