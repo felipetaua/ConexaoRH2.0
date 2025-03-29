@@ -1,7 +1,28 @@
 .videosSection{
-    margin-bottom: 110px
-    displ
+    margin-bottom: 110px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 12px;
+    overflow: auto;
 }
+.videosSection::-webkit-scrollbar {
+    display: none;
+}
+
+.videoSection .cardVideo {
+    margin-right: 15px;
+}
+
+.img {
+    width: 50px;
+    height: 50px;
+}
+
+.videoScroll{
+    /* display: flex; */
+}
+
 
 .categoryTitle {
     font-size: 24px;
@@ -12,6 +33,7 @@
 .categoryText {
     width: 580px;
     font-size: 32px;
+    margin-bottom: 25px;
 }
 
 
