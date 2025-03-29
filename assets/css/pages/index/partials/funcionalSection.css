@@ -41,10 +41,14 @@
     width: 322px;
     height: 200px;
     border-radius: 32px;
-    background-color: var(--primary);
+    background-color: var(--blue-pastel);
     color: var(--white);
-    opacity: 80%;
     border-radius: 32px;
+    transition: 1s ease;
+}
+
+.cardOne:hover {
+    /* background-color: var(--primary); */
 }
 
 .cardTwo {
@@ -125,6 +129,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: .5s ease;
+}
+
+.cardThree:hover {
+    filter: grayscale(50%);
 }
 
 .cardFour {
@@ -134,17 +143,20 @@
     background-image: url('../../../../images/pages/index/background-grid-3.png');
 }
 
-
 .cardFive {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 322px;
     height: 210px;
-    background-color: var(--orange);
+    background-color: var(--orange-pastel);
     color: var(--white);
-    opacity: 70%;
     border-radius: 32px;
+    transition: 1s ease;
+}
+
+.cardFive:hover {
+    /* background-color: var(--orange); */
 }
 
 .parentFiveTitle {
@@ -160,6 +172,10 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     gap: 20px;
+}
+
+.cardOne {
+    cursor: pointer;
 }
 
 .cardTwo {
@@ -178,9 +194,42 @@
     grid-row: span 2 / span 2;
     grid-column-start: 3;
     grid-row-start: 1;
+    cursor: pointer;
 }
 
 .cardFive {
     grid-column-start: 3;
     grid-row-start: 3;
+    cursor: pointer;
+}
+
+.cardOne, .cardFive {
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.cardOne::before, .cardFive::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    z-index: -1; 
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.cardOne::before {
+    background: linear-gradient(25deg, rgba(46,98,194,1) 0%, rgb(49, 168, 179) 100%);
+}
+
+.cardFive::before {
+    background: linear-gradient(25deg, rgba(214,88,47,1) 0%, rgba(228,123,42,1) 100%);
+}
+
+.cardOne:hover::before, .cardFive:hover::before {
+    opacity: 1;
 }

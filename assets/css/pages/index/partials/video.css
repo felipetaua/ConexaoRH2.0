@@ -1,0 +1,22 @@
+.videosSection{
+    margin-bottom: 110px
+    displ
+}
+
+.categoryTitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.categoryText {
+    width: 580px;
+    font-size: 32px;
+}
+
+
+.frameVideo{
+    width: 520px;
+    height: 350px;
+    border-radius: 32px;
+}

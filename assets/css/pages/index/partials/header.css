@@ -10,6 +10,19 @@
 
 .logo {
     font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+.logoEmpresa {
+    height: 70px;
+    width: 85px;
+    font-size: 20px;
+}
+
+.headerTitle {
+    font-size: 18px;
+    letter-spacing: .5px;
+    color: var(--blue);
 }
 
 .nav {
@@ -34,15 +47,17 @@
 }
 
 .loginNav {
-    background-color: #b8b8b8;
+    background-color: var(--gray-dark);
     width: 127px;
     height: 40px;
     transition: ease .5s;
 }
 
 .loginNav:hover {
-    background-color:var(--gray) ;
-    color: var(--black);
+    background: none ;
+    border: 2px solid var(--gray-dark);
+    color:  var(--gray-dark);
+    font-weight: bold;
 }
 
 .SingninNav {
@@ -54,5 +69,7 @@
 }
 
 .SingninNav:hover {
-    background-color: #4878d3;
+    background: none;
+    border: 2px solid var(--primary);
+    color: var(--primary);
 }
