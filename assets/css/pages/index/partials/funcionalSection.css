@@ -47,10 +47,6 @@
     transition: 1s ease;
 }
 
-.cardOne:hover {
-    /* background-color: var(--primary); */
-}
-
 .cardTwo {
     background-image: url('../../../../images/pages/index/background-grid-1.png');
     width: 317px;
@@ -153,10 +149,6 @@
     color: var(--white);
     border-radius: 32px;
     transition: 1s ease;
-}
-
-.cardFive:hover {
-    /* background-color: var(--orange); */
 }
 
 .parentFiveTitle {
