@@ -110,9 +110,10 @@
 }
 
 .heroText {
+    color: var(--color-gray);
     width: 487px;
     height: 100px;
-    font-size: 20px;
+    font-size: 24px;
     text-align: center;
     margin-bottom: 25px;
 }
