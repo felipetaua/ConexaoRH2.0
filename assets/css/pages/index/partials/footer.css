@@ -87,6 +87,7 @@ footer {
     display: flex;
     align-items: center;
     background-color: var(--color-neutral-0);
+    margin-top: 20px;
     border-radius: 4px;
 }
 
