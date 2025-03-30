@@ -1,0 +1,35 @@
+.cardsDepoimentos {
+    width: 500px;
+    height: 280px;
+    background-color: var(--white);
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentDepoiments {
+    display: flex;
+    flex-direction: column;
+}
+
+.avatar {
+    display: flex;
+    padding: 0 20px 0px 0;
+}
+
+.avatarPhoto {
+    padding: 0 20px 20px 0;
+}
+
+.depoimentsTitle {
+    font-size: 24px;
+}
+
+.depoimentsText {
+    font-size: 20px;
+    text-align: center;
+    padding-top: 20px;
+    width: 400px;
+}
