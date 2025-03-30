@@ -127,7 +127,7 @@
     width: 217px;
     height: 60px;
     color: var(--white);
-    background-color: var(--orange);
+    background-color: rgb(236, 112, 29);
     border-radius: 32px;
     display: flex;
     align-items: center;
@@ -136,7 +136,7 @@
 }
 
 .actionButtonHero:hover {
-    background-color: rgb(236, 112, 29);
+    background-color: rgb(252, 151, 69);
 }
 
 .circle {

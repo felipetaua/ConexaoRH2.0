@@ -1,5 +1,8 @@
 .usuarioText {
     margin-bottom: 25px;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
 }
 
 .usuariosSectionsAlign {
