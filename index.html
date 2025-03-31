@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./assets/css/pages/index/index.css">
     <script defer src="./assets/js/pages/index/index.js"></script>
     <script defer type="module" src="https://unpkg.com/@splinetool/viewer@1.9.80/build/spline-viewer.js"></script>
+    <script defer type="module" src="./assets/js/pages/index/index.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Icone da página-->
@@ -17,10 +18,15 @@
     <header class="header">
         <div class="logo">
             <img src="./assets/images/global/logo-test.png" alt="Logotipo da RH Conexão" class="logoEmpresa"><h2 class="headerTitle">RHConexão</h2>
+            <div class="hamburger">
+                <div class="linha"></div>
+                <div class="linha"></div>
+                <div class="linha"></div>    
+            </div>
         </div>
         <nav class="nav">
             <div class="linkNav">
-                <a href="./pages/ferramentas/ferramentas.html" class="link linkPages ferramentasLink">Ferramentas</a>
+                <a href="./pages/ferramentas/ferramentas.html" class="link linkPages ferramentasLink ativo">Ferramentas</a>
                 <a href="./pages/sobre/sobre.html" class="link linkPages">Quem Somos</a>
                 <a href="./pages/vantagens/vantagens.html" class="link linkPages ">Vantagens</a>
                 <a href="./pages/curadoria/curadoria.html" class="link linkPages curadoriaLink">Curadoria</a>
@@ -28,7 +34,7 @@
             </div>
         </nav>
 
-        <div>
+        <div class="linkAcount">
             <button class="btn actionBtnNav loginNav">Entrar</button>
             <button ondblclick="" class="btn actionBtnNav SingninNav">Crie sua Conta</button>
         </div>
@@ -73,7 +79,7 @@
     </section>
 
     <section class="heroCell">
-        <div class="cellAlign">
+        <figure class="cellAlign">
             <div class="cell1">
                 <img src="./assets/images/pages/index/celular-1.png" alt="Tela do aplicativo RH Conexão exibida em um celular">
             </div>
@@ -89,7 +95,7 @@
             <div class="cell5">
                 <img src="./assets/images/pages/index/celular-5.png" alt="">
             </div>
-        </div>
+        </figure>
     </section>
 
     <main class="page">

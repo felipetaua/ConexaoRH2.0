@@ -11,3 +11,16 @@
     background-image: url(../../../../images/pages/index/bg-items.png);
     background-size: cover;
 }
+
+
+@media (max-width: 1024px) {
+    .page {
+        padding: 80px 60px 50px 60px;
+    }
+}
+
+@media (max-width: 600px) {
+    .page {
+        padding: 20px 15px ;
+    }
+}
