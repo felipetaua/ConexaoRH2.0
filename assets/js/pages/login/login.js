@@ -13,5 +13,5 @@ loginBtn.addEventListener('click', () => {
 
 
 function main() {
-    window.location = "./pages/main/main.html";
+    window.location = "../main/main.html";
 }
