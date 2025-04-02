@@ -1,3 +1,3 @@
-import { menu } from './menu.js';
-
-console.log("script principal");
+function login() {
+    window.location = "./pages/login/login.html";
+}
