@@ -11,3 +11,7 @@ loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
 });
 
+
+function main() {
+    window.location = "./pages/main/main.html";
+}

@@ -1,0 +1,6 @@
+@import url(./partials/sidebar.css); 
+@import url(./partials/content.css); 
+
+
+@import url(../../global/normalize.css);
+@import url(../../global/variables.css);

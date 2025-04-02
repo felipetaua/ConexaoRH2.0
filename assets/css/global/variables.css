@@ -25,4 +25,12 @@
 
     --blue-pastel: #5079c7;
     --orange-pastel: #d67e63;
+
+    /*main page*/
+    --base-clr: #fff;
+    --line-clr: #6b6b6e;
+    --hover-clr: #a6d5db;
+    --text-clr: #1e1e20;
+    --accent-clr: #5e63ff;
+    --secondary-text-clr: #48494e;
 }
