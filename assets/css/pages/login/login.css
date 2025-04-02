@@ -2,6 +2,7 @@
 @import url(./partials/toogleSection.css); 
 
 @import url(../../global/normalize.css);
+@import url(../../global/variables.css);
 
 .container{
     background-color: #fff;
