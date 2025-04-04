@@ -102,32 +102,25 @@
 }
 
 .gradient {
-    background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    background: linear-gradient(45deg, rgb(163, 5, 5) 0%, rgb(248, 149, 0) 50%, rgb(236, 226, 89) 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-size: 300% auto;
-    animation: gradient 5s ease infinite;
+    background-size: 300%;
+    animation: gradient 2s ease-in-out alternate infinite; 
 }
 
 @keyframes gradient{
     0% {
-		background-position: 0% 50%;
-    }
-    25%{
-        background-position: 50% 100%;
+		background-position: 0% 25%;
     }
     50%{
-        background-position: 100% 100%;
-    }
-    75%{
-        background-position: 50% 100%;
+        background-position: 50% 75%;
     }
     100%{
-        background-position: 50% 0%;
+        background-position: 75% 100%;
     }
 }
-
 .heroText {
     color: var(--color-gray);
     width: 487px;
@@ -152,10 +145,29 @@
     align-items: center;
     justify-content: space-evenly;
     transition: .5s ease;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
-.actionButtonHero:hover {
-    background-color: rgb(252, 136, 69);
+.actionButtonHero:before{
+    content: '';
+    width: 0;
+    height: 60px;
+    border-radius: 30em;
+    box-shadow: 10px 0 35px rgb(235, 89, 44);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(235, 89, 44);
+    color: var(--white);
+    transition: .5s ease-in;
+    display: block;
+    z-index: -1;
+}
+
+.actionButtonHero:hover:before{
+    width: 217px;
 }
 
 .circle {
