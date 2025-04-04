@@ -102,11 +102,30 @@
 }
 
 .gradient {
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-
+    background: linear-gradient(45deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-size: 300% auto;
+    animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient{
+    0% {
+		background-position: 0% 50%;
+    }
+    25%{
+        background-position: 50% 100%;
+    }
+    50%{
+        background-position: 100% 100%;
+    }
+    75%{
+        background-position: 50% 100%;
+    }
+    100%{
+        background-position: 50% 0%;
+    }
 }
 
 .heroText {
@@ -136,7 +155,7 @@
 }
 
 .actionButtonHero:hover {
-    background-color: rgb(252, 151, 69);
+    background-color: rgb(252, 136, 69);
 }
 
 .circle {

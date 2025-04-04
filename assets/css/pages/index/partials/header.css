@@ -36,6 +36,10 @@
     transition: ease .5s;
 }
 
+.linkNav {
+    display: flex;
+}
+
 .linkPages:hover {
     color: #1D1D1D;
 }
@@ -73,6 +77,14 @@
     border: 2px solid var(--primary);
     color: var(--primary);
 }
+
+
+
+
+
+
+
+
 
 
 .hamburger {
