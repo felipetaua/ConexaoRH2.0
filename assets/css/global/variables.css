@@ -8,8 +8,8 @@
 
     --gray: #D9D9D9;
     --gray-dark: #74757c;
+    --color-gray: #747474;
     --bg: #E7E7E7;
-    /* E7E7E7 */
 
     --color-neutral-0: #0e0c0c;
     --color-neutral-10: #171717;
@@ -21,7 +21,16 @@
     --yellow: #E7BD34;
     --orange: #D6582F;
     --red: #C62929;
+    --green: #2da848;
 
     --blue-pastel: #5079c7;
     --orange-pastel: #d67e63;
+
+    /*main page*/
+    --base-clr: #fff;
+    --line-clr: #6b6b6e;
+    --hover-clr: #a6d5db;
+    --text-clr: #1e1e20;
+    --accent-clr: #5e63ff;
+    --secondary-text-clr: #48494e;
 }

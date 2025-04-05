@@ -1,5 +1,11 @@
 @import url('../../../global/variables.css');
 
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
 .header {
     display: flex;
@@ -31,13 +37,43 @@
 
 .linkPages {
     font-size: 16px;
-    margin: 0 15px 0 15px;
+    padding: .5rem 1rem;
     color: #747474;
     transition: ease .5s;
+    position: relative;
 }
 
 .linkPages:hover {
+    font-weight: 400;
     color: #1D1D1D;
+}
+
+.linkPages::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    border-radius: 5px;
+    background: #747474;/*cor*/
+    transform: scaleX(0);
+    bottom: 0;
+    left: 0;
+    transition: all .6s ease;
+}
+
+.linkPages:hover::before {
+    transform: scaleX(1);
+    font-weight: 300;
+}
+
+.linkNav {
+    display: flex;
+}
+
+.linkAcount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .actionBtnNav {
@@ -47,29 +83,157 @@
 }
 
 .loginNav {
+    display: flex;
     background-color: var(--gray-dark);
     width: 127px;
     height: 40px;
     transition: ease .5s;
+    align-items: center;
+    justify-content: center;
 }
 
 .loginNav:hover {
     background: none ;
-    border: 2px solid var(--gray-dark);
+    border: 1px solid var(--gray-dark);
     color:  var(--gray-dark);
     font-weight: bold;
 }
 
 .SingninNav {
+    display: flex;
     background-color: var(--primary);
-    min-width: 160px;
-    min-height: 40px;
+    padding: 20px 25px ;
+    width: 180px;
+    height: 40px;
     margin-left: 25px;
     transition: ease .5s;
+    align-items: center;
 }
 
 .SingninNav:hover {
     background: none;
-    border: 2px solid var(--primary);
+    border: 1px solid var(--primary);
     color: var(--primary);
+}
+
+
+
+
+
+
+
+
+
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.linkAcount {
+    overflow: hidden;
+}
+
+.hamburger .linha {
+    width: 30px;
+    height: 3px;
+    background: var(--black);
+    margin: 6px 0;
+}
+
+.nav-bar {
+    height: 0px;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background: black;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.nav-bar ul {
+    display: block;
+    width: fit-content;
+    margin: 80px auto 0 auto;
+    text-align: center;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.nav-bar.ativo {
+    height: 450px;
+}
+
+.nav-bar.ativo ul {
+    opacity: 1;
+}
+
+.nav-bar ul li a {
+    display: block;
+    color: #fefefe;
+    font-size: 20px;
+    padding: 10px 25px;
+    border-radius: 50px;
+    transition: 0.3s;
+    margin: 0 5px;
+}
+
+.nav-bar ul li a:hover {
+    color: #000;
+    background: #FFF;
+}
+
+.nav-bar ul li a.ativo {
+    color: #000;
+    background: #FFF;
+}
+
+/* @media */
+@media only screen and (max-width: 1320px){
+    header{
+        padding: 0 50px;
+    }
+}
+
+@media only screen and (max-width: 1100px){
+    header{
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .hamburger{
+        display: block;
+        cursor: pointer;
+    }
+    .hamburger .linha{
+        width: 30px;
+        height: 3px;
+        background: #fefefe;
+        margin: 6px 0;
+    }
+    .nav-bar{
+        height: 0px;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        width: 100vw;
+        background: black;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+    .nav-bar ul{
+        display: block;
+        width: fit-content;
+        margin: 80px auto 0 auto;
+        text-align: center;
+        transition: 0.5s;
+        opacity: 0;
+    }
+    .nav-bar ul li a{
+        margin-bottom: 12px;
+    }
 }

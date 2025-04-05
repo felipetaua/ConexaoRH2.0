@@ -3,44 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plataforma de Recursos Humanos">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Tauã Felipe, Nicoly Carvalho ">
+    <!-- css -->
     <link rel="stylesheet" href="./assets/css/pages/index/index.css">
-    <script defer src="./assets/js/pages/index/index.js"></script>
+
+    <!-- spline tool -->
     <script defer type="module" src="https://unpkg.com/@splinetool/viewer@1.9.80/build/spline-viewer.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Script principal -->
+    <script defer src="./assets/js/pages/index/index.js"></script>
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <!-- minhatura -->
+    <link rel="shortcut icon" href="./assets/images/global/logo.png" type="image/x-png">
 
     <title>Conexão RH</title>
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <img src="./assets/images/global/logo-test.png" alt="" class="logoEmpresa"><h2 class="headerTitle">RHConexão</h2>
+            <img src="./assets/images/global/logo-test.png" alt="Logotipo da RH Conexão" class="logoEmpresa"><h2 class="headerTitle">RHConexão</h2>
+            <div class="hamburger">
+                <div class="linha"></div>
+                <div class="linha"></div>
+                <div class="linha"></div>    
+            </div>
         </div>
         <nav class="nav">
-            <div class="linkNav">
-                <a href="./pages/ferramentas/ferramentas.html" class="link linkPages ferramentasLink">Ferramentas</a>
-                <a href="./pages/sobre/sobre.html" class="link linkPages">Quem Somos</a>
-                <a href="./pages/vantagens/vantagens.html" class="link linkPages ">Vantagens</a>
-                <a href="./pages/curadoria/curadoria.html" class="link linkPages curadoriaLink">Curadoria</a>
-                <a href="./pages/conect/conect.html" class="link linkPages">Conecte-se</a>
-            </div>
+            <ul class="linkNav li">
+                <li>
+                    <a href="./pages/ferramentas/ferramentas.html" class="link linkPages ferramentasLink ativo">Ferramentas</a>
+                </li>
+                <li>
+                    <a href="./pages/sobre/sobre.html" class="link linkPages">Quem Somos</a>
+                </li>
+                <li class="">
+                    <a href="./pages/vantagens/vantagens.html" class="link linkPages ">Vantagens</a>
+                </li>
+                <li>
+                    <a href="./pages/curadoria/curadoria.html" class="link linkPages curadoriaLink">Curadoria</a>
+                </li>
+                <li>
+                    <a href="./pages/conect/conect.html" class="link linkPages">Conecte-se</a>
+                </li>
+            </ul>
         </nav>
 
-        <div>
-            <button class="btn actionBtnNav loginNav">Entrar</button>
-            <button ondblclick="" class="btn actionBtnNav SingninNav">Crie sua Conta</button>
+        <div class="linkAcount">
+            <a href="#" class="loginNav link actionBtnNav">Entrar</a>
+            <a href="#" class="link actionBtnNav SingninNav">Crie sua Conta</a>
         </div>
     </header>
 
     <div class="imagensFundo">
-        <img class="pessoa" src="assets/images/pages/index/backgorund-pessoa.png" alt="pessoa" >
-        <img class="fumaca"src="assets/images/pages/index/backgorund-fumaca.png" alt="fumaça">
+        <img class="pessoa" src="assets/images/pages/index/backgorund-pessoa.png" alt="Ilustração de uma pessoa representando o público-alvo do site">
+        <img class="fumaca" src="assets/images/pages/index/backgorund-fumaca.png" alt="Efeito de fumaça para decoração do fundo">
     </div>
     <section class="heroSection">
 
         <div class="heroGrid">
             <article class="floating1 cardsFlutuantes">
-                <img class="cardsHero" src="./assets/images/pages/index/flutuante-1.png" alt="">
+                <img class="cardsHero" src="./assets/images/pages/index/flutuante-1.png" alt="Card flutuante com informações sobre as funcionalidades do RH Conexão">
             </article>
             <article class="floating2 cardsFlutuantes">
                 <img class="cardsHero" src="./assets/images/pages/index/flutuante-2.png" alt="">
@@ -51,7 +78,7 @@
 
             <main class="floatingContent contentHero">
                 <h1 class="heroTitle">Bem-Vindo ao RH Conexão <span class="gradient">2.0</span></h1>
-                <p class="heroText"></p>
+                <p class="heroText">Uma plataforma de talentos e oportunidade!</p>
                 <div class="containerBtn">
                     <button class="actionButtonHero btn" href="./pages/#">O que mudou?
                         <div class="circle"><img src="./assets/icons/icon-arrow-right.png" alt=""></div>
@@ -71,9 +98,9 @@
     </section>
 
     <section class="heroCell">
-        <div class="cellAlign">
+        <figure class="cellAlign">
             <div class="cell1">
-                <img src="./assets/images/pages/index/celular-1.png" alt="">
+                <img src="./assets/images/pages/index/celular-1.png" alt="Tela do aplicativo RH Conexão exibida em um celular">
             </div>
             <div class="cell2">
                 <img src="./assets/images/pages/index/celular-2.png" alt="">
@@ -87,14 +114,14 @@
             <div class="cell5">
                 <img src="./assets/images/pages/index/celular-5.png" alt="">
             </div>
-        </div>
+        </figure>
     </section>
 
     <main class="page">
         <section class="funcionalSection">
             <div class="contentFunctional">
                 <div>
-                    <h2 class="functionalTitle">Funcionalidades Presentes</h2>
+                    <h1 class="functionalTitle">Funcionalidades Presentes</h1>
                     <p class="funcionalText">O que você está interessado em fazer?</p>
                     <hr class="functionalRow">
                 </div>
@@ -121,59 +148,69 @@
         </section>
         <section class="videosSection">
             <article class="cardVideo video1">
-                <h2 class="categoryTitle">Educação</h2>
+                <h2 class="categoryTitle c0">Educação</h2>
                 <p class="categoryText">Você sabe calcular hora extra do seu colaborador?</p>
                 <div class="videoScroll">
-                    <img class="frameVideo" src="./assets/images/pages/index/videoCapa-1.png" controls="true"></img>
+                    <img class="frameVideo" src="./assets/images/pages/index/videoCapa-1.png" alt="Capa do vídeo sobre como calcular hora extra de colaboradores">
                 </div>
             </article>
             <article class="cardVideo video2">
-                <h2 class="categoryTitle">Empreendedorismo</h2>
+                <h2 class="categoryTitle c1">Empreendedorismo</h2>
                 <p class="categoryText">faça a gestão inteligênte de seus funcionários.</p>
                 <div class="videoScroll">
                     <img class="frameVideo" src="./assets/images/pages/index/videoCapa-2.png" controls="true"></img>
                 </div>
             </article>
             <article class="cardVideo video3">
-                <h2 class="categoryTitle">Microempresas</h2>
+                <h2 class="categoryTitle c2">Microempresas</h2>
                 <p class="categoryText">Métodos que você pode aplicar hoje na sua empresa!</p>
                 <div class="videoScroll">
                     <img class="frameVideo" src="./assets/images/pages/index/videoCapa-3.png" controls="true"></img>
                 </div>
             </article>
             <article class="cardVideo video4">
-                <h2 class="categoryTitle">Comunidade</h2>
+                <h2 class="categoryTitle c4">Comunidade</h2>
                 <p class="categoryText">Mostre seu negócio para todo o mundo através dos anuncios.</p>
                 <div class="videoScroll">
                     <img class="frameVideo" src="./assets/images/pages/index/videoCapa-4.png" controls="true"></img>
-                    
                 </div>
             </article>
         </section>
-        <div>
-            <img class="img" src="./assets/images/pages/index/direcao.jpg" alt="">
-        </div>
+        <section class="indicadorVideo">
+            <div class="circule"></div>
+            <div class="circule"></div>
+            <div class="circule"></div>
+        </section>
         
         <section class="usuariosSections">
             <h2 class="usuarioText">Perfil de Usuários</h2>
             <div class="usuariosSectionsAlign">
-                <article class="cardsUser colaborador">
+                <section class="cardsUser colaborador">
                     <div class="cardUserIntro">
                         <h3 class="cardUserTitle">Colaborador</h3>
                         <p class="cardUserText">Conheça suas vantagens por criar sua conta conosco.</p>
                     </div>
-                    <article class="cardColabContent">
-                        <li class="li listVantagens">
-                            <ul class="contentItem"><i><img src="./assets/icons/medal-icon.png" alt="medalha"></i><p class="empregadorText">Encontre oportunidades alinhadas ao seu perfil e objetivos.</p></ul>
-                            <ul class="contentItem"><i><img src="./assets/icons/check-circle-icon.png" alt="vantagens"></i><p class="empregadorText">Receba recomendações personalizadas com base no seu potencial.</p></ul>
-                            <ul class="contentItem"><i><img src="./assets/icons/trending-up-icon.png" alt="crescimento"></i><p class="empregadorText">Conecte-se diretamente com recrutadores e empresas inovadoras.</p></ul>
-                        </li>
+                    <div class="cardColabContent">
+                        <ul class="listVantagens">
+                            <li class="contentItem">
+                                <i><img src="./assets/icons/medal-icon.png" alt="medalha"></i>
+                                <p class="empregadorText">Encontre oportunidades alinhadas ao seu perfil e objetivos.</p>
+                            </li>
+                            <li class="contentItem">
+                                <i><img src="./assets/icons/check-circle-icon.png" alt="vantagens"></i>
+                                <p class="empregadorText">Receba recomendações personalizadas com base no seu potencial.</p>
+                            </li>
+                            <li class="contentItem">
+                                <i><img src="./assets/icons/trending-up-icon.png" alt="crescimento"></i>
+                                <p class="empregadorText">Conecte-se diretamente com recrutadores e empresas inovadoras.</p>
+                            </li>
+                        </ul>
                         <button class="btn btnUser">Participe</button>
-                    </article>
-                    <div>
-                        <img class="imgUser" src="./assets/images/pages/index/pessoa-colaborador.png" alt="">
                     </div>
-                </article>
+                    <div>
+                        <img class="imgUser" src="./assets/images/pages/index/pessoa-colaborador.png" alt="Imagem de um colaborador representando os usuários do site">
+                    </div>
+                </section>
                 <article class="cardsUser empregador">
                     <div class="cardUserIntro">
                         <h3 class="cardUserTitle">Empregador</h3>
@@ -188,39 +225,136 @@
                             <button class="btn btnUser">Participe</button>
                     </article>
                     <div>
-                        <img class="imgUser" src="./assets/images/pages/index/pessoa-empregador.png" alt="">
+                        <img class="imgUser" src="./assets/images/pages/index/pessoa-empregador.png" alt="Imagem de um empregador representando empresas parceiras">
                     </div>
                 </article>
             </div>
         </section>
-        <section class="depoimentsSection">
-            <h1>Depoimentos</h1>
-            <div class="scrollDepoiments">
-                <article class="cardsDepoimentos depoimentos1"></article>
-                <article class="cardsDepoimentos depoimentos2"></article>
-                <article class="cardsDepoimentos depoimentos3"></article>
-                <article class="cardsDepoimentos depoimentos4"></article>
-                <article class="cardsDepoimentos depoimentos5"></article>
+        
+        <section class="depoimentsWrapper">
+            <h2 class="depoimentsTitleSection">O que nossos usuários dizem</h2>
+            <div class="depoimentsSection">
+                <article class="cardsDepoimentos depoimentos1">
+                    <div class="avatar">
+                        <img class="avatarPhoto" src="./assets/images/pages/index/depoiments1.png" alt="Foto de Eminem, um dos usuários satisfeitos do RH Conexão">
+                        <div>
+                            <h3 class="depoimentsTitle">Eminem</h3>
+                            <figure class="stars">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="Ícone de estrela representando avaliação de 5 estrelas">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="contentDepoiments">
+                        <hr class="horizontalLine">
+                        <p class="depoimentsText">"Com a Inteligência do RH Conexão 2.0, consegui uma colocação na minha área em poucos dias!"</p>
+                    </div>
+                </article>
+                <article class="cardsDepoimentos depoimentos1">
+                    <div class="avatar">
+                        <img class="avatarPhoto" src="./assets/images/pages/index/depoiments2.png" alt="foto de um de nossos clientes que gostaram de nosso trabalho">
+                        <div>
+                            <h3 class="depoimentsTitle">Ariana Grande</h3>
+                            <figure class="stars">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="Ícone de estrela representando avaliação de 5 estrelas">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="contentDepoiments">
+                        <hr class="horizontalLine">
+                        <p class="depoimentsText">"O website é muito bonito visualmente, adorei as novas funções de IA."</p>
+                    </div>
+                </article>
+                <article class="cardsDepoimentos depoimentos1">
+                    <div class="avatar">
+                        <img class="avatarPhoto" src="./assets/images/pages/index/depoiments3.png" alt="foto do cliente">
+                        <div>
+                            <h3 class="depoimentsTitle">The Weekend</h3>
+                            <figure class="stars">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="avaliação de 5 estrelas">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="contentDepoiments">
+                        <hr class="horizontalLine">
+                        <p class="depoimentsText">"Graças ao RH Conexão, encontrei um emprego que realmente faz sentido para mim!"</p>
+                    </div>
+                </article>
+                <article class="cardsDepoimentos depoimentos1">
+                    <div class="avatar">
+                        <img class="avatarPhoto" src="./assets/images/pages/index/depoiments4.png" alt="foto de nosso cliente">
+                        <div>
+                            <h3 class="depoimentsTitle">LinkinPark</h3>
+                            <figure class="stars">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="Ícone de estrela representando avaliação de 5 estrelas">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="contentDepoiments">
+                        <hr class="horizontalLine">
+                        <p class="depoimentsText">"A nova plataforma otimizou nosso recrutamento, tornando o processo mais rápido e eficiente"</p>
+                    </div>
+                </article>
+                <article class="cardsDepoimentos depoimentos1">
+                    <div class="avatar">
+                        <img class="avatarPhoto" src="./assets/images/pages/index/depoiments5.png" alt="Imagem de nossos clientes">
+                        <div>
+                            <h3 class="depoimentsTitle">Taylor Swift</h3>
+                            <figure class="stars">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/star.svg" alt="Ícone de estrela representando avaliação de 5 estrelas">
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="contentDepoiments">
+                        <hr class="horizontalLine">
+                        <p class="depoimentsText">"O website é muito bonito visualmente, adorei as novas funções de IA."</p>
+                    </div>
+                </article>
             </div>
         </section>
     </main>
+
     <footer>
         <div class="footer-content">
             <div class="footer-contacts">
-                <img src="./assets/images/global/logo-test.png" alt="">
+                <img src="./assets/images/global/logo-test.png" alt="Logotipo da RH Conexão">
                 <h1>RHConexão</h1>
                 <p>Conheça sobre mais o projeto explore tudo o que pode contribuir para seu desenvolvimento!</p>
 
                 <div class="footer-social-media">
-                    <a href="#" class="footer-link instagram">
+                    <a href="https://www.instagram.com/" class="footer-link instagram" target="_blank" rel="noreferrer noopener">
                         <i class="fa-brands fa-instagram"></i>
                     </a>
 
-                    <a href="#" class="footer-link facebook">
+                    <a href="https://www.facebook.com/?locale=pt_BR" class="footer-link facebook" target="_blank" rel="noreferrer noopener">
                         <i class="fa-brands fa-facebook-f"></i>
                     </a>
 
-                    <a href="#" class="footer-link whatsapp">
+                    <a href="https://www.whatsapp.com/" class="footer-link whatsapp" target="_blank" rel="noreferrer noopener">
                         <i class="fa-brands fa-whatsapp"></i>
                     </a>
                 </div>
@@ -256,26 +390,31 @@
                 </li>
             </ul>
 
-            <div class="footer-subscribe">
+            <form action="https://escola.us13.list-manage.com/subscribe/post?u=a6246e182df6b62a3126abeed&amp;id=82e953ff84&amp;f_id=00568eeaf0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self">
                 <h3>Contato</h3>
-
-                <p>
-                    Entre em contato conosco através do campo abaixo:
-                </p>
-
+                <p>Entre em contato conosco através do campo abaixo:</p>
                 <div class="input-group">
-                    <input type="email" id="email">
-                    <button id="subscribe-button">
-                        <i class="fa-regular fa-envelope"></i>
+                    <input type="text" name="MMERGE6" class="text" id="mce-MMERGE6" value="" placeholder="Digite sua sugestão" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Digite seu e-mail" required>
+                    <button type="submit" name="subscribe" id="mc-embedded-subscribe">
+                        <i class="fa-regular fa-envelope"></i> Enviar
                     </button>
                 </div>
-            </div>
+                <!-- Campo oculto para evitar spam bots -->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                    <input type="text" name="b_a6246e182df6b62a3126abeed_82e953ff84" tabindex="-1" value="">
+                </div>
+            </form>
         </div>
 
         <div class="footer-copyright">
             &#169
-            2025 Direitos reservados <b> felipetauaSystems </b> & <b> nicoSystems </b> 
+            2025 Direitos reservados a RHConexão. Criado por <a class="link copyrightLink" href="https://github.com/felipetaua" target="_blank" rel="noreferrer noopener"> felipetauaSystems </a> & <a class="link copyrightLink" href="https://github.com/nico-cbr" target="_blank" rel="noreferrer noopener"> nicoSystems </a> 
         </div>
     </footer>
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
 </body>
 </html>

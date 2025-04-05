@@ -1,9 +1,8 @@
-.usuariosSections {
-    
-}
-
 .usuarioText {
     margin-bottom: 25px;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
 }
 
 .usuariosSectionsAlign {
@@ -83,4 +82,26 @@
     display: flex;
     align-items: center;
     
+}
+
+
+@media (max-width: 1024px) {
+    .usuariosSectionsAlign {
+        width: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto;
+    }
+
+    .cardsUser {
+        width: auto;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .usuariosSectionsAlign {
+        width: 100px;
+    }
 }

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../../assets/css/pages/login/login.css">
+
+    <script defer src="../../assets/js/pages/login/login.js"></script>
+
+    <!-- minhatura -->
+    <link rel="shortcut icon" href="./assets/images/global/logo.png" type="image/x-png">
+    <title>Conexão RH - Login</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <main class="form-container sign-up">
+            <form>
+                <h1>Crie sua Conta</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>ou utilize seu email para registrar-se</span>
+                <input type="text" placeholder="Nome">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Senha">
+                <button class="btnSign">Criar</button>
+            </form>
+        </main>
+        <main class="form-container sign-in">
+            <form>
+                <h1>Login</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>ou utilize seu email e senha</span>
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Senha">
+                <a href="#">Esqueçeu sua senha?</a>
+                <button onclick="main()" class="btnLogin">Entrar</button>
+            </form>
+        </main>
+        <main class="toggle-container">
+            <section class="toggle">
+                <aside class="toggle-panel toggle-left">
+                    <h1 class="toggleTitle">Seja Bem-Vindo!</h1>
+                    <p>Já possui uma conta? Que bacana! <br> Tenha acesso as nossas ferramentas efetuando o login.</p>
+                    <button class="hidden btnLoginAction" id="login">Entrar</button>
+                </aside>
+                <aside class="toggle-panel toggle-right">
+                    <h1 class="toggleTitle">Olá, Amigo!</h1>
+                    <p>Não possui uma conta? Sem problemas :) <br> Crie sua conta agora para aproveitar nossas ferramentas.</p>
+                    <button onclick="main()" class="hidden btnSignAction" id="register">Crie agora</button>
+                </aside>
+            </section>
+        </main>
+</body>
+
+</html>
