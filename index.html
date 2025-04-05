@@ -8,10 +8,15 @@
     <meta name="author" content="Tauã Felipe, Nicoly Carvalho ">
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/pages/index/index.css">
+    <!-- Linking Google fonts for icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <!-- Linking SwiperJS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 
     <!-- spline tool -->
     <script defer type="module" src="https://unpkg.com/@splinetool/viewer@1.9.80/build/spline-viewer.js"></script>
-
+    <!-- Linking SwiperJS script -->
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Script principal -->
     <script defer src="./assets/js/pages/index/index.js"></script>
 
@@ -63,6 +68,7 @@
         <img class="pessoa" src="assets/images/pages/index/backgorund-pessoa.png" alt="Ilustração de uma pessoa representando o público-alvo do site">
         <img class="fumaca" src="assets/images/pages/index/backgorund-fumaca.png" alt="Efeito de fumaça para decoração do fundo">
     </div>
+
     <section class="heroSection">
 
         <div class="heroGrid">
@@ -139,48 +145,73 @@
                     <button class="parentWhiteBtn cardThreeBtn btn">Clique e saiba mais</button>
                 </article>
                 <article class="cardFour">
-                    <p class="parentText">Vagas Disponíveis te aguardando...</p>
+                    <p class="parentVacancy">Vagas Disponíveis te aguardando...</p>
                 </article>
                 <article class="cardFive">
                     <h2 class="parentFiveTitle">Conheça nossas empresas e parceiros.</h2>
                 </article>
             </div>
         </section>
-        <section class="videosSection">
-            <article class="cardVideo video1">
-                <h2 class="categoryTitle c0">Educação</h2>
-                <p class="categoryText">Você sabe calcular hora extra do seu colaborador?</p>
-                <div class="videoScroll">
-                    <img class="frameVideo" src="./assets/images/pages/index/videoCapa-1.png" alt="Capa do vídeo sobre como calcular hora extra de colaboradores">
+
+        <section class="videosSection swiper">
+            <div class="container swiper">
+                <div class="card-wrapper">
+                    <!-- Card slides container -->
+                    <ul class="card-list swiper-wrapper">
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link">
+                                <iframe class="card-video"  width="560" src="https://www.youtube.com/embed/F-mvgoG0lLc?si=rTQ3DaPBmSdXyF3h" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <p class="badge badge-designer">Benefícios e Créditos</p>
+                                <h2 class="card-title">Crédito do Trabalhador E-consignado - Econet </h2>
+                                <button class="card-button material-symbols-rounded">arrow_forward</button>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link">
+                                <iframe class="card-video" width="560" src="https://www.youtube.com/embed/FxfaBy7Dj2s?si=JG_DqeBZ8ggMXKrL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <p class="badge badge-developer">Rotinas Trabalhistas</p>
+                                <h2 class="card-title">Hora Extra - Econet</h2>
+                                <button class="card-button material-symbols-rounded">arrow_forward</button>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link">
+                                <iframe class="card-video" width="560" src="https://www.youtube.com/embed/LwS_Ex3Z-EA?si=yaibWY6JH0rYOvtS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <p class="badge badge-marketer">Direitos do Trabalhador</p>
+                                <h2 class="card-title">Calculo do 13º Salário - Econet</h2>
+                                <button class="card-button material-symbols-rounded">arrow_forward</button>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link">
+                                <iframe class="card-video" width="560" src="https://www.youtube.com/embed/rVGaWZb_yMY?si=u8AbySUEVqOWQ8UL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <p class="badge badge-gamer">Recursos Humanos</p>
+                                <p class="badge badge-editor">Departamento Pessoal</p>
+                                <h2 class="card-title">Prazos para Recontratação de Ex-Funcionário - Econet</h2>
+                                <button class="card-button material-symbols-rounded">arrow_forward</button>
+                            </a>
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <a href="#" class="card-link">
+                                <iframe class="card-video" width="560" src="https://www.youtube.com/embed/GNfMBeLhldo?si=ENuvmvSFA__kwRjG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                <p class="badge badge-editor">Legislação</p>
+                                <h2 class="card-title">Carnaval é Feriado? Direitos e deveres do trabalhador. - Econet</h2>
+                                <button class="card-button material-symbols-rounded">arrow_forward</button>
+                            </a>
+                        </li>
+                    </ul>
+            
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+            
+                    <!-- Navigation Buttons -->
+                    <div class="swiper-slide-button swiper-button-prev"></div>
+                    <div class="swiper-slide-button swiper-button-next"></div>
                 </div>
-            </article>
-            <article class="cardVideo video2">
-                <h2 class="categoryTitle c1">Empreendedorismo</h2>
-                <p class="categoryText">faça a gestão inteligênte de seus funcionários.</p>
-                <div class="videoScroll">
-                    <img class="frameVideo" src="./assets/images/pages/index/videoCapa-2.png" controls="true"></img>
-                </div>
-            </article>
-            <article class="cardVideo video3">
-                <h2 class="categoryTitle c2">Microempresas</h2>
-                <p class="categoryText">Métodos que você pode aplicar hoje na sua empresa!</p>
-                <div class="videoScroll">
-                    <img class="frameVideo" src="./assets/images/pages/index/videoCapa-3.png" controls="true"></img>
-                </div>
-            </article>
-            <article class="cardVideo video4">
-                <h2 class="categoryTitle c4">Comunidade</h2>
-                <p class="categoryText">Mostre seu negócio para todo o mundo através dos anuncios.</p>
-                <div class="videoScroll">
-                    <img class="frameVideo" src="./assets/images/pages/index/videoCapa-4.png" controls="true"></img>
-                </div>
-            </article>
+            </div>
         </section>
-        <section class="indicadorVideo">
-            <div class="circule"></div>
-            <div class="circule"></div>
-            <div class="circule"></div>
-        </section>
+        
+
         
         <section class="usuariosSections">
             <h2 class="usuarioText">Perfil de Usuários</h2>
