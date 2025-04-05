@@ -86,7 +86,7 @@
     border-radius: 12px;
     color: var(--white);
     background: none;
-    border: 2px solid var(--white);
+    border: 1px solid var(--white);
     padding: 2px var(--white);
     transition: .5s ease-out;
 }
@@ -104,14 +104,14 @@
 }
 
 .cardTwoBtn:hover {
-    border: 2px solid var(--white);
+    border: 1px solid var(--white);
     background-color: var(--white);
     color: var(--black);
 }
 
 .cardThreeBtn:hover {
     background: none;
-    border: 2px solid var(--white);
+    border: 1px solid var(--white);
     padding: 2px var(--white);
     color: var(--white);
 }
@@ -188,6 +188,13 @@
     grid-column-start: 3;
     grid-row-start: 1;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.parentVacancy {
+    
 }
 
 .cardFive {
