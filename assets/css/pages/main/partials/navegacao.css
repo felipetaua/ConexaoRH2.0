@@ -1,0 +1,28 @@
+.header {
+    min-height: 87px;
+}
+
+.nav-main {
+    display: flex;
+    justify-content: end;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 16px;
+    margin-right: 24px;
+}
+
+.nav-item {
+    margin: 0 12px 0 12px;
+    transition: 1s ease;
+}
+
+.nav-item:hover {
+    font-weight: 500;
+}
+
+.nav-notificacao {
+    margin: 0 12px 0 12px;
+}
