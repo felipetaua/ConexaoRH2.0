@@ -24,7 +24,12 @@
     font-weight: 500;
 }
 
-
 .nav-notificacao {
-    margin: auto 12px auto 12px;
+    margin: auto 24px auto 12px;
+}
+
+.nav-action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
