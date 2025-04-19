@@ -5,6 +5,7 @@
 .nav-main {
     display: flex;
     justify-content: end;
+    align-items: center;
 }
 
 .nav-link {
@@ -23,6 +24,7 @@
     font-weight: 500;
 }
 
+
 .nav-notificacao {
-    margin: 0 12px 0 12px;
+    margin: auto 12px auto 12px;
 }
