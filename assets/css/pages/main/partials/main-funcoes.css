@@ -1,0 +1,30 @@
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 18px;
+}
+    
+.service1 {
+    grid-row: span 2 / span 2;
+}
+
+.service2 {
+    grid-row: span 2 / span 2;
+}
+
+.service3 {
+    grid-column: span 2 / span 2;
+}
+
+.service4 {
+    grid-column-start: 3;
+    grid-row-start: 2;
+}
+
+.service5 {
+    grid-column-start: 4;
+    grid-row-start: 2;
+}
+        

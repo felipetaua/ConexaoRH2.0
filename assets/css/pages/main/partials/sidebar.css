@@ -116,7 +116,7 @@ body{
   body{
     grid-template-columns: 1fr;
   }
-  main{
+  .main-page{
     padding: 2em 1em 60px 1em;
   }
   .container{

@@ -1,7 +1,7 @@
-main{
+.main-page{
     padding: min(30px, 7%);
   }
-  main p{
+  .main-page p{
     color: var(--secondary-text-clr);
     margin-top: 5px;
     margin-bottom: 15px;
