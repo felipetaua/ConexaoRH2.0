@@ -1,5 +1,5 @@
 .header {
-    min-height: 87px;
+    height: 4.688vw;
 }
 
 .nav-main {
@@ -11,13 +11,13 @@
 .nav-link {
     display: flex;
     justify-content: space-evenly;
-    font-size: 16px;
-    margin-right: 24px;
+    font-size: 0.833vw;
+    margin-right: 1.25vw;
 }
 
 .nav-item {
-    margin: 0 12px 0 12px;
-    transition: 1s ease;
+    margin: 0 0.625vw 0 0.625vw;
+    transition: 1s;
 }
 
 .nav-item:hover {
@@ -25,7 +25,7 @@
 }
 
 .nav-notificacao {
-    margin: auto 24px auto 12px;
+    margin: auto 1.25vw auto 0.625vw;
 }
 
 .nav-action {
