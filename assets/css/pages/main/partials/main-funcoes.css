@@ -53,28 +53,33 @@
 
 
 .card-curriculo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: rgba(240, 243, 245, 0.233);
     box-shadow: 0 8px 32px 0 #0000002d;
     backdrop-filter: blur( 24.5px );
     -webkit-backdrop-filter: blur( 24.5px );
     border-radius: 12px;
     padding: 0.625vw 1.25vw;
-    transition: .5s ease-in-out;
+    transition: .5s ;
 }
 
 .card-curriculo:hover {
     border: solid 2px var(--primary);
-    scale: 1.02;
 }
 
 .card-empresas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: rgba(240, 243, 245, 0.233);
     box-shadow: 0 8px 32px 0 #0000002d;
     backdrop-filter: blur( 24.5px );
     -webkit-backdrop-filter: blur( 24.5px );
     border-radius: 12px;
     padding: 0.625vw 1.25vw;
-    transition: .5s ease-in-out;
+    transition: .5s ;
 }
 
 .card-empresas:hover {
@@ -90,7 +95,7 @@
     -webkit-backdrop-filter: blur( 24.5px );
     border-radius: 12px;
     padding: 0.625vw 1.25vw;
-    transition: .5s ease-in-out;
+    transition: .5s ;
 }
 
 .card-suporte:hover {
@@ -111,7 +116,7 @@
   -webkit-backdrop-filter: blur( 24.5px );
   border-radius: 12px;
   padding: 0.625vw 1.25vw;
-  transition: .5s ease-in-out;
+  transition: .5s ;
 }
 
 .card-chat {
@@ -121,7 +126,7 @@
   -webkit-backdrop-filter: blur( 24.5px );
   border-radius: 12px;
   padding: 0.625vw 1.25vw;
-  transition: .5s ease-in-out;
+  transition: .5s ;
 }
 
 .scroll-container {
