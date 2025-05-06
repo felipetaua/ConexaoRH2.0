@@ -1,16 +1,14 @@
 .lista-vagas {
     display: grid;
-    grid-template-columns: repeat(2, fr);
-    grid-template-rows: repeat(2, fr);
-    gap: 8px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
 .card-vagas {
     display: flex;
     justify-content: start;
-    
     align-items: center;
-    width: 250px;
+    width: 90%;
     border: 1px solid #5E5E5E;
     padding: 10px 20px;
     border-radius: 16px;
@@ -28,4 +26,5 @@
 }
 
 .image-empresa {
+    /*ajustes img*/ 
 }

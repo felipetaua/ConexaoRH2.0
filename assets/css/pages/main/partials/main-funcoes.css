@@ -61,8 +61,8 @@
     backdrop-filter: blur( 24.5px );
     -webkit-backdrop-filter: blur( 24.5px );
     border-radius: 12px;
-    padding: 0.625vw 1.25vw;
-    transition: .5s ;
+    padding: 12px 24px;
+    transition: .8s;
 }
 
 .card-curriculo:hover {
