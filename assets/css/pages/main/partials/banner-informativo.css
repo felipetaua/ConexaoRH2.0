@@ -1,0 +1,44 @@
+.banner-informativo {
+    width: 100%;
+    height: 25.667vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #303030;
+    border-radius: 12px;
+}
+
+.banner-content-1 {
+    color: var(--white);
+    /* padding: 24px 48px; */
+    padding: 2% 4%;
+}
+
+.banner-title {
+    font-size: 18px;
+}
+
+.banner-card-title {
+    font-size: 18px;
+}
+
+.banner-content-2 {
+    color: var(--black);
+    padding: 12px 24px;
+}
+
+.banner-text-1 {
+    color: var(--white) !important;
+}
+
+.banner-text-2 {
+    color: var(--black) !important; 
+}
+
+.banner-card {
+    height: 20vw;
+    width: 40vw;
+    background-image: url(../../../../images/pages/main/banner-cards.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}

@@ -1,4 +1,6 @@
-
+.gerenciamento {
+    margin-bottom: 120px;
+}
 .gerenciamento-content {
     display: flex;
     justify-content: space-between;

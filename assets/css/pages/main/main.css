@@ -5,8 +5,7 @@
 @import url(./partials/main-funcoes.css); 
 @import url(./partials/gerenciamento.css);
 @import url(./partials/lista-vagas.css); 
-
-
+@import url(./partials/banner-informativo.css); 
 
 @import url(../../global/normalize.css);
 @import url(../../global/variables.css);
