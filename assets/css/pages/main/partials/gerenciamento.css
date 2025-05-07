@@ -9,3 +9,18 @@
 .btn-gerenciamento {
     background-color: grey;
 }
+
+.gerencimento-content-text {
+    width: 60%;
+}
+
+.title-main {
+    display: flex;
+}
+
+.circle {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #2E62C2;
+}
