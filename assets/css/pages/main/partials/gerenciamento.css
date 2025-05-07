@@ -1,17 +1,20 @@
 
 .gerenciamento-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .btn-gerenciamento {
-    background-color: grey;
+    background-color: #C4CAE5;
+    border-radius: 8px;
 }
 
 .gerencimento-content-text {
     width: 60%;
+    
 }
 
 .title-main {
@@ -23,4 +26,46 @@
     width: 10px;
     height: 10px;
     background-color: #2E62C2;
+}
+
+.btn-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    padding: 20px;
+}
+
+.btn-2 {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    color: #2E62C2;
+}
+
+.btn-3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #2E62C2;
+    color: white;
+}
+
+.icon-btn2, .icon-btn3 {
+    margin-right: 10px;
+}
+
+/* .content-pt1 {
+    width: 50%;
+} */
+
+.content-pt2 {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
 }
