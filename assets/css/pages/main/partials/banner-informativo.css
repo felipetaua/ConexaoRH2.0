@@ -32,12 +32,23 @@
 
 .banner-text-2 {
     color: var(--black) !important; 
+    padding: 2% 0;
 }
 
 .banner-card {
     height: 20vw;
     width: 40vw;
+    padding: 4% 8%;
     background-image: url(../../../../images/pages/main/banner-cards.svg);
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.card-content-main {
+    width: 58%;
+}
+
+.banner-content-tag {
+    display: flex;
+    align-items: center;
 }
