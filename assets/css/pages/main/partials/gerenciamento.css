@@ -21,13 +21,27 @@
 
 .title-main {
     display: flex;
+    align-items: center;
+}
+
+.title-text {
+    font-size: 24px;
+    margin-right: 2%;
 }
 
 .circle {
-    content: "";
+    display: inline-block;
     width: 10px;
     height: 10px;
     background-color: #2E62C2;
+    border-radius: 5px;
+}
+
+.tag-text {
+    background-color: #C4CAE5;
+    color: #2E62C2 !important;
+    padding: 4px 8px;
+    border-radius: 24px;
 }
 
 .btn-1 {
