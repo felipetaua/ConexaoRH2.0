@@ -142,7 +142,7 @@
   }
   
   .scroll-img {
-    width: 32px; /* ou defina um tamanho fixo se preferir */
+    width: 32px;
     height: auto;
     display: block;
   }
