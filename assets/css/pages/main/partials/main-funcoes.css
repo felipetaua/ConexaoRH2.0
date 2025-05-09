@@ -65,8 +65,8 @@
     transition: .8s;
 }
 
-.card-curriculo:hover {
-    border: solid 2px var(--primary);
+.services article:nth-child(1){
+  border: solid 2px var(--primary);
 }
 
 .card-empresas {
@@ -82,9 +82,9 @@
     transition: .5s ;
 }
 
-.card-empresas:hover {
-    border: solid 2px var(--primary);
-    scale: 1.01;
+.services article:hover:not(.services article:nth-child(1)) {
+    /* border: solid 2px var(--primary); */
+    scale: 1.009;
 }
 
 .card-suporte {
@@ -96,11 +96,6 @@
     border-radius: 12px;
     padding: 0.625vw 1.25vw;
     transition: .5s ;
-}
-
-.card-suporte:hover {
-    border: solid 2px var(--primary);
-    scale: 1.01;
 }
 
 .main-scroll {
