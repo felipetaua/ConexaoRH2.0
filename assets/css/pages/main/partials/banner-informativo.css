@@ -10,11 +10,12 @@
 
 .banner-content-1 {
     color: var(--white);
-    padding: 2% 4%;
+    padding: 2% 0 2% 4%;
 }
 
 .banner-title {
     font-size: 18px;
+    padding-right: 2%;
 }
 
 .banner-card-title {
@@ -28,6 +29,7 @@
 
 .banner-text-1 {
     color: var(--white) !important;
+    margin: 12px 0;
 }
 
 .banner-text-2 {
@@ -51,4 +53,20 @@
 .banner-content-tag {
     display: flex;
     align-items: center;
+}
+
+.circle-white {
+    background-color: var(--white);
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.tag-banner-text {
+    width: 120px;
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 2px 8px;
+    border-radius: 24px;
 }
