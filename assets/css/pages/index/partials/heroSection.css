@@ -7,19 +7,23 @@
 }   
 
 .imagensFundo .pessoa{
+    position: relative;
     width: 99vw;
-    margin-bottom: -36rem;
-    margin-top: -16rem;
+    margin-top: -3.5vw;
+    opacity: 25%;
 }
 
 .imagensFundo .fumaca{
     width: 99vw;
+    margin-top: -25vw;
     position: relative;
 }
+
 .heroSection {
-    width: 1080px;
-    height: 850px;
+    width: 100vw;
+    height: 45vw;
     margin: auto;
+    padding: 0 120px;
 }
 
 .cardsHero {
