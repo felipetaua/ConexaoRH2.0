@@ -242,7 +242,7 @@
     }
 
     .cardOne {
-        height: 50%;
+        height: 200px;
     }
 
     .cardTwo {
@@ -269,6 +269,14 @@
 @media (max-width: 640px) {
     .parentGrid {
         grid-template-columns: 1fr;
+        
+    }
+
+    .parentGrid {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        margin: 0 8%;
     }
 
     .cardOne,
@@ -278,5 +286,8 @@
     .cardFive {
         grid-column: span 1;
         grid-row: auto;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
