@@ -241,6 +241,10 @@
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .cardOne {
+        height: 50%;
+    }
+
     .cardTwo {
         grid-column: span 1;
         grid-row: auto;
@@ -252,7 +256,7 @@
     }
 
     .cardFour {
-        grid-column: span 1;
+        grid-column: 2 span ;
         grid-row: auto;
     }
 
