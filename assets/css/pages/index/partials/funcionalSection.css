@@ -163,7 +163,8 @@
 .parentGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-rows: auto;
+    margin-bottom: 110px;
     gap: 20px;
 }
 
@@ -233,4 +234,45 @@
 
 .cardOne:hover::before, .cardFive:hover::before {
     opacity: 1;
+}
+
+@media (max-width: 1024px) {
+    .parentGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cardTwo {
+        grid-column: span 1;
+        grid-row: auto;
+    }
+
+    .cardThree {
+        grid-column: span 2;
+        grid-row: auto;
+    }
+
+    .cardFour {
+        grid-column: span 1;
+        grid-row: auto;
+    }
+
+    .cardFive {
+        grid-column: span 2;
+        grid-row: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .parentGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .cardOne,
+    .cardTwo,
+    .cardThree,
+    .cardFour,
+    .cardFive {
+        grid-column: span 1;
+        grid-row: auto;
+    }
 }
