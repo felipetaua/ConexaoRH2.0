@@ -19,6 +19,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Script principal -->
     <script defer src="./assets/js/pages/index/index.js"></script>
+    <script defer src="./assets/js/global/main.js"></script>
 
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -31,38 +32,45 @@
 <body>
     <header class="header">
         <div class="logo">
-            <img src="./assets/images/global/RHconexao-logo.svg" alt="Logotipo da RH Conexão" class="logoEmpresa"><h2 class="headerTitle"><!--RHConexão--></h2>
-            <div class="hamburger">
-                <div class="linha"></div>
-                <div class="linha"></div>
-                <div class="linha"></div>    
-            </div>
+            <img src="./assets/images/global/RHconexao-logo.svg" alt="Logotipo da RH Conexão" class="logoEmpresa">
+            <h2 class="headerTitle"><!--RHConexão--></h2>
         </div>
-        <nav class="nav">
-            <ul class="linkNav li">
-                <li>
-                    <a href="./pages/ferramentas/ferramentas.html" class="link linkPages ferramentasLink ativo">Ferramentas</a>
-                </li>
-                <li>
-                    <a href="./pages/sobre/sobre.html" class="link linkPages">Quem Somos</a>
-                </li>
-                <li class="">
-                    <a href="./pages/vantagens/vantagens.html" class="link linkPages ">Vantagens</a>
-                </li>
-                <li>
-                    <a href="./pages/curadoria/curadoria.html" class="link linkPages curadoriaLink">Curadoria</a>
-                </li>
-                <li>
-                    <a href="./pages/conect/conect.html" class="link linkPages">Conecte-se</a>
-                </li>
+
+        <!-- Botão hamburguer fora da logo -->
+        <div class="hamburger">
+            <div class="linha"></div>
+            <div class="linha"></div>
+            <div class="linha"></div>    
+        </div>
+
+        <!-- Navegação principal -->
+        <nav class="nav-bar">
+            <ul class="linkNav">
+            <li>
+                <a href="./pages/ferramentas/ferramentas.html" class="linkPages ferramentasLink ativo">Ferramentas</a>
+            </li>
+            <li>
+                <a href="./pages/sobre/sobre.html" class="linkPages">Quem Somos</a>
+            </li>
+            <li>
+                <a href="./pages/vantagens/vantagens.html" class="linkPages">Vantagens</a>
+            </li>
+            <li>
+                <a href="./pages/curadoria/curadoria.html" class="linkPages curadoriaLink">Curadoria</a>
+            </li>
+            <li>
+                <a href="./pages/conect/conect.html" class="linkPages">Conecte-se</a>
+            </li>
             </ul>
         </nav>
 
-        <div class="linkAcount">
-            <a href="./pages/main/main.html" class="loginNav link actionBtnNav">Entrar</a>
-            <a href="#" class="link actionBtnNav SingninNav">Crie sua Conta</a>
+        <!-- Botões de ação -->
+       <div class="linkAcount">
+            <a href="./pages/main/main.html" class="loginNav actionBtnNav btn">Entrar</a>
+            <a href="#" class="SingninNav actionBtnNav btn">Crie sua Conta</a>
         </div>
-    </header>
+</header>
+
 
     <div class="imagensFundo">
         <img class="pessoa" src="assets/images/pages/index/bg-pessoa.png" alt="Ilustração de uma pessoa representando o público-alvo do site">
