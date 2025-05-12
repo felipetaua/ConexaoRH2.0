@@ -128,37 +128,41 @@ body {
 
 /* Responsivo */
 @media screen and (max-width: 900px) {
-  .hamburger {
-    display: flex;
-  }
+    .header {
+        margin: 15px 35px 0 35px;
+    }
 
-  .nav-bar {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
+    .hamburger {
+        display: flex;
+    }
 
-  .nav-bar.ativo {
-    display: flex;
-  }
+    .nav-bar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-  .linkNav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
+    .nav-bar.ativo {
+        display: flex;
+    }
 
-  .linkPages {
-    padding: 0.5rem 0;
-  }
+    .linkNav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
 
-  .linkAcount {
-    display: none;
-  }
+    .linkPages {
+        padding: 0.5rem 0;
+    }
+
+    .linkAcount {
+        display: none;
+    }
 }
