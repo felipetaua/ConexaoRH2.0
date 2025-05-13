@@ -193,6 +193,33 @@
     color: var(--black);
 }
 
+.scroll-hero {
+    display: flex;
+    justify-content: center;
+    margin-top: 10vw;
+}
+
+.scroll-down-image {
+    filter: invert(50%);
+    animation: floatingScroll 5s ease-in-out infinite;
+}
+
+@keyframes floatingScroll {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(30px);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+}
+
 @media screen and (max-width: 900px) {
     .heroGrid {
         grid-template-columns: 1fr; 

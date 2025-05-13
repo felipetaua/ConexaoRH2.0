@@ -20,6 +20,7 @@
     <!-- Script principal -->
     <script defer src="./assets/js/pages/index/index.js"></script>
     <script defer src="./assets/js/global/main.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -114,22 +115,26 @@
         </div>
     </section>
 
+    <section class="scroll-hero">
+        <a class="link" href="#center-nav"><img class="scroll-down-image" src="./assets/images/pages/index/scroll-down.svg" alt="Desçer para ver mais" /></a>
+    </section>
+
     <section class="heroCell">
         <figure class="cellAlign">
             <div class=" cell1">
-                <img class="cellphones-img" src="./assets/images/pages/index/celular-1.png" alt="Tela do aplicativo RH Conexão exibida em um celular">
+                <img class="cellA1 cellphones-img" src="./assets/images/pages/index/celular-1.png" alt="Tela do aplicativo RH Conexão exibida em um celular">
             </div>
             <div class=" cell2">
-                <img class="cellphones-img" src="./assets/images/pages/index/celular-2.png" alt="">
+                <img class="cellA2 cellphones-img" src="./assets/images/pages/index/celular-2.png" alt="">
             </div>
             <div class=" cell3">
-                <img class="cellphones-img" src="./assets/images/pages/index/celular-3.png" alt="">
+                <img class="cellA3 cellphones-img" src="./assets/images/pages/index/celular-3.png" alt="">
             </div>
             <div class=" cell4">
-                <img class="cellphones-img" src="./assets/images/pages/index/celular-4.png" alt="">
+                <img class="cellA4 cellphones-img" src="./assets/images/pages/index/celular-4.png" alt="">
             </div>
             <div class=" cell5">
-                <img class="cellphones-img" src="./assets/images/pages/index/celular-5.png" alt="">
+                <img class="cellA5 cellphones-img" src="./assets/images/pages/index/celular-5.png" alt="">
             </div>
         </figure>
     </section>
@@ -143,7 +148,7 @@
                     <hr class="functionalRow">
                 </div>
             </article>
-            <main class="parentGrid">
+            <main class="parentGrid" id="center-nav">
                 <article class="cardOne">
                     <h2 class="cardOneTitle">Quem somos?</h2>
                 </article>
