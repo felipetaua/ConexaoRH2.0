@@ -50,7 +50,7 @@
 .cardTwo {
     background-image: url('../../../../images/pages/index/background-grid-1.png');
     width: 317px;
-    height: 453px;   
+    height: 100%;   
     border-radius: 32px;
     display: flex;
     flex-direction: column;
@@ -248,6 +248,7 @@
     .cardTwo {
         grid-column: span 1;
         grid-row: auto;
+        height: 453px;
     }
 
     .cardThree {
@@ -277,6 +278,10 @@
         grid-template-columns: 1fr;
         justify-items: center;
         margin: 0 8%;
+    }
+
+    .cardTwo {
+        height: 453px;
     }
 
     .cardOne,
