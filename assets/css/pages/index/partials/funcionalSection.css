@@ -268,6 +268,10 @@
 }
 
 @media (max-width: 640px) {
+
+    .funcionalSection {
+        width: 100vw;
+    }
     .parentGrid {
         grid-template-columns: 1fr;
         
@@ -291,8 +295,24 @@
     .cardFive {
         grid-column: span 1;
         grid-row: auto;
-        width: 100%;
         background-repeat: no-repeat;
         background-size: cover;
+    }
+    
+    .contentFunctional {
+        width: 100%;
+    }
+
+    .functionalTitle {
+        width: 100%;
+        font-size: 28px;
+    }
+
+    .funcionalText {
+        font-size: 18px;
+    }
+    
+    .functionalRow  {
+        height: 4px;
     }
 }
