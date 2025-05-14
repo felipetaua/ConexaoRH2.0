@@ -195,8 +195,11 @@
 }
 
 .parentVacancy {
+    width: 85%;
     font-weight: 300;
     letter-spacing: 1px;
+    font-size: 24px;
+    display: inline-block;
 }
 
 .cardFive {
@@ -277,17 +280,11 @@
     .margin-content {
         margin: 0 8%;
     }
-    
-    .parentGrid {
-        grid-template-columns: 1fr;
-        
-    }
 
     .parentGrid {
         display: grid;
         grid-template-columns: 1fr;
         justify-items: center;
-        margin: 0 8%;
     }
 
     .cardTwo {
