@@ -199,11 +199,21 @@
     margin-top: 10vw;
 }
 
-.scroll-down-image {
-    filter: invert(50%);
+.scroll-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid 2px gray;
+    border-radius: 24px;
+    padding: 5px;
+    width: 60px;
     animation: floatingScroll 5s ease-in-out infinite;
     opacity: .8;
     transition: .5s;
+}
+
+.scroll-down-image {
+    filter: invert(50%);
 }
 
 .scroll-down-image:hover {
