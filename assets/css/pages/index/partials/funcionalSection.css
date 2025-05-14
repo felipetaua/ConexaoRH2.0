@@ -271,6 +271,7 @@
 
     .funcionalSection {
         width: 100vw;
+        margin-bottom: 120px;
     }
     .parentGrid {
         grid-template-columns: 1fr;

@@ -141,7 +141,7 @@
     }
 
     .card-link {
-        width: 100vw;
+        width: 40%;
     }
 
 
@@ -157,5 +157,6 @@
     .pagination-wrapper {
         margin-top: 15px;
         padding: 0 5px;
+        display: none;/* ajustar ainda */
     }
 }
