@@ -120,16 +120,36 @@
     margin-top: -35px;
 }
 
-/* Responsive media query code for small screens */
+.pagination-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card-wrapper .swiper-pagination {
+    position: static !important;
+    width: auto;
+}
+
 @media (max-width: 768px) {
     .card-video {
-        width: 50%;
+        width: 25%;
     }
     .card-wrapper {
         margin: 0 10px 25px;
+        padding: 10px;
     }
 
     .card-wrapper .swiper-slide-button {
         display: none;
+    }
+
+    .pagination-wrapper {
+        margin-top: 15px;
+        padding: 0 5px;
     }
 }
