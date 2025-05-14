@@ -273,6 +273,11 @@
         width: 100vw;
         margin-bottom: 120px;
     }
+
+    .margin-content {
+        margin: 0 8%;
+    }
+    
     .parentGrid {
         grid-template-columns: 1fr;
         

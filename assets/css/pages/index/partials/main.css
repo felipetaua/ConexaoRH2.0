@@ -21,7 +21,7 @@
 
 @media (max-width: 600px) {
     .page {
-        padding: 20px 15px ;
+        padding: 120px 15px ;
         overflow-x: hidden;
     }
 }
