@@ -137,11 +137,17 @@
 
 @media (max-width: 768px) {
     .card-video {
-        width: 25%;
+        width: 100% !important;
     }
+
+    .card-link {
+        width: 100vw;
+    }
+
+
     .card-wrapper {
-        margin: 0 10px 25px;
-        padding: 10px;
+        margin: 0 0px 25px;
+        padding: 10px 0;
     }
 
     .card-wrapper .swiper-slide-button {
