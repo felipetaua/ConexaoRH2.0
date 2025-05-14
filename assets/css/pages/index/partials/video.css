@@ -122,6 +122,9 @@
 
 /* Responsive media query code for small screens */
 @media (max-width: 768px) {
+    .card-video {
+        width: 50%;
+    }
     .card-wrapper {
         margin: 0 10px 25px;
     }
