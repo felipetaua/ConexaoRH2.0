@@ -5,6 +5,11 @@ footer {
     color: var(--color-neutral-40);
 }
 
+.footer-logo{
+    width: 120px;
+    height: 100px;
+}
+
 .footer-link {
     text-decoration: none;
 }
