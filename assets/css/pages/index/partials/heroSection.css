@@ -148,7 +148,7 @@
     width: 217px;
     height: 60px;
     color: var(--white);
-    background-color: rgb(236, 112, 29);
+    background-color: var(--orange);
     border-radius: 32px;
     display: flex;
     align-items: center;
@@ -164,11 +164,11 @@
     width: 0;
     height: 60px;
     border-radius: 30em;
-    box-shadow: 10px 0 35px rgb(235, 89, 44);
+    box-shadow: 10px 0 35px rgb(236, 112, 29);
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgb(235, 89, 44);
+    background-color: rgb(236, 112, 29);
     transition: .5s ease-in;
     display: block;
     z-index: -1;
