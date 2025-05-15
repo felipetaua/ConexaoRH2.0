@@ -23,6 +23,7 @@
 }
 
 .card-list .card-item .card-link {
+    height: 480px;
     display: block;
     background: #fff;
     padding: 18px;
