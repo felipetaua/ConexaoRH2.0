@@ -3,6 +3,16 @@
     margin: auto;
 }
 
+.heroCell::after {
+    content: "";
+    width: 100vw;
+    height: 90px;
+    display: block;
+    background: linear-gradient(to top, rgba(231, 231, 231, 1), rgba(231, 231, 231, 0.5), rgba(231, 231, 231, 0));
+    position: absolute;
+    z-index: 2;
+}
+
 .cellAlign {
     display: flex;
     justify-content: space-around;
