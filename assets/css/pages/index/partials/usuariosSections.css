@@ -101,7 +101,23 @@
 }
 
 @media (max-width: 600px) {
+    .cardsUser {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .cardColabContent {
+        width: 100%;
+    }
+    
+    .cardEmpreContent {
+        width: 100%;
+    }
+    .usuariosSections {
+        width: 100%;
+    }
+
     .usuariosSectionsAlign {
-        width: 100px;
+        width: 100%;
     }
 }
