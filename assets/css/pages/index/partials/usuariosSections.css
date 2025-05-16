@@ -84,10 +84,6 @@
     
 }
 
-.contentItem:last-child(1) {
-    margin-bottom: 20px;
-}
-
 
 @media (max-width: 1024px) {
     .usuariosSectionsAlign {
@@ -122,5 +118,10 @@
 
     .usuariosSectionsAlign {
         width: 100%;
+    }
+
+    .imgUser {
+        margin-top: 20px;
+        width: 200px;
     }
 }
