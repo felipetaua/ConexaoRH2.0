@@ -13,18 +13,18 @@
 
 .functionalTitle {
     font-size: 32px;
-    color: var(--black);
+    color: var(--color-neutral-0);
 }
 
 .funcionalText {
-    color: #696969;
+    color: var(--color-neutral-10);
     font-size: 24px;
     margin-bottom: 30px;
 }
 
 .functionalRow {
-    background-color: #696969;
-    height: 8px;
+    background-color: var(--line-clr);
+    height: 5.5px;
     border-radius: 8px;
 }
 
