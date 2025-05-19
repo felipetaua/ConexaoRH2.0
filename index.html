@@ -19,6 +19,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Script principal -->
     <script defer src="./assets/js/pages/index/index.js"></script>
+    <script defer src="./assets/js/global/main.js"></script>
 
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -31,46 +32,52 @@
 <body>
     <header class="header">
         <div class="logo">
-            <img src="./assets/images/global/logo-test.png" alt="Logotipo da RH Conexão" class="logoEmpresa"><h2 class="headerTitle">RHConexão</h2>
-            <div class="hamburger">
-                <div class="linha"></div>
-                <div class="linha"></div>
-                <div class="linha"></div>    
-            </div>
+            <img src="./assets/images/global/RHconexao-logo.svg" alt="Logotipo da RH Conexão" class="logoEmpresa">
+            <h2 class="headerTitle"><!--RHConexão--></h2>
         </div>
-        <nav class="nav">
-            <ul class="linkNav li">
-                <li>
-                    <a href="./pages/ferramentas/ferramentas.html" class="link linkPages ferramentasLink ativo">Ferramentas</a>
-                </li>
-                <li>
-                    <a href="./pages/sobre/sobre.html" class="link linkPages">Quem Somos</a>
-                </li>
-                <li class="">
-                    <a href="./pages/vantagens/vantagens.html" class="link linkPages ">Vantagens</a>
-                </li>
-                <li>
-                    <a href="./pages/curadoria/curadoria.html" class="link linkPages curadoriaLink">Curadoria</a>
-                </li>
-                <li>
-                    <a href="./pages/conect/conect.html" class="link linkPages">Conecte-se</a>
-                </li>
+
+        <!-- Botão hamburguer fora da logo -->
+        <div class="hamburger">
+            <div class="linha"></div>
+            <div class="linha"></div>
+            <div class="linha"></div>    
+        </div>
+
+        <!-- Navegação principal -->
+        <nav class="nav-bar">
+            <ul class="linkNav">
+            <li>
+                <a href="./pages/ferramentas/ferramentas.html" class="linkPages ferramentasLink ativo">Ferramentas</a>
+            </li>
+            <li>
+                <a href="./pages/sobre/sobre.html" class="linkPages">Quem Somos</a>
+            </li>
+            <li>
+                <a href="./pages/vantagens/vantagens.html" class="linkPages">Vantagens</a>
+            </li>
+            <li>
+                <a href="./pages/curadoria/curadoria.html" class="linkPages curadoriaLink">Curadoria</a>
+            </li>
+            <li>
+                <a href="./pages/conect/conect.html" class="linkPages">Conecte-se</a>
+            </li>
             </ul>
         </nav>
 
-        <div class="linkAcount">
-            <a href="./pages/main/main.html" class="loginNav link actionBtnNav">Entrar</a>
-            <a href="#" class="link actionBtnNav SingninNav">Crie sua Conta</a>
+        <!-- Botões de ação -->
+       <div class="linkAcount">
+            <a href="./pages/main/main.html" class="loginNav actionBtnNav btn">Entrar</a>
+            <a href="#" class="SingninNav actionBtnNav btn">Crie sua Conta</a>
         </div>
-    </header>
+</header>
+
 
     <div class="imagensFundo">
-        <img class="pessoa" src="assets/images/pages/index/backgorund-pessoa.png" alt="Ilustração de uma pessoa representando o público-alvo do site">
+        <img class="pessoa" src="assets/images/pages/index/bg-pessoa.png" alt="Ilustração de uma pessoa representando o público-alvo do site">
         <img class="fumaca" src="assets/images/pages/index/backgorund-fumaca.png" alt="Efeito de fumaça para decoração do fundo">
     </div>
 
     <section class="heroSection">
-
         <div class="heroGrid">
             <article class="floating1 cardsFlutuantes">
                 <img class="cardsHero" src="./assets/images/pages/index/flutuante-1.png" alt="Card flutuante com informações sobre as funcionalidades do RH Conexão">
@@ -83,11 +90,15 @@
             </article>
 
             <main class="floatingContent contentHero">
+                <div class="container-mobile">
+                    <img class="mundo-mobile" src="./assets/images/pages/index/word-mobile.png
+                    " alt="">
+                </div>
                 <h1 class="heroTitle">Bem-Vindo ao RH Conexão <span class="gradient">2.0</span></h1>
                 <p class="heroText">Uma plataforma de talentos e oportunidade!</p>
                 <div class="containerBtn">
                     <button class="actionButtonHero btn" href="./pages/#">O que mudou?
-                        <div class="circle"><img src="./assets/icons/icon-arrow-right.png" alt=""></div>
+                        <div class="circle"><img src="./assets/icons/pages/index/icon-arrow-right.png" alt=""></div>
                     </button>
                 </div>
             </main>
@@ -105,34 +116,34 @@
 
     <section class="heroCell">
         <figure class="cellAlign">
-            <div class="cell1">
-                <img src="./assets/images/pages/index/celular-1.png" alt="Tela do aplicativo RH Conexão exibida em um celular">
+            <div class=" cell1">
+                <img class="cellphones-img" src="./assets/images/pages/index/celular-1.png" alt="Tela do aplicativo RH Conexão exibida em um celular">
             </div>
-            <div class="cell2">
-                <img src="./assets/images/pages/index/celular-2.png" alt="">
+            <div class=" cell2">
+                <img class="cellphones-img" src="./assets/images/pages/index/celular-2.png" alt="">
             </div>
-            <div class="cell3">
-                <img src="./assets/images/pages/index/celular-3.png" alt="">
+            <div class=" cell3">
+                <img class="cellphones-img" src="./assets/images/pages/index/celular-3.png" alt="">
             </div>
-            <div class="cell4">
-                <img src="./assets/images/pages/index/celular-4.png" alt="">
+            <div class=" cell4">
+                <img class="cellphones-img" src="./assets/images/pages/index/celular-4.png" alt="">
             </div>
-            <div class="cell5">
-                <img src="./assets/images/pages/index/celular-5.png" alt="">
+            <div class=" cell5">
+                <img class="cellphones-img" src="./assets/images/pages/index/celular-5.png" alt="">
             </div>
         </figure>
     </section>
 
     <main class="page">
         <section class="funcionalSection">
-            <div class="contentFunctional">
+            <article class="contentFunctional">
                 <div>
                     <h1 class="functionalTitle">Funcionalidades Presentes</h1>
                     <p class="funcionalText">O que você está interessado em fazer?</p>
                     <hr class="functionalRow">
                 </div>
-            </div>
-            <div class="parentGrid">
+            </article>
+            <main class="parentGrid">
                 <article class="cardOne">
                     <h2 class="cardOneTitle">Quem somos?</h2>
                 </article>
@@ -150,7 +161,7 @@
                 <article class="cardFive">
                     <h2 class="parentFiveTitle">Conheça nossas empresas e parceiros.</h2>
                 </article>
-            </div>
+            </main>
         </section>
 
         <section class="videosSection swiper">
@@ -224,15 +235,15 @@
                     <div class="cardColabContent">
                         <ul class="listVantagens">
                             <li class="contentItem">
-                                <i><img src="./assets/icons/medal-icon.png" alt="medalha"></i>
+                                <i><img src="./assets/icons/pages/index/medal-icon.png" alt="medalha"></i>
                                 <p class="empregadorText">Encontre oportunidades alinhadas ao seu perfil e objetivos.</p>
                             </li>
                             <li class="contentItem">
-                                <i><img src="./assets/icons/check-circle-icon.png" alt="vantagens"></i>
+                                <i><img src="./assets/icons/pages/index/check-circle-icon.png" alt="vantagens"></i>
                                 <p class="empregadorText">Receba recomendações personalizadas com base no seu potencial.</p>
                             </li>
                             <li class="contentItem">
-                                <i><img src="./assets/icons/trending-up-icon.png" alt="crescimento"></i>
+                                <i><img src="./assets/icons/pages/index/trending-up-icon.png" alt="crescimento"></i>
                                 <p class="empregadorText">Conecte-se diretamente com recrutadores e empresas inovadoras.</p>
                             </li>
                         </ul>
@@ -249,9 +260,9 @@
                     </div>
                     <article class="cardEmpreContent">
                         <li class="li listVantagens">
-                            <ul class="contentItem"><i><img src="./assets/icons/medal-icon.png" alt="medalha"></i><p class="empregadorText">Reduza o tempo de contratação com buscas inteligentes.</p></ul>
-                            <ul class="contentItem"><i><img src="./assets/icons/check-circle-icon.png" alt="vantagens"></i><p class="empregadorText">Fortaleça a marca empregadora e atraia os melhores talentos.</p></ul>
-                            <ul class="contentItem"><i><img src="./assets/icons/trending-up-icon.png" alt="crescimento"></i><p class="empregadorText">Acesse uma base qualificada de talentos.</p></ul>
+                            <ul class="contentItem"><i><img src="./assets/icons/pages/index/medal-icon.png" alt="medalha"></i><p class="empregadorText">Reduza o tempo de contratação com buscas inteligentes.</p></ul>
+                            <ul class="contentItem"><i><img src="./assets/icons/pages/index/check-circle-icon.png" alt="vantagens"></i><p class="empregadorText">Fortaleça a marca empregadora e atraia os melhores talentos.</p></ul>
+                            <ul class="contentItem"><i><img src="./assets/icons/pages/index/trending-up-icon.png" alt="crescimento"></i><p class="empregadorText">Acesse uma base qualificada de talentos.</p></ul>
                         </li>
                             <button class="btn btnUser">Participe</button>
                     </article>
@@ -271,12 +282,12 @@
                         <div>
                             <h3 class="depoimentsTitle">Eminem</h3>
                             <figure class="stars">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="Ícone de estrela representando avaliação de 5 estrelas">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="Ícone de estrela representando avaliação de 5 estrelas">
                             </figure>
                         </div>
                     </div>
@@ -291,12 +302,12 @@
                         <div>
                             <h3 class="depoimentsTitle">Ariana Grande</h3>
                             <figure class="stars">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="Ícone de estrela representando avaliação de 5 estrelas">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="Ícone de estrela representando avaliação de 5 estrelas">
                             </figure>
                         </div>
                     </div>
@@ -311,12 +322,12 @@
                         <div>
                             <h3 class="depoimentsTitle">The Weekend</h3>
                             <figure class="stars">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="avaliação de 5 estrelas">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="avaliação de 5 estrelas">
                             </figure>
                         </div>
                     </div>
@@ -331,12 +342,12 @@
                         <div>
                             <h3 class="depoimentsTitle">LinkinPark</h3>
                             <figure class="stars">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="Ícone de estrela representando avaliação de 5 estrelas">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="Ícone de estrela representando avaliação de 5 estrelas">
                             </figure>
                         </div>
                     </div>
@@ -351,12 +362,12 @@
                         <div>
                             <h3 class="depoimentsTitle">Taylor Swift</h3>
                             <figure class="stars">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="estrela de avaliação">
-                                <img src="./assets/icons/star.svg" alt="Ícone de estrela representando avaliação de 5 estrelas">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="estrela de avaliação">
+                                <img src="./assets/icons/pages/index/star.svg" alt="Ícone de estrela representando avaliação de 5 estrelas">
                             </figure>
                         </div>
                     </div>

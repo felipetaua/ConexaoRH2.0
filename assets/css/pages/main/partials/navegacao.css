@@ -1,0 +1,36 @@
+.header {
+    height: 4.688vw;
+    margin-bottom: 20px;
+}
+
+.nav-main {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 0.833vw;
+    margin-right: 1.25vw;
+}
+
+.nav-item {
+    margin: 0 0.625vw 0 0.625vw;
+    transition: 1s;
+}
+
+.nav-item:hover {
+    font-weight: 400;
+}
+
+.nav-notificacao {
+    margin: auto 1.25vw auto 0.625vw;
+}
+
+.nav-action {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

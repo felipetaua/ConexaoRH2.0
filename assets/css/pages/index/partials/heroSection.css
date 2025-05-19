@@ -1,49 +1,67 @@
 @import url('../../../global/variables.css');
 
-.imagensFundo{
+.imagensFundo {
     display: block;
     position: absolute;
     z-index: -1;
 }   
 
-.imagensFundo .pessoa{
-    width: 99vw;
-    margin-bottom: -36rem;
-    margin-top: -16rem;
-}
-
-.imagensFundo .fumaca{
-    width: 99vw;
+.imagensFundo .pessoa,
+.imagensFundo .fumaca {
+    width: 100vw;
     position: relative;
 }
+
+.imagensFundo .pessoa{
+    width: 99vw;
+    margin-top: -3.5vw;
+    opacity: 25%;
+}
+
+.imagensFundo .fumaca {
+    width: 99vw;
+    margin-top: -25vw;
+}
+
+.mundo-mobile {
+    display: none;
+}
+
 .heroSection {
-    width: 1080px;
-    height: 850px;
+    width: 100%;
+    height: auto;
     margin: auto;
+    padding: 0 20px;
 }
 
 .cardsHero {
     width: 80px;
     height: 80px;
     border-radius: 20px;
+    object-fit: cover;
 }
 
 .cardsFlutuantes {
     display: block;
+    width: 100%;
 }
 
 .heroGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 20px;
+    grid-gap: 20px;
+    position: relative;
+    align-items: center;
+}
+
+.heroGrid article {
+    position: relative;
 }
 
 .floating1 {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
 }
-    
 
 .floating2 {
     margin: 80px 20px 40px 20px;
@@ -53,16 +71,16 @@
 
 .floating3 {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     grid-column-start: 1;
     grid-row-start: 3;
 }
 
 .floatingContent {
     margin: auto;
-    grid-row: span 3 / span 3;
     grid-column-start: 2;
-    grid-row-start: 1;
+    grid-column-end: 3;
+    grid-row: span 3;
 }
 
 .floating5 {
@@ -72,7 +90,7 @@
 
 .floating6 {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     grid-column-start: 3;
     grid-row-start: 2;
 }
@@ -84,12 +102,11 @@
 
 .contentHero {
     padding: 20px;
-} 
+    text-align: center;
+}
 
 .heroTitle {
     color: var(--blue);
-    width: 487px;
-    height: 100px;
     font-size: 42px;
     line-height: 50px;
     font-weight: bold;
@@ -98,7 +115,6 @@
 
 .heroTitle span {
     font-weight: bold;
-    color-interpolation-filters: line;
 }
 
 .gradient {
@@ -107,24 +123,17 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-size: 300%;
-    animation: gradient 2s ease-in-out alternate infinite; 
+    animation: gradient 2s ease-in-out alternate infinite;
 }
 
-@keyframes gradient{
-    0% {
-		background-position: 0% 25%;
-    }
-    50%{
-        background-position: 50% 75%;
-    }
-    100%{
-        background-position: 75% 100%;
-    }
+@keyframes gradient {
+    0% { background-position: 0% 25%; }
+    50% { background-position: 50% 75%; }
+    100% { background-position: 75% 100%; }
 }
+
 .heroText {
     color: var(--color-gray);
-    width: 487px;
-    height: 100px;
     font-size: 24px;
     text-align: center;
     margin-bottom: 25px;
@@ -150,7 +159,7 @@
     z-index: 1;
 }
 
-.actionButtonHero:before{
+.actionButtonHero:before {
     content: '';
     width: 0;
     height: 60px;
@@ -160,14 +169,13 @@
     top: 0;
     left: 0;
     background-color: rgb(235, 89, 44);
-    color: var(--white);
     transition: .5s ease-in;
     display: block;
     z-index: -1;
 }
 
-.actionButtonHero:hover:before{
-    width: 217px;
+.actionButtonHero:hover:before {
+    width: 100%;
 }
 
 .circle {
@@ -183,7 +191,48 @@
 .fa-arrow-right-long {
     font-size: 16px;
     color: var(--black);
+<<<<<<< HEAD
     margin: auto;
     width: 24px;
     height: 24px;
+=======
+}
+
+@media screen and (max-width: 900px) {
+    .heroGrid {
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto;
+    }
+
+    .fumaca, .pessoa {
+        display: none;
+    }
+
+    .heroGrid article:not(.floatingContent) {
+        display: none;
+    }
+
+    .floatingContent {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .mundo-mobile {
+        display: block;
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .heroTitle {
+        font-size: 28px; 
+    }
+
+    .heroText {
+        font-size: 18px; 
+    }
+
+    .actionButtonHero {
+        font-size: 16px;
+    }
+>>>>>>> e6803c294b7cbf16fae6a228053ccf163d4e542d
 }

@@ -1,4 +1,5 @@
 .heroCell {
+    width: 100%;
     margin: auto;
 }
 
@@ -8,12 +9,16 @@
     align-items: center;
 }
 
-.cell1 { margin-top: 70px; }
+.cellphones-img {
+    width: 18vw;
+}
 
-.cell2 { margin-top: 25px; }
+.cell1 { margin-top: 16vw; }
+
+.cell2 { margin-top: 8vw;}
 
 .cell3 { margin-top: 0; }
 
-.cell4 { margin-top: 25px; }
+.cell4 { margin-top: 8vw; }
 
-.cell5 { margin-top: 70px }
+.cell5 { margin-top: 16vw;}

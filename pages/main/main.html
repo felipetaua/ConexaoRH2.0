@@ -6,14 +6,18 @@
   <title>Home</title>
   <link rel="stylesheet" href="../../assets/css/pages/main/main.css">
   <script type="text/javascript" src="../../assets/js/pages/main/app.js" defer></script>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js" defer></script>
+  <!-- Fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
   <!-- minhatura -->
   <link rel="shortcut icon" href="./assets/images/global/logo.png" type="image/x-png">
 </head>
 <body>
-  <nav id="sidebar">
+  <aside id="sidebar">
     <ul>
       <li>
-        <span class="logo">Conexão RH</span>
+        <img class="logo" src="../../assets/images/global/RHconexao-logo.svg" alt="logo RH Conexão, Uma plataforma de talentos e oportunidade!">
         <button onclick=toggleSidebar() id="toggle-btn">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
         </button>
@@ -33,7 +37,7 @@
       <li>
         <button onclick=toggleSubMenu(this) class="dropdown-btn">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h207q16 0 30.5 6t25.5 17l57 57h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H447l-80-80H160v480Zm0 0v-480 480Zm400-160v40q0 17 11.5 28.5T600-320q17 0 28.5-11.5T640-360v-40h40q17 0 28.5-11.5T720-440q0-17-11.5-28.5T680-480h-40v-40q0-17-11.5-28.5T600-560q-17 0-28.5 11.5T560-520v40h-40q-17 0-28.5 11.5T480-440q0 17 11.5 28.5T520-400h40Z"/></svg>
-          <span>Criar</span>
+          <span>Vagas</span>
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
         </button>
         <ul class="sub-menu">
@@ -47,7 +51,7 @@
       <li>
         <button onclick=toggleSubMenu(this) class="dropdown-btn">
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m221-313 142-142q12-12 28-11.5t28 12.5q11 12 11 28t-11 28L250-228q-12 12-28 12t-28-12l-86-86q-11-11-11-28t11-28q11-11 28-11t28 11l57 57Zm0-320 142-142q12-12 28-11.5t28 12.5q11 12 11 28t-11 28L250-548q-12 12-28 12t-28-12l-86-86q-11-11-11-28t11-28q11-11 28-11t28 11l57 57Zm339 353q-17 0-28.5-11.5T520-320q0-17 11.5-28.5T560-360h280q17 0 28.5 11.5T880-320q0 17-11.5 28.5T840-280H560Zm0-320q-17 0-28.5-11.5T520-640q0-17 11.5-28.5T560-680h280q17 0 28.5 11.5T880-640q0 17-11.5 28.5T840-600H560Z"/></svg>
-          <span>Magic build</span>
+          <span>Seleção</span>
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
         </button>
         <ul class="sub-menu">
@@ -73,20 +77,176 @@
         </a>
       </li>
     </ul>
-  </nav>
-  <main>
-    <div class="container">
-      <h2>Hello World</h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis porro iure quaerat aliquam! Optio dolorum in eum provident, facilis error repellendus excepturi enim dolor deleniti adipisci consectetur doloremque, unde maiores odit sapiente. Atque ab necessitatibus laboriosam consequatur eius similique, ex dolorum eum eaque sequi id veritatis voluptates perspiciatis, cupiditate pariatur.</p>
-    </div>
-    <div class="container">
-      <h2>Example Heading</h2>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic aliquid corrupti, tenetur fuga magnam necessitatibus blanditiis quod sint excepturi laborum esse alias labore molestias adipisci, nostrum corporis ex maiores quis dolore quidem asperiores odio ad fugit eos! Delectus modi quas ipsa deleniti consequuntur nihil, hic in ipsum exercitationem blanditiis natus, ex, expedita eos. Excepturi quidem harum hic nam magnam deserunt illum quis dolorum eos ipsum ut natus sapiente sit, officia obcaecati assumenda tempore molestias? In fugiat iure laboriosam quasi, eum suscipit, harum autem saepe ut, soluta aspernatur ducimus eos magnam quidem officiis. Laboriosam nemo explicabo delectus, et quos vero cum?</p>
-    </div>
-    <div class="container">
-      <h2>Lorem Ipsum</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore repudiandae labore veniam reprehenderit voluptatum, laboriosam perferendis fuga, dolore quam quas nostrum totam sunt esse expedita. Vero distinctio omnis accusantium. Quisquam ullam saepe cupiditate magni numquam totam perspiciatis error velit, debitis veniam labore possimus aut sunt, reiciendis natus. Impedit provident voluptatum nulla fuga error a magnam, corporis natus aperiam fugit quod perferendis quos quaerat, numquam sequi doloribus tenetur dolorem voluptate deleniti, odio minus. Deserunt eius quasi odit voluptas unde voluptatum dicta cumque exercitationem soluta beatae porro distinctio, delectus officiis, nobis officia ullam necessitatibus, rem natus corrupti nam! Est, nihil molestias fugiat sed quae enim commodi expedita soluta tempore molestiae fuga adipisci rem esse voluptates quos, ut quasi sunt ad a perspiciatis ducimus maxime animi. Adipisci officia doloribus magni alias maiores ab quo, eos mollitia sint esse. Labore odio, architecto nihil quaerat soluta blanditiis impedit laudantium esse officiis dolorum dolore libero, id sequi minima incidunt eum facilis itaque distinctio. Voluptas doloremque minus reiciendis ex beatae laudantium cum sequi repellat blanditiis molestiae. Cumque, libero nulla! Sit, quisquam magni dolore consectetur odio impedit adipisci voluptas ab, laboriosam autem nihil nam est ipsa excepturi obcaecati eos neque! Omnis similique qui veritatis. Repellat magni dolorem, facilis eaque, harum molestias, delectus est adipisci laudantium velit optio blanditiis debitis? Tenetur totam maiores animi officiis eligendi expedita nemo corrupti distinctio. Cum libero soluta beatae doloribus sit, repellendus nobis vel obcaecati velit dolorem voluptate magnam inventore quas pariatur quam reprehenderit molestiae hic sunt dicta illo amet quis magni accusamus sequi? Vel quis, dolores iusto suscipit excepturi laboriosam repellat consectetur! Maiores deserunt, pariatur nesciunt consequuntur recusandae minima assumenda consequatur inventore natus debitis illo velit voluptatum necessitatibus qui aspernatur illum impedit magni dignissimos ea, molestias tempora corporis, asperiores iusto possimus. Libero expedita aspernatur officia totam dolorum culpa, minus, alias adipisci eligendi suscipit voluptates, magnam laudantium? Inventore cupiditate perspiciatis mollitia excepturi, voluptatibus ducimus expedita provident. Dicta, odit. Odio, qui repudiandae! Maiores dignissimos, magnam deleniti reprehenderit ex cum ea eveniet placeat quae, ad at perspiciatis nobis corporis doloribus voluptatem nulla aliquam sunt accusamus facere quaerat necessitatibus ipsa! Nam quisquam dicta minima commodi nostrum. Exercitationem necessitatibus optio cumque voluptate modi amet consequuntur similique ex inventore explicabo doloremque esse sed sequi nemo rem, nostrum ullam. Totam repellat ut ipsa quisquam rem, nulla, suscipit debitis atque earum quis voluptates quaerat exercitationem architecto repellendus placeat, tenetur incidunt distinctio consectetur reiciendis minima officiis aliquam? Ipsum sequi hic officia iste a. Blanditiis, dicta! Eveniet molestias ut natus odio fugiat cum necessitatibus, architecto, quo a quisquam autem porro explicabo ipsam, nostrum deserunt possimus expedita eum est corporis quibusdam cupiditate! Fugiat, quaerat saepe. Harum modi eligendi beatae alias fugiat. Nostrum cum nisi saepe dicta iste cupiditate, deserunt omnis, doloremque a distinctio eum rem adipisci ab? Sapiente, dicta ipsam blanditiis earum omnis necessitatibus temporibus, excepturi accusantium delectus quo quod iusto ad aliquam nemo ducimus ab nobis inventore sequi veritatis? Nulla, dolorem. Voluptas, obcaecati non facilis repellendus ratione officiis veritatis, modi culpa rerum placeat voluptatum quia ex? Officia quos dolorum repellat deserunt voluptas praesentium.</p>
-    </div>
+  </aside>
+  
+  <main class="main-page">
+    <header class="header">
+      <nav class="nav-main">
+        <ul class="link nav-link">
+          <li class="nav-item nav-1">Downloads</li>
+          <li class="nav-item nav-2">Guide</li>
+          <li class="nav-item nav-3">Comunidade</li>
+        </ul>
+        <div class="nav-action">
+          <a class="link nav-notificacao" href="#"><i class="fa-solid fa-bell"></i></a>
+          <a class="link nav-avatar" href="#"><img src="./../../assets/images/pages/main/person.png" alt=""></a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-section">
+      <section class="main-content">
+        <div class="main-introducao">
+          <div>
+            <p class="main-data">19 Abril, 2025</p>
+            <h1 class="main-title">Seja bem vindo, Hello Word!</h1>
+          </div>
+          <div >
+            <a class="main-btn link" href="#"><img class="icone-sparkle" src="../../assets/icons/pages/index/sparkler.png" alt="">Atualizações</a>
+          </div>
+        </div>
+        <forms class="main-search">
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <div id="lupa" onclick="alert('OK')"></div>
+          <input class="main-input form-control" placeholder="Faça sua pesquisa e descubra vagas na sua área" type="search"> <button>
+          <i class="fa-solid fa-chevron-down"></i></button>
+        </forms>
+
+        
+        <main class="services">
+          <article class="service1 card-curriculo active">
+            <img src="../../assets/images/pages/main/enterprise.png" alt="">
+            <h2>Crie seu curriculo</h2>
+            <p>Gere seu modelo de currículo perfeito para você.</p>
+            <a href="#" class="link services-btn"><i class="fa-solid fa-chevron-right"></i></a>
+          </article>
+          <article class="service2 card-empresas">
+            <img src="../../assets/images/pages/main/process-seletive.png" alt="">
+            <h2>Lorem ipsum dolor sit amet.</h2>
+            <p>Gere seu modelo com um click agora, na data
+              .</p>
+            <button class="btn services-btn"><i class="fa-solid fa-chevron-right"></i></button>
+          </article>
+          <article class="service3 card-suporte">
+            <div class="suport-content">
+              <button><img src="../../assets/icons/pages/main/phone-outgoing.svg" alt=""></button>
+              <h2>Conteúdo que nossa equipe criou para você</h2>
+              <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga.</p>
+            </div>
+            <div class="main-scroll">
+              <div class="scroll-container up">
+                <div class="scroll-content">
+                  <img class="scroll-img" src="../../assets/images/pages/main/equipe1.png" alt="">
+                  <img class="scroll-img" src="../../assets/images/pages/main/equipe2.png" alt="">
+                  <img class="scroll-img" src="../../assets/images/pages/main/equipe3.png" alt="">
+                </div>
+              </div>
+              
+              <div class="scroll-container down">
+                <div class="scroll-content">
+                  <img class="scroll-img" src="../../assets/images/pages/main/equipe4.png" alt="">
+                  <img class="scroll-img" src="../../assets/images/pages/main/equipe5.png" alt="">
+                  <img class="scroll-img" src="../../assets/images/pages/main/equipe6.png" alt="">
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="service4 card-forms">
+            <div>
+              <button><img src="../../assets/icons/pages/main/book.svg" alt=""></button>
+            </div>
+            <h2>Docs</h2>
+          </article>
+          <article class="service5 card-chat">
+            <div>
+              <button><img src="../../assets/icons/pages/main/Frame 129.svg" alt=""></button>
+            </div>
+            <h2>Quizes</h2>
+          </article>
+        </main>
+      </section>
+      <section class="gerenciamento">
+        <div class="gerenciamento-content">
+          <div class="content-pt1">
+            <div class="title-main">
+              <h1 class="title-text">Seus Gerenciamentos</h1>
+              <p class="tag-text"><span class="circle"></span> Atualizado a 5 dias</p>
+            </div>
+            <p class="gerencimento-content-text">
+              Faça seus gerenciamentos da empresa e tudo mais detalhadamente sobre as vagas disponíveis.
+            </p>
+          </div>
+          <div class="content-pt2">
+            <button class="btn-1 btn-gerenciamento btn"><img class="icon-btn" src="../../assets/icons/pages/main/archive.svg" alt=""> </button>
+            <button class="btn-2 btn-gerenciamento btn"><img class="icon-btn2" src="../../assets/icons/pages/main/file-plus.svg" alt=""> Criar documento</button>
+            <button class="btn-3 btn-gerenciamento btn"><img class="icon-btn3" src="../../assets/icons/pages/main/folder-plus.svg" alt=""> Novo Aquivo</button>
+          </div>
+        </div>
+
+        <div class="lista-vagas">
+          <article class="card-vagas">
+            <div class="logotipo-empresa"><img src="../../assets/icons/pages/main/slack.svg" alt=""></div>
+            <div>
+              <h2>Gartic</h2>
+              <p>Nova Londrina - PR</p>
+            </div>
+          </article>
+          <article class="card-vagas">
+            <div class="logotipo-empresa"><img src="../../assets/icons/pages/main/hexagon.svg" alt=""></div>
+            <div>
+              <h2>Bloc</h2>
+              <p>Nova Londrina - PR</p>
+            </div>
+          </article>
+          <article class="card-vagas">
+            <div class="logotipo-empresa"><img class="image-empresa" src="../../assets/icons/pages/main/framer.svg" alt=""></div>
+            <div>
+              <h2>Trix</h2>
+              <p>Paranavaí - PR</p>
+            </div>
+          </article>
+          <article class="card-vagas">
+            <div class="logotipo-empresa"><img src="../../assets/icons/pages/main/loader.svg" alt=""></div>
+            <div>
+              <h2>Spacy</h2>
+              <p>Marilena - PR</p>
+            </div>
+          </article>
+          <article class="card-vagas">
+            <div class="logotipo-empresa"><img src="../../assets/icons/pages/main/stop-circle.svg" alt=""></div>
+            <div>
+              <h2>Cily</h2>
+              <p>Nova Londrina - PR</p>
+            </div>
+        </div>
+      </section>
+
+      <section class="banner-informativo">
+        <article class="banner-content-1">
+          <div class="banner-content-tag">
+            <h1 class="banner-title">Segurança e Privacidade</h1>
+            <div class="tag-banner-text"><span class="circle-white"></span></div>
+          </div>
+          <p class="banner-text-1">
+            Faça seus gerenciamentos da empresa e tudo mais detalhadamente sobre as vagas disponíveis.
+          </p>
+        </article>
+        <article class="banner-content-2">
+          <div class="banner-card">
+            <div class="card-content-main">
+              <h2 class="banner-card-title">Explore</h2>
+              <p class="banner-text-2">
+                Faça seus gerenciamentos da empresa e tudo mais detalhadamente sobre as vagas disponíveis.
+              </p>
+            </div>
+            <progress></progress>
+            <img src="" alt="">
+          </div>
+        </article>
+      </section>
+    </main>
   </main>
 </body>
 </html>
