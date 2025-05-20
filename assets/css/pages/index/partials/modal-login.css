@@ -6,16 +6,8 @@
     z-index: 1000;
     justify-content: center;
     align-items: center;
-}
-
-.close-modal {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 18px;
-    cursor: pointer;
-    border: none;
-    background: none;
+    padding: 15px;
+    overflow-y: auto;
 }
 
 .modal-content {
@@ -23,15 +15,27 @@
     padding: 40px 30px;
     width: 100%;
     max-width: 500px;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     text-align: center;
     position: relative;
+    box-sizing: border-box;
+}
+
+.close-modal {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #333;
 }
 
 .subtitle {
     color: #777;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-size: 0.95rem;
 }
 
@@ -44,14 +48,16 @@
 }
 
 .option {
-    flex: 1;
-    min-width: 150px;
+    flex: 1 1 45%;
+    min-width: 140px;
+    max-width: 220px;
     border: 2px solid #eee;
     border-radius: 10px;
-    padding: 25px 20px;
+    padding: 20px 15px;
     cursor: pointer;
     transition: 0.3s ease;
     background: #f9f9f9;
+    box-sizing: border-box;
 }
 
 .option.selected {
@@ -61,12 +67,13 @@
 }
 
 .option img {
-    height: 50px;
+    height: 48px;
     margin-bottom: 10px;
 }
 
 .option h3 {
-    margin: 10px 0 5px;
+    margin: 8px 0 4px;
+    font-size: 1rem;
 }
 
 .option p {
@@ -75,16 +82,46 @@
 }
 
 .next-button {
-    background-color: #007bff;
+    background-color: var(--primary);
     color: white;
     border: none;
     border-radius: 30px;
-    padding: 10px 25px;
+    padding: 12px 28px;
     font-size: 1rem;
     cursor: pointer;
     transition: 0.3s;
+    width: 100%;
+    max-width: 220px;
+    margin: 0 auto;
 }
 
 .next-button:hover {
-    background-color: #0056cc;
+    background-color: #007bff;
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 30px 20px;
+    }
+
+    .option {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .option img {
+        height: 40px;
+    }
+
+    .option h3 {
+        font-size: 0.95rem;
+    }
+
+    .option p {
+        font-size: 0.8rem;
+    }
+
+    .close-modal {
+        font-size: 22px;
+    }
 }
