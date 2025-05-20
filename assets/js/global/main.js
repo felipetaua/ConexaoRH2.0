@@ -17,17 +17,19 @@ const config = {
 
 
 // animações do painel de funcionalidades
-ScrollReveal().reveal('.cardOne', config);
-ScrollReveal().reveal('.cardTwo', config);
-ScrollReveal().reveal('.cardThree', config);
-ScrollReveal().reveal('.cardFour', config);
-ScrollReveal().reveal('.cardFive', config);
+// ScrollReveal().reveal('.cardOne', config);
+// ScrollReveal().reveal('.cardTwo', config);
+// ScrollReveal().reveal('.cardThree', config);
+// ScrollReveal().reveal('.cardFour', config);
+// ScrollReveal().reveal('.cardFive', config);
 
 
 
 // Animações do celulares
-ScrollReveal().reveal('.cellA1', config);
-ScrollReveal().reveal('.cellA2', config);
-ScrollReveal().reveal('.cellA3', config);
-ScrollReveal().reveal('.cellA4', config);
-ScrollReveal().reveal('.cellA5', config);
+// ScrollReveal().reveal('.cellA1', config);
+// ScrollReveal().reveal('.cellA2', config);
+// ScrollReveal().reveal('.cellA3', config);
+// ScrollReveal().reveal('.cellA4', config);
+// ScrollReveal().reveal('.cellA5', config);
+
+

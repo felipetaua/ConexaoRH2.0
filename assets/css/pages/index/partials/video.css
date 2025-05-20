@@ -18,6 +18,11 @@
     overflow: hidden;
 }
 
+.swiper-title {
+    width: 100%;
+    text-align: center;
+}
+
 .card-list .card-item {
     list-style: none;
 }
@@ -145,6 +150,9 @@
         width: 35%;
     }
 
+    .swiper-title {
+        width: 35%;
+    }
 
     .card-wrapper {
         margin: 0 0px 25px;
