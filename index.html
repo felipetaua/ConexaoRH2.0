@@ -18,9 +18,9 @@
     <!-- Linking SwiperJS script -->
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Script principal -->
+    <script defer src="https://unpkg.com/scrollreveal"></script>
     <script defer src="./assets/js/pages/index/index.js"></script>
     <script defer src="./assets/js/global/main.js"></script>
-    <script defer src="https://unpkg.com/scrollreveal"></script>
 
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -98,9 +98,9 @@
                 <h1 class="heroTitle">Bem-Vindo ao RH Conexão <span class="gradient">2.0</span></h1>
                 <p class="heroText">Uma plataforma de talentos e oportunidade!</p>
                 <div class="containerBtn">
-                    <a class="link actionButtonHero btn" href="./pages/main/main.html">O que mudou?
+                    <button class="link actionButtonHero btn" id="openModalBtn">O que mudou?
                         <div class="circle"><img src="./assets/icons/pages/index/icon-arrow-right.png" alt=""></div>
-                    </a>
+                    </button>
                 </div>
             </main>
             <article class="floating5 cardsFlutuantes">
@@ -462,6 +462,15 @@
             2025 Direitos reservados a RHConexão. Criado por: <a class="copyrightLink" href="https://github.com/felipetaua" target="_blank" rel="noreferrer noopener">felipetauaSystems </a> & <a class="link copyrightLink" href="https://github.com/nico-cbr" target="_blank" rel="noreferrer noopener"> nicoSystems </a> 
         </div>
     </footer>
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal-content">
+        <button class="close-modal" id="closeModalBtn">&times;</button>
+        <h2>Título do Modal</h2>
+        <p>Este é um exemplo de modal simples com HTML, CSS e JS.</p>
+        </div>
+    </div>
+    
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
     <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
 </body>

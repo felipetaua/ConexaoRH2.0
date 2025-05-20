@@ -1,4 +1,3 @@
-
 // Cards deslizantes
 new Swiper('.card-wrapper', {
     loop: true,
@@ -29,4 +28,33 @@ new Swiper('.card-wrapper', {
             slidesPerView: 3
         }
     }
+});
+
+
+
+// MODAL LOGIN
+
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('modal');
+    const openBtn = document.getElementById('openModalBtn');
+    const closeBtn = document.getElementById('closeModalBtn');
+
+    if (openBtn && modal) {
+        openBtn.onclick = function(e) {
+            e.preventDefault();
+            modal.style.display = 'flex';
+        };
+    }
+    if (closeBtn && modal) {
+        closeBtn.onclick = function(e) {
+            e.preventDefault();
+            modal.style.display = 'none';
+        };
+    }
+    // Fecha ao clicar fora do conteúdo
+    modal.addEventListener('mousedown', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 });
