@@ -31,30 +31,50 @@ new Swiper('.card-wrapper', {
 });
 
 
+// MODAL LOGIN + SELEÇÃO DE USUÁRIO
 
-// MODAL LOGIN
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('modal');
     const openBtn = document.getElementById('openModalBtn');
     const closeBtn = document.getElementById('closeModalBtn');
+    const options = document.querySelectorAll('.option');
+    const nextButton = document.querySelector('.next-button');
 
     if (openBtn && modal) {
-        openBtn.onclick = function(e) {
+        openBtn.onclick = function (e) {
             e.preventDefault();
             modal.style.display = 'flex';
         };
     }
+
     if (closeBtn && modal) {
-        closeBtn.onclick = function(e) {
+        closeBtn.onclick = function (e) {
             e.preventDefault();
             modal.style.display = 'none';
         };
     }
-    // Fecha ao clicar fora do conteúdo
-    modal.addEventListener('mousedown', function(e) {
+
+    modal.addEventListener('mousedown', function (e) {
         if (e.target === modal) {
             modal.style.display = 'none';
+        }
+    });
+
+    // Lógica de seleção
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            options.forEach(o => o.classList.remove('selected'));
+            option.classList.add('selected');
+        });
+    });
+
+    nextButton.addEventListener('click', () => {
+        const selected = document.querySelector('.option.selected');
+        if (selected) {
+            alert(`Você selecionou: ${selected.querySelector('h3').innerText}`);
+            // Aqui você pode prosseguir com a lógica de envio ou redirecionamento
+        } else {
+            alert('Por favor, selecione um tipo de usuário.');
         }
     });
 });
