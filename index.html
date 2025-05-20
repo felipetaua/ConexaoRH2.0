@@ -18,9 +18,9 @@
     <!-- Linking SwiperJS script -->
     <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- Script principal -->
+    <script defer src="https://unpkg.com/scrollreveal"></script>
     <script defer src="./assets/js/pages/index/index.js"></script>
     <script defer src="./assets/js/global/main.js"></script>
-    <script defer src="https://unpkg.com/scrollreveal"></script>
 
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -98,9 +98,9 @@
                 <h1 class="heroTitle">Bem-Vindo ao RH Conexão <span class="gradient">2.0</span></h1>
                 <p class="heroText">Uma plataforma de talentos e oportunidade!</p>
                 <div class="containerBtn">
-                    <a class="link actionButtonHero btn" href="./pages/main/main.html">O que mudou?
+                    <button class="link actionButtonHero btn" id="openModalBtn">O que mudou?
                         <div class="circle"><img src="./assets/icons/pages/index/icon-arrow-right.png" alt=""></div>
-                    </a>
+                    </button>
                 </div>
             </main>
             <article class="floating5 cardsFlutuantes">
@@ -140,38 +140,58 @@
     </section>
 
     <main class="page">
-        <section class="funcionalSection">
-            <article class="contentFunctional">
-                <div class="margin-content">
-                    <h1 class="functionalTitle">Funcionalidades Presentes</h1>
-                    <p class="funcionalText">O que você está interessado em fazer?</p>
-                    <hr class="functionalRow">
-                </div>
-            </article>
-            <main class="parentGrid" id="center-nav">
-                <article class="cardOne">
-                    <h2 class="cardOneTitle">Quem somos?</h2>
+
+        <section class="usuariosSections">
+            <div class="userContent">
+                <h2 class="usuarioText">Perfil de Usuários</h2>
+                <p class="userText">Conheça suas vantagens como colaborador ou empresa ao acessar e nossa plataforma.</p>
+            </div>
+            <div class="usuariosSectionsAlign">
+                <section class="cardsUser colaborador">
+                    <div class="cardUserIntro">
+                        <h3 class="cardUserTitle">Colaborador</h3>
+                        <p class="cardUserText">Conheça suas vantagens por criar sua conta conosco.</p>
+                    </div>
+                    <div class="cardColabContent">
+                        <ul class="listVantagens">
+                            <li class="contentItem">
+                                <i><img src="./assets/icons/pages/index/medal-icon.png" alt="medalha"></i>
+                                <p class="empregadorText">Encontre oportunidades alinhadas ao seu perfil e objetivos.</p>
+                            </li>
+                            <li class="contentItem">
+                                <i><img src="./assets/icons/pages/index/check-circle-icon.png" alt="vantagens"></i>
+                                <p class="empregadorText">Receba recomendações personalizadas com base no seu potencial.</p>
+                            </li>
+                            <li class="contentItem">
+                                <i><img src="./assets/icons/pages/index/trending-up-icon.png" alt="crescimento"></i>
+                                <p class="empregadorText">Conecte-se diretamente com recrutadores e empresas inovadoras.</p>
+                            </li>
+                        </ul>
+                        <button class="btn btnUser">Participe</button>
+                    </div>
+                    <img class="imgUser" src="./assets/images/pages/index/pessoa-colaborador.png" alt="Imagem de um colaborador representando os usuários do site">
+                </section>
+                <article class="cardsUser empregador">
+                    <div class="cardUserIntro">
+                        <h3 class="cardUserTitle">Empregador</h3>
+                        <p class="cardUserText">Descubra suas vantagens como empresa.</p>
+                    </div>
+                    <div class="cardEmpreContent">
+                        <ul class="listVantagens">
+                            <li class="contentItem"><i><img src="./assets/icons/pages/index/medal-icon.png" alt="medalha"></i><p class="empregadorText">Reduza o tempo de contratação com buscas inteligentes.</p></li>
+                            <li class="contentItem"><i><img src="./assets/icons/pages/index/check-circle-icon.png" alt="vantagens"></i><p class="empregadorText">Fortaleça a marca empregadora e atraia os melhores talentos.</p></li>
+                            <li class="contentItem"><i><img src="./assets/icons/pages/index/trending-up-icon.png" alt="crescimento"></i><p class="empregadorText">Acesse uma base qualificada de talentos.</p></li>
+                        </ul>
+                            <button class="btn btnUser">Participe</button>
+                    </div>
+                    <img class="imgUser" src="./assets/images/pages/index/pessoa-empregador.png" alt="empregador representando empresas parceiras">
                 </article>
-                <article class="cardTwo">
-                    <p class="parentText">Já sabe preencher o seu curriculo?</p>
-                    <button class="parentBtn cardTwoBtn btnOutline">Conhça como</button>
-                </article>
-                <article class="cardThree">
-                    <h2 class="parentTitle">Ei, você esta com dúvida nos processos de RH?</h2>
-                    <button class="parentWhiteBtn cardThreeBtn btn">Clique e saiba mais</button>
-                </article>
-                <article class="cardFour">
-                    <p class="parentVacancy">As melhores vagas disponíveis te aguardando.</p>
-                </article>
-                <article class="cardFive">
-                    <h2 class="parentFiveTitle">Conheça nossas empresas e parceiros.</h2>
-                </article>
-            </main>
+            </div>
         </section>
 
         <section class="videosSection swiper">
             <div class="container swiper">
-                <h2>Sessão de cards deslizantes</h2>
+                <h2 class="swiper-title">Quer melhorar e criar novas experiências para o ambiente de trabalho</h2>
                 <div class="card-wrapper">
                     <!-- Card slides container -->
                     <ul class="card-list swiper-wrapper">
@@ -229,55 +249,34 @@
                 </div>
             </div>
         </section>
-        
 
-        
-        <section class="usuariosSections">
-            <div class="userContent">
-                <h2 class="usuarioText">Perfil de Usuários</h2>
-                <p class="userText">Conheça suas vantagens como colaborador ou empresa ao acessar e nossa plataforma.</p>
-            </div>
-            <div class="usuariosSectionsAlign">
-                <section class="cardsUser colaborador">
-                    <div class="cardUserIntro">
-                        <h3 class="cardUserTitle">Colaborador</h3>
-                        <p class="cardUserText">Conheça suas vantagens por criar sua conta conosco.</p>
-                    </div>
-                    <div class="cardColabContent">
-                        <ul class="listVantagens">
-                            <li class="contentItem">
-                                <i><img src="./assets/icons/pages/index/medal-icon.png" alt="medalha"></i>
-                                <p class="empregadorText">Encontre oportunidades alinhadas ao seu perfil e objetivos.</p>
-                            </li>
-                            <li class="contentItem">
-                                <i><img src="./assets/icons/pages/index/check-circle-icon.png" alt="vantagens"></i>
-                                <p class="empregadorText">Receba recomendações personalizadas com base no seu potencial.</p>
-                            </li>
-                            <li class="contentItem">
-                                <i><img src="./assets/icons/pages/index/trending-up-icon.png" alt="crescimento"></i>
-                                <p class="empregadorText">Conecte-se diretamente com recrutadores e empresas inovadoras.</p>
-                            </li>
-                        </ul>
-                        <button class="btn btnUser">Participe</button>
-                    </div>
-                    <img class="imgUser" src="./assets/images/pages/index/pessoa-colaborador.png" alt="Imagem de um colaborador representando os usuários do site">
-                </section>
-                <article class="cardsUser empregador">
-                    <div class="cardUserIntro">
-                        <h3 class="cardUserTitle">Empregador</h3>
-                        <p class="cardUserText">Descubra suas vantagens como empresa.</p>
-                    </div>
-                    <div class="cardEmpreContent">
-                        <ul class="listVantagens">
-                            <li class="contentItem"><i><img src="./assets/icons/pages/index/medal-icon.png" alt="medalha"></i><p class="empregadorText">Reduza o tempo de contratação com buscas inteligentes.</p></li>
-                            <li class="contentItem"><i><img src="./assets/icons/pages/index/check-circle-icon.png" alt="vantagens"></i><p class="empregadorText">Fortaleça a marca empregadora e atraia os melhores talentos.</p></li>
-                            <li class="contentItem"><i><img src="./assets/icons/pages/index/trending-up-icon.png" alt="crescimento"></i><p class="empregadorText">Acesse uma base qualificada de talentos.</p></li>
-                        </ul>
-                            <button class="btn btnUser">Participe</button>
-                    </div>
-                    <img class="imgUser" src="./assets/images/pages/index/pessoa-empregador.png" alt="empregador representando empresas parceiras">
+        <section class="funcionalSection">
+            <article class="contentFunctional">
+                <div class="margin-content">
+                    <h1 class="functionalTitle">Funcionalidades Presentes</h1>
+                    <p class="funcionalText">O que você está interessado em fazer?</p>
+                    <hr class="functionalRow">
+                </div>
+            </article>
+            <main class="parentGrid" id="center-nav">
+                <article class="cardOne">
+                    <h2 class="cardOneTitle">Quem somos?</h2>
                 </article>
-            </div>
+                <article class="cardTwo">
+                    <p class="parentText">Já sabe preencher o seu curriculo?</p>
+                    <button class="parentBtn cardTwoBtn btnOutline">Conhça como</button>
+                </article>
+                <article class="cardThree">
+                    <h2 class="parentTitle">Ei, você esta com dúvida nos processos de RH?</h2>
+                    <button class="parentWhiteBtn cardThreeBtn btn">Clique e saiba mais</button>
+                </article>
+                <article class="cardFour">
+                    <p class="parentVacancy">As melhores vagas disponíveis te aguardando.</p>
+                </article>
+                <article class="cardFive">
+                    <h2 class="parentFiveTitle">Conheça nossas empresas e parceiros.</h2>
+                </article>
+            </main>
         </section>
         
         <section class="depoimentsWrapper">
@@ -460,9 +459,35 @@
 
         <div class="footer-copyright">
             &#169
-            2025 Direitos reservados a RHConexão. Criado por  <a class="copyrightLink" href="https://github.com/felipetaua" target="_blank" rel="noreferrer noopener">felipetauaSystems </a> & <a class="link copyrightLink" href="https://github.com/nico-cbr" target="_blank" rel="noreferrer noopener"> nicoSystems </a> 
+            2025 Direitos reservados a RHConexão. Criado por: <a class="copyrightLink" href="https://github.com/felipetaua" target="_blank" rel="noreferrer noopener">felipetauaSystems </a> & <a class="link copyrightLink" href="https://github.com/nico-cbr" target="_blank" rel="noreferrer noopener"> nicoSystems </a> 
         </div>
     </footer>
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+        <button class="close-modal" id="closeModalBtn">&times;</button>
+
+        <h2>Selecione o tipo de conta</h2>
+        <p class="subtitle">Como você quer usar a plataforma?</p>
+
+        <div class="user-type-options">
+        <div class="option" id="personal">
+            <img src="https://img.icons8.com/ios-filled/50/000000/businessman.png" alt="Personal">
+            <h3>Colaborador</h3>
+            <p>Cadastre-se como candidato, monte seu perfil e aplique para as vagas disponíveis.</p>
+        </div>
+        <div class="option" id="business">
+            <img src="https://img.icons8.com/ios-filled/50/000000/conference.png" alt="Business">
+            <h3>Empresa</h3>
+            <p>Ideal para empresas que desejam anunciar oportunidades e acompanhar os processos seletivos.</p>
+        </div>
+        </div>
+
+        <button class="next-button">Continue</button>
+    </div>
+    </div>
+
+    
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
     <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
 </body>

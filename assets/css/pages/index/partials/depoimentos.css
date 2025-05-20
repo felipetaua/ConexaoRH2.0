@@ -55,6 +55,8 @@
 
 .avatarPhoto {
     padding: 0 20px 20px 0;
+    width: 90px;
+    height: 90px;
 }
 
 .depoimentsTitle {
