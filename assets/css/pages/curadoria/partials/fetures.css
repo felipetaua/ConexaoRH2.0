@@ -1,0 +1,31 @@
+
+/* Featured */
+.featured {
+    padding: 60px 0;
+}
+
+.featured h2 {
+    margin-bottom: 20px;
+}
+
+.featured .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.card.large img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    margin-top: 10px;
+}

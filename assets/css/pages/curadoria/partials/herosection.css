@@ -1,0 +1,45 @@
+/* Hero */
+.hero {
+    background: #caf0f8;
+    padding: 60px 0;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+}
+
+.hero-text span {
+    color: #0077b6;
+}
+
+.hero-text p {
+    margin: 15px 0;
+    color: #555;
+}
+
+.hero-buttons .btn {
+    margin-right: 15px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: #0077b6;
+    color: white;
+}
+
+.hero-buttons .btn.dark {
+    background: #023e8a;
+}
+
+.hero-buttons .btn:hover {
+    opacity: 0.9;
+}
+
+.hero-img img {
+    width: 300px;
+}
