@@ -191,6 +191,11 @@
 .fa-arrow-right-long {
     font-size: 16px;
     color: var(--black);
+<<<<<<< HEAD
+    margin: auto;
+    width: 24px;
+    height: 24px;
+=======
 }
 
 .scroll-hero {
@@ -276,4 +281,5 @@
     .actionButtonHero {
         font-size: 16px;
     }
+>>>>>>> e6803c294b7cbf16fae6a228053ccf163d4e542d
 }
