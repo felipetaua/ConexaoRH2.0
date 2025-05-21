@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Geviti Marketplace</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background: linear-gradient(to bottom, white, #f9fafb);
+            color: #1f2937;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.125rem;
+            color: #6b7280;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.75rem 1.5rem;
+            background-color: black;
+            color: white;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin-bottom: 5rem;
+        }
+
+        .button:hover {
+            background-color: #1f2937;
+        }
+
+        .button svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            margin-left: 0.5rem;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (min-width: 1024px) {
+            .flex-container {
+                flex-direction: row;
+            }
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: box-shadow 0.3s ease;
+            cursor: pointer;
+            text-align: left;
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .card:hover {
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        .card a {
+            color: #2563eb;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .card a:hover {
+            text-decoration: underline;
+        }
+
+        .mockup {
+            width: 18rem;
+            max-width: 20rem;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <section>
+        <h1>Step into Geviti’s Exclusive Marketplace</h1>
+        <p>We connect members with at-home specialty testing, precision medications, customized supplements, and proactive care, empowering them to live optimized.</p>
+
+        <a href="#" class="button">
+            Marketplace
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+            </svg>
+        </a>
+
+        <div class="flex-container">
+            <div class="card">
+                <h3>Compounded Medications</h3>
+                <p>Lorem ipsum dolor sit amet consectetur. Dui sodales morbi in eget. Sit suscipit eleifend enim nunc.</p>
+                <a href="#">See full list</a>
+            </div>
+
+            <div>
+                <img src="https://via.placeholder.com/300x600?text=App+Mockup" alt="Phone mockup" class="mockup"/>
+            </div>
+
+            <div class="card">
+                <h3>Custom Supplements</h3>
+                <p>Lorem ipsum dolor sit amet consectetur. Dui sodales morbi in eget. Sit suscipit eleifend enim nunc.</p>
+                <a href="#">See full list</a>
+            </div>
+        </div>
+
+        <div class="card" style="margin: 3rem auto 0; max-width: 350px;">
+            <h3>At-Home Health Screening</h3>
+            <p>Lorem ipsum dolor sit amet consectetur. Dui sodales morbi in eget. Sit suscipit eleifend enim nunc.</p>
+            <a href="#">See full list</a>
+        </div>
+    </section>
+
+</body>
+</html>
