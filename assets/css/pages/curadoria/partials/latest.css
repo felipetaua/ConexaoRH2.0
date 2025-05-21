@@ -1,0 +1,25 @@
+
+/* Latest */
+.latest {
+    padding: 60px 0;
+    background: #f6f6f6;
+}
+
+.latest h2 {
+    margin-bottom: 20px;
+}
+
+.latest .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.post img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.post h3 {
+    margin-top: 10px;
+}
