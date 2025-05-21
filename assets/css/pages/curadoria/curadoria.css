@@ -1,0 +1,41 @@
+@import url(../../pages/curadoria/partials/fetures.css);
+@import url(../../pages/curadoria/partials/herosection.css);
+@import url(../../pages/curadoria/partials/latest.css);
+@import url(../../pages/curadoria/partials/sidebar.css);
+
+
+
+@import url(../../global/variables.css);
+@import url(../../global/normalize.css);
+@import url(../../global/elements.css);
+
+@import url(../../../css/pages/index/partials/header.css);
+@import url(../../../css/pages/index/partials/footer.css);
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
