@@ -1,0 +1,34 @@
+.heroSection {
+    background: linear-gradient(145deg, #dfefff, #c4e1ff);
+    padding: 60px 20px;
+    text-align: center;
+    position: relative;
+}
+.hero-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+.hero-input {
+    padding: 15px;
+    width: 300px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+.hero-btn {
+    padding: 15px 30px;
+    margin-left: 10px;
+    border-radius: 30px;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 505px) {
+    .hero-btn {
+        margin-top: 20px;
+    }
+}
