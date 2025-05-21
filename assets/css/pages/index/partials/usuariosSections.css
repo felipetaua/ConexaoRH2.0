@@ -1,8 +1,17 @@
 .usuarioText {
-    margin-bottom: 25px;
+    
     font-size: 32px;
     display: flex;
     justify-content: center;
+}
+
+.userContent {
+    margin: 100px auto 25px auto;
+    text-align: center;
+}
+
+.userText {
+    font-size: 24px;
 }
 
 .usuariosSectionsAlign {
@@ -87,7 +96,6 @@
 
 @media (max-width: 1024px) {
     .usuariosSectionsAlign {
-        width: 250px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -101,7 +109,28 @@
 }
 
 @media (max-width: 600px) {
+    .cardsUser {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .cardColabContent {
+        width: 100%;
+    }
+    
+    .cardEmpreContent {
+        width: 100%;
+    }
+    .usuariosSections {
+        width: 100%;
+    }
+
     .usuariosSectionsAlign {
-        width: 100px;
+        width: 100%;
+    }
+
+    .imgUser {
+        margin-top: 20px;
+        width: 200px;
     }
 }
