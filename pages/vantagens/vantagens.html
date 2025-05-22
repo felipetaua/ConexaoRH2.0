@@ -11,21 +11,27 @@
             background: linear-gradient(to bottom, white, #f9fafb);
             color: #1f2937;
         }
+        
+        .align-card {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
 
-        section {
+        .section-news {
             max-width: 1200px;
             margin: 0 auto;
             padding: 5rem 1.5rem;
             text-align: center;
         }
 
-        h1 {
+        .news-title{
             font-size: 2.5rem;
             font-weight: bold;
             margin-bottom: 1rem;
         }
 
-        p {
+        .news-text {
             font-size: 1.125rem;
             color: #6b7280;
             margin-bottom: 2.5rem;
@@ -34,7 +40,7 @@
             margin-right: auto;
         }
 
-        .button {
+        .button-action {
             display: inline-flex;
             align-items: center;
             padding: 0.75rem 1.5rem;
@@ -46,11 +52,16 @@
             margin-bottom: 5rem;
         }
 
-        .button:hover {
+        .button-action:hover {
             background-color: #1f2937;
         }
 
-        .button svg {
+        .card-skill3 {
+            max-width: 350px;
+            margin: 3rem auto 0;
+        }
+
+        .button-action svg {
             width: 1.25rem;
             height: 1.25rem;
             margin-left: 0.5rem;
@@ -70,7 +81,7 @@
             }
         }
 
-        .card {
+        .card-skill {
             background-color: white;
             border-radius: 1rem;
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -82,29 +93,33 @@
             max-width: 350px;
         }
 
-        .card:hover {
+        .card-skill3 {
+            margin: 3rem -24px 0;
+        }
+
+        .card-skill:hover {
             box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
         }
 
-        .card h3 {
+        .card-skill h3 {
             font-size: 1.25rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
 
-        .card p {
+        .card-skill p {
             font-size: 1rem;
             color: #6b7280;
             margin-bottom: 1rem;
         }
 
-        .card a {
+        .card-skill a {
             color: #2563eb;
             font-weight: 600;
             text-decoration: none;
         }
 
-        .card a:hover {
+        .card-skill a:hover {
             text-decoration: underline;
         }
 
@@ -117,11 +132,11 @@
 </head>
 <body>
 
-    <section>
-        <h1>Step into Geviti’s Exclusive Marketplace</h1>
-        <p>We connect members with at-home specialty testing, precision medications, customized supplements, and proactive care, empowering them to live optimized.</p>
+    <section class="section-news">
+        <h1 class="news-title">Step into Geviti`s Exclusive Marketplace</h1>
+        <p class="news-text">We connect members with at-home specialty testing, precision medications, customized supplements, and proactive care, empowering them to live optimized.</p>
 
-        <a href="#" class="button">
+        <a href="#" class="button-action">
             Marketplace
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
@@ -129,28 +144,31 @@
         </a>
 
         <div class="flex-container">
-            <div class="card">
+            <article class="card-skill">
                 <h3>Compounded Medications</h3>
                 <p>Lorem ipsum dolor sit amet consectetur. Dui sodales morbi in eget. Sit suscipit eleifend enim nunc.</p>
                 <a href="#">See full list</a>
-            </div>
+            </article>
 
             <div>
                 <img src="https://via.placeholder.com/300x600?text=App+Mockup" alt="Phone mockup" class="mockup"/>
             </div>
 
-            <div class="card">
+            <article class="card-skill">
                 <h3>Custom Supplements</h3>
                 <p>Lorem ipsum dolor sit amet consectetur. Dui sodales morbi in eget. Sit suscipit eleifend enim nunc.</p>
                 <a href="#">See full list</a>
-            </div>
+            </article>
         </div>
-
-        <div class="card" style="margin: 3rem auto 0; max-width: 350px;">
-            <h3>At-Home Health Screening</h3>
-            <p>Lorem ipsum dolor sit amet consectetur. Dui sodales morbi in eget. Sit suscipit eleifend enim nunc.</p>
-            <a href="#">See full list</a>
-        </div>
+        
+        <div class="align-card">
+            <article class="card-skill card-skill3">
+                <h3>At-Home Health Screening</h3>
+                <p>Lorem ipsum dolor sit amet consectetur. Dui sodales morbi in eget. Sit suscipit eleifend enim nunc.</p>
+                <a href="#">See full list</a>
+            <div/>
+        </article>
+       
     </section>
 
 </body>
