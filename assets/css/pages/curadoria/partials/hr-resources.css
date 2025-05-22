@@ -1,0 +1,78 @@
+.rh-resource-center {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.rh-resource-title {
+    font-size: 2rem;
+    color: #0077ff;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.rh-resource-description {
+    font-size: 1.1rem;
+    color: #555;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.rh-resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.rh-resource-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 24px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e6e6e6;
+}
+
+.rh-resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.rh-resource-card-title {
+    font-size: 1.25rem;
+    color: #0077ff;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.rh-resource-card-description {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.rh-resource-card-link {
+    display: inline-block;
+    background-color: #0077ff;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.rh-resource-card-link:hover {
+    background-color: #005fcc;
+}
+
+@media (max-width: 600px) {
+    .rh-resource-title {
+        font-size: 1.6rem;
+    }
+    .rh-resource-description {
+        font-size: 1rem;
+    }
+}
