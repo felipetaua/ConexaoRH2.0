@@ -1,12 +1,11 @@
-
-/* Featured */
-
+/* Container geral */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* Sessão Featured */
 .featured {
     padding: 60px 0;
 }
@@ -26,6 +25,13 @@
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .card.large img {
@@ -34,5 +40,43 @@
 }
 
 .card h3 {
+    color: var(--primary);
     margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+.card p {
+    margin-top: 8px;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.meta span {
+    background-color: #eee;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+.meta .category {
+    background-color: #0077ff;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    .card h3 {
+        font-size: 1rem;
+    }
+    .meta {
+        font-size: 0.8rem;
+    }
 }

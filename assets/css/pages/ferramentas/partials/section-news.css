@@ -110,7 +110,7 @@
 }
 
 .mockup {
-    width: 18rem;
-    max-width: 20rem;
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    width: 58rem;
+    max-width: 25rem;
+    mix-blend-mode: darken;
 }
