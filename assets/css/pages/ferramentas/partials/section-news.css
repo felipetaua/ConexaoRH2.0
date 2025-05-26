@@ -114,3 +114,9 @@
     max-width: 25rem;
     mix-blend-mode: darken;
 }
+
+@media screen and (max-width: 600px) {
+    .mockup {
+        width: 100%;
+    }
+}
