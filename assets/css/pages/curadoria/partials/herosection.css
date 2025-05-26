@@ -9,10 +9,17 @@
     align-items: center;
     justify-content: space-between;
     gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1 1 500px;
 }
 
 .hero-text h1 {
+    width: 100%;
     font-size: 2.5rem;
+    line-height: 1.2;
 }
 
 .hero-text span {
@@ -20,16 +27,25 @@
 }
 
 .hero-text p {
+    width: 100%;
+    font-size: 1.2rem;
     margin: 15px 0;
     color: #555;
 }
 
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
 .hero-buttons .btn {
-    margin-right: 15px;
     padding: 10px 20px;
     border-radius: 20px;
     background: #0077b6;
     color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
 }
 
 .hero-buttons .btn.dark {
@@ -40,6 +56,89 @@
     opacity: 0.9;
 }
 
+/* Controle de imagem */
+.hero-img {
+    flex: 1 1 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .hero-img img {
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+    .hero .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-text {
+        flex: 1 1 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 25px 0;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text p {
+        font-size: 1rem;
+    }
+
+    .hero-img img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text p {
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-img img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    .hero-text h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero-img img {
+        flex: 1 1 0px;
+        width: 100%;
+    }
 }
