@@ -21,7 +21,7 @@
     margin-left: 10px;
     border-radius: 30px;
     border: none;
-    background: #007bff;
+    background: var(--orange);
     color: white;
     font-weight: bold;
     cursor: pointer;

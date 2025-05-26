@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
     <link rel="stylesheet" href="../../assets/css/pages/ferramentas/ferramentas.css">
 
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>    
+    
+    <!-- JavaScript -->
+    <script defer src="../../assets/js/pages/ferramentas/ferramentas.js"></script>
     <script defer src="../../assets/js/global/main.js"></script>
     <title>Ferramentas</title>
 </head>
@@ -53,22 +57,22 @@
 
     <!-- Header Hero -->
     <header class="heroSection">
-        <h1 class="hero-title">Você conhece nossa IA, para te ajudar?</h1>
+        <h1 class="hero-title">Você conhece nossa <span class="gradient">IA</span>, para te ajudar?</h1>
         <input class="hero-input" type="email" placeholder="Seu e-mail corporativo">
         <button class="hero-btn">Venha conhecer</button>
     </header>
 
     <section class="section-news">
-        <h1 class="news-title">Descubra as Soluções da RH Conexão 2.0</h1>
+        <h1 class="news-title">Descubra as Soluções do RH Conexão <span class="gradient">2.0</span></h1>
         <p class="news-text">
             Conectamos empresas às melhores ferramentas de recrutamento, gestão de talentos, clima organizacional e desenvolvimento humano, impulsionando a performance e o bem-estar no ambiente corporativo.
         </p>
 
         <a href="#" class="button-action">
             Acessar Plataforma
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-            </svg>
+            <span class="circle">
+                <img src="../../assets/icons/pages/index/icon-arrow-right.png" alt="">
+            </span>
         </a>
 
         <div class="flex-container">
@@ -77,7 +81,7 @@
                 <p>
                     Soluções inteligentes para atração de talentos, triagem de currículos, entrevistas e acompanhamento de processos seletivos, tudo em um só lugar.
                 </p>
-                <a href="#">Ver detalhes</a>
+                <button class="open-modal-btn" href="#">Ver detalhes</button>
             </article>
 
             <div>
@@ -107,7 +111,7 @@
 
     <!-- Trusted Logos -->
     <section class="section">
-        <h2>Confiado Por Mais de <span style="color:#007bff;">+10.000 Profissionais de RH</span></h2>
+        <h2>Empresas que parceiras que <span style="color:#007bff;">Confiam no nosso trabalho</span></h2>
         <div class="logos">
             <img src="https://cdn.worldvectorlogo.com/logos/paypal-3.svg" alt="PayPal">
             <img src="https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg" alt="Slack">
@@ -212,25 +216,24 @@
                     <a href="#" class="footer-link link">Curadoria</a>
                 </li>
                 <li>
-                    <a href="#" class="footer-link link">Curadoria</a>
+                    <a href="#" class="footer-link link">Proteção de Dados</a>
                 </li>
                 <li>
-                    <a href="#" class="footer-link link">Curadoria</a>
+                    <a href="#" class="footer-link link">Termos de Uso</a>
                 </li>
             </ul>
-
             <ul class="footer-list">
                 <li>
                     <h3>Para colaboradores</h3>
                 </li>
                 <li>
-                    <a href="#" class="footer-link link">Curadoria</a>
+                    <a href="#" class="footer-link link">Artigos</a>
                 </li>
                 <li>
-                    <a href="#" class="footer-link link">Curadoria</a>
+                    <a href="#" class="footer-link link">Dicas empresariais</a>
                 </li>
                 <li>
-                    <a href="#" class="footer-link link">Curadoria</a>
+                    <a href="#" class="footer-link link">Vagas e Curriculos</a>
                 </li>
             </ul>
 
@@ -258,5 +261,55 @@
             2025 Direitos reservados a RHConexão. Criado por: <a class="copyrightLink" href="https://github.com/felipetaua" target="_blank" rel="noreferrer noopener">felipetauaSystems </a> & <a class="link copyrightLink" href="https://github.com/nico-cbr" target="_blank" rel="noreferrer noopener"> nicoSystems </a> 
         </div>
     </footer>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Linha do Tempo do Processo</h2>
+
+        <div class="timeline">
+        <div class="timeline-step active">
+            <i class="fas fa-paper-plane"></i>
+            <div class="timeline-content">
+            <h3>Currículo Enviado</h3>
+            <p>Seu currículo foi recebido com sucesso.</p>
+            </div>
+        </div>
+
+        <div class="timeline-step active">
+            <i class="fas fa-search"></i>
+            <div class="timeline-content">
+            <h3>Análise do RH</h3>
+            <p>Estamos avaliando seu perfil para a vaga.</p>
+            </div>
+        </div>
+
+        <div class="timeline-step">
+            <i class="fas fa-envelope-open-text"></i>
+            <div class="timeline-content">
+            <h3>Resultado da Triagem</h3>
+            <p>Você será informado se for selecionado para a próxima etapa.</p>
+            </div>
+        </div>
+
+        <div class="timeline-step">
+            <i class="fas fa-comments"></i>
+            <div class="timeline-content">
+            <h3>Entrevista</h3>
+            <p>Se aprovado, uma entrevista será agendada.</p>
+            </div>
+        </div>
+
+        <div class="timeline-step">
+            <i class="fas fa-briefcase"></i>
+            <div class="timeline-content">
+            <h3>Contratado</h3>
+            <p>Parabéns! Você foi contratado.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
 </body>
 </html>

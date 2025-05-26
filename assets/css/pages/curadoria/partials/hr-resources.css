@@ -6,14 +6,14 @@
 
 .rh-resource-title {
     font-size: 2rem;
-    color: #0077ff;
+    color: var(--orange);
     font-weight: 700;
     margin-bottom: 20px;
     text-align: center;
 }
 
 .rh-resource-description {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     color: #555;
     text-align: center;
     max-width: 800px;
@@ -42,7 +42,7 @@
 
 .rh-resource-card-title {
     font-size: 1.25rem;
-    color: #0077ff;
+    color: var(--orange);
     margin-bottom: 12px;
     font-weight: 600;
 }
@@ -55,7 +55,7 @@
 
 .rh-resource-card-link {
     display: inline-block;
-    background-color: #0077ff;
+    background-color: var(--orange);
     color: #fff;
     padding: 8px 16px;
     border-radius: 8px;
