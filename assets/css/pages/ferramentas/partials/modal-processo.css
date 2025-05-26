@@ -1,0 +1,125 @@
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* Modal Content */
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    overflow-y: auto;
+    max-height: 90vh;
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Close Button */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+/* Timeline */
+.timeline {
+    position: relative;
+    margin: 30px 0;
+    padding-left: 30px;
+    border-left: 3px solid var(--primary);
+}
+
+.timeline-step {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-step i {
+    position: absolute;
+    left: -21px;
+    top: 0;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    padding: 8px;
+    font-size: 1rem;
+}
+
+.timeline-content {
+    background: var(--gray);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.timeline-step h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #023e8a;
+}
+
+.timeline-step p {
+    margin: 0;
+    color: var(--black);
+}
+
+/* Status */
+    .timeline-step.active i {
+    background: #023e8a;
+}
+
+.timeline-step.active .timeline-content {
+    background: var(--gray);
+}
+
+/* Botão abrir */
+.open-modal-btn {
+    padding: 10px 0px;
+    background: none;
+    color: var(--primary);
+    border-bottom: 3px solid;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.open-modal-btn:hover {
+    opacity: 0.9;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 20px;
+    }
+
+    .timeline {
+        padding-left: 25px;
+    }
+
+    .timeline-step i {
+        left: -18px;
+        padding: 6px;
+    }
+}
