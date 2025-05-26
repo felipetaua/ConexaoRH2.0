@@ -26,3 +26,18 @@
 .li {
     list-style: none;
 }
+
+.gradient {
+    background: linear-gradient(45deg, rgb(163, 5, 5) 0%, rgb(248, 149, 0) 50%, rgb(236, 226, 89) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300%;
+    animation: gradient 2s ease-in-out alternate infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 25%; }
+    50% { background-position: 50% 75%; }
+    100% { background-position: 75% 100%; }
+}
