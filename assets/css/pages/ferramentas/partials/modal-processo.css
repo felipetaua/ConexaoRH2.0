@@ -139,11 +139,11 @@
 }
 
 .timeline-step.active i {
-    background-color: #03045e;
+    background-color: #023e8a;
 }
 
 .timeline-step.active .timeline-content {
-    border-left: 4px solid #03045e;
+    border-left: 4px solid #023e8a;
 }
 
 @media (max-width: 600px) {
