@@ -18,3 +18,12 @@ window.addEventListener('click', (e) => {
         document.body.style.overflow = 'auto';
     }
 });
+
+function openModal(id) {
+    document.getElementById(id).style.display = 'flex';
+}
+
+function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+}
+
