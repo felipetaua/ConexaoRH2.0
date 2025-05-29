@@ -1,6 +1,6 @@
 /* Hero */
 .hero {
-    background: #b3b3b3;
+    background: linear-gradient(to right, #fff, #fdf2e4);
     padding: 60px 0;
 }
 
@@ -42,7 +42,7 @@
 .hero-buttons .btn {
     padding: 10px 20px;
     border-radius: 20px;
-    background: #0077b6;
+    background: var(--orange);
     color: white;
     text-decoration: none;
     transition: opacity 0.3s ease;
