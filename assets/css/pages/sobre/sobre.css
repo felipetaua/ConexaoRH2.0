@@ -31,8 +31,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 60px 0% 60px 10%;
-  background: linear-gradient(to right, #fff, #f3f1ff);
+  padding-left: 10%;
+  background: linear-gradient(145deg, #fff, #ebe0ff);
 }
 .hero-text {
   width: 50%;
@@ -51,8 +51,7 @@ body {
 }
 
 .hero-image {
-  width: auto;
-  height: 500px;
+  width: 50%;
 }
 
 .subscribe {
@@ -125,6 +124,22 @@ body {
   font-size: 24px;
 }
 
+@media screen and (max-width: 1000px) {
+  .hero {
+    display: block;
+    padding: 80px 10% ;
+  }
+
+  .hero-text {
+    margin-bottom: 5%;
+    width: auto;
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+}
+
 
 @media screen and (max-width: 850px) {
     .hero-text {
@@ -134,4 +149,10 @@ body {
     .hero-text .btns a {
       margin-right: 0px;
     } 
+}
+
+@media screen and (max-width: 400px) {
+  .hero {
+    padding-bottom: 0px;
+  }
 }
