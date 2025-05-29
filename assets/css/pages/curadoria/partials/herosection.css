@@ -1,7 +1,8 @@
 /* Hero */
 .hero {
-    background: linear-gradient(to right, #fff, #fdf2e4);
+    background: linear-gradient(145deg, #fff, #ffedd9);
     padding: 60px 0;
+    
 }
 
 .hero .container {
@@ -97,11 +98,11 @@
 
 @media (max-width: 768px) {
     .hero {
-        padding: 25px 0;
+        padding: 80px 20px;
     }
 
     .hero-text h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
 
     .hero-text p {
@@ -115,15 +116,15 @@
 
 @media (max-width: 500px) {
     .hero-text h1 {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
     }
 
     .hero-text p {
-        font-size: 0.95rem;
+        font-size: 1.25rem;
     }
 
     .hero-buttons .btn {
-        width: 100%;
+        width: 60%;
         text-align: center;
     }
 
@@ -134,11 +135,15 @@
 
 @media (max-width: 380px) {
     .hero-text h1 {
-        font-size: 1.6rem;
+        font-size: 2.5rem;
     }
 
     .hero-img img {
         flex: 1 1 0px;
         width: 100%;
+    }
+
+    .hero {
+        padding-bottom: 0px;
     }
 }

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../../assets/css/pages/curadoria-detalhe/detalhes.css">
     <link rel="stylesheet" href="style.css">
     <script defer src="../../../assets/js/global/main.js"></script>
+    <script defer src="../../../assets/js/pages/curadoria/curadoria.js"></script>
 </head>
 <body>
 
@@ -116,21 +117,12 @@
 
         <div class="interaction-bar">
             <div>
-                <span>💬 19</span>
-                <span>❤️ 91</span>
+                <span class="like-btn" style="cursor:pointer;user-select:none;">❤️</span> <span class="like-count">0</span>
             </div>
-            <button class="comment-btn">Add Comment</button>
         </div>
 
         <section class="comments-section">
-            <h3>Comments (23)</h3>
-            <div class="comment">
-                <p><strong>Maria:</strong> Excelente matéria!</p>
-            </div>
-            <div class="comment">
-                <p><strong>João:</strong> Muito relevante!</p>
-            </div>
-            <!-- Mais comentários... -->
+            <!-- Comentários dinâmicos serão renderizados pelo JS -->
         </section>
     </main>
 
