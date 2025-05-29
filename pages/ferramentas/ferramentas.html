@@ -68,7 +68,7 @@
             Conectamos empresas às melhores ferramentas de recrutamento, gestão de talentos, clima organizacional e desenvolvimento humano, impulsionando a performance e o bem-estar no ambiente corporativo.
         </p>
 
-        <a href="#" class="button-action">
+        <a href="#" class="button-action ">
             Acessar Plataforma
             <span class="circle">
                 <img src="../../assets/icons/pages/index/icon-arrow-right.png" alt="">
@@ -81,7 +81,7 @@
                 <p>
                     Soluções inteligentes para atração de talentos, triagem de currículos, entrevistas e acompanhamento de processos seletivos, tudo em um só lugar.
                 </p>
-                <button class="open-modal-btn" href="#">Ver detalhes</button>
+                <button class="open-modal-btn">Ver detalhes</button>
             </article>
 
             <div>
@@ -93,8 +93,9 @@
                 <p>
                     Ferramentas para mapeamento de competências, planos de desenvolvimento, treinamentos e acompanhamento da evolução dos colaboradores.
                 </p>
-                <a href="#">Ver detalhes</a>
+                <button class="open-modal-btn" onclick="openModal('talentoModal')">Ver detalhes</button>
             </article>
+
         </div>
 
         <div class="align-card">
@@ -103,7 +104,7 @@
                 <p>
                     Acompanhe o clima organizacional, aplique pesquisas de satisfação e obtenha insights para fortalecer a cultura e o engajamento da sua equipe.
                 </p>
-                <a href="#">Ver detalhes</a>
+                <button class="open-modal-btn" onclick="openModal('climaModal')">Ver detalhes</button>
             <div/>
         </article>
     </section>
@@ -266,50 +267,120 @@
     <div class="modal-overlay" id="modal">
     <div class="modal-content">
         <span class="close-modal">&times;</span>
-        <h2>Linha do Tempo do Processo</h2>
+        <h2>Etapas do Processo Seletivo</h2>
 
         <div class="timeline">
+        <!-- 1. Diagnóstico -->
         <div class="timeline-step active">
-            <i class="fas fa-paper-plane"></i>
+            <i class="fas fa-user-circle"></i>
             <div class="timeline-content">
-            <h3>Currículo Enviado</h3>
-            <p>Seu currículo foi recebido com sucesso.</p>
+            <h3>Diagnóstico</h3>
+            <p>Alinhamento do perfil da vaga, missão, valores, desafios e propósitos da empresa.</p>
             </div>
         </div>
 
+        <!-- 2. Comunicação -->
         <div class="timeline-step active">
-            <i class="fas fa-search"></i>
+            <i class="fas fa-bullhorn"></i>
             <div class="timeline-content">
-            <h3>Análise do RH</h3>
-            <p>Estamos avaliando seu perfil para a vaga.</p>
+            <h3>Comunicação</h3>
+            <p>Divulgação em canais online e offline, redes sociais e portais de emprego.</p>
             </div>
         </div>
 
+        <!-- 3. Triagem -->
         <div class="timeline-step">
-            <i class="fas fa-envelope-open-text"></i>
+            <i class="fas fa-tasks"></i>
             <div class="timeline-content">
-            <h3>Resultado da Triagem</h3>
-            <p>Você será informado se for selecionado para a próxima etapa.</p>
+            <h3>Triagem</h3>
+            <p>Análise de pré-requisitos e hard skills dos candidatos.</p>
             </div>
         </div>
 
+        <!-- 4. Seleção -->
         <div class="timeline-step">
-            <i class="fas fa-comments"></i>
+            <i class="fas fa-filter"></i>
             <div class="timeline-content">
-            <h3>Entrevista</h3>
-            <p>Se aprovado, uma entrevista será agendada.</p>
+            <h3>Seleção</h3>
+            <p>Mapeamento de competências, avaliação de hard e soft skills, fit cultural e alinhamento com o culture code da empresa.</p>
             </div>
         </div>
 
+        <!-- 5. Encaminhamento -->
         <div class="timeline-step">
-            <i class="fas fa-briefcase"></i>
+            <i class="fas fa-check-circle"></i>
             <div class="timeline-content">
-            <h3>Contratado</h3>
-            <p>Parabéns! Você foi contratado.</p>
+            <h3>Encaminhamento</h3>
+            <p>Envio do perfil aderente através de relatório técnico ao cliente.</p>
             </div>
         </div>
         </div>
     </div>
     </div>
+
+    <!-- clima organizacional modal -->
+    <div class="modal-overlay" id="climaModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('climaModal')">&times;</span>
+            <h2>Clima e Engajamento</h2>
+            <p class="subtitle">
+                Acompanhe o clima organizacional, aplique pesquisas de satisfação e obtenha insights para fortalecer a cultura e o engajamento da sua equipe.
+            </p>
+
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h3>Clima Organizacional</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 82%;">82%</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <h3>Engajamento</h3>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 76%;">76%</div>
+                    </div>
+                </div>
+            </div>
+
+            <button class="details-btn">Ver Detalhes</button>
+        </div>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="talentoModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('talentoModal')">&times;</span>
+            <h2>Desenvolvimento de Talentos</h2>
+            <p class="modal-description">
+            Potencialize sua equipe com ferramentas que promovem crescimento, evolução e alto desempenho.
+            </p>
+
+            <div class="modal-sections">
+
+            <div class="modal-card">
+                <h3>Mapeamento de Competências</h3>
+                <p>Identifique as habilidades-chave dos colaboradores e alinhe-as com os objetivos da empresa.</p>
+            </div>
+
+            <div class="modal-card">
+                <h3>Planos de Desenvolvimento</h3>
+                <p>Crie trilhas de crescimento personalizadas para que cada profissional evolua em sua carreira.</p>
+            </div>
+
+            <div class="modal-card">
+                <h3>Treinamentos e Capacitações</h3>
+                <p>Implemente programas de capacitação focados nas necessidades reais da equipe.</p>
+            </div>
+
+            <div class="modal-card">
+                <h3>Acompanhamento Contínuo</h3>
+                <p>Monitore o progresso, ofereça feedbacks construtivos e ajuste os planos conforme necessário.</p>
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+
 </body>
 </html>

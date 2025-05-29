@@ -1,94 +1,28 @@
-/* Modal Overlay */
 .modal-overlay {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.6);
-    display: none;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
     justify-content: center;
     align-items: center;
-    z-index: 999;
 }
 
-/* Modal Content */
 .modal-content {
-    background: white;
+    background-color: #ffffff;
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 12px;
+    max-width: 700px;
     width: 90%;
-    max-width: 600px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
     position: relative;
     overflow-y: auto;
     max-height: 90vh;
 }
 
-.modal-content h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* Close Button */
-.close-modal {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-/* Timeline */
-.timeline {
-    position: relative;
-    margin: 30px 0;
-    padding-left: 30px;
-    border-left: 3px solid var(--primary);
-}
-
-.timeline-step {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.timeline-step i {
-    position: absolute;
-    left: -21px;
-    top: 0;
-    background: var(--primary);
-    color: white;
-    border-radius: 50%;
-    padding: 8px;
-    font-size: 1rem;
-}
-
-.timeline-content {
-    background: var(--gray);
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-}
-
-.timeline-step h3 {
-    margin-top: 0;
-    margin-bottom: 5px;
-    color: #023e8a;
-}
-
-.timeline-step p {
-    margin: 0;
-    color: var(--black);
-}
-
-/* Status */
-    .timeline-step.active i {
-    background: #023e8a;
-}
-
-.timeline-step.active .timeline-content {
-    background: var(--gray);
-}
-
-/* Botão abrir */
 .open-modal-btn {
     padding: 10px 0px;
     background: none;
@@ -108,18 +42,122 @@
     text-underline-offset: 5px;
 }
 
-/* Responsivo */
-@media (max-width: 480px) {
-    .modal-content {
-        padding: 20px;
-    }
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
 
-    .timeline {
-        padding-left: 25px;
-    }
+.close-modal:hover {
+    color: #d90429;
+}
 
+.modal-content h2 {
+    text-align: center;
+    color: #023e8a;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.timeline {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 30px 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #0077b6;
+}
+
+.timeline-step {
+    display: flex;
+    position: relative;
+    margin-bottom: 40px;
+    align-items: flex-start;
+}
+
+.timeline-step:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-step i {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #0077b6;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-size: 22px;
+    position: relative;
+    z-index: 2;
+    margin-right: 20px;
+    transition: background-color 0.3s;
+}
+
+.timeline-step:hover i {
+    background-color: #023e8a;
+}
+
+.timeline-content {
+    background-color: #f1f5f9;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex: 1;
+    transition: transform 0.3s;
+}
+
+.timeline-content:hover {
+    transform: translateY(-2px);
+}
+
+.timeline-step h3 {
+    margin: 0 0 8px 0;
+    color: #023e8a;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.timeline-step p {
+    margin: 0;
+    color: #333;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+.timeline-step.active i {
+    background-color: #023e8a;
+}
+
+.timeline-step.active .timeline-content {
+    border-left: 4px solid #023e8a;
+}
+
+@media (max-width: 600px) {
+    .timeline::before {
+        left: 20px;
+    }
+    .timeline-step {
+        flex-direction: column;
+        align-items: flex-start;
+    }
     .timeline-step i {
-        left: -18px;
-        padding: 6px;
+        margin-bottom: 10px;
+    }
+    .timeline-content {
+        width: 100%;
     }
 }

@@ -1,0 +1,109 @@
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 26px;
+    color: #333;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #d90429;
+}
+
+.modal-content h2 {
+    color: #023e8a;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.stats-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: #f1f5f9;
+    padding: 20px;
+    border-radius: 8px;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.stat-card h3 {
+    margin-bottom: 12px;
+    color: #023e8a;
+}
+
+.progress-bar {
+    background: #e0e0e0;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 24px;
+}
+
+.progress {
+    background: #0077b6;
+    color: white;
+    text-align: center;
+    line-height: 24px;
+    height: 100%;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+    font-weight: bold;
+}
+
+.details-btn {
+    margin-top: 25px;
+    background-color: #0077b6;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.details-btn:hover {
+    background-color: #023e8a;
+}
+
+@media (max-width: 500px) {
+    .stat-card {
+        width: 100%;
+    }
+}
