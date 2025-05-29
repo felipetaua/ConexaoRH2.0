@@ -12,7 +12,7 @@
   font-family: "Poppins", sans-serif;
 }
 body {
-  background: #f8f8fc;
+  background: white;
   color: #333;
 }
 .hero-btn {
@@ -35,7 +35,7 @@ body {
   background: #ede9fe;
 }
 .hero-text {
-  max-width: 50%;
+  width: 50%;
 }
 .hero-text h1 {
   font-size: 40px;
@@ -118,4 +118,11 @@ body {
 .stats h3 {
   color: var(--primary);
   font-size: 24px;
+}
+
+
+@media screen and (max-width: 850px) {
+    .hero-text {
+      width: 100%;
+    }
 }
