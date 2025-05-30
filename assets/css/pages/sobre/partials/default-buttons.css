@@ -1,0 +1,16 @@
+.hero-btn,
+.subscribe button {
+    background: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.hero-btn:hover,
+.subscribe button:hover {
+    background: #542dc3;
+}

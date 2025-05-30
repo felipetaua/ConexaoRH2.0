@@ -1,0 +1,57 @@
+@media screen and (max-width: 1000px) {
+    .hero {
+        flex-direction: column;
+        padding: 80px 10%;
+        text-align: center;
+    }
+
+    .hero-text {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .hero-image {
+        width: 100%;
+    }
+
+    .about .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .subscribe {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .subscribe input {
+        width: 100%;
+    }
+
+    .hero-text .btns a {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .hero {
+        padding-bottom: 0;
+    }
+}
