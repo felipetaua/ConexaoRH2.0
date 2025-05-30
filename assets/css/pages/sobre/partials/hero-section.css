@@ -1,3 +1,4 @@
+@import url(../../../../css/global/variables.css);
 .hero {
     display: flex;
     align-items: center;
@@ -13,7 +14,7 @@
 .hero-text h1 {
     font-size: 40px;
     margin-bottom: 20px;
-    color: #333;
+    color: var(--blue);
 }
 
 .hero-text p {
