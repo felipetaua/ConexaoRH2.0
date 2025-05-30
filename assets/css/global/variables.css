@@ -11,6 +11,8 @@
     --color-gray: #747474;
     --bg: #E7E7E7;
 
+    --size: min(80vw, 400px);
+
     --color-neutral-0: #0e0c0c;
     --color-neutral-10: #171717;
     --color-neutral-30: #a8a29e;
