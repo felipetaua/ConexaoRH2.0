@@ -24,8 +24,13 @@
 
 .hero-text .btns a {
     margin-right: 15px;
+    border-radius: 32px;
 }
 
 .hero-image {
     width: 50%;
+}
+
+.btns {
+    display: flex;
 }
