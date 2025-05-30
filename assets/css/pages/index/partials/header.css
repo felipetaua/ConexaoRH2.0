@@ -98,6 +98,10 @@ body {
   font-weight: bold;
 }
 
+.btn-mobile {
+  display: none;
+}
+
 .SingninNav {
   background-color: var(--primary, #0055ff);
   color: white;
@@ -118,54 +122,103 @@ body {
   flex-direction: column;
   gap: 6px;
   cursor: pointer;
+  z-index: 1002;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hamburger .linha {
   width: 30px;
   height: 3px;
   background: #333;
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
-/* Responsivo */
+.hamburger.ativo .linha:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger.ativo .linha:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.ativo .linha:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1001;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.menu-overlay.ativo {
+  display: block;
+  opacity: 1;
+}
+
+/* Menu mobile animado */
 @media screen and (max-width: 900px) {
-    .header {
-        margin: 15px 35px;
-    }
+  .header {
+    margin: 15px 35px;
+  }
 
+  .hamburger {
+    display: flex;
+  }
 
-    .hamburger {
-        display: flex;
-    }
+  .btn-mobile {
+    display: flex;
+    width: 55%;
+    height: auto;
+    justify-content: center;
+  }
 
-    .nav-bar {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: #fff;
-        padding: 1rem;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+  .nav-bar {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1003;
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-    .nav-bar.ativo {
-        display: flex;
-        position: absolute;
-        z-index: 10;
-    }
+  .nav-bar.ativo {
+    display: flex;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    border-radius: 12px;
+  }
 
-    .linkNav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.5rem;
-    }
+  .linkNav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 
-    .linkPages {
-        padding: 0.5rem 0;
-    }
+  .linkPages {
+    padding: 0.5rem 0;
+  }
 
-    .linkAcount {
-        display: none;
-    }
+  .linkAcount {
+    display: none;
+  }
 }
