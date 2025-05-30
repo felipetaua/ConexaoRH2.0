@@ -52,6 +52,12 @@
     font-size: clamp(10px, 2.5vw, 14px);
     cursor: pointer;
     transition: transform 0.3s ease, filter 0.3s;
+    z-index: 2;
+}
+
+.label:hover,
+.label:focus {
+    z-index: 20;
 }
 
 /* Tooltip */
@@ -70,6 +76,8 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s;
+    z-index: 30;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
 }
 
 .label:hover::after {
@@ -84,13 +92,13 @@
 
 /* Posicionamento das labels */
 .label1 {
-    top: 5%;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 10%;
+    left: 30%;
+    transform: translateY(-50%);
 }
 
 .label2 {
-    top: 20%;
+    top: 25%;
     right: 0%;
     transform: translateY(-50%);
 }
@@ -102,19 +110,19 @@
 }
 
 .label4 {
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 10%;
+    left: 30%;
+    transform: translateY(90%);
 }
 
 .label5 {
     bottom: 25%;
     left: 0%;
-    transform: translateY(50%);
+    transform: translateY(60%);
 }
 
 .label6 {
-    top: 20%;
+    top: 25%;
     left: 0%;
     transform: translateY(-50%);
 }
@@ -127,5 +135,19 @@
 
     .label {
         width: 40%;
+    }
+}
+
+@media (max-width: 600px) {
+    .label::after {
+        font-size: 10px;
+        padding: 4px 6px;
+        max-width: 90vw;
+        white-space: normal;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 80px;
+        box-sizing: border-box;
+        word-break: break-word;
     }
 }

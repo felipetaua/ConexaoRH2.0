@@ -29,3 +29,45 @@ function closeModal(id) {
     document.body.style.overflow = 'auto';
 }
 
+// Efeito de digitação no input da IA
+const heroInput = document.querySelector('.hero-input');
+const frases = [
+    'Pergunte à nossa IA, vai te ajudar muito',
+    'Como melhorar o clima organizacional?',
+    'Dicas para engajar colaboradores?',
+    'Como otimizar o recrutamento?',
+    'Como criar um curriculo incível?',
+    'Sugestões para desenvolvimento de talentos?'
+];
+let fraseIndex = 0;
+let charIndex = 0;
+let typingInterval;
+
+function digitarFrase() {
+    if (!heroInput) return;
+    heroInput.placeholder = '';
+    charIndex = 0;
+    typingInterval = setInterval(() => {
+        heroInput.placeholder = frases[fraseIndex].slice(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === frases[fraseIndex].length) {
+            clearInterval(typingInterval);
+            setTimeout(apagarFrase, 1800);
+        }
+    }, 55);
+}
+
+function apagarFrase() {
+    typingInterval = setInterval(() => {
+        heroInput.placeholder = frases[fraseIndex].slice(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+            clearInterval(typingInterval);
+            fraseIndex = (fraseIndex + 1) % frases.length;
+            setTimeout(digitarFrase, 600);
+        }
+    }, 30);
+}
+
+digitarFrase();
+
