@@ -1,0 +1,61 @@
+.developers {
+    padding: 60px 10%;
+    background: linear-gradient(145deg, #fff, #ebe0ff);
+}
+
+.developers .section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.developers .section-title h2 {
+    font-size: 32px;
+    color: #333;
+}
+
+.developers .section-title p {
+    color: #666;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    text-align: center;
+    background: white;
+    border-radius: 12px;
+    padding: 40px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.slide h3 {
+    color: var(--primary);
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.slide p {
+    color: #666;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 500px) {
+    .slide h3 {
+        font-size: 24px;
+    }
+
+    .slide p {
+        font-size: 14px;
+    }
+}

@@ -5,7 +5,8 @@
 @import url(./partials/responsividade.css);
 @import url(./partials/sections-defaults.css);
 @import url(./partials/subscribe-section.css);
-
+@import url(./partials/painel-images.css);
+@import url(./partials/desenvolvedores.css);
 
 @import url(../../../css/global/variables.css);
 @import url(../../../css/global/normalize.css);
