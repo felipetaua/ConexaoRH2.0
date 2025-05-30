@@ -1,0 +1,97 @@
+/* Sections padrão (Services, About, Features) */
+.services,
+.about,
+.features {
+    padding: 60px 10%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: #333;
+}
+
+.evolution {
+    padding: 60px 10%;
+    background: linear-gradient(145deg, #fff, #f5f0ff);
+}
+
+.evolution .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.evolution .section-title h2 {
+    font-size: 32px;
+    color: #333;
+}
+
+.evolution .section-title p {
+    color: #666;
+    margin-top: 10px;
+    font-size: 16px;
+}
+
+.timeline {
+    position: relative;
+    border-left: 3px solid var(--primary);
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -40px;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    background: var(--primary);
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 3px var(--primary);
+}
+
+.timeline-date {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 5px;
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.timeline-content h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: #555;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline-content {
+        padding: 15px;
+    }
+
+    .timeline-dot {
+        left: -30px;
+    }
+}
