@@ -177,6 +177,9 @@ body {
 
   .btn-mobile {
     display: flex;
+    width: 55%;
+    height: auto;
+    justify-content: center;
   }
 
   .nav-bar {
