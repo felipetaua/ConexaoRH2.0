@@ -141,6 +141,16 @@
     width: auto;
 }
 
+@media screen and (max-width: 1024px) {
+    .videosSection {
+        margin-top: 7.5rem;
+    }
+    
+    .funcionalSection {
+        margin: 7.5rem 0 10%;
+    }
+}
+
 @media (max-width: 768px) {
     .card-video {
         width: 100% !important;
@@ -167,5 +177,9 @@
         margin-top: 15px;
         padding: 0 5px;
         display: none;/* ajustar ainda */
+    }
+
+    .funcionalSection {
+        margin: 7.5rem 0 0 0;
     }
 }

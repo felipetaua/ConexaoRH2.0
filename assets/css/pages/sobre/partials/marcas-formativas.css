@@ -1,0 +1,131 @@
+.marcas-formativas {
+    text-align: center;
+    padding: 40px 10px;
+}
+
+.marcas-formativas h2 {
+    font-size: 6vw;
+    font-size: 32px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.circle {
+    width: var(--size);
+    height: var(--size);
+    margin: 0 auto;
+    border-radius: 50%;
+    background: conic-gradient(
+        #64c7c9 0deg 60deg,            /* Autonomia Digital */
+        #f4d44d 60deg 120deg,          /* Criatividade e Atitude Empreendedora */
+        #f05a5c 120deg 180deg,         /* Visão Crítica */
+        #e6468a 180deg 240deg,         /* Atitude Sustentável */
+        #0068b8 240deg 300deg,         /* Colaboração e Comunicação */
+        #1fa9d6 300deg 360deg          /* Domínio Técnico-Científico */
+    );
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45%;
+    text-align: center;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: clamp(12px, 3vw, 16px);
+    line-height: 1.4;
+}
+
+.label {
+    position: absolute;
+    width: 35%;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+    line-height: 1.2;
+    font-size: clamp(10px, 2.5vw, 14px);
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s;
+}
+
+/* Tooltip */
+.label::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 6px 8px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.label:hover::after {
+    opacity: 1;
+}
+
+/* Efeito Hover */
+.label:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Posicionamento das labels */
+.label1 {
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.label2 {
+    top: 20%;
+    right: 0%;
+    transform: translateY(-50%);
+}
+
+.label3 {
+    bottom: 25%;
+    right: 0%;
+    transform: translateY(50%);
+}
+
+.label4 {
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.label5 {
+    bottom: 25%;
+    left: 0%;
+    transform: translateY(50%);
+}
+
+.label6 {
+    top: 20%;
+    left: 0%;
+    transform: translateY(-50%);
+}
+
+/* Responsivo */
+@media (max-width: 500px) {
+    .marcas-formativas h2 {
+        font-size: 24px;
+    }
+
+    .label {
+        width: 40%;
+    }
+}
