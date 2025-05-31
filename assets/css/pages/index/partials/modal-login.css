@@ -36,7 +36,7 @@
 .subtitle {
     color: #777;
     margin-bottom: 25px;
-    font-size: 0.95rem;
+    font-size: 1.25rem;
 }
 
 .user-type-options {
@@ -82,21 +82,35 @@
 }
 
 .next-button {
-    background-color: var(--primary);
+    background-color: var(--primary, #0055ff);
     color: white;
     border: none;
     border-radius: 30px;
     padding: 12px 28px;
     font-size: 1rem;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s, filter 0.2s;
     width: 100%;
     max-width: 220px;
     margin: 0 auto;
+    box-shadow: 0 2px 12px rgba(0,85,255,0.08);
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
-.next-button:hover {
+.next-button.disabled,
+.next-button:disabled {
+    background: #e0e3e8;
+    color: #b0b6be;
+    cursor: not-allowed;
+    filter: grayscale(0.2) brightness(0.97);
+    box-shadow: none;
+    border: 1.5px solid #e0e3e8;
+}
+
+.next-button:not(:disabled):hover {
     background-color: #007bff;
+    filter: brightness(1.08);
 }
 
 @media (max-width: 480px) {
