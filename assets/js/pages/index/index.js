@@ -65,8 +65,17 @@ document.addEventListener('DOMContentLoaded', function () {
         option.addEventListener('click', () => {
             options.forEach(o => o.classList.remove('selected'));
             option.classList.add('selected');
+            // Habilita o botão ao selecionar
+            nextButton.disabled = false;
+            nextButton.classList.add('active');
         });
     });
+
+    // Desabilita o botão se nenhuma opção estiver selecionada ao abrir o modal
+    if (nextButton) {
+        nextButton.disabled = true;
+        nextButton.classList.remove('active');
+    }
 
     nextButton.addEventListener('click', () => {
         const selected = document.querySelector('.option.selected');
