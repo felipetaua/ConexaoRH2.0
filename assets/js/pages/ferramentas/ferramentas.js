@@ -36,7 +36,7 @@ const frases = [
     'Como melhorar o clima organizacional?',
     'Dicas para engajar colaboradores?',
     'Como otimizar o recrutamento?',
-    'Como criar um curriculo incível?',
+    'Como criar um curriculo incrível?',
     'Sugestões para desenvolvimento de talentos?'
 ];
 let fraseIndex = 0;

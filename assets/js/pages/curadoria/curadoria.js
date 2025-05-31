@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     renderLike();
     setupTranscriptionToggle();
     setupCuradoriaTabs();
+    setupCuradoriaSearch();
 });
 
 // Função para tabs dinâmicas na curadoria
@@ -210,4 +211,108 @@ function setupCuradoriaTabs() {
     });
     // Render inicial
     renderTab(0);
+}
+
+// Scroll suave para a seção Featured ao clicar no botão "Posts"
+document.addEventListener('DOMContentLoaded', function() {
+    const postsBtn = document.querySelector('.hero-buttons .btn:not(.dark)');
+    const featuredSection = document.querySelector('.featured');
+    if (postsBtn && featuredSection) {
+        postsBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            featuredSection.scrollIntoView({ behavior: 'smooth' });
+            // Animação de destaque
+            featuredSection.classList.add('featured-animate');
+            setTimeout(() => {
+                featuredSection.classList.remove('featured-animate');
+            }, 1200);
+        });
+    }
+});
+
+// Pesquisa inteligente com sugestões
+function setupCuradoriaSearch() {
+    const input = document.querySelector('.search-input');
+    const suggestions = document.querySelector('.search-suggestions');
+    if (!input || !suggestions) return;
+
+    // Lista de conteúdos pesquisáveis (pode ser expandida)
+    const items = [
+        { title: 'Processo de Demissão', url: './lista-postagens/detalhe-e1.html' },
+        { title: 'Entrevista de Emprego', url: './lista-postagens/detalhe-e2.html' },
+        { title: 'Perguntas que não deve fazer', url: './lista-postagens/detalhe-e3.html' },
+        { title: 'Legislação Trabalhista', url: './lista-postagens/detalhe-e4.html' },
+        { title: 'Férias', url: './lista-postagens/detalhe-e5.html' },
+        { title: 'Recrutamento e Seleção', url: './lista-postagens/detalhe-e6.html' },
+        { title: 'Benefícios', url: './lista-postagens/detalhe-e7.html' },
+        { title: 'Processo de Admissão', url: './lista-postagens/detalhe-e8.html' },
+        { title: 'Departamento Pessoal', url: './lista-postagens/detalhe-e9.html' },
+        { title: 'Treinamento e Desenvolvimento', url: './lista-postagens/detalhe-e10.html' },
+        { title: 'Cultura Organizacional', url: './lista-postagens/detalhe-e11.html' },
+        { title: 'História do RH', url: './lista-postagens/detalhe-e12.html' },
+        { title: 'RH Digital', url: '#' },
+        { title: 'Gestão Humanizada', url: '#' },
+        { title: 'RH Ágil', url: '#' },
+        { title: 'Como reter talentos', url: '#' },
+        { title: 'Feedback Eficaz', url: '#' },
+        { title: 'Desenvolvimento Pessoal', url: '#' },
+        { title: 'Saúde Mental', url: '#' },
+        { title: 'Diversidade e Inclusão', url: '#' },
+        { title: 'Vídeo RH 2024', url: '#' },
+        { title: 'Entrevista com Especialista', url: '#' }
+    ];
+
+    function normalize(str) {
+        return str.normalize('NFD').replace(/[ -- --]/g, '').toLowerCase();
+    }
+
+    function getSuggestions(query) {
+        if (!query) return [];
+        const q = normalize(query);
+        // Ordena por quão parecido (começa, inclui, etc)
+        return items
+            .map(item => ({
+                ...item,
+                score: normalize(item.title).startsWith(q) ? 2 : (normalize(item.title).includes(q) ? 1 : 0)
+            }))
+            .filter(item => item.score > 0)
+            .sort((a, b) => b.score - a.score || a.title.localeCompare(b.title));
+    }
+
+    input.addEventListener('input', function() {
+        const val = input.value.trim();
+        const found = getSuggestions(val);
+        if (found.length) {
+            suggestions.innerHTML = found.map(item => `<li tabindex="0" data-url="${item.url}">${item.title}</li>`).join('');
+            suggestions.classList.add('active');
+        } else if (val.length > 0) {
+            suggestions.innerHTML = `<li class="no-result">Nenhum resultado encontrado</li>`;
+            suggestions.classList.add('active');
+        } else {
+            suggestions.innerHTML = '';
+            suggestions.classList.remove('active');
+        }
+    });
+
+    suggestions.addEventListener('click', function(e) {
+        const li = e.target.closest('li[data-url]');
+        if (li) {
+            window.location.href = li.getAttribute('data-url');
+        }
+    });
+    // Acessibilidade: enter/tecla
+    suggestions.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            const li = document.activeElement;
+            if (li && li.hasAttribute('data-url')) {
+                window.location.href = li.getAttribute('data-url');
+            }
+        }
+    });
+    // Fecha sugestões ao clicar fora
+    document.addEventListener('click', function(e) {
+        if (!input.contains(e.target) && !suggestions.contains(e.target)) {
+            suggestions.classList.remove('active');
+        }
+    });
 }
