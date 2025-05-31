@@ -10,6 +10,7 @@
     color: var(--blue);
 }
 .hero-input {
+    background: var(--gray);
     padding: 15px;
     width: 300px;
     border-radius: 30px;
