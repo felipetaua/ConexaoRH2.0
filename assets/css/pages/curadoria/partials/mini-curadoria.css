@@ -1,28 +1,40 @@
 
+.chosen-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    margin-bottom: 18px;
+    padding: 40px 20px 0 20px;
+}
 .mini-curadoria-card {
     display: flex;
     align-items: center;
-    gap: 12px;
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-    padding: 10px 14px;
+    gap: 18px;
+    background: linear-gradient(135deg, #f3f4f6 60%, #e0e3e8 100%);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    padding: 18px 22px;
     margin: 0 auto 18px auto;
-    max-width: 340px;
+    max-width: 420px;
     min-width: 0;
     width: 100%;
-    transition: box-shadow 0.2s;
+    font-size: 1.13rem;
+    border: 1.5px solid #e0e3e8;
+    transition: box-shadow 0.2s, border 0.2s;
 }
 .mini-curadoria-card:hover {
-    box-shadow: 0 4px 16px rgba(0,119,255,0.10);
+    box-shadow: 0 4px 18px rgba(0,119,255,0.13);
+    border: 1.5px solid #bfc3c9;
 }
 .mini-curadoria-img {
-    width: 56px;
-    height: 56px;
+    width: 72px;
+    height: 72px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
     flex-shrink: 0;
-    background: #f0f0f0;
+    background: #e0e3e8;
+    border: 1px solid #d1d5db;
 }
 .mini-curadoria-info {
     flex: 1;
@@ -30,26 +42,26 @@
 }
 .mini-curadoria-meta {
     display: inline-block;
-    font-size: 0.78rem;
+    font-size: 1rem;
     color: #0077ff;
     font-weight: 600;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 .mini-curadoria-title {
-    font-size: 1.02rem;
-    margin: 0 0 2px 0;
-    color: #222;
+    font-size: 1.18rem;
+    margin: 0 0 4px 0;
+    color: #23272f;
     font-weight: 700;
     line-height: 1.1;
 }
 .mini-curadoria-desc {
-    font-size: 0.93rem;
-    color: #444;
-    margin: 0 0 4px 0;
+    font-size: 1.08rem;
+    color: #444a54;
+    margin: 0 0 6px 0;
     line-height: 1.3;
 }
 .mini-curadoria-link {
-    font-size: 0.92rem;
+    font-size: 1.05rem;
     color: #0077ff;
     text-decoration: underline;
     font-weight: 600;
@@ -58,21 +70,52 @@
 .mini-curadoria-link:hover {
     color: #005bb5;
 }
-@media (max-width: 600px) {
+
+.featured-animate {
+    animation: featuredHighlight 1.1s cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes featuredHighlight {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0,119,255,0.18);
+        background: #f3f8ff;
+    }
+    30% {
+        box-shadow: 0 0 0 16px rgba(0,119,255,0.10);
+        background: #eaf3ff;
+    }
+    60% {
+        box-shadow: 0 0 0 8px rgba(0,119,255,0.08);
+        background: #f3f8ff;
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0,119,255,0.0);
+        background: inherit;
+    }
+}
+
+@media (max-width: 700px) {
+    .chosen-wrapper {
+        gap: 10px;
+    }
     .mini-curadoria-card {
-        max-width: 98vw;
-        padding: 8px 4px;
-        gap: 8px;
+        max-width: 99vw;
+        padding: 15px 30px;
+        gap: 10px;
+        font-size: 1rem;
     }
     .mini-curadoria-img {
-        width: 44px;
-        height: 44px;
-        border-radius: 6px;
+        width: 48px;
+        height: 48px;
+        border-radius: 7px;
     }
     .mini-curadoria-title {
-        font-size: 0.98rem;
+        font-size: 1.05rem;
     }
     .mini-curadoria-desc {
-        font-size: 0.89rem;
+        font-size: 0.98rem;
+    }
+    .mini-curadoria-link {
+        font-size: 0.97rem;
     }
 }
