@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../assets/css/pages/curadoria-detalhe/detalhes.css">
-    <link rel="stylesheet" href="style.css">
+    
     <script defer src="../../../assets/js/global/main.js"></script>
     <script defer src="../../../assets/js/pages/curadoria/curadoria.js"></script>
 
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <!-- miniatura -->
     <link rel="icon" href="../../../assets/images/global/RHconexao-icone.png" type="image/png">
     <title>Detalhe da Notícia | Conexão RH</title>
@@ -15,7 +17,7 @@
 <body>
 
     <header class="header">
-        <a href="" class="logo">
+        <a href="../curadoria.html" class="logo">
             <img src="../../../assets/images/global/RHconexao-logo.svg" alt="Logotipo da RH Conexão" class="logoEmpresa">
         </a>
 
@@ -108,6 +110,87 @@
             <!-- Comentários dinâmicos serão renderizados pelo JS -->
         </section>
     </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contacts">
+                <img class="footer-logo" src="../../../assets/images/global/RHconexao-logo.svg" alt="Conexão RH - Rodapé da página">
+                <h1>RHConexão</h1>
+                <p>Saiba mais sobre o projeto e descubra como podemos contribuir para o seu desenvolvimento profissional!</p>
+
+                <div class="footer-social-media">
+                    <a href="https://www.instagram.com/" class="footer-link instagram" target="_blank" rel="noreferrer noopener" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="https://www.facebook.com/?locale=pt_BR" class="footer-link facebook" target="_blank" rel="noreferrer noopener" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://www.whatsapp.com/" class="footer-link whatsapp" target="_blank" rel="noreferrer noopener" aria-label="Whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <nav class="footer-list" aria-label="Links para empresas">
+                <h3>Recursos para empresas</h3>
+                <ul>
+                    <li  class="li">
+                        <a href="#" class="footer-link link">Curadoria</a>
+                    </li>
+                    <li class="li">
+                        <a href="#" class="footer-link link">Proteção de Dados</a>
+                    </li>
+                    <li class="li">
+                        <a href="#" class="footer-link link">Termos de Uso</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <nav class="footer-list"  aria-label="Links para colaboradores">
+                <h3>Soluções para colaboradores</h3>
+                <ul>
+                    <li class="li">
+                        <a href="#" class="footer-link link">Artigos</a>
+                    </li>
+                    <li class="li">
+                        <a href="#" class="footer-link link">Dicas empresariais</a>
+                    </li>
+                    <li class="li">
+                        <a href="#" class="footer-link link">Vagas e Curriculos</a>
+                    </li>
+                </ul>
+            </nav>
+            
+
+            <form action="https://escola.us13.list-manage.com/subscribe/post?u=a6246e182df6b62a3126abeed&amp;id=82e953ff84&amp;f_id=00568eeaf0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self">
+                <h3>Contato</h3>
+                <p>Entre em contato conosco através do campo abaixo:</p>
+                <div class="input-group">
+                    <input type="text" name="MMERGE6" class="text" id="mce-MMERGE6" value="" placeholder="Digite sua sugestão" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Digite seu e-mail" required>
+                    <button type="submit" name="subscribe" id="mc-embedded-subscribe">
+                        <i class="fa-regular fa-envelope"></i> Enviar
+                    </button>
+                </div>
+                <!-- Campo oculto para evitar spam bots -->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                    <input type="text" name="b_a6246e182df6b62a3126abeed_82e953ff84" tabindex="-1" value="">
+                </div>
+            </form>
+        </div>
+
+        <div class="footer-copyright">
+            &#169
+            2025 Direitos reservados a RHConexão. Criado por: <a class="copyrightLink" href="https://github.com/felipetaua" target="_blank" rel="noreferrer noopener">felipetauaSystems </a> & <a class="link copyrightLink" href="https://github.com/nico-cbr" target="_blank" rel="noreferrer noopener"> nicoSystems </a> 
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 
 </body>
 </html>
