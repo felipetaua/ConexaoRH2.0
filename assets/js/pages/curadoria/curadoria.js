@@ -60,7 +60,26 @@ function renderLike() {
     };
 }
 
+// Acessibilidade: mostrar/ocultar transcrição ao clicar no botão
+function setupTranscriptionToggle() {
+    const transcriptionBtns = document.querySelectorAll('.transcription-btn');
+    const transcriptionContents = document.querySelectorAll('.transcription-content');
+    transcriptionBtns.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+            const content = transcriptionContents[i];
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                btn.textContent = 'Ocultar transcrição do vídeo ' + (i+1);
+            } else {
+                content.style.display = 'none';
+                btn.textContent = 'Transcrição do vídeo ' + (i+1) + ' (Acessível)';
+            }
+        });
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     renderComments();
     renderLike();
+    setupTranscriptionToggle();
 });
