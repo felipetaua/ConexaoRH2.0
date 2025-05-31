@@ -1,0 +1,47 @@
+
+.cardsFlutuantes {
+    animation: floatCard 4.5s ease-in-out infinite;
+    will-change: transform;
+}
+.floating1 { animation-delay: 0s; }
+.floating2 { animation-delay: 0.7s; }
+.floating3 { animation-delay: 1.4s; }
+.floating5 { animation-delay: 2.1s; }
+.floating6 { animation-delay: 2.8s; }
+.floating7 { animation-delay: 3.5s; }
+
+@keyframes floatCard {
+    0% {
+        transform: translateY(0) scale(1);
+        filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
+    }
+    20% {
+        transform: translateY(-18px) scale(1.03) rotate(-2deg);
+        filter: drop-shadow(0 8px 18px rgba(0,119,255,0.08));
+    }
+    50% {
+        transform: translateY(0) scale(1.01) rotate(1deg);
+        filter: drop-shadow(0 2px 8px rgba(0,0,0,0.10));
+    }
+    80% {
+        transform: translateY(14px) scale(0.98) rotate(-1deg);
+        filter: drop-shadow(0 2px 8px rgba(0,0,0,0.07));
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        filter: drop-shadow(0 2px 8px rgba(0,0,0,0.08));
+    }
+}
+@media (max-width: 700px) {
+    .cardsFlutuantes {
+        animation: floatCardMobile 4.5s ease-in-out infinite;
+    }
+    @keyframes floatCardMobile {
+        0% { transform: translateY(0) scale(1); }
+        20% { transform: translateY(-8px) scale(1.01); }
+        50% { transform: translateY(0) scale(1.01); }
+        80% { transform: translateY(7px) scale(0.99); }
+        100% { transform: translateY(0) scale(1); }
+    }
+}
+
