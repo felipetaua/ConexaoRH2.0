@@ -45,3 +45,8 @@
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .cardsFlutuantes {
+        animation: none;
+    }
+}
