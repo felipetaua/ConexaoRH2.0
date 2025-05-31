@@ -1,4 +1,3 @@
-
 .cardsFlutuantes {
     animation: floatCard 4.5s ease-in-out infinite;
     will-change: transform;
