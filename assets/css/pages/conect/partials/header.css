@@ -24,8 +24,9 @@
 
 .heroSection p {
     max-width: 500px;
-    color: var(--gray-text);
+    color: var(--gray-dark);
     margin-bottom: 30px;
+    font-size: 1.25rem;
 }
 
 .heroSection form {

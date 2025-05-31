@@ -30,9 +30,9 @@
 
 .hero-text p {
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     margin: 15px 0;
-    color: #555;
+    color: var(--gray-dark);
 }
 
 .hero-buttons {
@@ -51,7 +51,7 @@
 }
 
 .hero-buttons .btn.dark {
-    background: #023e8a;
+    background: var(--primary);
 }
 
 .hero-buttons .btn:hover {
