@@ -20,15 +20,9 @@ body {
     margin: 0;
     border-bottom: 1px solid #e0e0e0;
     position: sticky;
+    z-index: 20;
     top: 0;
 }
-
-/* .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 6px;
-    cursor: pointer;
-} */
 
 .hamburger .linha {
     width: 30px;
