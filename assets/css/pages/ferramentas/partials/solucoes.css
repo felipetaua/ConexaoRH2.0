@@ -49,12 +49,22 @@
     transform: translateX(5px);
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
     .solutions-content {
         flex-direction: row;
     }
 
     .solutions-block {
         flex: 1;
+    }
+
+    .section-solutions {
+        padding: 20px 30px;
+    }
+}
+
+@media screen and (min-width: 570px) {
+    .section-solutions {
+        padding: 0 0;
     }
 }
