@@ -164,11 +164,11 @@
     width: 0;
     height: 60px;
     border-radius: 30em;
-    box-shadow: 10px 0 35px #fc3200;
+    box-shadow: 10px 0 35px var(--orange-hover);
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #fc3200;
+    background-color: var(--orange-hover);
     transition: .5s ease-in;
     display: block;
     z-index: -1;

@@ -16,7 +16,7 @@
 }
 
 .solutions-title .highlight {
-    color: #007bff;
+    color: var(--orange);
 }
 
 .solutions-content {
@@ -26,14 +26,14 @@
 }
 
 .solutions-block {
-    border-left: 4px solid #007bff;
+    border-left: 4px solid var(--orange);
     padding-left: 20px;
     transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
 .solutions-block h3 {
     font-size: 1.6rem;
-    color: #007bff;
+    color: var(--orange);
     margin-bottom: 10px;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .solutions-block:hover {
-    border-color: #0056b3;
+    border-color: var(--orange-hover);
     transform: translateX(5px);
 }
 
