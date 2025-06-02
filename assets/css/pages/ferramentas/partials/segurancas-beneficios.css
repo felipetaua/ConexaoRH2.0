@@ -59,8 +59,16 @@
 }
 
 /* Responsivo */
-@media (max-width: 768px) {
+@media screen and(max-width: 768px) {
     .flex-item {
         flex: 1 1 100%;
     }
+}
+
+@media screen and (max-width: 550px) {
+    .flex-item img {
+        width: 80px;
+        height: 80px;
+    }
+
 }
