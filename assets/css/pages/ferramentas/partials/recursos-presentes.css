@@ -1,0 +1,59 @@
+.section {
+    padding: 60px 90px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.recurso-item {
+    text-align: center;
+    max-width: 280px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recurso-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.recurso-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.recurso-item h3 {
+    font-size: 1.2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.recurso-item p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+@media (max-width: 500px) {
+    .section h2 {
+        font-size: 2rem;
+    }
+}
