@@ -3,12 +3,16 @@
     padding: 80px 20px;
     text-align: center;
 }
+
+.blue-text {
+    color: #007bff;
+}
 .section h2 {
     font-size: 2rem;
     margin-bottom: 20px;
 }
 .logos img {
-    height: 40px;
+    height: 120px;
     margin: 10px 20px;
     opacity: 0.7;
 }
