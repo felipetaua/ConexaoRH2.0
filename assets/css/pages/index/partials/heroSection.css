@@ -164,11 +164,11 @@
     width: 0;
     height: 60px;
     border-radius: 30em;
-    box-shadow: 10px 0 35px rgb(236, 112, 29);
+    box-shadow: 10px 0 35px #fc3200;
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgb(236, 112, 29);
+    background-color: #fc3200;
     transition: .5s ease-in;
     display: block;
     z-index: -1;
@@ -176,6 +176,14 @@
 
 .actionButtonHero:hover:before {
     width: 100%;
+}
+
+.arrow {
+    transition: .5s;
+}
+
+.arrow:hover {
+    transform: rotate(45deg);
 }
 
 .circle {
