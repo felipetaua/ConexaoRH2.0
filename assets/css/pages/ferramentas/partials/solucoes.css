@@ -65,6 +65,12 @@
 
 @media screen and (max-width: 570px) {
     .section-solutions {
-        padding: 0 0;
+        width: 95vw;
+        padding: 20px;
     }
+
+    .solutions-content {
+        padding: 20px;
+    }
+
 }
