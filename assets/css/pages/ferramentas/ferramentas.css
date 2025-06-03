@@ -4,12 +4,13 @@
 @import url(./partials/section-news.css);
 @import url(./partials/modal-processo.css);
 @import url(./partials/modal-organizacional.css);
+@import url(./partials/modal-talents.css);
 @import url(./partials/sparkle.css);
 @import url(./partials/recursos-presentes.css);
 @import url(./partials/segurancas-beneficios.css);
 @import url(./partials/solucoes.css);
 @import url(./partials/banner.css);
-
+@import url(./partials/duvidas.css);
 
 
 @import url(../../../css/global/variables.css);

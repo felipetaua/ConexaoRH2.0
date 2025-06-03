@@ -66,6 +66,9 @@
 }
 
 @media screen and (max-width: 550px) {
+    .flex-item {
+        display: block;
+    }
     .flex-item img {
         width: 80px;
         height: 80px;
