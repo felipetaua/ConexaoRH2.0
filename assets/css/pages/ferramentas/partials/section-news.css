@@ -109,16 +109,6 @@
     margin-bottom: 1rem;
 }
 
-.card-skill a {
-    color: var(--primary);
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.card-skill a:hover {
-    text-decoration: underline;
-}
-
 .mockup {
     width: 58rem;
     max-width: 25rem;
