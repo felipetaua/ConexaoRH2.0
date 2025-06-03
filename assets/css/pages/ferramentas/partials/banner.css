@@ -1,0 +1,27 @@
+.banner-mid {
+    background: linear-gradient(90deg, var(--orange), var(--orange-hover));
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 12px;
+    margin: 40px auto;
+}
+
+.banner-mid .btn-banner {
+    background: white;
+    color: var(--orange);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.banner-content p {
+    margin: 20px auto 40px auto;
+    font-size: 1.25rem;
+}
+
+.banner-mid .btn-banner:hover {
+    background: #ffbc84;
+}
