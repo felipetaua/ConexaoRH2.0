@@ -36,6 +36,15 @@
     animation: gradient 2s ease-in-out alternate infinite;
 }
 
+.gradient-blue {
+    background: linear-gradient(45deg, #6C97DC  0%, #4278CD  50%, #2E62C2 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300%;
+    animation: gradient 2s ease-in-out alternate infinite;
+}
+
 @keyframes gradient {
     0% { background-position: 0% 25%; }
     50% { background-position: 50% 75%; }
