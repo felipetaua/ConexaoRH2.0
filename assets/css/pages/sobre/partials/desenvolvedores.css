@@ -76,6 +76,56 @@
     opacity: 0.7;
 }
 
+.dev-photo {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    border: 3px solid var(--primary, #6c63ff);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.dev-social {
+    margin: 12px 0 18px 0;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+.dev-social a {
+    color: #6c63ff;
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+
+.dev-social a:hover {
+    color: #333;
+}
+
+.dev-comments-slider {
+    margin-top: 18px;
+    min-height: 40px;
+    position: relative;
+}
+
+.dev-comment {
+    display: none;
+    font-style: italic;
+    color: #444;
+    font-size: 1.08rem;
+    transition: opacity 0.4s;
+    opacity: 0;
+    position: absolute;
+    left: 0; right: 0;
+}
+
+.dev-comment.active {
+    display: block;
+    opacity: 1;
+    position: relative;
+}
+
 @media screen and (max-width: 500px) {
     .slide h3 {
         font-size: 24px;
