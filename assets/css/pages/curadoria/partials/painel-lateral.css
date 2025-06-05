@@ -26,7 +26,7 @@
 }
 .media-detail-panel .close-panel {
     position: absolute;
-    top: 18px; right: 18px;
+    top: 5px; right: 18px;
     background: none;
     border: none;
     font-size: 2rem;
@@ -90,6 +90,6 @@
 @media (max-width: 700px) {
     .media-detail-panel {
         width: 100vw;
-        padding: 18px 8px 18px 8px;
+        padding: 18px 5% ;
     }
 }

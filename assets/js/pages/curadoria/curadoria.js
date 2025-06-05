@@ -334,10 +334,10 @@ const mediaDetails = [
         type: 'podcast',
         thumb: '../../assets/images/pages/curadoria/duvidas-1.png',
         title: 'Tendências do RH Digital',
-        meta: 'Por RH Conexão • 28 min • 2024',
+        meta: 'Por RH Conexão • 6:50 • 2024',
         desc: 'Um bate-papo sobre as principais tendências tecnológicas que estão transformando o RH.',
         credits: 'Podcast por RH Conexão. Arte: Freepik.',
-        url: 'https://open.spotify.com/episode/xxxxxxx'
+        localVideo: '../../assets/video/PODCAST-1.mp4'
     },
     // Vídeo 2
     {
@@ -354,10 +354,11 @@ const mediaDetails = [
         type: 'podcast',
         thumb: '../../assets/images/pages/curadoria/duvidas-2.png',
         title: 'Liderança Humanizada',
-        meta: 'Por RH Conexão • 22 min • 2024',
+        meta: 'Por RH Conexão • 6:50 min • 2024',
         desc: 'Reflexões e dicas para líderes que querem inspirar e transformar equipes.',
         credits: 'Podcast por RH Conexão.',
-        url: 'https://open.spotify.com/episode/yyyyyyy'
+        url: 'https://open.spotify.com/episode/yyyyyyy',
+        localVideo: '../../assets/video/PODCAST-2.mp4'
     },
     // YouTube 1
     {
@@ -420,9 +421,15 @@ function openMediaDetail(index) {
 
     content.innerHTML = `
         <div class="media-detail-thumb">
-            ${item.type === 'video'
-                ? `<iframe src="${item.url.replace('watch?v=', 'embed/')}" frameborder="0" allowfullscreen loading="lazy" style="width:100%;height:100%;"></iframe>`
-                : `<img src="${item.thumb}" alt="${item.title}" style="width:100%;height:100%;object-fit:cover;">`
+            ${
+                item.localVideo
+                    ? `<video controls style="width:100%;height:100%;border-radius:10px;" poster="${item.thumb}">
+                            <source src="${item.localVideo}" type="video/mp4">
+                            Seu navegador não suporta vídeo HTML5.
+                       </video>`
+                    : item.type === 'video' || item.type === 'youtube'
+                        ? `<iframe src="${item.url.replace('watch?v=', 'embed/')}" frameborder="0" allowfullscreen loading="lazy" style="width:100%;height:100%;"></iframe>`
+                        : `<img src="${item.thumb}" alt="${item.title}" style="width:100%;height:100%;object-fit:cover;">`
             }
         </div>
         <div class="media-detail-title">${item.title}</div>
