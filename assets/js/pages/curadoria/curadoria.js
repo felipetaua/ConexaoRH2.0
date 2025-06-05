@@ -445,6 +445,7 @@ function openMediaDetail(index) {
     panel.removeAttribute('hidden');
     overlay.removeAttribute('hidden');
     panel.focus();
+    document.body.style.overflow = 'hidden'; 
 }
 
 // Fechar painel
@@ -455,6 +456,7 @@ function closeMediaDetail() {
     setTimeout(() => {
         document.getElementById('mediaDetailPanel').setAttribute('hidden', '');
         document.getElementById('mediaDetailOverlay').setAttribute('hidden', '');
+        document.body.style.overflow = '';
     }, 350);
 }
 
