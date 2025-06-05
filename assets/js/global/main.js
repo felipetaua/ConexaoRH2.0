@@ -74,3 +74,17 @@ window.addEventListener('DOMContentLoaded', function() {
 });
 
 
+// Mostrar/ocultar botão ao rolar
+window.addEventListener('scroll', function() {
+    const btn = document.getElementById('backToTopBtn');
+    if (window.scrollY > window.innerHeight / 2) {
+        btn.style.display = 'flex';
+    } else {
+        btn.style.display = 'none';
+    }
+});
+
+// Scroll suave ao topo
+document.getElementById('backToTopBtn').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
