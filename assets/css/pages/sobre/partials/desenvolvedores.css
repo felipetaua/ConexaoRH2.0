@@ -31,9 +31,12 @@
 }
 
 .slide {
+    background-image: url(../../../../images/pages/sobre/fundo-desenvolvedores.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     min-width: 100%;
     text-align: center;
-    background: white;
     border-radius: 12px;
     padding: 40px 20px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
