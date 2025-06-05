@@ -35,3 +35,13 @@
 .btns {
     display: flex;
 }
+
+@media screen and (max-width: 550px ) {
+    .hero-text h1 {
+        text-align: left;
+    }
+
+    .hero-text p {
+        text-align: left;
+    }
+}

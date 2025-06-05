@@ -32,3 +32,13 @@ function updateSlider() {
 }
 
 setInterval(nextSlide, 3000); // Troca a cada 3 segundos
+
+document.querySelectorAll('.dev-comments-slider').forEach(slider => {
+    const comments = slider.querySelectorAll('.dev-comment');
+    let idx = 0;
+    setInterval(() => {
+        comments[idx].classList.remove('active');
+        idx = (idx + 1) % comments.length;
+        comments[idx].classList.add('active');
+    }, 3500);
+});
