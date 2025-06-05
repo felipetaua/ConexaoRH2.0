@@ -444,6 +444,40 @@
             </div>
         </div>
     </section>
+    <div class="media-more-wrapper">
+        <button class="btn media-more-btn" id="showMoreVideosBtn" aria-label="Ver mais vídeos">
+            <i class="fa-solid fa-chevron-down arrow"></i>
+        </button>
+    </div>
+    <div class="media-youtube-list" id="mediaYoutubeList" style="display: none;">
+        <div class="media-youtube-grid">
+            <!-- Vídeo 1 -->
+            <div class="media-youtube-card">
+                <iframe class="media-youtube-iframe" src="https://www.youtube.com/embed/F-mvgoG0lLc?si=rTQ3DaPBmSdXyF3h" title="Crédito do Trabalhador E-consignado - Econet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen></iframe>
+                <h4 class="media-youtube-title">Crédito do Trabalhador E-consignado - Econet</h4>
+            </div>
+            <!-- Vídeo 2 -->
+            <div class="media-youtube-card">
+                <iframe class="media-youtube-iframe" src="https://www.youtube.com/embed/FxfaBy7Dj2s?si=JG_DqeBZ8ggMXKrL" title="Hora Extra - Econet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen></iframe>
+                <h4 class="media-youtube-title">Hora Extra - Econet</h4>
+            </div>
+            <!-- Vídeo 3 -->
+            <div class="media-youtube-card">
+                <iframe class="media-youtube-iframe" src="https://www.youtube.com/embed/LwS_Ex3Z-EA?si=yaibWY6JH0rYOvtS" title="Calculo do 13º Salário - Econet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen></iframe>
+                <h4 class="media-youtube-title">Cálculo do 13º Salário - Econet</h4>
+            </div>
+            <!-- Vídeo 4 -->
+            <div class="media-youtube-card">
+                <iframe class="media-youtube-iframe" src="https://www.youtube.com/embed/rVGaWZb_yMY?si=u8AbySUEVqOWQ8UL" title="Prazos para Recontratação de Ex-Funcionário - Econet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen></iframe>
+                <h4 class="media-youtube-title">Prazos para Recontratação de Ex-Funcionário - Econet</h4>
+            </div>
+            <!-- Vídeo 5 -->
+            <div class="media-youtube-card">
+                <iframe class="media-youtube-iframe" src="https://www.youtube.com/embed/GNfMBeLhldo?si=ENuvmvSFA__kwRjG" title="Carnaval é Feriado? Direitos e deveres do trabalhador. - Econet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen></iframe>
+                <h4 class="media-youtube-title">Carnaval é Feriado? Direitos e deveres do trabalhador. - Econet</h4>
+            </div>
+        </div>
+    </div>
 
     <!-- Latest -->
     <section class="latest">
@@ -570,5 +604,14 @@
     <button id="backToTopBtn" aria-label="Voltar ao topo">
         <i class="fa fa-arrow-up"></i>
     </button>
+
+    <!-- Painel lateral de detalhes do vídeo/podcast -->
+    <div class="media-detail-panel" id="mediaDetailPanel" tabindex="-1" aria-modal="true" hidden>
+        <button class="close-panel" id="closeMediaDetail" aria-label="Fechar detalhes">&times;</button>
+        <div class="media-detail-content" id="mediaDetailContent">
+            <!-- Conteúdo dinâmico será inserido via JS -->
+        </div>
+    </div>
+    <div class="media-detail-overlay" id="mediaDetailOverlay" hidden></div>
 </body>
 </html>
