@@ -55,6 +55,11 @@ body {
   transition: color 0.3s ease;
 }
 
+.linkPages.linkPagesActive::before {
+  color: #1d1d1d;
+  transform: scaleX(1);
+}
+
 .linkPages:hover {
   color: #1d1d1d;
 }

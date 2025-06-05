@@ -50,3 +50,43 @@
     50% { background-position: 50% 75%; }
     100% { background-position: 75% 100%; }
 }
+
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 1500;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    font-size: 1.7rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, transform 0.2s;
+}
+
+#backToTopBtn i {
+    display: block;
+}
+
+#backToTopBtn:hover, #backToTopBtn:focus {
+    background: var(--blue);
+    transform: scale(1.06);
+}
+
+/* Responsividade para mobile */
+@media (max-width: 600px) {
+    #backToTopBtn {
+        width: 42px;
+        height: 42px;
+        font-size: 1.2rem;
+        bottom: 16px;
+        right: 16px;
+    }
+}
