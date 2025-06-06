@@ -1,9 +1,12 @@
 @import url(../../../css/pages/conect/partials/header.css);
 @import url(../../../css/pages/conect/partials/features.css);
-
+@import url(../../../css/pages/conect/partials/sessao-colaborador.css);
+@import url(../../../css/pages/conect/partials/sessao-empresa.css);
+@import url(../../../css/pages/conect/partials/sessao-vantagens.css);
 
 @import url(../../../css/global/variables.css);
 @import url(../../../css/global/normalize.css);
 @import url(../../../css/global/elements.css);
 @import url(../../../css/pages/index/partials/header.css);
 @import url(../../../css/pages/index/partials/footer.css);
+@import url(../../../css/pages/ferramentas/partials/duvidas.css);
