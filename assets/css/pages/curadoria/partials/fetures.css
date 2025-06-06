@@ -68,9 +68,30 @@
 }
 
 .meta .category {
-    background-color: #0077ff;
-    color: white;
+    background: #dde4ff;
+    color: #5372F0;
 }
+
+.meta .category-empregador {
+    background: #F7DFF5;
+    color: #B22485;
+}
+
+.meta .category-gestao {
+    background: #FFE3D2;
+    color: #B25A2B;
+}
+
+.meta .category-colaborador {
+    background: #D6F8D6;
+    color: #205C20;
+}
+
+.meta .category-clt {
+    background: #fff3cd;
+    color: #856404;
+}
+
 
 @media (max-width: 600px) {
     .card h3 {

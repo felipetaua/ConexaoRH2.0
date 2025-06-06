@@ -1,5 +1,4 @@
 
-/* Sidebar */
 .sidebar {
     padding: 40px 0;
 }
@@ -16,6 +15,10 @@
 .sidebar li {
     counter-increment: item;
     margin-bottom: 10px;
+}
+
+.sidebar li a {
+    color: var(--black);
 }
 
 .sidebar li::before {

@@ -21,3 +21,48 @@
     background-color: #0077ff;
     color: white;
 }
+
+.mini-curadoria-meta {
+    display: inline-block;
+    padding: 4px 8px;
+    font-size: 0.93rem;
+    border-radius: 12px;
+    font-weight: 500;
+    margin: 8px 10px 0px 0;
+    background: #dde4ff;
+    color: #5372F0;
+    transition: background 0.2s, color 0.2s;
+}
+
+.mini-curadoria-meta[data-meta="Tendências"] {
+    background: #DDE4FF;
+    color: #5372F0;
+}
+.mini-curadoria-meta[data-meta="Gestão"] {
+    background: #F7DFF5;
+    color: #B22485;
+}
+.mini-curadoria-meta[data-meta="Inovação"] {
+    background: #FFE3D2;
+    color: #B25A2B;
+}
+.mini-curadoria-meta[data-meta="Artigo"] {
+    background: #fff3cd;
+    color: #856404;
+}
+.mini-curadoria-meta[data-meta="Colaborador"] {
+    background: #D6F8D6;
+    color: #205C20;
+}
+.mini-curadoria-meta[data-meta="Empresa"] {
+    background: #E3F2FD;
+    color: #1976D2;
+}
+.mini-curadoria-meta[data-meta="Vídeo"] {
+    background: #e0e7ff;
+    color: #4f46e5;
+}
+.mini-curadoria-meta[data-meta="YouTube"] {
+    background: #ffeaea;
+    color: #e53935;
+}
