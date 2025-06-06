@@ -48,14 +48,14 @@
 }
 
 .rh-resource-card-description {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     color: #666;
     margin-bottom: 20px;
 }
 
 .rh-resource-card-link {
     display: inline-block;
-    background-color: var(--orange);
+    background-color: #242424;
     color: #fff;
     padding: 8px 16px;
     border-radius: 8px;
@@ -65,7 +65,7 @@
 }
 
 .rh-resource-card-link:hover {
-    background-color: var(--orange-hover);
+    background-color: #161616;
 }
 
 @media (max-width: 600px) {
@@ -73,6 +73,6 @@
         font-size: 1.6rem;
     }
     .rh-resource-description {
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 }

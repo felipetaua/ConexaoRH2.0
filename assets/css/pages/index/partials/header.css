@@ -228,3 +228,9 @@ body {
     display: none;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .nav-bar.ativo {
+    padding: 60px 5%;
+  }
+}
