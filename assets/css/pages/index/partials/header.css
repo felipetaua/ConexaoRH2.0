@@ -210,17 +210,18 @@ body {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+    padding: 60px 10%;
     border-radius: 12px;
   }
 
   .linkNav {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 0.8rem;
   }
 
   .linkPages {
-    padding: 0.5rem 0;
+    padding: 0.3rem 0;
   }
 
   .linkAcount {

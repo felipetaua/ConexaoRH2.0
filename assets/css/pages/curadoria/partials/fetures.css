@@ -1,11 +1,9 @@
-/* Container geral */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Sessão Featured */
 .featured {
     padding: 60px 0;
 }

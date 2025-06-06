@@ -18,7 +18,7 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 .search-input:focus {
-    border: 1.5px solid #0077ff;
+    border: 1.5px solid var(--orange);
     background: #fff;
 }
 .search-suggestions {
@@ -54,7 +54,7 @@
 }
 .search-suggestions li:hover, .search-suggestions li:focus {
     background: #f3f8ff;
-    color: #0077ff;
+    color: var(--orange);
 }
 
 
@@ -87,7 +87,7 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 .search-input:focus {
-    border: 1.5px solid #0077ff;
+    border: 1.5px solid var(--orange);
     background: #fff;
 }
 

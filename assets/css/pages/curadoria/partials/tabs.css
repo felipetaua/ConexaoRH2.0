@@ -18,7 +18,7 @@
 
 .tabs button.active,
 .tabs button:hover {
-    background-color: #0077ff;
+    background-color: var(--orange);
     color: white;
 }
 
