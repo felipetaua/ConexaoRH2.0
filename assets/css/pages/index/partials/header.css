@@ -170,7 +170,6 @@ body {
   opacity: 1;
 }
 
-/* Menu mobile animado */
 @media screen and (max-width: 900px) {
   .header {
     margin: 15px 35px;
@@ -222,6 +221,7 @@ body {
 
   .linkPages {
     padding: 0.3rem 0;
+    font-size: 1.25rem;
   }
 
   .linkAcount {
