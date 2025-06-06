@@ -7,6 +7,12 @@
     background: linear-gradient(145deg, #fff, #bdc5e6);
 }
 
+.heroSection input[type="email"]::placeholder {
+    color: var(--gray-dark);
+    opacity: 1;
+    transition: color 0.3s;
+}
+
 .heroSection h1 {
     font-size: 2.5rem;
     max-width: 600px;
@@ -31,7 +37,7 @@
 
 .heroSection input {
     padding: 12px 20px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--gray);
     border-radius: 30px;
     min-width: 250px;
     outline: none;
