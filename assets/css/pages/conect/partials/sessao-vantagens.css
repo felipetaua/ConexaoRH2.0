@@ -1,0 +1,162 @@
+.advantages-section {
+    padding: 80px 5%;
+    overflow-x: hidden;
+}
+
+.advantages-section#colaboradores {
+    background-color: #f8f9fa; 
+}
+.advantages-section#empresas {
+    background-color: #fff;
+}
+
+.section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-content {
+    flex-basis: 40%;
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.text-content.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.section-title {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btn-main {
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-main:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.2);
+}
+
+.cards-container {
+    flex-basis: 55%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.advantage-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    opacity: 0;
+    transform: scale(0.9);
+    animation: cardFadeIn 0.8s forwards;
+}
+
+.advantage-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.advantage-card h3 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.advantage-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: iconFloat 3s ease-in-out infinite; 
+}
+
+@keyframes cardFadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes iconFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+@media (max-width: 992px) {
+    .section-content {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 2vw;
+    }
+    .cards-container {
+        width: 100%;
+        gap: 20px;
+    }
+    .advantage-card {
+        padding: 22px 12px;
+    }
+    .text-content {
+        text-align: center;
+        flex-basis: 100%;
+        transform: translateY(-40px);
+    }
+    .text-content.visible {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 700px) {
+    .advantages-section {
+        padding: 40px 2vw;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .cards-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    .advantage-card {
+        padding: 16px 8px;
+    }
+    .card-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+}

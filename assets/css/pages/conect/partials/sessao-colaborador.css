@@ -1,0 +1,20 @@
+#colaboradores .text-content {
+    transform: translateX(-100px);
+}
+@media (max-width: 992px) {
+    #colaboradores .text-content {
+        transform: translateY(-40px);
+    }
+    #colaboradores .text-content.visible {
+        transform: translateY(0);
+    }
+}
+
+#colaboradores .card-icon {
+    color: #007bff;
+}
+
+/* Animação de entrada escalonada dos cards */
+#colaboradores .advantage-card:nth-of-type(1) { animation-delay: 0.2s; }
+#colaboradores .advantage-card:nth-of-type(2) { animation-delay: 0.4s; }
+#colaboradores .advantage-card:nth-of-type(3) { animation-delay: 0.6s; }
