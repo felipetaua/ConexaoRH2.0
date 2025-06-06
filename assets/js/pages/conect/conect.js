@@ -19,7 +19,12 @@ document.addEventListener("DOMContentLoaded", function() {
     animateOnScroll();
 
     // Efeito de digitação no input da heroSection
-    const heroInput = document.querySelector('.heroSection input[type="email"]');
+    const heroInput = document.querySelector('.heroSection input[type="text"]');
+    if (heroInput) {
+        heroInput.setAttribute('readonly', 'readonly');
+        heroInput.setAttribute('tabindex', '-1');
+        heroInput.style.cursor = 'default';
+    }
     const frases = [
         'Digite seu e-mail e faça parte da nossa comunidade!',
         'Receba oportunidades exclusivas em primeira mão.',
