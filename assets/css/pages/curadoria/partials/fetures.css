@@ -1,11 +1,9 @@
-/* Container geral */
 .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Sessão Featured */
 .featured {
     padding: 60px 0;
 }
@@ -40,7 +38,7 @@
 }
 
 .card h3 {
-    color: var(--primary);
+    color: #363a4d;
     margin-top: 10px;
     font-size: 1.1rem;
 }

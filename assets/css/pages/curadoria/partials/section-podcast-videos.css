@@ -160,7 +160,7 @@
     gap: 10px;
 }
 .media-more-btn:hover, .media-more-btn:focus {
-    background: #4b47b8;
+    background: var(--blue);
     transform: scale(1.04);
 }
 

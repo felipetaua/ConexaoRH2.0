@@ -65,7 +65,7 @@
 }
 
 .rh-resource-card-link:hover {
-    background-color: #005fcc;
+    background-color: var(--orange-hover);
 }
 
 @media (max-width: 600px) {
