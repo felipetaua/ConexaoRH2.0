@@ -1,9 +1,7 @@
-// Função utilitária para obter chave única por página
 function getPageKey() {
     return window.location.pathname;
 }
 
-// Comentários
 function renderComments() {
     const commentsSection = document.querySelector('.comments-section');
     if (!commentsSection) return;
@@ -35,7 +33,6 @@ function renderComments() {
     };
 }
 
-// Likes
 function renderLike() {
     const likeBtn = document.querySelector('.like-btn');
     const likeCount = document.querySelector('.like-count');
@@ -60,7 +57,6 @@ function renderLike() {
     };
 }
 
-// Acessibilidade: mostrar/ocultar transcrição ao clicar no botão
 function setupTranscriptionToggle() {
     const transcriptionBtns = document.querySelectorAll('.transcription-btn');
     const transcriptionContents = document.querySelectorAll('.transcription-content');
@@ -86,13 +82,11 @@ document.addEventListener('DOMContentLoaded', function() {
     setupCuradoriaSearch();
 });
 
-// Função para tabs dinâmicas na curadoria
 function setupCuradoriaTabs() {
     const tabs = document.querySelectorAll('.tabs button');
     const chosenWrapper = document.querySelector('.chosen-wrapper');
     if (!tabs.length || !chosenWrapper) return;
 
-    // Conteúdo de cada categoria (agora com múltiplos cards por categoria)
     const tabContent = [
         // Destaques
         [
@@ -172,19 +166,30 @@ function setupCuradoriaTabs() {
         // Vídeos
         [
             {
-                title: 'Vídeo RH 2024',
-                desc: 'Assista aos principais insights do setor.',
-                img: '../../assets/images/pages/curadoria/curadoria-10.webp',
+                title: 'Os 6 Tipos de Cultura Organizacional: Qual é a Ideal para o Seu Negócio?',
+                desc: 'A cultura de uma empresa vai muito além de manuais e regras...',
+                img: '../../assets/images/pages/curadoria/rh-1.png',
                 meta: 'Vídeo',
-                link: '#',
+                type: 'video',
+                index: 0 
             },
             {
-                title: 'Entrevista com Especialista',
-                desc: 'Especialistas comentam tendências do RH.',
-                img: '../../assets/images/pages/curadoria/curadoria-11.jpg',
+                title: 'Cultura Organizacional Tóxica: A Parábola dos Cinco Macacos',
+                desc: 'Uma história sobre macacos que explica por que...',
+                img: '../../assets/images/pages/curadoria/rh-2.png',
                 meta: 'Vídeo',
-                link: '#',
-            }
+                type: 'video',
+                index: 2
+            },
+            {
+                title: 'Crédito do Trabalhador E-consignado - Econet',
+                desc: 'Entenda como funciona o crédito do trabalhador e-consignado.',
+                img: 'https://img.youtube.com/vi/F-mvgoG0lLc/hqdefault.jpg',
+                meta: 'YouTube',
+                type: 'youtube',
+                index: 4
+            },
+            
         ],
     ];
 
@@ -209,11 +214,17 @@ function setupCuradoriaTabs() {
             renderTab(idx);
         });
     });
-    // Render inicial
     renderTab(0);
+
+    chosenWrapper.querySelectorAll('.mini-curadoria-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const idx = parseInt(this.getAttribute('data-media-index'), 10);
+            if (!isNaN(idx)) openMediaDetail(idx);
+        });
+    });
 }
 
-// Scroll suave para a seção Featured ao clicar no botão "Posts"
 document.addEventListener('DOMContentLoaded', function() {
     const postsBtn = document.querySelector('.hero-buttons .btn:not(.dark)');
     const featuredSection = document.querySelector('.featured');
@@ -230,13 +241,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Pesquisa inteligente com sugestões
 function setupCuradoriaSearch() {
     const input = document.querySelector('.search-input');
     const suggestions = document.querySelector('.search-suggestions');
     if (!input || !suggestions) return;
 
-    // Lista de conteúdos pesquisáveis (pode ser expandida)
     const items = [
         { title: 'Processo de Demissão', url: './lista-postagens/detalhe-e1.html' },
         { title: 'Entrevista de Emprego', url: './lista-postagens/detalhe-e2.html' },
@@ -259,7 +268,16 @@ function setupCuradoriaSearch() {
         { title: 'Saúde Mental', url: '#' },
         { title: 'Diversidade e Inclusão', url: '#' },
         { title: 'Vídeo RH 2024', url: '#' },
-        { title: 'Entrevista com Especialista', url: '#' }
+        { title: 'Entrevista com Especialista', url: '#' },
+        { title: 'Os 6 Tipos de Cultura Organizacional: Qual é a Ideal para o Seu Negócio?', url: '#', type: 'video' },
+        { title: 'POD OU NÃO POD RH - EP 1', url: '#', type: 'podcast' },
+        { title: 'Cultura Organizacional Tóxica: A Parábola dos Cinco Macacos', url: '#', type: 'video' },
+        { title: 'POD OU NÃO POD RH - EP 2', url: '#', type: 'podcast' },
+        { title: 'Crédito do Trabalhador E-consignado - Econet', url: '#', type: 'youtube' },
+        { title: 'Hora Extra - Econet', url: '#', type: 'youtube' },
+        { title: 'Cálculo do 13º Salário - Econet', url: '#', type: 'youtube' },
+        { title: 'Prazos para Recontratação de Ex-Funcionário - Econet', url: '#', type: 'youtube' },
+        { title: 'Carnaval é Feriado? Direitos e deveres do trabalhador. - Econet', url: '#', type: 'youtube' },
     ];
 
     function normalize(str) {
