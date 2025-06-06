@@ -323,41 +323,42 @@ const mediaDetails = [
     {
         type: 'video',
         thumb: '../../assets/images/pages/curadoria/rh-1.png',
-        title: 'Como Engajar sua Equipe no Novo RH',
-        meta: 'Por RH Conexão • 12 min • 2024',
-        desc: 'Dicas práticas para líderes e profissionais de RH aumentarem o engajamento e a motivação dos times.',
+        title: 'Os 6 Tipos de Cultura Organizacional: Qual é a Ideal para o Seu Negócio?',
+        meta: 'Por RH Conexão • 11:17 min • 2024',
+        desc: 'A cultura de uma empresa vai muito além de manuais e regras. Ela é o conjunto de valores, comportamentos e práticas que define o ambiente de trabalho e impulsiona os resultados.',
         credits: 'Vídeo por RH Conexão. Ilustrações: Storyset.',
-        url: 'https://www.youtube.com/watch?v=xxxxxxx'
+        localVideo: '../../assets/video/CULTURA-ORGANIZACIONAL-1.mp4'
     },
     // Podcast 1
     {
         type: 'podcast',
         thumb: '../../assets/images/pages/curadoria/duvidas-1.png',
-        title: 'Tendências do RH Digital',
-        meta: 'Por RH Conexão • 28 min • 2024',
-        desc: 'Um bate-papo sobre as principais tendências tecnológicas que estão transformando o RH.',
+        title: 'POD OU NÃO POD RH - EP 1',
+        meta: 'Por RH Conexão • 6:50 • 2024',
+        desc: 'Um bate-papo sobre as principais tendências, dicas e mudanças que estão transformando o RH.',
         credits: 'Podcast por RH Conexão. Arte: Freepik.',
-        url: 'https://open.spotify.com/episode/xxxxxxx'
+        localVideo: '../../assets/video/PODCAST-1.mp4'
     },
-    // Vídeo 2
+    // Vídeo 2 
     {
         type: 'video',
         thumb: '../../assets/images/pages/curadoria/rh-2.png',
-        title: 'Diversidade nas Empresas',
-        meta: 'Por RH Conexão • 15 min • 2024',
-        desc: 'Como criar ambientes inclusivos e os benefícios da diversidade para o sucesso organizacional.',
+        title: 'Cultura Organizacional Tóxica: A Parábola dos Cinco Macacos',
+        meta: 'Por RH Conexão • 1:22 min • 2024',
+        desc: 'Uma história sobre macacos que explica por que, às vezes, as equipes têm medo de tentar algo novo. Entenda de forma simples o perigo da cultura do "sempre foi assim".',
         credits: 'Vídeo por RH Conexão.',
-        url: 'https://www.youtube.com/watch?v=yyyyyyy'
+        localVideo: '../../assets/video/CULTURAR-ORGANIZACIONAL-2.mp4'
     },
     // Podcast 2
     {
         type: 'podcast',
         thumb: '../../assets/images/pages/curadoria/duvidas-2.png',
-        title: 'Liderança Humanizada',
-        meta: 'Por RH Conexão • 22 min • 2024',
-        desc: 'Reflexões e dicas para líderes que querem inspirar e transformar equipes.',
+        title: 'POD OU NÃO POD RH - EP 2',
+        meta: 'Por RH Conexão • 6:50 min • 2024',
+        desc: 'Conversando com profissional da área, e contará um pouco da sua experiência no setor de RH.',
         credits: 'Podcast por RH Conexão.',
-        url: 'https://open.spotify.com/episode/yyyyyyy'
+        url: 'https://open.spotify.com/episode/yyyyyyy',
+        localVideo: '../../assets/video/PODCAST-2.mp4'
     },
     // YouTube 1
     {
@@ -420,9 +421,15 @@ function openMediaDetail(index) {
 
     content.innerHTML = `
         <div class="media-detail-thumb">
-            ${item.type === 'video'
-                ? `<iframe src="${item.url.replace('watch?v=', 'embed/')}" frameborder="0" allowfullscreen loading="lazy" style="width:100%;height:100%;"></iframe>`
-                : `<img src="${item.thumb}" alt="${item.title}" style="width:100%;height:100%;object-fit:cover;">`
+            ${
+                item.localVideo
+                    ? `<video controls style="width:100%;height:100%;border-radius:10px;" poster="${item.thumb}">
+                            <source src="${item.localVideo}" type="video/mp4">
+                            Seu navegador não suporta vídeo HTML5.
+                       </video>`
+                    : item.type === 'video' || item.type === 'youtube'
+                        ? `<iframe src="${item.url.replace('watch?v=', 'embed/')}" frameborder="0" allowfullscreen loading="lazy" style="width:100%;height:100%;"></iframe>`
+                        : `<img src="${item.thumb}" alt="${item.title}" style="width:100%;height:100%;object-fit:cover;">`
             }
         </div>
         <div class="media-detail-title">${item.title}</div>
@@ -430,17 +437,17 @@ function openMediaDetail(index) {
         <div class="media-detail-desc">${item.desc}</div>
         <div class="media-detail-credits">Créditos: ${item.credits}</div>
         <div class="media-detail-nav">
-            <button ${index === 0 ? 'disabled' : ''} onclick="openMediaDetail(${index - 1})">&larr; Anterior</button>
-            <button ${index === mediaDetails.length - 1 ? 'disabled' : ''} onclick="openMediaDetail(${index + 1})">Próximo &rarr;</button>
+            <button ${index === 0 ? 'disabled' : ''} onclick="openMediaDetail(${index - 1})"><i class="fa-solid fa-arrow-left"></i> Anterior</button>
+            <button ${index === mediaDetails.length - 1 ? 'disabled' : ''} onclick="openMediaDetail(${index + 1})">Próximo <i class="fa-solid fa-arrow-right"></i></button>
         </div>
     `;
     panel.classList.add('open');
     panel.removeAttribute('hidden');
     overlay.removeAttribute('hidden');
     panel.focus();
+    document.body.style.overflow = 'hidden'; 
 }
 
-// Fechar painel
 document.getElementById('closeMediaDetail').onclick = closeMediaDetail;
 document.getElementById('mediaDetailOverlay').onclick = closeMediaDetail;
 function closeMediaDetail() {
@@ -448,6 +455,7 @@ function closeMediaDetail() {
     setTimeout(() => {
         document.getElementById('mediaDetailPanel').setAttribute('hidden', '');
         document.getElementById('mediaDetailOverlay').setAttribute('hidden', '');
+        document.body.style.overflow = '';
     }, 350);
 }
 
