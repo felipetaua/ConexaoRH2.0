@@ -62,13 +62,13 @@
 }
 .mini-curadoria-link {
     font-size: 1.05rem;
-    color: #0077ff;
+    color: var(--gray-dark);
     text-decoration: underline;
     font-weight: 600;
     transition: color 0.2s;
 }
 .mini-curadoria-link:hover {
-    color: #005bb5;
+    color: #444a54;
 }
 
 .featured-animate {

@@ -1,17 +1,10 @@
-:root {
-    --primary-color: #6B5AED;
-    --dark-color: #222;
-    --light-color: #f9f9f9;
-    --gray-text: #666;
-}
-
 .heroSection {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 80px 20px;
-    background: linear-gradient(145deg, #fff, #f7f3ff);
+    padding: 80px 20px 0 20px;
+    background: linear-gradient(145deg, #fff, #bdc5e6);
 }
 
 .heroSection h1 {
@@ -45,7 +38,7 @@
 }
 
 .heroSection button {
-    background: var(--primary-color);
+    background: var(--primary);
     color: white;
     padding: 12px 30px;
     border: none;
@@ -59,8 +52,13 @@
 }
 
 .heroSection img {
-    width: 300px;
+    max-width: 800px;
     margin-top: 40px;
     border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 768px) {
+    .heroSection img {
+        width: 100%;
+    }    
 }
