@@ -365,9 +365,9 @@ const mediaDetails = [
         type: 'youtube',
         thumb: 'https://img.youtube.com/vi/F-mvgoG0lLc/hqdefault.jpg',
         title: 'Crédito do Trabalhador E-consignado - Econet',
-        meta: 'YouTube • Econet',
+        meta: 'YouTube • 10:50 min • Econet',
         desc: 'Entenda como funciona o crédito do trabalhador e-consignado.',
-        credits: 'Vídeo por Econet.',
+        credits: 'Vídeo criado por Econet.',
         url: 'https://www.youtube.com/watch?v=F-mvgoG0lLc'
     },
     // YouTube 2
@@ -375,9 +375,9 @@ const mediaDetails = [
         type: 'youtube',
         thumb: 'https://img.youtube.com/vi/FxfaBy7Dj2s/hqdefault.jpg',
         title: 'Hora Extra - Econet',
-        meta: 'YouTube • Econet',
+        meta: 'YouTube • 9:29 min • Econet',
         desc: 'Tudo sobre hora extra e direitos do trabalhador.',
-        credits: 'Vídeo por Econet.',
+        credits: 'Vídeo criado por Econet.',
         url: 'https://www.youtube.com/watch?v=FxfaBy7Dj2s'
     },
     // YouTube 3
@@ -385,9 +385,9 @@ const mediaDetails = [
         type: 'youtube',
         thumb: 'https://img.youtube.com/vi/LwS_Ex3Z-EA/hqdefault.jpg',
         title: 'Cálculo do 13º Salário - Econet',
-        meta: 'YouTube • Econet',
+        meta: 'YouTube • 8:23 min • Econet',
         desc: 'Aprenda a calcular o 13º salário corretamente.',
-        credits: 'Vídeo por Econet.',
+        credits: 'Vídeo criado por Econet.',
         url: 'https://www.youtube.com/watch?v=LwS_Ex3Z-EA'
     },
     // YouTube 4
@@ -395,9 +395,9 @@ const mediaDetails = [
         type: 'youtube',
         thumb: 'https://img.youtube.com/vi/rVGaWZb_yMY/hqdefault.jpg',
         title: 'Prazos para Recontratação de Ex-Funcionário - Econet',
-        meta: 'YouTube • Econet',
+        meta: 'YouTube • 6:32 min • Econet',
         desc: 'Saiba os prazos legais para recontratar ex-funcionários.',
-        credits: 'Vídeo por Econet.',
+        credits: 'Vídeo criado por Econet.',
         url: 'https://www.youtube.com/watch?v=rVGaWZb_yMY'
     },
     // YouTube 5
@@ -405,9 +405,9 @@ const mediaDetails = [
         type: 'youtube',
         thumb: 'https://img.youtube.com/vi/GNfMBeLhldo/hqdefault.jpg',
         title: 'Carnaval é Feriado? Direitos e deveres do trabalhador. - Econet',
-        meta: 'YouTube • Econet',
+        meta: 'YouTube • 5:09 min • Econet',
         desc: 'Descubra se o Carnaval é feriado e os direitos do trabalhador.',
-        credits: 'Vídeo por Econet.',
+        credits: 'Vídeo criado por Econet.',
         url: 'https://www.youtube.com/watch?v=GNfMBeLhldo'
     }
 ];
