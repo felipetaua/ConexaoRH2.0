@@ -198,7 +198,7 @@ function setupCuradoriaTabs() {
             <div class="mini-curadoria-card">
                 <img src="${card.img}" alt="${card.title}" class="mini-curadoria-img">
                 <div class="mini-curadoria-info">
-                    <span class="mini-curadoria-meta">${card.meta}</span>
+                    <span class="mini-curadoria-meta" data-meta="${card.meta}">${card.meta}</span>
                     <h4 class="mini-curadoria-title">${card.title}</h4>
                     <p class="mini-curadoria-desc">${card.desc}</p>
                     <a href="${card.link}" class="mini-curadoria-link">Saiba mais</a>
@@ -287,7 +287,7 @@ function setupCuradoriaSearch() {
     function getSuggestions(query) {
         if (!query) return [];
         const q = normalize(query);
-        // Ordena por quão parecido (começa, inclui, etc)
+
         return items
             .map(item => ({
                 ...item,
@@ -335,7 +335,6 @@ function setupCuradoriaSearch() {
     });
 }
 
-// Exemplo de dados dos vídeos/podcasts (adicione todos que quiser)
 const mediaDetails = [
     // Vídeo 1
     {
@@ -430,7 +429,6 @@ const mediaDetails = [
     }
 ];
 
-// Função para abrir painel
 function openMediaDetail(index) {
     const panel = document.getElementById('mediaDetailPanel');
     const overlay = document.getElementById('mediaDetailOverlay');
