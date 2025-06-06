@@ -229,6 +229,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 28px;
+    padding: 0 10%;
 }
 .media-youtube-card {
     background: #fff;
@@ -268,6 +269,7 @@
     .media-youtube-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+        padding: 0 8%;
     }
     .media-youtube-iframe {
         min-height: 180px;
