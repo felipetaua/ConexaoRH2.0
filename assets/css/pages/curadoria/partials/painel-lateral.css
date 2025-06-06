@@ -40,7 +40,6 @@
     flex-direction: column;
     gap: 18px;
     position: relative;
-    padding-bottom: 70px; 
 }
 .media-detail-content .media-detail-thumb {
     width: 100%;
@@ -109,6 +108,6 @@
         padding: 14px 5vw;
     }
     .media-detail-content {
-        padding-bottom: 80px;
+        padding-bottom: 0px;
     }
 }
