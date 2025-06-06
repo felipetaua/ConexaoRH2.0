@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 80px 20px;
+    padding: 80px 20px 0 20px;
     background: linear-gradient(145deg, #fff, #bdc5e6);
 }
 
@@ -52,8 +52,13 @@
 }
 
 .heroSection img {
-    width: 300px;
+    max-width: 800px;
     margin-top: 40px;
     border-radius: 20px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 768px) {
+    .heroSection img {
+        width: 100%;
+    }    
 }
