@@ -1,5 +1,5 @@
 #colaboradores .text-content {
-    transform: translateX(-100px);
+    transform: translateX(0px);
 }
 @media (max-width: 992px) {
     #colaboradores .text-content {

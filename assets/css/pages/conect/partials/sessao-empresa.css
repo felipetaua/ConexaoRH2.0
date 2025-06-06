@@ -3,7 +3,7 @@
 }
 
 #empresas .text-content {
-    transform: translateX(100px); 
+    transform: translateX(0px); 
 }
 
 #empresas .card-icon {
