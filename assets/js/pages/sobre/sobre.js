@@ -4,7 +4,6 @@ const indicatorsContainer = document.getElementById('indicators');
 
 let index = 0;
 
-// Cria os indicadores dinamicamente
 slides.forEach((_, i) => {
     const dot = document.createElement('div');
     dot.classList.add('dot');
@@ -31,7 +30,7 @@ function updateSlider() {
     dots[index].classList.add('active');
 }
 
-setInterval(nextSlide, 3000); // Troca a cada 3 segundos
+setInterval(nextSlide, 3000); 
 
 document.querySelectorAll('.dev-comments-slider').forEach(slider => {
     const comments = slider.querySelectorAll('.dev-comment');

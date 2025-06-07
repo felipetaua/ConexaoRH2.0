@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     animateOnScroll();
 
-    // Efeito de digitação no input da heroSection
     const heroInput = document.querySelector('.heroSection input[type="text"]');
     if (heroInput) {
         heroInput.setAttribute('readonly', 'readonly');

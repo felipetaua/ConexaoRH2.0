@@ -1,22 +1,18 @@
-// Cards deslizantes
 new Swiper('.card-wrapper', {
     loop: true,
     spaceBetween: 30,
 
-    // Pagination bullets
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
         dynamicBullets: true
     },
 
-    // Navigation arrows
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
     },
 
-    // Responsive breakpoints
     breakpoints: {
         0: {
             slidesPerView: 1
@@ -29,9 +25,6 @@ new Swiper('.card-wrapper', {
         }
     }
 });
-
-
-// MODAL LOGIN + SELEÇÃO DE USUÁRIO
 
 document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('modal');
@@ -60,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Lógica de seleção
     options.forEach(option => {
         option.addEventListener('click', () => {
             options.forEach(o => o.classList.remove('selected'));
@@ -71,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Desabilita o botão se nenhuma opção estiver selecionada ao abrir o modal
     if (nextButton) {
         nextButton.disabled = true;
         nextButton.classList.remove('active');
@@ -81,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const selected = document.querySelector('.option.selected');
         if (selected) {
             alert(`Você selecionou: ${selected.querySelector('h3').innerText}`);
-            // Aqui você pode prosseguir com a lógica de envio ou redirecionamento
         } else {
             alert('Por favor, selecione um tipo de usuário.');
         }
