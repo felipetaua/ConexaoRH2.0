@@ -60,21 +60,17 @@ function toggleMenuMobile() {
     }
 }
 
-// Inicialização do menu hambúrguer e overlay
 window.addEventListener('DOMContentLoaded', function() {
     criarMenuOverlay();
     const hamburger = document.querySelector('.hamburger');
     if (hamburger) {
         hamburger.addEventListener('click', toggleMenuMobile);
     }
-    // Fecha menu ao clicar em qualquer link do menu mobile
     document.querySelectorAll('.nav-bar a').forEach(link => {
         link.addEventListener('click', fecharMenuMobile);
     });
 });
 
-
-// Mostrar/ocultar botão ao rolar
 window.addEventListener('scroll', function() {
     const btn = document.getElementById('backToTopBtn');
     if (window.scrollY > window.innerHeight / 2) {
@@ -84,7 +80,6 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Scroll suave ao topo
 document.getElementById('backToTopBtn').addEventListener('click', function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
