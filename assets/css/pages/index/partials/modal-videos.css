@@ -8,6 +8,11 @@
     justify-content: center;
     transition: opacity 0.3s;
 }
+
+.video-modal-overlay[hidden] {
+    display: none !important;
+}
+
 .video-modal-content {
     background: #fff;
     border-radius: 18px;
