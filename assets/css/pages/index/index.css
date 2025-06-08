@@ -9,6 +9,10 @@
 @import url('./partials/footer.css');
 @import url('./partials/modal-login.css');
 @import url('./partials/cards-flutuantes.css');
+@import url('./partials/modal-videos.css');
+
 
 @import url('../../global/elements.css');
 @import url('../../global/normalize.css');
+
+@import url('../../pages/ferramentas/partials/duvidas.css');
