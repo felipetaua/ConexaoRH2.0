@@ -318,7 +318,6 @@ function setupCuradoriaSearch() {
             window.location.href = li.getAttribute('data-url');
         }
     });
-    // Acessibilidade: enter/tecla
     suggestions.addEventListener('keydown', function(e) {
         if (e.key === 'Enter') {
             const li = document.activeElement;
@@ -327,7 +326,6 @@ function setupCuradoriaSearch() {
             }
         }
     });
-    // Fecha sugestões ao clicar fora
     document.addEventListener('click', function(e) {
         if (!input.contains(e.target) && !suggestions.contains(e.target)) {
             suggestions.classList.remove('active');
