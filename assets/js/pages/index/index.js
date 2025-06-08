@@ -77,3 +77,85 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+const videoCards = document.querySelectorAll('.card-list .card-item .card-link');
+const videoModal = document.getElementById('videoModal');
+const videoModalPlayer = document.getElementById('videoModalPlayer');
+const videoModalTitle = document.getElementById('videoModalTitle');
+const videoModalBadges = document.getElementById('videoModalBadges');
+const videoModalCreator = document.getElementById('videoModalCreator');
+const videoModalYoutube = document.getElementById('videoModalYoutube');
+const closeVideoModal = document.getElementById('closeVideoModal');
+
+const videoDetails = [
+    {
+        youtube: 'https://www.youtube.com/watch?v=F-mvgoG0lLc',
+        embed: 'https://www.youtube.com/embed/F-mvgoG0lLc?si=rTQ3DaPBmSdXyF3h',
+        title: 'Crédito do Trabalhador E-consignado - Econet',
+        badges: [
+            { text: 'Benefícios e Créditos', class: 'badge-designer' }
+        ],
+        creator: 'Econet'
+    },
+    {
+        youtube: 'https://www.youtube.com/watch?v=FxfaBy7Dj2s',
+        embed: 'https://www.youtube.com/embed/FxfaBy7Dj2s?si=JG_DqeBZ8ggMXKrL',
+        title: 'Hora Extra - Econet',
+        badges: [
+            { text: 'Rotinas Trabalhistas', class: 'badge-developer' }
+        ],
+        creator: 'Econet'
+    },
+    {
+        youtube: 'https://www.youtube.com/watch?v=LwS_Ex3Z-EA',
+        embed: 'https://www.youtube.com/embed/LwS_Ex3Z-EA?si=yaibWY6JH0rYOvtS',
+        title: 'Calculo do 13º Salário - Econet',
+        badges: [
+            { text: 'Direitos do Trabalhador', class: 'badge-marketer' }
+        ],
+        creator: 'Econet'
+    },
+    {
+        youtube: 'https://www.youtube.com/watch?v=rVGaWZb_yMY',
+        embed: 'https://www.youtube.com/embed/rVGaWZb_yMY?si=u8AbySUEVqOWQ8UL',
+        title: 'Prazos para Recontratação de Ex-Funcionário - Econet',
+        badges: [
+            { text: 'Recursos Humanos', class: 'badge-gamer' },
+            { text: 'Departamento Pessoal', class: 'badge-editor' }
+        ],
+        creator: 'Econet'
+    },
+    {
+        youtube: 'https://www.youtube.com/watch?v=GNfMBeLhldo',
+        embed: 'https://www.youtube.com/embed/GNfMBeLhldo?si=ENuvmvSFA__kwRjG',
+        title: 'Carnaval é Feriado? Direitos e deveres do trabalhador. - Econet',
+        badges: [
+            { text: 'Legislação', class: 'badge-editor' }
+        ],
+        creator: 'Econet'
+    }
+];
+
+videoCards.forEach((card, idx) => {
+    card.addEventListener('click', function(e) {
+        e.preventDefault();
+        const data = videoDetails[idx];
+        videoModalPlayer.innerHTML = `<iframe src="${data.embed}" frameborder="0" allowfullscreen loading="lazy" style="width:100%;height:100%;min-height:220px;border-radius:12px;"></iframe>`;
+        videoModalTitle.textContent = data.title;
+        videoModalBadges.innerHTML = data.badges.map(b => `<span class="badge ${b.class}">${b.text}</span>`).join('');
+        videoModalCreator.textContent = `Criador: ${data.creator}`;
+        videoModalYoutube.href = data.youtube;
+        videoModal.removeAttribute('hidden');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+closeVideoModal.addEventListener('click', closeModal);
+videoModal.addEventListener('click', function(e) {
+    if (e.target === videoModal) closeModal();
+});
+function closeModal() {
+    videoModal.setAttribute('hidden', '');
+    videoModalPlayer.innerHTML = '';
+    document.body.style.overflow = '';
+}
