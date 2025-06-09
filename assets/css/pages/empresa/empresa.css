@@ -4,3 +4,22 @@
 @import url(./partials/conteudo-principal.css);
 @import url(./partials/layout-principal.css);
 @import url(./partials/responsividade.css);
+
+@import url(../../global/normalize.css);
+@import url(../../global/variables.css);
+@import url(../../global/elements.css);
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-dark);
+    font-size: 16px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
