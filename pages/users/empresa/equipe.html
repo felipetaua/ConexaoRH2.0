@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Equipe - RecrutaPRO</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset e Variáveis de Cor (Mesma identidade visual) */
+        :root {
+            --primary-color: #6a5af9;
+            --primary-light: #f0eefc;
+            --background-color: #f8f8f8;
+            --white-color: #ffffff;
+            --text-dark: #1e1e1e;
+            --text-light: #7a7a7a;
+            --border-color: #e5e5e5;
+            --success-color: #22c55e;
+            --offline-color: #a0a0a0;
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--background-color); color: var(--text-dark); }
+        a { text-decoration: none; }
+
+        /* --- Layout Principal (Reutilizado) --- */
+        .dashboard-container { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+        .sidebar { background-color: var(--white-color); padding: 2rem 1.5rem; }
+        .main-content { padding: 2rem; overflow-y: auto; max-height: 100vh; }
+        
+        /* --- Barra Lateral (Sidebar - simplificada) --- */
+        .sidebar-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; }
+        .logo-icon { background-color: var(--primary-color); color: var(--white-color); padding: 0.5rem; border-radius: 8px; }
+        .logo-text { font-size: 1.5rem; font-weight: 700; }
+        .menu-item { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1rem; border-radius: 8px; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-light); }
+        .menu-item.active { background-color: var(--primary-color); color: var(--white-color); }
+        
+        /* --- Cabeçalho do Conteúdo --- */
+        .page-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .page-header h1 { font-size: 2rem; font-weight: 700; }
+        .page-actions { display: flex; align-items: center; gap: 1rem; }
+        
+        .search-bar { position: relative; }
+        .search-bar input {
+            padding: 0.8rem 1rem 0.8rem 2.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            min-width: 250px;
+            font-size: 1rem;
+        }
+        .search-bar svg { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-light); }
+        
+        .btn { padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background-color: var(--primary-color); color: var(--white-color); }
+
+        /* --- Grade de Membros da Equipe --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .member-card {
+            background-color: var(--white-color);
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            padding-bottom: 1.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(106, 90, 249, 0.1);
+        }
+
+        .card-header-bg {
+            background-color: var(--primary-light);
+            height: 100px;
+        }
+        
+        .member-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid var(--white-color);
+            margin: -50px auto 0; /* Puxa o avatar para cima */
+            position: relative;
+            z-index: 2;
+            object-fit: cover;
+        }
+        
+        .member-info { padding: 1rem; }
+        .member-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .status-dot.online { background-color: var(--success-color); }
+        .status-dot.offline { background-color: var(--offline-color); }
+
+        .member-role {
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .member-meta {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .member-meta span { display: flex; align-items: center; gap: 0.5rem; }
+        
+        .member-actions {
+            display: flex;
+            gap: 1rem;
+            padding: 0 1.5rem;
+        }
+        .member-actions .btn {
+            width: 100%;
+            justify-content: center;
+            padding: 0.75rem;
+        }
+        .btn-secondary { background-color: var(--primary-light); color: var(--primary-color); }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .dashboard-container { grid-template-columns: 1fr; }
+            .sidebar { position: fixed; left: 0; top: 0; bottom: 0; z-index: 1000; transform: translateX(-100%); }
+            .main-content { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar" id="sidebar">
+             <div class="sidebar-header">
+                <div class="logo-icon">
+                    <svg fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                </div>
+                <h1 class="logo-text">RecrutaPRO</h1>
+            </div>
+            <ul>
+                <li class="menu-item"><span>Dashboard</span></li>
+                <li class="menu-item"><span>Vagas</span></li>
+                <li class="menu-item active"><span>Equipe</span></li>
+                 <li class="menu-item"><span>Agenda</span></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="page-header">
+                <div>
+                    <h1>Nossa Equipe</h1>
+                    <p>Gerencie os membros da sua organização.</p>
+                </div>
+                <div class="page-actions">
+                    <div class="search-bar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+                        <input type="text" placeholder="Buscar membro...">
+                    </div>
+                    <button class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        <span>Adicionar Membro</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="team-grid">
+                <div class="member-card">
+                    <div class="card-header-bg"></div>
+                    <img src="https://i.pravatar.cc/150?img=68" alt="Foto de Ana Oliveira" class="member-avatar">
+                    <div class="member-info">
+                        <h3 class="member-name">Ana Oliveira <span class="status-dot online"></span></h3>
+                        <p class="member-role">Gerente de RH</p>
+                        <div class="member-meta">
+                            <span><svg fill="currentColor" width="16" height="16" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg> ana.o@email.com</span>
+                        </div>
+                    </div>
+                    <div class="member-actions">
+                        <button class="btn btn-secondary">Ver Perfil</button>
+                        <button class="btn btn-primary">Mensagem</button>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <div class="card-header-bg"></div>
+                    <img src="https://i.pravatar.cc/150?img=33" alt="Foto de Bruno Santos" class="member-avatar">
+                    <div class="member-info">
+                        <h3 class="member-name">Bruno Santos <span class="status-dot online"></span></h3>
+                        <p class="member-role">Recrutador Sênior</p>
+                         <div class="member-meta">
+                            <span><svg fill="currentColor" width="16" height="16" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg> bruno.s@email.com</span>
+                        </div>
+                    </div>
+                    <div class="member-actions">
+                        <button class="btn btn-secondary">Ver Perfil</button>
+                        <button class="btn btn-primary">Mensagem</button>
+                    </div>
+                </div>
+                <div class="member-card">
+                    <div class="card-header-bg"></div>
+                    <img src="https://i.pravatar.cc/150?img=25" alt="Foto de Carla Costa" class="member-avatar">
+                    <div class="member-info">
+                        <h3 class="member-name">Carla Costa <span class="status-dot offline"></span></h3>
+                        <p class="member-role">Analista de Recrutamento</p>
+                         <div class="member-meta">
+                            <span><svg fill="currentColor" width="16" height="16" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg> carla.c@email.com</span>
+                        </div>
+                    </div>
+                     <div class="member-actions">
+                        <button class="btn btn-secondary">Ver Perfil</button>
+                        <button class="btn btn-primary">Mensagem</button>
+                    </div>
+                </div>
+                 <div class="member-card">
+                    <div class="card-header-bg"></div>
+                    <img src="https://i.pravatar.cc/150?img=15" alt="Foto de Daniel Ferreira" class="member-avatar">
+                    <div class="member-info">
+                        <h3 class="member-name">Daniel Ferreira <span class="status-dot online"></span></h3>
+                        <p class="member-role">Gerente de Contratação (TI)</p>
+                         <div class="member-meta">
+                            <span><svg fill="currentColor" width="16" height="16" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg> daniel.f@email.com</span>
+                        </div>
+                    </div>
+                    <div class="member-actions">
+                        <button class="btn btn-secondary">Ver Perfil</button>
+                        <button class="btn btn-primary">Mensagem</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+<script>
+    // O JavaScript existente para o menu móvel da sidebar pode ser adicionado aqui, se necessário.
+    // Para esta tela estática, nenhum JavaScript adicional é essencial.
+</script>
+</body>
+</html>
