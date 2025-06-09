@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Controle de RH</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        /* CSS Reset e Variáveis de Cor */
+        :root {
+            --primary-color: #6a5af9;
+            --primary-light: #f0eefc;
+            --secondary-color: #f7b14a;
+            --background-color: #f8f8f8;
+            --white-color: #ffffff;
+            --text-dark: #1e1e1e;
+            --text-light: #7a7a7a;
+            --border-color: #e5e5e5;
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-dark);
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* --- Layout Principal --- */
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background-color: var(--white-color);
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .main-content {
+            padding: 2rem;
+            overflow-y: auto;
+            max-height: 100vh;
+        }
+        
+        /* Layout com 3 colunas para o conteúdo principal */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 2rem;
+        }
+
+        /* --- Barra Lateral Esquerda (Sidebar) --- */
+        .sidebar-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo-icon {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            padding: 0.5rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .sidebar-menu h3 {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.9rem 1rem;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-light);
+            transition: all 0.2s ease;
+        }
+
+        .menu-item:hover, .menu-item.active {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+
+        .menu-item svg {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .sidebar-footer {
+            margin-top: auto;
+        }
+
+        /* --- Conteúdo Principal --- */
+        .main-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .search-bar {
+            position: relative;
+            flex-grow: 1;
+            max-width: 500px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 0.9rem 1rem 0.9rem 2.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            background-color: var(--white-color);
+            font-size: 1rem;
+        }
+
+        .search-bar input::placeholder {
+            color: var(--text-light);
+        }
+        
+        .search-bar svg {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            width: 20px;
+            height: 20px;
+        }
+        
+        .header-profile {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-left: 2rem;
+        }
+
+        .notification-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        .user-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* --- Componentes --- */
+        .card {
+            background-color: var(--white-color);
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .main-banner {
+            background: linear-gradient(90deg, #6a5af9, #8c7eff);
+            color: var(--white-color);
+            padding: 2.5rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .main-banner-sparkle {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            font-size: 10rem;
+            color: rgba(255, 255, 255, 0.2);
+            transform: rotate(15deg);
+        }
+        .main-banner h2 {
+            font-size: 2rem;
+            max-width: 60%;
+        }
+        .join-now-btn {
+            background-color: var(--white-color);
+            color: var(--primary-color);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            transition: transform 0.2s ease;
+        }
+        .join-now-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .stats-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .stat-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .stat-icon {
+            padding: 1rem;
+            border-radius: 12px;
+            display: flex;
+        }
+        .stat-icon.purple { background-color: #f0eefc; color: #6a5af9; }
+        .stat-icon.red { background-color: #ffe4e4; color: #f95a5a; }
+        .stat-icon.blue { background-color: #e3f2fd; color: #3b82f6; }
+        .stat-card-info h4 { font-size: 1rem; }
+        .stat-card-info p { font-size: 0.8rem; color: var(--text-light); }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 2rem 0 1.5rem 0;
+        }
+        .section-header h2 { font-size: 1.5rem; }
+        .section-header a { color: var(--primary-color); font-weight: 500; }
+
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .job-card {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+        .job-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .job-card-content {
+            padding: 1rem;
+        }
+        .job-tag {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        .job-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+        .job-manager {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .job-manager img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .job-manager span {
+            font-size: 0.8rem;
+            color: var(--text-light);
+        }
+        .job-manager span b {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .pipeline-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .pipeline-table th, .pipeline-table td {
+            padding: 1rem 0;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+        .pipeline-table th {
+            color: var(--text-light);
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+        .pipeline-table td {
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+        .candidate-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .candidate-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .status-tag {
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-align: center;
+        }
+        .status-triagem { background-color: #fffbeb; color: #f59e0b; }
+        .status-entrevista { background-color: #e0f2fe; color: #0ea5e9; }
+        .status-oferta { background-color: #dcfce7; color: #22c55e; }
+        .action-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.2s ease;
+        }
+        .action-btn:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* --- Barra Lateral Direita (Stats) --- */
+        .stats-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .welcome-card { text-align: center; }
+        .welcome-card img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            border: 4px solid var(--primary-color);
+        }
+        .welcome-card h3 { font-size: 1.25rem; }
+        .welcome-card p { font-size: 0.9rem; color: var(--text-light); margin-top: 0.25rem; }
+        
+        #statsChart {
+            max-height: 200px;
+            margin-top: 1rem;
+        }
+        
+        .recruiter-list .recruiter-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        .recruiter-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .recruiter-info img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .recruiter-info p { font-size: 0.8rem; color: var(--text-light); }
+        .follow-btn {
+            background: none;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .follow-btn:hover {
+            background-color: var(--primary-color);
+            color: var(--white-color);
+        }
+        .see-all-btn {
+            width: 100%;
+            padding: 0.9rem;
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        /* --- Responsividade --- */
+        .mobile-menu-btn {
+            display: none;
+        }
+        
+        @media (max-width: 1200px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-sidebar {
+                grid-row: 1;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: fixed;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                z-index: 1000;
+                transform: translateX(-100%);
+                box-shadow: 10px 0 20px rgba(0,0,0,0.1);
+            }
+            .sidebar.show {
+                transform: translateX(0);
+            }
+            .main-header {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .search-bar {
+                order: 2;
+                max-width: none;
+                flex-basis: 100%;
+            }
+            .header-profile {
+                order: 1;
+                margin-left: auto;
+            }
+            .mobile-menu-btn {
+                display: block;
+                order: 0;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+            .main-banner h2 { max-width: 100%; font-size: 1.5rem; }
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1rem;
+            }
+            .content-grid {
+                gap: 1rem;
+            }
+            .main-banner { padding: 1.5rem; }
+            .section-header h2 { font-size: 1.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                </div>
+                <h1 class="logo-text">RecrutaPRO</h1>
+            </div>
+
+            <nav class="sidebar-menu">
+                <h3>Menu Principal</h3>
+                <ul>
+                    <li><a href="#" class="menu-item active">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <span>Dashboard</span>
+                    </a></li>
+                    <li><a href="#" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
+                        <span>Vagas</span>
+                    </a></li>
+                    <li><a href="#" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2-2H6l-4 4V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5Z"></path><path d="M18 9h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2"></path><path d="m7 15-1 1 1 1"></path><path d="M10 15h4"></path></svg>
+                        <span>Candidatos</span>
+                    </a></li>
+                    <li><a href="#" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                        <span>Entrevistas</span>
+                    </a></li>
+                    <li><a href="#" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <span>Equipe</span>
+                    </a></li>
+                </ul>
+
+                <h3>Recrutadores</h3>
+                <ul>
+                    <li><a href="#" class="menu-item">
+                        <img src="https://i.pravatar.cc/150?img=11" alt="Recrutador" style="width: 24px; height: 24px; border-radius: 50%;">
+                        <span>Bagas Mahpie</span>
+                    </a></li>
+                     <li><a href="#" class="menu-item">
+                        <img src="https://i.pravatar.cc/150?img=12" alt="Recrutador" style="width: 24px; height: 24px; border-radius: 50%;">
+                        <span>Sir Dandy</span>
+                    </a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                 <a href="#" class="menu-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-4.44a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.38M18 14v-4h-4M14 2v4h4"></path></svg>
+                    <span>Configurações</span>
+                </a>
+                 <a href="#" class="menu-item" style="color: #f95a5a;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span>Sair</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+                <div class="search-bar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+                    <input type="text" placeholder="Buscar vagas ou candidatos...">
+                </div>
+                <div class="header-profile">
+                    <button class="notification-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    </button>
+                    <div class="user-info">
+                        <img src="https://i.pravatar.cc/150?img=68" alt="Jason Ranti">
+                        <span>Jason Ranti</span>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="content-grid">
+                <div class="main-column">
+                    <section class="main-banner">
+                        <span class="main-banner-sparkle">✦</span>
+                        <h2>Otimize seu Processo Seletivo com Nossa Plataforma</h2>
+                        <button class="join-now-btn">
+                            <span>Criar Nova Vaga</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </button>
+                    </section>
+
+                    <section class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-icon purple"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg></div>
+                            <div class="stat-card-info">
+                                <h4>Vagas Abertas</h4>
+                                <p>12 vagas ativas</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon red"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+                            <div class="stat-card-info">
+                                <h4>Novos Candidatos</h4>
+                                <p>38 na última semana</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon blue"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M3 6h.01"></path><path d="M3 12h.01"></path><path d="M3 18h.01"></path></svg></div>
+                            <div class="stat-card-info">
+                                <h4>Entrevistas Agendadas</h4>
+                                <p>6 para hoje</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="featured-jobs">
+                        <div class="section-header">
+                            <h2>Vagas em Destaque</h2>
+                            <a href="#">Ver todas</a>
+                        </div>
+                        <div class="jobs-grid">
+                            <div class="job-card">
+                                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" alt="Job Image">
+                                <div class="job-card-content">
+                                    <span class="job-tag">Front-End</span>
+                                    <h4>Guia para se Tornar um Desenvolvedor Front-End</h4>
+                                    <div class="job-manager">
+                                        <img src="https://i.pravatar.cc/150?img=33" alt="Manager">
+                                        <span>Gerente: <b>Leonardo Samuel</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="job-card">
+                                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop" alt="Job Image">
+                                <div class="job-card-content">
+                                    <span class="job-tag">UI/UX Design</span>
+                                    <h4>Otimizando a Experiência do Usuário com Design</h4>
+                                     <div class="job-manager">
+                                        <img src="https://i.pravatar.cc/150?img=35" alt="Manager">
+                                        <span>Gerente: <b>Beyo Salto</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="job-card">
+                                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Job Image">
+                                <div class="job-card-content">
+                                    <span class="job-tag">Marketing</span>
+                                    <h4>Estratégias para Imagem Corporativa</h4>
+                                    <div class="job-manager">
+                                        <img src="https://i.pravatar.cc/150?img=40" alt="Manager">
+                                        <span>Gerente: <b>Padhang Satrio</b></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section class="hiring-pipeline">
+                        <div class="section-header">
+                            <h2>Pipeline de Contratação</h2>
+                            <a href="#">Ver todos</a>
+                        </div>
+                        <div class="pipeline-table card">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Candidato</th>
+                                        <th>Vaga</th>
+                                        <th>Status</th>
+                                        <th>Ação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="candidate-info">
+                                                <img src="https://i.pravatar.cc/150?img=5" alt="Candidate">
+                                                <div>
+                                                    <strong>Padhang Satrio</strong>
+                                                    <p style="color: var(--text-light); font-size: 0.8rem">Aplicou em 22/08/2024</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>UI/UX Design</td>
+                                        <td><span class="status-tag status-entrevista">Entrevista</span></td>
+                                        <td>
+                                            <button class="action-btn">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="candidate-info">
+                                                <img src="https://i.pravatar.cc/150?img=8" alt="Candidate">
+                                                <div>
+                                                    <strong>Ana Clara</strong>
+                                                    <p style="color: var(--text-light); font-size: 0.8rem">Aplicou em 21/08/2024</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Desenvolvedor(a)</td>
+                                        <td><span class="status-tag status-triagem">Triagem</span></td>
+                                        <td>
+                                            <button class="action-btn">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+                
+                <aside class="stats-sidebar">
+                    <div class="card welcome-card">
+                        <h3>Estatísticas</h3>
+                        <img src="https://i.pravatar.cc/150?img=68" alt="Jason Ranti">
+                        <h3>Bom dia, Jason!</h3>
+                        <p>Continue seu ótimo trabalho de recrutamento.</p>
+                        <canvas id="statsChart"></canvas>
+                    </div>
+
+                    <div class="card recruiter-list">
+                        <div class="section-header" style="margin: 0 0 1.5rem 0;">
+                            <h2>Gerentes Contratando</h2>
+                        </div>
+                        <div class="recruiter-item">
+                            <div class="recruiter-info">
+                                <img src="https://i.pravatar.cc/150?img=40" alt="Recruiter">
+                                <div>
+                                    <strong>Padhang Satrio</strong>
+                                    <p>Marketing</p>
+                                </div>
+                            </div>
+                            <button class="follow-btn">Seguir</button>
+                        </div>
+                         <div class="recruiter-item">
+                            <div class="recruiter-info">
+                                <img src="https://i.pravatar.cc/150?img=45" alt="Recruiter">
+                                <div>
+                                    <strong>Zaki Horizontal</strong>
+                                    <p>Tecnologia</p>
+                                </div>
+                            </div>
+                            <button class="follow-btn">Seguir</button>
+                        </div>
+                         <div class="recruiter-item">
+                            <div class="recruiter-info">
+                                <img src="https://i.pravatar.cc/150?img=33" alt="Recruiter">
+                                <div>
+                                    <strong>Leonardo Samuel</strong>
+                                    <p>Design</p>
+                                </div>
+                            </div>
+                            <button class="follow-btn">Seguir</button>
+                        </div>
+                        <button class="see-all-btn">Ver Todos</button>
+                    </div>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+<script>
+    // --- Lógica para o Menu Móvel ---
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const sidebar = document.getElementById('sidebar');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('show');
+    });
+    
+    // Fechar o menu se clicar fora dele (em modo mobile)
+    document.addEventListener('click', (event) => {
+        const isClickInsideSidebar = sidebar.contains(event.target);
+        const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
+        if (!isClickInsideSidebar && !isClickOnMenuBtn && sidebar.classList.contains('show')) {
+            sidebar.classList.remove('show');
+        }
+    });
+
+
+    // --- Lógica para o Gráfico (Chart.js) ---
+    const ctx = document.getElementById('statsChart').getContext('2d');
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4'],
+            datasets: [{
+                label: 'Novos Candidatos',
+                data: [20, 35, 45, 30],
+                backgroundColor: [
+                    '#dcd8fd',
+                    '#dcd8fd',
+                    '#6a5af9', // Cor primária para a barra de maior valor
+                    '#dcd8fd',
+                ],
+                borderRadius: 8,
+                borderSkipped: false,
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        display: false
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        font: {
+                            family: "'Poppins', sans-serif",
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+</script>
+</body>
+</html>
