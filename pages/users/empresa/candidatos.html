@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidatos da Vaga - RecrutaPRO</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset e Variáveis de Cor (Mesma identidade visual) */
+        :root {
+            --primary-color: #6a5af9;
+            --primary-light: #f0eefc;
+            --background-color: #f8f8f8;
+            --white-color: #ffffff;
+            --text-dark: #1e1e1e;
+            --text-light: #7a7a7a;
+            --border-color: #e5e5e5;
+            --success-color: #22c55e;
+            --warning-color: #f59e0b;
+            --info-color: #3b82f6;
+            --tag-new-bg: #e0f2fe;
+            --tag-new-text: #0ea5e9;
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--background-color); color: var(--text-dark); }
+        
+        /* --- Layout Principal (Reutilizado) --- */
+        .dashboard-container { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+        .sidebar { background-color: var(--white-color); padding: 2rem 1.5rem; }
+        .main-content { padding: 2rem; overflow-y: auto; max-height: 100vh; }
+        
+        /* --- Barra Lateral (Sidebar - simplificada) --- */
+        .sidebar-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; }
+        .logo-icon { background-color: var(--primary-color); color: var(--white-color); padding: 0.5rem; border-radius: 8px; display: flex; }
+        .logo-text { font-size: 1.5rem; font-weight: 700; }
+        .menu-item { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1rem; border-radius: 8px; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-light); transition: all 0.2s ease; }
+        .menu-item:hover, .menu-item.active { background-color: var(--primary-color); color: var(--white-color); }
+        
+        /* --- Conteúdo da Página "Candidatos" --- */
+        .pipeline-view {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 2rem;
+        }
+
+        .page-header {
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;
+        }
+        .page-header h1 { font-size: 1.75rem; font-weight: 700; }
+        .page-header .actions { display: flex; gap: 1rem; }
+        .btn { padding: 0.7rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background-color: var(--primary-color); color: var(--white-color); }
+        .btn-secondary { background-color: var(--white-color); color: var(--text-dark); border: 1px solid var(--border-color); }
+
+        .applicant-list {
+            background-color: var(--white-color);
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+        }
+
+        .list-header, .applicant-row {
+            display: grid;
+            grid-template-columns: 50px 2fr 1.5fr 2fr 1.5fr 1fr;
+            gap: 1rem;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .list-header { font-weight: 600; color: var(--text-light); font-size: 0.9rem; text-transform: uppercase; }
+        .applicant-row:last-child { border-bottom: none; }
+        .applicant-row:hover { background-color: #f9f8ff; }
+
+        .applicant-info { display: flex; align-items: center; gap: 1rem; }
+        .applicant-info img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+        .applicant-info .name { font-weight: 600; }
+        .tag-new { background-color: var(--tag-new-bg); color: var(--tag-new-text); font-size: 0.75rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 12px; margin-left: 0.5rem; }
+
+        /* Progress Stepper */
+        .progress-stepper { display: flex; align-items: center; gap: 4px; }
+        .progress-stepper .step {
+            width: 100%; height: 6px; background-color: var(--border-color); border-radius: 3px;
+        }
+        .progress-stepper .step.completed { background-color: var(--primary-color); }
+
+        /* Star Rating */
+        .star-rating { display: flex; gap: 2px; }
+        .star-rating svg { width: 20px; height: 20px; color: var(--warning-color); }
+        .star-rating svg.empty { color: var(--border-color); }
+
+        .btn-cv {
+            background-color: var(--primary-light); color: var(--primary-color); font-size: 0.9rem; padding: 0.5rem 1rem;
+        }
+
+        .list-footer { padding: 1rem 1.5rem; color: var(--text-light); font-size: 0.9rem; }
+        
+        /* Painel Lateral (Pipeline Flyout) */
+        .pipeline-flyout {
+            background-color: var(--white-color);
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            align-self: start; /* Impede que estique */
+        }
+        .flyout-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+        .flyout-header h2 { font-size: 1.25rem; }
+        .flyout-header .total-badge { background-color: var(--primary-light); color: var(--primary-color); font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 8px; }
+
+        .pipeline-stage { margin-bottom: 1.5rem; }
+        .stage-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+        .stage-header h3 { font-size: 1rem; font-weight: 600; }
+        .stage-header .count { color: var(--text-light); font-weight: 500; }
+        
+        .stage-candidate { display: flex; align-items: center; gap: 1rem; padding: 0.75rem; border-radius: 8px; }
+        .stage-candidate:hover { background-color: #f9f8ff; }
+        .stage-candidate img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
+        .stage-candidate .info .name { font-weight: 500; }
+        .stage-candidate .info .rating { font-size: 0.8rem; color: var(--text-light); }
+
+        /* Responsividade */
+        @media (max-width: 1400px) {
+            .list-header, .applicant-row { grid-template-columns: 50px 2fr 1fr 1.5fr 1fr 1fr; }
+        }
+        @media (max-width: 1200px) {
+            .pipeline-view { grid-template-columns: 1fr; }
+            .pipeline-flyout { margin-top: 2rem; }
+        }
+        @media (max-width: 992px) {
+            .dashboard-container { grid-template-columns: 1fr; }
+            .sidebar { position: fixed; left: 0; top: 0; bottom: 0; z-index: 1000; transform: translateX(-100%); }
+            .list-header { display: none; }
+            .applicant-row {
+                grid-template-columns: 1fr 1fr;
+                border: 1px solid var(--border-color);
+                border-radius: 12px;
+                margin-bottom: 1rem;
+                padding: 1rem;
+            }
+            .applicant-row > div { grid-column: span 2; }
+            .applicant-row .applicant-info { grid-column: span 2; }
+            .applicant-row .progress-col { grid-column: 1 / 2; }
+            .applicant-row .rating-col { grid-column: 2 / 3; text-align: right; }
+            .applicant-row .actions-col { grid-column: span 2; margin-top: 1rem; }
+            .applicant-list { background: none; box-shadow: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                </div>
+                <h1 class="logo-text">RecrutaPRO</h1>
+            </div>
+
+            <nav class="sidebar-menu">
+                <h3>Menu Principal</h3>
+                <ul>
+                    <li><a href="./empresa.html" class="menu-item ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <span>Dashboard</span>
+                    </a></li>
+                    <li><a href="./vagas.html" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
+                        <span>Vagas</span>
+                    </a></li>
+                    <li><a href="./candidatos.html" class="menu-item active">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2-2H6l-4 4V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5Z"></path><path d="M18 9h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2"></path><path d="m7 15-1 1 1 1"></path><path d="M10 15h4"></path></svg>
+                        <span>Candidatos</span>
+                    </a></li>
+                    <li><a href="./entrevistas.html" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                        <span>Entrevistas</span>
+                    </a></li>
+                    <li><a href="./equipe.html" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <span>Equipe</span>
+                    </a></li>
+                    <li><a href="./organizacao.html" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <span>Organização</span>
+                    </a></li>
+                </ul>
+
+                <h3>Recrutadores</h3>
+                <ul>
+                    <li><a href="#" class="menu-item">
+                        <img src="https://i.pravatar.cc/150?img=11" alt="Recrutador" style="width: 24px; height: 24px; border-radius: 50%;">
+                        <span>Bagas Mahpie</span>
+                    </a></li>
+                     <li><a href="#" class="menu-item">
+                        <img src="https://i.pravatar.cc/150?img=12" alt="Recrutador" style="width: 24px; height: 24px; border-radius: 50%;">
+                        <span>Sir Dandy</span>
+                    </a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                 <a href="./configuracoes.html" class="menu-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-4.44a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.38M18 14v-4h-4M14 2v4h4"></path></svg>
+                    <span>Configurações</span>
+                </a>
+                 <a href="#" class="menu-item" style="color: #f95a5a;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span>Sair</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="pipeline-view">
+                <div class="applicant-list-wrapper">
+                    <div class="page-header">
+                        <h1>Candidatos: UI/UX Designer Sênior</h1>
+                        <div class="actions">
+                             <button class="btn btn-secondary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                                 Filtros
+                            </button>
+                            <button class="btn btn-primary">+ Adicionar Candidato</button>
+                        </div>
+                    </div>
+                    
+                    <div class="applicant-list">
+                        <header class="list-header">
+                            <div><input type="checkbox"></div>
+                            <div>Candidato</div>
+                            <div>Aplicação</div>
+                            <div>Progresso</div>
+                            <div>Avaliação</div>
+                            <div>Ações</div>
+                        </header>
+                        
+                        <div class="applicant-row">
+                            <div><input type="checkbox"></div>
+                            <div class="applicant-info">
+                                <img src="https://i.pravatar.cc/150?img=1" alt="Kay Tottleben">
+                                <div>
+                                    <span class="name">Kay Tottleben</span>
+                                    <span class="tag-new">Novo</span>
+                                </div>
+                            </div>
+                            <div>09/06/2025</div>
+                            <div class="progress-col">
+                                <div class="progress-stepper">
+                                    <div class="step completed"></div><div class="step"></div><div class="step"></div><div class="step"></div>
+                                </div>
+                            </div>
+                            <div class="rating-col">
+                                <div class="star-rating">
+                                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                    <svg class="empty" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                    <svg class="empty" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                </div>
+                            </div>
+                             <div class="actions-col"><button class="btn btn-cv">Ver Currículo</button></div>
+                        </div>
+                        
+                        <div class="applicant-row">
+                            <div><input type="checkbox"></div>
+                            <div class="applicant-info">
+                                <img src="https://i.pravatar.cc/150?img=5" alt="Yogarasa Gandhi">
+                                <div><span class="name">Yogarasa Gandhi</span></div>
+                            </div>
+                            <div>01/06/2025</div>
+                             <div class="progress-col">
+                                <div class="progress-stepper">
+                                    <div class="step completed"></div><div class="step completed"></div><div class="step"></div><div class="step"></div>
+                                </div>
+                            </div>
+                            <div class="rating-col">
+                                <div class="star-rating">
+                                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                    <svg fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                    <svg class="empty" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                </div>
+                            </div>
+                             <div class="actions-col"><button class="btn btn-cv">Ver Currículo</button></div>
+                        </div>
+
+                    </div>
+                    <footer class="list-footer">Mostrando 2 de 247 candidatos</footer>
+                </div>
+
+                <aside class="pipeline-flyout">
+                    <div class="flyout-header">
+                        <h2>Pipeline da Vaga</h2>
+                        <span class="total-badge">7 Total</span>
+                    </div>
+                    
+                    <div class="pipeline-stage">
+                        <div class="stage-header"><h3>Triagem</h3> <span class="count">2</span></div>
+                        </div>
+
+                    <div class="pipeline-stage">
+                        <div class="stage-header"><h3>Entrevista</h3> <span class="count">1</span></div>
+                        <div class="stage-candidate">
+                            <img src="https://i.pravatar.cc/150?img=11" alt="Davina Olkowicz">
+                            <div class="info">
+                                <div class="name">Davina Olkowicz</div>
+                                <div class="rating">4.0 ★</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pipeline-stage">
+                        <div class="stage-header"><h3>Rejeitados</h3> <span class="count">4</span></div>
+                         </div>
+
+                </aside>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

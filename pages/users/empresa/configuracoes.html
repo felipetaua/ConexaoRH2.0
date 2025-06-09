@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações - RecrutaPRO</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset e Variáveis de Cor (Mesma identidade visual) */
+        :root {
+            --primary-color: #6a5af9;
+            --primary-light: #f0eefc;
+            --background-color: #f8f8f8;
+            --white-color: #ffffff;
+            --text-dark: #1e1e1e;
+            --text-light: #7a7a7a;
+            --border-color: #e5e5e5;
+            --success-color: #22c55e;
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--background-color); color: var(--text-dark); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- Layout Principal (Reutilizado) --- */
+        .dashboard-container { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+        .sidebar { background-color: var(--white-color); padding: 2rem 1.5rem; }
+        .main-content { padding: 2rem; overflow-y: auto; max-height: 100vh; }
+        
+        /* --- Barra Lateral (Sidebar - simplificada) --- */
+        .sidebar-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; }
+        .logo-icon { background-color: var(--primary-color); color: var(--white-color); padding: 0.5rem; border-radius: 8px; }
+        .logo-text { font-size: 1.5rem; font-weight: 700; }
+        .menu-item { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1rem; border-radius: 8px; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-light); }
+        .menu-item.active { background-color: var(--primary-color); color: var(--white-color); }
+        
+        /* --- Conteúdo da Página "Configurações" --- */
+        .page-header { margin-bottom: 2rem; }
+        .page-header h1 { font-size: 2rem; font-weight: 700; }
+
+        .settings-layout {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .settings-nav ul { display: flex; flex-direction: column; gap: 0.5rem; }
+        .settings-nav a {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.9rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 500;
+            color: var(--text-light);
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .settings-nav a:hover { background-color: var(--primary-light); color: var(--primary-color); }
+        .settings-nav a.active {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .settings-pane { display: none; }
+        .settings-pane.active { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .settings-card {
+            background-color: var(--white-color);
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+        }
+        .card-header { padding: 1.5rem; border-bottom: 1px solid var(--border-color); }
+        .card-header h2 { font-size: 1.25rem; }
+        .card-header p { font-size: 0.9rem; color: var(--text-light); }
+        
+        .card-body { padding: 1.5rem; }
+        .card-footer { padding: 1.5rem; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end; }
+        
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .form-group { display: flex; flex-direction: column; }
+        .form-group.full-width { grid-column: 1 / -1; }
+        .form-group label { font-size: 0.9rem; font-weight: 500; margin-bottom: 0.5rem; }
+        .form-group input { width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; }
+        
+        /* Componente de Upload de Avatar */
+        .avatar-upload { display: flex; align-items: center; gap: 1.5rem; }
+        .avatar-upload img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
+        .btn { padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s ease; }
+        .btn-primary { background-color: var(--primary-color); color: var(--white-color); }
+        .btn-secondary { background-color: var(--white-color); color: var(--text-dark); border: 1px solid var(--border-color); }
+        
+        /* Componente de Toggle Switch */
+        .notification-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border-color); }
+        .notification-item:last-child { border-bottom: none; }
+        .toggle-switch input { display: none; }
+        .toggle-switch label {
+            width: 50px; height: 28px; background-color: #ccc; border-radius: 14px; display: inline-block; position: relative; cursor: pointer; transition: background-color 0.2s;
+        }
+        .toggle-switch label::after {
+            content: ''; position: absolute; width: 22px; height: 22px; background-color: white; border-radius: 50%; top: 3px; left: 3px; transition: transform 0.2s ease;
+        }
+        .toggle-switch input:checked + label { background-color: var(--success-color); }
+        .toggle-switch input:checked + label::after { transform: translateX(22px); }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .dashboard-container { grid-template-columns: 1fr; }
+            .sidebar { position: fixed; left: 0; top: 0; bottom: 0; z-index: 1000; transform: translateX(-100%); }
+            .settings-layout { grid-template-columns: 1fr; }
+            .settings-nav ul { flex-direction: row; overflow-x: auto; }
+            .main-content { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                </div>
+                <h1 class="logo-text">RecrutaPRO</h1>
+            </div>
+
+            <nav class="sidebar-menu">
+                <h3>Menu Principal</h3>
+                <ul>
+                    <li><a href="./empresa.html" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <span>Dashboard</span>
+                    </a></li>
+                    
+                    <li class="menu-item-collapsible">
+                        <div class="menu-item menu-item-trigger" id="vagas-trigger">
+                            <div class="menu-main-link">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
+                                <span>Vagas</span>
+                            </div>
+                            <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                        </div>
+                        <ul class="submenu">
+                            <li><a href="#" class="submenu-item">Vagas Ativas</a></li>
+                            <li><a href="#" class="submenu-item">Arquivadas</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a href="./candidatos.html" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2-2H6l-4 4V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5Z"></path><path d="M18 9h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2"></path><path d="m7 15-1 1 1 1"></path><path d="M10 15h4"></path></svg>
+                        <span>Candidatos</span>
+                    </a></li>
+                    <li><a href="./entrevistas.html" class="menu-item ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                        <span>Entrevistas</span>
+                    </a></li>
+                    <li><a href="./equipe.html" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <span>Equipe</span>
+                    </a></li>
+                    <li><a href="./organizacao.html" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <span>Organização</span>
+                    </a></li>
+                </ul>
+
+                <h3>Recrutadores</h3>
+                <ul>
+                    <li><a href="#" class="menu-item">
+                        <img src="https://i.pravatar.cc/150?img=11" alt="Recrutador" style="width: 24px; height: 24px; border-radius: 50%;">
+                        <span>Bagas Mahpie</span>
+                    </a></li>
+                    <li><a href="#" class="menu-item">
+                        <img src="https://i.pravatar.cc/150?img=12" alt="Recrutador" style="width: 24px; height: 24px; border-radius: 50%;">
+                        <span>Sir Dandy</span>
+                    </a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="./configuracoes.html" class="menu-item active">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-4.44a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.38M18 14v-4h-4M14 2v4h4"></path></svg>
+                    <span>Configurações</span>
+                </a>
+                <a href="#" class="menu-item" style="color: #f95a5a;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span>Sair</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Configurações</h1>
+            </header>
+
+            <div class="settings-layout">
+                <nav class="settings-nav">
+                    <ul>
+                        <li><a href="#perfil" class="active" data-target="perfil">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/></svg>
+                            Meu Perfil
+                        </a></li>
+                        <li><a href="#empresa" data-target="empresa">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8.277.084a.5.5 0 0 0-.554 0l-7.5 5A.5.5 0 0 0 .5 6h1.875v7H1.5a.5.5 0 0 0 0 1h13a.5.5 0 0 0 0-1h-.875V6H15.5a.5.5 0 0 0 .277-.916l-7.5-5zM12.375 6v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zM8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM.5 15a.5.5 0 0 0 0 1h15a.5.5 0 0 0 0-1H.5z"/></svg>
+                            Empresa
+                        </a></li>
+                        <li><a href="#notificacoes" data-target="notificacoes">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/></svg>
+                            Notificações
+                        </a></li>
+                        <li><a href="#plano" data-target="plano">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg>
+                            Plano e Faturamento
+                        </a></li>
+                    </ul>
+                </nav>
+
+                <div class="settings-content">
+                    <section id="perfil" class="settings-pane active">
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <h2>Meu Perfil</h2>
+                                <p>Gerencie as informações da sua conta pessoal e senha.</p>
+                            </div>
+                            <div class="card-body">
+                                <div class="avatar-upload">
+                                    <img src="https://i.pravatar.cc/150?img=68" alt="Seu Avatar">
+                                    <div>
+                                        <button class="btn btn-secondary">Alterar Foto</button>
+                                        <p style="font-size: 0.8rem; color: var(--text-light); margin-top: 0.5rem;">JPG, GIF ou PNG. Tamanho máx. de 800K</p>
+                                    </div>
+                                </div>
+                                <hr style="border: none; border-top: 1px solid var(--border-color); margin: 1.5rem 0;">
+                                <form class="form-grid">
+                                    <div class="form-group"><label for="name">Nome Completo</label><input type="text" id="name" value="Jason Ranti" disabled></div>
+                                    <div class="form-group"><label for="email">E-mail</label><input type="email" id="email" value="jason.ranti@recrutapro.com" disabled></div>
+                                    <div class="form-group"><label for="password">Nova Senha</label><input type="password" id="password"></div>
+                                    <div class="form-group"><label for="confirmPassword">Confirmar Senha</label><input type="password" id="confirmPassword"></div>
+                                </form>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary">Salvar Alterações</button>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section id="empresa" class="settings-pane">
+                         <div class="settings-card">
+                            <div class="card-header"><h2>Perfil da Empresa</h2><p>Estas informações serão exibidas publicamente nas suas vagas.</p></div>
+                             <div class="card-body">
+                                <form class="form-grid">
+                                    <div class="form-group full-width"><label for="companyName">Nome da Empresa</label><input type="text" id="companyName" value="RecrutaPRO Inc."></div>
+                                    <div class="form-group full-width"><label for="website">Website</label><input type="url" id="website" value="https://www.recrutapro.com"></div>
+                                </form>
+                             </div>
+                             <div class="card-footer"><button class="btn btn-primary">Salvar Informações</button></div>
+                        </div>
+                    </section>
+
+                    <section id="notificacoes" class="settings-pane">
+                        <div class="settings-card">
+                            <div class="card-header"><h2>Preferências de Notificação</h2><p>Escolha como você deseja ser notificado sobre as atividades.</p></div>
+                             <div class="card-body">
+                                <div class="notification-item">
+                                    <div>
+                                        <h3 style="font-size: 1rem; font-weight: 500;">Notificações por E-mail</h3>
+                                        <p style="font-size: 0.9rem; color: var(--text-light);">Receber um e-mail para cada nova candidatura.</p>
+                                    </div>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="email-toggle" checked>
+                                        <label for="email-toggle"></label>
+                                    </div>
+                                </div>
+                                 <div class="notification-item">
+                                    <div>
+                                        <h3 style="font-size: 1rem; font-weight: 500;">Resumo Semanal</h3>
+                                        <p style="font-size: 0.9rem; color: var(--text-light);">Receber um resumo das atividades da semana.</p>
+                                    </div>
+                                     <div class="toggle-switch">
+                                        <input type="checkbox" id="weekly-toggle">
+                                        <label for="weekly-toggle"></label>
+                                    </div>
+                                </div>
+                             </div>
+                        </div>
+                    </section>
+                    
+                    <section id="plano" class="settings-pane">
+                        <div class="settings-card">
+                            <div class="card-header"><h2>Plano Atual</h2></div>
+                             <div class="card-body">
+                                <h3 style="font-size: 1.1rem;">Você está no plano <span style="color: var(--primary-color); font-weight: 600;">PRO</span>.</h3>
+                                 <p style="color: var(--text-light);">Sua assinatura será renovada em 08 de Julho de 2025.</p>
+                             </div>
+                             <div class="card-footer">
+                                 <button class="btn btn-secondary">Cancelar Assinatura</button>
+                                 <button class="btn btn-primary">Gerenciar Plano</button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const navLinks = document.querySelectorAll('.settings-nav a');
+        const panes = document.querySelectorAll('.settings-pane');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                // Remove 'active' de todos
+                navLinks.forEach(l => l.classList.remove('active'));
+                panes.forEach(p => p.classList.remove('active'));
+
+                // Adiciona 'active' ao clicado e ao seu alvo
+                link.classList.add('active');
+                const targetId = link.dataset.target;
+                const targetPane = document.getElementById(targetId);
+                if (targetPane) {
+                    targetPane.classList.add('active');
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
