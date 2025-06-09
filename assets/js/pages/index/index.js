@@ -71,7 +71,14 @@ document.addEventListener('DOMContentLoaded', function () {
     nextButton.addEventListener('click', () => {
         const selected = document.querySelector('.option.selected');
         if (selected) {
-            alert(`Você selecionou: ${selected.querySelector('h3').innerText}`);
+            const title = selected.querySelector('h3').innerText.toLowerCase();
+            if (title.includes('colaborador')) {
+                window.location.href = './pages/users/colaborador/colaborador.html';
+            } else if (title.includes('empresa')) {
+                window.location.href = './pages/users/empresa/empresa.html';
+            } else {
+                alert(`Você selecionou: ${selected.querySelector('h3').innerText}`);
+            }
         } else {
             alert('Por favor, selecione um tipo de usuário.');
         }
