@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fingoals - Finance Dashboard</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Aplicando a fonte Poppins como padrão */
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        /* Custom scrollbar para um look mais limpo */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+    <script>
+        // Customizando as cores do Tailwind para combinar com o design
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-purple': '#6D3BFF',
+                        'brand-purple-light': '#F0EBFF',
+                        'brand-gray-100': '#F7F7F9',
+                        'brand-gray-200': '#E8E8E8',
+                        'brand-gray-400': '#A0A0A0',
+                        'brand-gray-800': '#333333',
+                        'brand-green': '#34A853',
+                        'brand-red': '#EA4335',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-gray-100 text-brand-gray-800">
+
+    <div class="flex h-screen overflow-hidden">
+        <aside id="sidebar" class="w-64 bg-white p-6 fixed lg:static inset-y-0 left-0 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out z-30 flex flex-col justify-between">
+            <div>
+                <div class="flex items-center gap-3 mb-10">
+                    <div class="bg-brand-purple p-2 rounded-lg">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <h1 class="text-xl font-bold text-brand-gray-800">fingoals</h1>
+                </div>
+
+                <nav class="flex flex-col gap-2">
+                    <a href="#" class="flex items-center gap-4 px-4 py-3 bg-brand-purple text-white rounded-lg font-semibold">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-4 px-4 py-3 text-brand-gray-400 hover:bg-brand-purple-light hover:text-brand-purple rounded-lg font-semibold">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                        <span>Analytics</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-4 px-4 py-3 text-brand-gray-400 hover:bg-brand-purple-light hover:text-brand-purple rounded-lg font-semibold">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                        <span>My Wallet</span>
+                    </a>
+                     <a href="#" class="flex items-center gap-4 px-4 py-3 text-brand-gray-400 hover:bg-brand-purple-light hover:text-brand-purple rounded-lg font-semibold">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm0 2c-2.21 0-4 1.79-4 4v1h8v-1c0-2.21-1.79-4-4-4z"></path></svg>
+                        <span>Account</span>
+                    </a>
+                    <a href="#" class="flex items-center gap-4 px-4 py-3 text-brand-gray-400 hover:bg-brand-purple-light hover:text-brand-purple rounded-lg font-semibold">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span>Settings</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="relative bg-brand-purple-light p-5 rounded-xl text-center">
+                <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-white p-3 rounded-full shadow-lg">
+                    <svg class="w-8 h-8 text-brand-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="mt-4 text-sm font-semibold text-brand-gray-800">Unlock full version</h3>
+                <p class="text-xs text-brand-gray-400 mt-1 mb-4">Upgrade your account to get full access</p>
+                <button class="w-full bg-brand-purple text-white py-2 rounded-lg font-semibold text-sm hover:bg-opacity-90 transition">Upgrade</button>
+            </div>
+        </aside>
+        
+        <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden lg:hidden" onclick="toggleMenu()"></div>
+
+        <main class="flex-1 h-full overflow-y-auto">
+            <div class="p-6 lg:p-8">
+                <header class="flex flex-col md:flex-row justify-between items-center mb-8">
+                    <div>
+                        <h1 class="text-3xl font-bold text-brand-gray-800">Financial Overview</h1>
+                        <p class="text-brand-gray-400">Welcome back, Arthur!</p>
+                    </div>
+                    <div class="flex items-center gap-4 mt-4 md:mt-0">
+                        <button class="lg:hidden" id="menu-button" onclick="toggleMenu()">
+                            <svg class="w-6 h-6 text-brand-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                        </button>
+                         <div class="relative">
+                            <input type="text" placeholder="Jan 20, 2024 - Feb 18, 2024" class="bg-white pl-10 pr-4 py-2.5 rounded-lg border border-brand-gray-200 w-full md:w-auto text-sm focus:outline-none focus:ring-2 focus:ring-brand-purple">
+                            <svg class="w-5 h-5 text-brand-gray-400 absolute top-1/2 left-3 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        </div>
+                        <button class="bg-white p-3 rounded-lg border border-brand-gray-200 hover:bg-brand-purple-light hover:text-brand-purple">
+                           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V10zM15 10a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2a1 1 0 01-1-1v-4z"></path></svg>
+                        </button>
+                    </div>
+                </header>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    
+                    <div class="lg:col-span-2 bg-white p-6 rounded-2xl shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h2 class="text-xl font-bold">Expense Breakdown</h2>
+                                <p class="text-sm text-brand-gray-400">Track your spending habits</p>
+                            </div>
+                            <button class="text-brand-gray-400 hover:text-brand-purple">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path></svg>
+                            </button>
+                        </div>
+                        <canvas id="expenseChart" height="150"></canvas>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-sm flex flex-col items-center justify-center text-center">
+                         <h2 class="text-xl font-bold mb-2">Financial Balance</h2>
+                         <p class="text-sm text-brand-gray-400 mb-4">Your current financial status</p>
+                         <div class="relative w-40 h-40 mb-4">
+                             <canvas id="balanceChart"></canvas>
+                             <div class="absolute inset-0 flex flex-col items-center justify-center">
+                                 <span class="text-sm text-brand-gray-400">Total Balance</span>
+                                 <span class="text-2xl font-bold text-brand-gray-800">$18,230</span>
+                             </div>
+                         </div>
+                         <div class="flex gap-2 items-center text-brand-green font-semibold">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd"></path></svg>
+                            <span>15% From last month</span>
+                         </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-2xl shadow-sm">
+                        <div class="flex justify-between items-start mb-4">
+                           <div>
+                                <h2 class="text-xl font-bold">Income Sources</h2>
+                                <p class="text-sm text-brand-gray-400">Your main channels of income</p>
+                           </div>
+                           <button class="text-brand-gray-400 hover:text-brand-purple">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path></svg>
+                           </button>
+                        </div>
+                        <canvas id="incomeChart" height="200"></canvas>
+                    </div>
+
+                    <div class="lg:col-span-2 bg-brand-purple p-8 rounded-2xl shadow-sm flex flex-col md:flex-row items-center justify-between text-white">
+                        <div>
+                            <h2 class="text-2xl font-bold">Join Our Financial Class Mastery</h2>
+                            <p class="mt-1 mb-4 md:mb-0 max-w-md">Get the best and latest classes on financial management, investment and personal finance.</p>
+                        </div>
+                        <button class="bg-white text-brand-purple font-bold py-3 px-6 rounded-lg whitespace-nowrap hover:bg-opacity-90 transition transform hover:scale-105">
+                            Join Now
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:col-span-3 gap-6">
+                        <div class="bg-white p-6 rounded-2xl shadow-sm flex items-center gap-6">
+                            <div class="bg-brand-purple-light p-4 rounded-full">
+                                <svg class="w-8 h-8 text-brand-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-brand-gray-400">Today Received</p>
+                                <span class="text-2xl font-bold">$4,830</span>
+                            </div>
+                            <div class="ml-auto text-brand-green font-semibold flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 9.707a1 1 0 010-1.414l4-4a1 1 0 011.414 0l4 4a1 1 0 01-1.414 1.414L11 7.414V15a1 1 0 11-2 0V7.414L6.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+                                <span>+10%</span>
+                            </div>
+                        </div>
+
+                        <div class="bg-white p-6 rounded-2xl shadow-sm flex items-center gap-6">
+                            <div class="bg-red-100 p-4 rounded-full">
+                                <svg class="w-8 h-8 text-brand-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8C9.791 8 8 9.791 8 12s1.791 4 4 4 4-1.791 4-4-1.791-4-4-4z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-brand-gray-400">Total Expense</p>
+                                <span class="text-2xl font-bold">$2,390</span>
+                            </div>
+                            <div class="ml-auto text-brand-red font-semibold flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M14.707 10.293a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 111.414-1.414L9 12.586V5a1 1 0 012 0v7.586l2.293-2.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                <span>-5%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // --- Mobile Menu Toggle ---
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            sidebar.classList.toggle('-translate-x-full');
+            overlay.classList.toggle('hidden');
+        }
+
+        // --- Chart.js Implementations ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const purpleColor = '#6D3BFF';
+            const purpleLightColor = '#E5DEFF';
+            const grayColor = '#A0A0A0';
+
+            // 1. Expense Breakdown Chart (Line Chart)
+            const expenseCtx = document.getElementById('expenseChart').getContext('2d');
+            new Chart(expenseCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                    datasets: [{
+                        label: 'Expense',
+                        data: [65, 59, 80, 81, 56, 55, 40],
+                        fill: true,
+                        backgroundColor: 'rgba(109, 59, 255, 0.1)',
+                        borderColor: purpleColor,
+                        tension: 0.4,
+                        pointBackgroundColor: purpleColor,
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: purpleColor,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                drawBorder: false,
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return '$' + value + 'k';
+                                }
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+
+            // 2. Financial Balance Chart (Doughnut Chart)
+            const balanceCtx = document.getElementById('balanceChart').getContext('2d');
+            new Chart(balanceCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Profit', 'Remaining'],
+                    datasets: [{
+                        label: 'Financial Balance',
+                        data: [75, 25], // 75% profit
+                        backgroundColor: [
+                            purpleColor,
+                            '#E8E8E8'
+                        ],
+                        borderColor: [
+                           '#fff',
+                           '#fff'
+                        ],
+                        borderWidth: 4,
+                        cutout: '80%'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { enabled: false }
+                    }
+                }
+            });
+            
+            // 3. Income Sources Chart (Bar Chart)
+            const incomeCtx = document.getElementById('incomeChart').getContext('2d');
+            new Chart(incomeCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Salary', 'Freelance', 'Investment', 'Other'],
+                    datasets: [{
+                        label: 'Income',
+                        data: [5000, 2500, 1500, 800],
+                        backgroundColor: [
+                            purpleLightColor,
+                            purpleColor,
+                            purpleLightColor,
+                            purpleLightColor
+                        ],
+                        borderRadius: 8,
+                        barThickness: 20
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // Horizontal Bar Chart
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            grid: {
+                                display: false,
+                                drawBorder: false,
+                            }
+                        },
+                        x: {
+                            grid: {
+                                display: false,
+                                drawBorder: false,
+                            },
+                             ticks: {
+                                display: false
+                            }
+                        }
+                    }
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>

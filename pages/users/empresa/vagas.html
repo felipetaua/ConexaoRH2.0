@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Nova Vaga - RecrutaPRO</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Reset e Variáveis de Cor (Mesma identidade visual) */
+        :root {
+            --primary-color: #6a5af9;
+            --primary-light: #f0eefc;
+            --background-color: #f8f8f8;
+            --white-color: #ffffff;
+            --text-dark: #1e1e1e;
+            --text-light: #7a7a7a;
+            --border-color: #e5e5e5;
+            --success-color: #22c55e;
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-dark);
+        }
+        
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- Layout Principal (Reutilizado do Painel) --- */
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background-color: var(--white-color);
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .main-content {
+            padding: 2rem;
+            overflow-y: auto;
+            max-height: 100vh;
+        }
+        
+        /* --- Barra Lateral (Sidebar - simplificada para o exemplo) --- */
+        .sidebar-header {
+            display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem;
+        }
+        .logo-icon {
+            background-color: var(--primary-color); color: var(--white-color); padding: 0.5rem; border-radius: 8px; display: flex;
+        }
+        .logo-text { font-size: 1.5rem; font-weight: 700; }
+        .sidebar-menu h3 { font-size: 0.8rem; font-weight: 500; color: var(--text-light); text-transform: uppercase; margin: 1.5rem 0 1rem 0; }
+        .menu-item { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1rem; border-radius: 8px; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-light); transition: all 0.2s ease; }
+        .menu-item:hover, .menu-item.active { background-color: var(--primary-color); color: var(--white-color); }
+        .menu-item svg { width: 24px; height: 24px; }
+        .sidebar-footer { margin-top: auto; }
+
+        /* --- Conteúdo da Página "Criar Vaga" --- */
+        .page-header { margin-bottom: 2rem; }
+        .page-header h1 { font-size: 2rem; font-weight: 700; }
+        .page-header p { color: var(--text-light); }
+
+        .create-job-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+        }
+        
+        .form-column { display: flex; flex-direction: column; gap: 1.5rem; }
+        .form-section {
+            background-color: var(--white-color);
+            padding: 1.5rem 2rem;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+        }
+        .form-section h2 {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px var(--primary-light);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-actions {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.8rem; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; border: none; transition: all 0.2s ease;
+        }
+        .btn-primary { background-color: var(--primary-color); color: var(--white-color); }
+        .btn-primary:hover { opacity: 0.9; }
+        .btn-secondary { background-color: var(--primary-light); color: var(--primary-color); }
+        .btn-secondary:hover { opacity: 0.9; }
+
+        /* --- Coluna de Preview --- */
+        .preview-column { position: sticky; top: 2rem; }
+        .preview-column h2 { font-size: 1.25rem; margin-bottom: 1rem; }
+        
+        /* Estilos do Job Card (Reutilizados da Visão do Candidato) */
+        .job-card {
+            background-color: var(--white-color); border: 1px solid var(--border-color); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column;
+        }
+        .job-header { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1rem; }
+        .job-icon { background-color: var(--primary-light); color: var(--primary-color); padding: 0.75rem; border-radius: 12px; display: flex; }
+        .job-icon svg { width: 32px; height: 32px; }
+        .job-title h3 { font-size: 1.25rem; }
+        .job-title p { color: var(--text-light); font-size: 0.9rem; }
+        .job-details { display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1rem 0; color: var(--text-light); font-size: 0.9rem; }
+        .job-details span { display: flex; align-items: center; gap: 0.5rem; }
+        .job-card p.description { color: var(--text-light); font-size: 0.9rem; flex-grow: 1; margin-bottom: 1.5rem; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+        .job-footer { margin-top: auto; border-top: 1px solid var(--border-color); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+        .job-salary { font-weight: 600; font-size: 1.1rem; }
+        .job-salary span { font-weight: 400; font-size: 0.8rem; color: var(--text-light); }
+        
+        /* --- Responsividade --- */
+        @media (max-width: 1200px) {
+            .create-job-layout {
+                grid-template-columns: 1fr;
+            }
+            .preview-column {
+                position: static;
+                margin-top: 2rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .dashboard-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                position: fixed; left: 0; top: 0; bottom: 0; z-index: 1000; transform: translateX(-100%);
+            }
+            .main-content { padding: 1.5rem; }
+        }
+        @media (max-width: 768px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                </div>
+                <h1 class="logo-text">RecrutaPRO</h1>
+            </div>
+
+            <nav class="sidebar-menu">
+                <h3>Menu Principal</h3>
+                <ul>
+                    <li><a href="./empresa.html" class="menu-item ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                        <span>Dashboard</span>
+                    </a></li>
+                    <li><a href="./vagas.html" class="menu-item active">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
+                        <span>Vagas</span>
+                    </a></li>
+                    <li><a href="./candidatos.html" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2-2H6l-4 4V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5Z"></path><path d="M18 9h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2"></path><path d="m7 15-1 1 1 1"></path><path d="M10 15h4"></path></svg>
+                        <span>Candidatos</span>
+                    </a></li>
+                    <li><a href="./entrevistas.html" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                        <span>Entrevistas</span>
+                    </a></li>
+                    <li><a href="./equipe.html" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <span>Equipe</span>
+                    </a></li>
+                    <li><a href="./organizacao.html" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <span>Organização</span>
+                    </a></li>
+                </ul>
+
+                <h3>Recrutadores</h3>
+                <ul>
+                    <li><a href="#" class="menu-item">
+                        <img src="https://i.pravatar.cc/150?img=11" alt="Recrutador" style="width: 24px; height: 24px; border-radius: 50%;">
+                        <span>Bagas Mahpie</span>
+                    </a></li>
+                     <li><a href="#" class="menu-item">
+                        <img src="https://i.pravatar.cc/150?img=12" alt="Recrutador" style="width: 24px; height: 24px; border-radius: 50%;">
+                        <span>Sir Dandy</span>
+                    </a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                 <a href="./configuracoes.html" class="menu-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-4.44a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.38M18 14v-4h-4M14 2v4h4"></path></svg>
+                    <span>Configurações</span>
+                </a>
+                 <a href="#" class="menu-item" style="color: #f95a5a;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span>Sair</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <div class="page-header">
+                <h1>Criar Nova Vaga</h1>
+                <p>Preencha os detalhes abaixo para publicar uma nova oportunidade em seu portal de carreiras.</p>
+            </div>
+
+            <div class="create-job-layout">
+                <div class="form-column">
+                    <form>
+                        <section class="form-section">
+                            <h2>Informações Principais</h2>
+                            <div class="form-grid">
+                                <div class="form-group full-width">
+                                    <label for="jobTitle">Título da Vaga</label>
+                                    <input type="text" id="jobTitle" placeholder="Ex: Desenvolvedor(a) Full-Stack Sênior">
+                                </div>
+                                <div class="form-group">
+                                    <label for="department">Departamento</label>
+                                    <input type="text" id="department" placeholder="Ex: Tecnologia e Produto">
+                                </div>
+                                <div class="form-group">
+                                    <label for="location">Localização</label>
+                                    <input type="text" id="location" placeholder="Ex: São Paulo, SP ou Remoto">
+                                </div>
+                                <div class="form-group">
+                                    <label for="workModel">Modelo de Trabalho</label>
+                                    <select id="workModel">
+                                        <option>Híbrido</option>
+                                        <option>Remoto</option>
+                                        <option>Presencial</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contractType">Tipo de Contrato</label>
+                                    <select id="contractType">
+                                        <option>Tempo Integral</option>
+                                        <option>Meio Período</option>
+                                        <option>PJ</option>
+                                        <option>Estágio</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="form-section">
+                            <h2>Detalhes da Vaga</h2>
+                             <div class="form-group full-width">
+                                <label for="jobDescription">Descrição da Vaga</label>
+                                <textarea id="jobDescription" placeholder="Fale sobre a vaga, a equipe e por que é um ótimo lugar para trabalhar..."></textarea>
+                            </div>
+                        </section>
+                        
+                         <section class="form-section">
+                            <h2>Remuneração</h2>
+                             <div class="form-grid">
+                                 <div class="form-group">
+                                     <label for="salary">Salário (mensal)</label>
+                                     <input type="number" id="salary" placeholder="Ex: 9000">
+                                 </div>
+                             </div>
+                        </section>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn btn-secondary">Salvar como Rascunho</button>
+                            <button type="submit" class="btn btn-primary">Publicar Vaga</button>
+                        </div>
+                    </form>
+                </div>
+
+                <aside class="preview-column">
+                    <h2>Pré-visualização do Card</h2>
+                    <article class="job-card">
+                        <div class="job-header">
+                            <div class="job-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </div>
+                            <div class="job-title">
+                                <h3 id="previewTitle">Título da Vaga</h3>
+                                <p id="previewDepartment">Departamento</p>
+                            </div>
+                        </div>
+                        <div class="job-details">
+                            <span id="previewLocationWrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                <span id="previewLocation">Localização</span>
+                            </span>
+                            <span id="previewWorkModelWrapper">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                                <span id="previewWorkModel">Modelo</span>
+                            </span>
+                        </div>
+                        <p class="description" id="previewDescription">A descrição completa da vaga aparecerá aqui, mostrando um resumo para o candidato...</p>
+                        <div class="job-footer">
+                            <span class="job-salary" id="previewSalary">R$ 0,00 <span>/mês</span></span>
+                            <a href="#" class="btn btn-secondary" style="pointer-events: none;">Ver Detalhes</a>
+                        </div>
+                    </article>
+                </aside>
+            </div>
+        </main>
+    </div>
+
+<script>
+    // --- Lógica para o Preview em Tempo Real ---
+    document.addEventListener('DOMContentLoaded', () => {
+        // Mapeamento dos campos do formulário para os elementos do preview
+        const fieldsToUpdate = {
+            'jobTitle': 'previewTitle',
+            'department': 'previewDepartment',
+            'location': 'previewLocation',
+            'workModel': 'previewWorkModel',
+            'jobDescription': 'previewDescription',
+        };
+
+        // Adiciona um event listener para cada campo
+        for (const inputId in fieldsToUpdate) {
+            const inputElement = document.getElementById(inputId);
+            const previewElementId = fieldsToUpdate[inputId];
+            const previewElement = document.getElementById(previewElementId);
+            
+            if (inputElement && previewElement) {
+                inputElement.addEventListener('input', () => {
+                    const placeholder = previewElement.dataset.placeholder || previewElement.textContent;
+                    previewElement.textContent = inputElement.value || placeholder;
+                });
+            }
+        }
+        
+        // Listener específico para o salário para formatar como moeda
+        const salaryInput = document.getElementById('salary');
+        const salaryPreview = document.getElementById('previewSalary');
+        
+        if (salaryInput && salaryPreview) {
+            salaryInput.addEventListener('input', () => {
+                const value = parseFloat(salaryInput.value) || 0;
+                const formattedSalary = value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+                salaryPreview.innerHTML = `${formattedSalary} <span>/mês</span>`;
+            });
+        }
+
+        // Armazenar os textos placeholders iniciais
+        document.querySelectorAll('[id^="preview"]').forEach(el => {
+            el.dataset.placeholder = el.textContent;
+        });
+    });
+</script>
+</body>
+</html>
