@@ -53,10 +53,29 @@
 @media (max-width: 768px) {
     .main-content {
         padding: 1rem;
+        overflow-x: hidden;
     }
     .content-grid {
         gap: 1rem;
     }
     .main-banner { padding: 1.5rem; }
     .section-header h2 { font-size: 1.25rem; }
+    .welcome-card canvas {
+    max-width: 350px !important;
+    max-height: 200px;
+    }
+}
+
+@media (max-width: 458px) {
+    .welcome-card {
+        width: 90vw;
+    }
+
+    .card {
+        width: 90vw;
+    }
+
+    .pipeline-table.card {
+        overflow-x: auto;
+    }
 }
