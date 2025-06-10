@@ -13,7 +13,18 @@
 .job-title p { color: var(--text-light); font-size: 0.9rem; }
 .job-details { display: flex; flex-wrap: wrap; gap: 1.5rem; margin: 1rem 0; color: var(--text-light); font-size: 0.9rem; }
 .job-details span { display: flex; align-items: center; gap: 0.5rem; }
-.job-card p.description { color: var(--text-light); font-size: 0.9rem; flex-grow: 1; margin-bottom: 1.5rem; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+.job-card p.description { 
+    color: var(--text-light); 
+    font-size: 0.9rem; 
+    flex-grow: 1; 
+    margin-bottom: 1.5rem; 
+    overflow: hidden; 
+    display: -webkit-box; 
+    -webkit-line-clamp: 3; 
+    -webkit-box-orient: vertical; 
+    line-clamp: 3;
+    box-orient: vertical;
+}
 .job-footer { margin-top: auto; border-top: 1px solid var(--border-color); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; }
 .job-salary { font-weight: 600; font-size: 1.1rem; }
 .job-salary span { font-weight: 400; font-size: 0.8rem; color: var(--text-light); }
