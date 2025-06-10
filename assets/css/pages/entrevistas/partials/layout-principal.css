@@ -1,0 +1,4 @@
+/* --- Layout Principal (Reutilizado) --- */
+.dashboard-container { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+.sidebar { background-color: var(--white-color); padding: 2rem 1.5rem; display: flex; flex-direction: column; }
+.main-content { padding: 2rem; overflow-y: auto; max-height: 100vh; }

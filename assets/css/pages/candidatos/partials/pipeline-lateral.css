@@ -1,0 +1,22 @@
+/* Painel Lateral (Pipeline Flyout) */
+.pipeline-flyout {
+    background-color: var(--white-color);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    padding: 1.5rem;
+    align-self: start; /* Impede que estique */
+}
+.flyout-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
+.flyout-header h2 { font-size: 1.25rem; }
+.flyout-header .total-badge { background-color: var(--primary-light); color: var(--primary-color); font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 8px; }
+
+.pipeline-stage { margin-bottom: 1.5rem; }
+.stage-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.stage-header h3 { font-size: 1rem; font-weight: 600; }
+.stage-header .count { color: var(--text-light); font-weight: 500; }
+
+.stage-candidate { display: flex; align-items: center; gap: 1rem; padding: 0.75rem; border-radius: 8px; }
+.stage-candidate:hover { background-color: #f9f8ff; }
+.stage-candidate img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; }
+.stage-candidate .info .name { font-weight: 500; }
+.stage-candidate .info .rating { font-size: 0.8rem; color: var(--text-light); }

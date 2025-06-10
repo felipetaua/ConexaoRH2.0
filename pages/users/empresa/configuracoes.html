@@ -8,120 +8,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../../assets/css/pages/configuracoes/configuracoes.css">
     
-    <style>
-        /* CSS Reset e Variáveis de Cor (Mesma identidade visual) */
-        :root {
-            --primary-color: #6a5af9;
-            --primary-light: #f0eefc;
-            --background-color: #f8f8f8;
-            --white-color: #ffffff;
-            --text-dark: #1e1e1e;
-            --text-light: #7a7a7a;
-            --border-color: #e5e5e5;
-            --success-color: #22c55e;
-            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: var(--background-color); color: var(--text-dark); }
-        a { text-decoration: none; color: inherit; }
-        ul { list-style: none; }
-
-        /* --- Layout Principal (Reutilizado) --- */
-        .dashboard-container { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
-        .sidebar { background-color: var(--white-color); padding: 2rem 1.5rem; }
-        .main-content { padding: 2rem; overflow-y: auto; max-height: 100vh; }
-        
-        /* --- Barra Lateral (Sidebar - simplificada) --- */
-        .sidebar-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; }
-        .logo-icon { background-color: var(--primary-color); color: var(--white-color); padding: 0.5rem; border-radius: 8px; }
-        .logo-text { font-size: 1.5rem; font-weight: 700; }
-        .menu-item { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1rem; border-radius: 8px; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-light); }
-        .menu-item.active { background-color: var(--primary-color); color: var(--white-color); }
-        
-        /* --- Conteúdo da Página "Configurações" --- */
-        .page-header { margin-bottom: 2rem; }
-        .page-header h1 { font-size: 2rem; font-weight: 700; }
-
-        .settings-layout {
-            display: grid;
-            grid-template-columns: 240px 1fr;
-            gap: 2rem;
-            align-items: flex-start;
-        }
-
-        .settings-nav ul { display: flex; flex-direction: column; gap: 0.5rem; }
-        .settings-nav a {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.9rem 1.25rem;
-            border-radius: 8px;
-            font-weight: 500;
-            color: var(--text-light);
-            border: 1px solid transparent;
-            transition: all 0.2s ease;
-        }
-        .settings-nav a:hover { background-color: var(--primary-light); color: var(--primary-color); }
-        .settings-nav a.active {
-            background-color: var(--primary-light);
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .settings-pane { display: none; }
-        .settings-pane.active { display: block; animation: fadeIn 0.5s; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        .settings-card {
-            background-color: var(--white-color);
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            margin-bottom: 2rem;
-        }
-        .card-header { padding: 1.5rem; border-bottom: 1px solid var(--border-color); }
-        .card-header h2 { font-size: 1.25rem; }
-        .card-header p { font-size: 0.9rem; color: var(--text-light); }
-        
-        .card-body { padding: 1.5rem; }
-        .card-footer { padding: 1.5rem; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end; }
-        
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        .form-group { display: flex; flex-direction: column; }
-        .form-group.full-width { grid-column: 1 / -1; }
-        .form-group label { font-size: 0.9rem; font-weight: 500; margin-bottom: 0.5rem; }
-        .form-group input { width: 100%; padding: 0.8rem 1rem; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; }
-        
-        /* Componente de Upload de Avatar */
-        .avatar-upload { display: flex; align-items: center; gap: 1.5rem; }
-        .avatar-upload img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
-        .btn { padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s ease; }
-        .btn-primary { background-color: var(--primary-color); color: var(--white-color); }
-        .btn-secondary { background-color: var(--white-color); color: var(--text-dark); border: 1px solid var(--border-color); }
-        
-        /* Componente de Toggle Switch */
-        .notification-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border-color); }
-        .notification-item:last-child { border-bottom: none; }
-        .toggle-switch input { display: none; }
-        .toggle-switch label {
-            width: 50px; height: 28px; background-color: #ccc; border-radius: 14px; display: inline-block; position: relative; cursor: pointer; transition: background-color 0.2s;
-        }
-        .toggle-switch label::after {
-            content: ''; position: absolute; width: 22px; height: 22px; background-color: white; border-radius: 50%; top: 3px; left: 3px; transition: transform 0.2s ease;
-        }
-        .toggle-switch input:checked + label { background-color: var(--success-color); }
-        .toggle-switch input:checked + label::after { transform: translateX(22px); }
-
-        /* Responsividade */
-        @media (max-width: 992px) {
-            .dashboard-container { grid-template-columns: 1fr; }
-            .sidebar { position: fixed; left: 0; top: 0; bottom: 0; z-index: 1000; transform: translateX(-100%); }
-            .settings-layout { grid-template-columns: 1fr; }
-            .settings-nav ul { flex-direction: row; overflow-x: auto; }
-            .main-content { padding: 1.5rem; }
-        }
-    </style>
+    <script defer src="../../../assets/js/pages/configuracoes/configuracoes.js"></script>
 </head>
 <body>
     <div class="dashboard-container">
@@ -150,8 +40,9 @@
                             <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                         </div>
                         <ul class="submenu">
-                            <li><a href="#" class="submenu-item">Vagas Ativas</a></li>
-                            <li><a href="#" class="submenu-item">Arquivadas</a></li>
+                            <li><a href="./vagas/vagas.html" class="submenu-item">Criar vagas</a></li>
+                            <li><a href="./vagas/ativo.html" class="submenu-item">Vagas Ativas</a></li>
+                            <li><a href="./vagas/arquivadas.html" class="submenu-item">Arquivadas</a></li>
                         </ul>
                     </li>
 
@@ -168,7 +59,7 @@
                         <span>Equipe</span>
                     </a></li>
                     <li><a href="./organizacao.html" class="menu-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-4.44a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.38M18 14v-4h-4M14 2v4h4"></path></svg>
                         <span>Organização</span>
                     </a></li>
                 </ul>
@@ -207,7 +98,7 @@
                 <nav class="settings-nav">
                     <ul>
                         <li><a href="#perfil" class="active" data-target="perfil">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/></svg>
                             Meu Perfil
                         </a></li>
                         <li><a href="#empresa" data-target="empresa">
@@ -255,22 +146,22 @@
                     </section>
                     
                     <section id="empresa" class="settings-pane">
-                         <div class="settings-card">
+                        <div class="settings-card">
                             <div class="card-header"><h2>Perfil da Empresa</h2><p>Estas informações serão exibidas publicamente nas suas vagas.</p></div>
-                             <div class="card-body">
+                            <div class="card-body">
                                 <form class="form-grid">
                                     <div class="form-group full-width"><label for="companyName">Nome da Empresa</label><input type="text" id="companyName" value="RecrutaPRO Inc."></div>
                                     <div class="form-group full-width"><label for="website">Website</label><input type="url" id="website" value="https://www.recrutapro.com"></div>
                                 </form>
-                             </div>
-                             <div class="card-footer"><button class="btn btn-primary">Salvar Informações</button></div>
+                            </div>
+                            <div class="card-footer"><button class="btn btn-primary">Salvar Informações</button></div>
                         </div>
                     </section>
 
                     <section id="notificacoes" class="settings-pane">
                         <div class="settings-card">
                             <div class="card-header"><h2>Preferências de Notificação</h2><p>Escolha como você deseja ser notificado sobre as atividades.</p></div>
-                             <div class="card-body">
+                            <div class="card-body">
                                 <div class="notification-item">
                                     <div>
                                         <h3 style="font-size: 1rem; font-weight: 500;">Notificações por E-mail</h3>
@@ -281,7 +172,7 @@
                                         <label for="email-toggle"></label>
                                     </div>
                                 </div>
-                                 <div class="notification-item">
+                                <div class="notification-item">
                                     <div>
                                         <h3 style="font-size: 1rem; font-weight: 500;">Resumo Semanal</h3>
                                         <p style="font-size: 0.9rem; color: var(--text-light);">Receber um resumo das atividades da semana.</p>
@@ -312,30 +203,5 @@
             </div>
         </main>
     </div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const navLinks = document.querySelectorAll('.settings-nav a');
-        const panes = document.querySelectorAll('.settings-pane');
-
-        navLinks.forEach(link => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault();
-
-                // Remove 'active' de todos
-                navLinks.forEach(l => l.classList.remove('active'));
-                panes.forEach(p => p.classList.remove('active'));
-
-                // Adiciona 'active' ao clicado e ao seu alvo
-                link.classList.add('active');
-                const targetId = link.dataset.target;
-                const targetPane = document.getElementById(targetId);
-                if (targetPane) {
-                    targetPane.classList.add('active');
-                }
-            });
-        });
-    });
-</script>
 </body>
 </html>

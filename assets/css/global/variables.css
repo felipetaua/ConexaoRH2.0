@@ -39,4 +39,9 @@
     --text-light: #7a7a7a;
     --border-color: #e5e5e5;
     --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --success-color: #22c55e;
+    --warning-color: #f59e0b;
+    --info-color: #3b82f6;
+    --tag-new-bg: #e0f2fe;
+    --tag-new-text: #0ea5e9;
 }
