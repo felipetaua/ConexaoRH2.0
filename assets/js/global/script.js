@@ -21,17 +21,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     // Seleciona o elemento que aciona o submenu
-    const vagasTrigger = document.getElementById('vagas-trigger');
+    const vagasTrigger = document.querySelector('.menu-item-trigger');
+    const submenu = vagasTrigger ? vagasTrigger.nextElementSibling : null;
+
+    // Abre automaticamente o submenu se estiver em uma das páginas de vagas
+    if (submenu && (
+        window.location.pathname.includes('/vagas/vagas.html') ||
+        window.location.pathname.includes('/vagas/ativo.html') ||
+        window.location.pathname.includes('/vagas/arquivadas.html')
+    )) {
+        vagasTrigger.classList.add('open', 'active');
+        submenu.classList.add('open');
+    }
 
     if (vagasTrigger) {
         vagasTrigger.addEventListener('click', () => {
-            // Seleciona o submenu associado
-            // O nextElementSibling pega o próximo elemento irmão, que é a nossa <ul>
-            const submenu = vagasTrigger.nextElementSibling;
-
-            // Alterna a classe 'open' no gatilho (para a seta) e no submenu (para expandir)
-            vagasTrigger.classList.toggle('open');
             submenu.classList.toggle('open');
+            vagasTrigger.classList.toggle('open');
         });
     }
 });
