@@ -1,0 +1,20 @@
+@import url(./partials/criar-vaga.css);
+@import url(./partials/layout-principal.css);
+@import url(./partials/responsividade.css);
+@import url(./partials/vagas-preview.css);
+
+
+@import url(../../../css/pages/empresa/partials/barra-lateral.css);
+@import url(../../../css/pages/empresa/partials/submenu.css);
+
+@import url(../../../css/global/elements.css);
+@import url(../../../css/global/normalize.css);
+@import url(../../../css/global/variables.css);
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-dark);
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }

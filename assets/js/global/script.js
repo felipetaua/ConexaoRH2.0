@@ -35,3 +35,46 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// --- Lógica para o Preview em Tempo Real ---
+document.addEventListener('DOMContentLoaded', () => {
+    // Mapeamento dos campos do formulário para os elementos do preview
+    const fieldsToUpdate = {
+        'jobTitle': 'previewTitle',
+        'department': 'previewDepartment',
+        'location': 'previewLocation',
+        'workModel': 'previewWorkModel',
+        'jobDescription': 'previewDescription',
+    };
+
+    // Adiciona um event listener para cada campo
+    for (const inputId in fieldsToUpdate) {
+        const inputElement = document.getElementById(inputId);
+        const previewElementId = fieldsToUpdate[inputId];
+        const previewElement = document.getElementById(previewElementId);
+        
+        if (inputElement && previewElement) {
+            inputElement.addEventListener('input', () => {
+                const placeholder = previewElement.dataset.placeholder || previewElement.textContent;
+                previewElement.textContent = inputElement.value || placeholder;
+            });
+        }
+    }
+    
+    // Listener específico para o salário para formatar como moeda
+    const salaryInput = document.getElementById('salary');
+    const salaryPreview = document.getElementById('previewSalary');
+    
+    if (salaryInput && salaryPreview) {
+        salaryInput.addEventListener('input', () => {
+            const value = parseFloat(salaryInput.value) || 0;
+            const formattedSalary = value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+            salaryPreview.innerHTML = `${formattedSalary} <span>/mês</span>`;
+        });
+    }
+
+    // Armazenar os textos placeholders iniciais
+    document.querySelectorAll('[id^="preview"]').forEach(el => {
+        el.dataset.placeholder = el.textContent;
+    });
+});
