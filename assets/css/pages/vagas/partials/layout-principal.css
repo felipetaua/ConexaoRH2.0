@@ -1,0 +1,20 @@
+/* --- Layout Principal (Reutilizado do Painel) --- */
+.dashboard-container {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+}
+
+.sidebar {
+    background-color: var(--white-color);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease-in-out;
+}
+
+.main-content {
+    padding: 2rem;
+    overflow-y: auto;
+    max-height: 100vh;
+}

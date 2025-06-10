@@ -1,0 +1,4 @@
+.dashboard-container { display: grid; grid-template-columns: 260px 1fr; height: 100vh; }
+.sidebar { background-color: var(--white-color); padding: 2rem 1.5rem; }
+.main-content { display: flex; flex-direction: column; overflow: hidden; }
+.main-content-header { padding: 2rem 2rem 1.5rem 2rem; }

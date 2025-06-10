@@ -1,0 +1,33 @@
+/* Visão de Calendário */
+        .calendar-container {
+            background-color: var(--white-color);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: var(--card-shadow);
+        }
+        .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
+        .calendar-header h2 { font-size: 1.5rem; }
+        .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+        .calendar-day {
+            min-height: 120px;
+            padding: 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .calendar-day.other-month { background-color: #f9f9f9; color: #ccc; }
+        .day-name { text-align: center; font-weight: 600; color: var(--text-light); padding-bottom: 0.5rem; }
+        
+        .calendar-event {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            border-left: 3px solid var(--primary-color);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }

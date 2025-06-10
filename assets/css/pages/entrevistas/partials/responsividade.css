@@ -1,0 +1,13 @@
+/* Responsividade */
+@media (max-width: 1200px) {
+    .interview-card { flex-direction: column; align-items: stretch; }
+    .interview-date { border-right: none; border-bottom: 1px solid var(--border-color); text-align: left; padding: 1rem; display: flex; align-items: center; gap: 1rem; }
+    .interview-date .day { font-size: 1.5rem; }
+    .interview-actions { margin-left: auto; }
+}
+@media (max-width: 992px) {
+    .dashboard-container { grid-template-columns: 1fr; }
+    .sidebar { position: fixed; left: 0; top: 0; bottom: 0; z-index: 1000; transform: translateX(-100%); }
+    .main-content { padding: 1.5rem; }
+    .interview-info { flex-direction: column; align-items: flex-start; }
+}
