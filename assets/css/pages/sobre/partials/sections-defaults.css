@@ -33,7 +33,7 @@
 .evolution .section-title p {
     color: #666;
     margin-top: 10px;
-    font-size: 16px;
+    font-size: 1.25rem;
 }
 
 .timeline {
@@ -79,7 +79,7 @@
 
 .timeline-content p {
     color: #555;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 @media screen and (max-width: 768px) {

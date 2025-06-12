@@ -2,8 +2,12 @@
     display: flex;
     align-items: center;
     gap: 40px;
+    margin-bottom: 7%;
 }
 
+.about-content  p, .about-content2  p{
+    font-size: 1.25rem;
+}
 .about .about-text {
     flex: 1;
 }
@@ -16,3 +20,12 @@
     width: 100%;
     border-radius: 10px;
 }
+
+.list-about {
+    margin: 20px 0 0 3%;
+}
+
+.item {
+    padding-top: 10px;
+    font-size: 1.25rem;
+};
