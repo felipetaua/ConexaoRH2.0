@@ -58,8 +58,19 @@ body {
 }
 
 /* Conteúdo da notícia */
+
 .news-content {
     padding: 16px;
+}
+
+.navPage {
+    color: var(--orange);
+    transition: .5s;
+}
+
+.navPage:hover {
+    color: var(--orange-hover);
+    opacity: 90%;
 }
 
 .news-title {
