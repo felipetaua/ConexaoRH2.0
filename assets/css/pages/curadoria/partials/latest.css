@@ -21,3 +21,71 @@
 .post h3 {
     margin-top: 10px;
 }
+
+
+.recommended-posts {
+    margin: 40px auto 0 auto;
+    max-width: 900px;
+    padding: 0 16px;
+    text-align: center;
+}
+.recommended-cards {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+}
+.recommended-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(44,62,80,0.07);
+    padding: 18px 16px 14px 16px;
+    max-width: 260px;
+    min-width: 220px;
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: box-shadow 0.2s;
+}
+.recommended-card:hover {
+    box-shadow: 0 4px 24px rgba(44,62,80,0.13);
+}
+.recommended-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+.recommended-card h4 {
+    font-size: 1.08rem;
+    margin: 0 0 8px 0;
+    color: #2d3a4a;
+}
+.recommended-card p {
+    font-size: 0.97rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+.recommended-card a {
+    color: #5372F0;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: auto;
+    transition: color 0.2s;
+}
+.recommended-card a:hover {
+    color: #2d3a4a;
+}
+@media (max-width: 700px) {
+    .recommended-cards {
+        flex-direction: column;
+        gap: 14px;
+    }
+    .recommended-card {
+        max-width: 100%;
+        min-width: 0;
+    }
+}
