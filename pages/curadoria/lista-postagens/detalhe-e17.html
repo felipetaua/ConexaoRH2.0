@@ -9,6 +9,7 @@
     <!-- JavaScript -->
     <script defer src="../../../assets/js/global/main.js"></script>
     <script defer src="../../../assets/js/pages/curadoria/curadoria.js"></script>
+    <script src="../../assets/js/pages/curadoria/recomendados.js"></script>
 
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -60,6 +61,7 @@
     </header>
 
     <main class="news-content">
+        <p><a class="link navPage " href="../../../index.html">início</a> > <a class=" link navPage" href="../curadoria.html">curadoria</a> > <a class="link navPage " href="./detalhe-e17.html">adimissão-e-demissão</a></p>
         <h2 class="news-title">Admissão e Demissão: O Guia Definitivo do RH para Processos Legais e Humanizados</h2>
         <div class="meta-info">
             <span class="author">Admin</span> • 
@@ -131,6 +133,14 @@
 
         <section class="comments-section">
             </section>
+
+        <section class="recommended-posts">
+            <h2>Recomendados para você</h2>
+            <div class="recommended-cards" id="recommendedCards"></div>
+            <button class="btn" id="nextRecommendationsBtn" aria-label="Ver outras recomendações">
+                <i class="fa fa-arrow-right"></i> Ver outros posts
+            </button>
+        </section>
     </main>
 
     <footer>
@@ -218,5 +228,6 @@
     <button id="backToTopBtn" aria-label="Voltar ao topo">
         <i class="fa fa-arrow-up"></i>
     </button>
+    <script defer src="../../../assets/js/pages/curadoria/recomendado.js"></script>
 </body>
 </html>
