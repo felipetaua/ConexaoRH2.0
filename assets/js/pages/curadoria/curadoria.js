@@ -247,18 +247,18 @@ function setupCuradoriaSearch() {
     if (!input || !suggestions) return;
 
     const items = [
-        { title: 'Processo de Demissão', url: './lista-postagens/detalhe-e1.html' },
-        { title: 'Entrevista de Emprego', url: './lista-postagens/detalhe-e2.html' },
-        { title: 'Perguntas que não deve fazer', url: './lista-postagens/detalhe-e3.html' },
-        { title: 'Legislação Trabalhista', url: './lista-postagens/detalhe-e4.html' },
-        { title: 'Férias', url: './lista-postagens/detalhe-e5.html' },
-        { title: 'Recrutamento e Seleção', url: './lista-postagens/detalhe-e6.html' },
-        { title: 'Benefícios', url: './lista-postagens/detalhe-e7.html' },
-        { title: 'Processo de Admissão', url: './lista-postagens/detalhe-e8.html' },
-        { title: 'Departamento Pessoal', url: './lista-postagens/detalhe-e9.html' },
-        { title: 'Treinamento e Desenvolvimento', url: './lista-postagens/detalhe-e10.html' },
-        { title: 'Cultura Organizacional', url: './lista-postagens/detalhe-e11.html' },
-        { title: 'História do RH', url: './lista-postagens/detalhe-e12.html' },
+        { title: 'Processo de Demissão', url: '/pages/curadoria/lista-postagens/detalhe-e1.html' },
+        { title: 'Entrevista de Emprego', url: '/pages/curadoria/lista-postagens/detalhe-e2.html' },
+        { title: 'Perguntas que não deve fazer', url: '/pages/curadoria/lista-postagens/detalhe-e3.html' },
+        { title: 'Legislação Trabalhista', url: '/pages/curadoria/lista-postagens/detalhe-e4.html' },
+        { title: 'Férias', url: '/pages/curadoria/lista-postagens/detalhe-e5.html' },
+        { title: 'Recrutamento e Seleção', url: '/pages/curadoria/lista-postagens/detalhe-e6.html' },
+        { title: 'Benefícios', url: '/pages/curadoria/lista-postagens/detalhe-e7.html' },
+        { title: 'Processo de Admissão', url: '/pages/curadoria/lista-postagens/detalhe-e8.html' },
+        { title: 'Departamento Pessoal', url: '/pages/curadoria/lista-postagens/detalhe-e9.html' },
+        { title: 'Treinamento e Desenvolvimento', url: '/pages/curadoria/lista-postagens/detalhe-e10.html' },
+        { title: 'Cultura Organizacional', url: '/pages/curadoria/lista-postagens/detalhe-e11.html' },
+        { title: 'História do RH', url: '/pages/curadoria/lista-postagens/detalhe-e12.html' },
         { title: 'RH Digital', url: '#' },
         { title: 'Gestão Humanizada', url: '#' },
         { title: 'RH Ágil', url: '#' },
@@ -499,109 +499,109 @@ const allPosts = [
         title: "PROCESSO DE DEMISSÃO NA EMPRESA: COMO TORNAR O PROCESSO MAIS RESPEITOSO E AGRADÁVEL",
         img: "../../assets/images/pages/curadoria/curadoria-1.jpg",
         desc: "Cuidar de um processo de desligamento de um funcionário, assim como o de integração no momento da contratação é algo que faz parte das funções.",
-        url: "./lista-postagens/detalhe-e1.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e1.html"
     },
     {
         title: "ENTREVISTA DE EMPREGO: COMO MANDAR BEM E IMPRESSIONAR O RECRUTADOR",
         img: "../../assets/images/pages/curadoria/curadoria-2.jpg",
         desc: "Muitas pessoas podem ficar nervosas diante de uma nova oportunidade de trabalho. E é extremamente comum não saber o que falar em uma entrevista de emprego.",
-        url: "./lista-postagens/detalhe-e2.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e2.html"
     },
     {
         title: "ENTREVISTA: PERGUNTAS QUE NÃO DEVE FAZER",
         img: "../../assets/images/pages/curadoria/curadoria-3.jpg",
         desc: "Por que um roteiro é importante na hora de realizar uma entrevista? Um roteiro de entrevista, quando feito corretamente, traz ótimas contratações para todas as empresas.",
-        url: "./lista-postagens/detalhe-e3.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e3.html"
     },
     {
         title: "LEGISLAÇÃO TRABALHISTAS",
         img: "../../assets/images/pages/curadoria/curadoria-4.png",
         desc: "As leis trabalhistas são de extrema importância para garantir os direitos e a proteção dos trabalhadores.",
-        url: "./lista-postagens/detalhe-e4.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e4.html"
     },
     {
         title: "FÉRIAS",
         img: "../../assets/images/pages/curadoria/curadoria-5.webp",
         desc: "O que são férias no contexto do direito trabalhista? Férias são um período de descanso remunerado concedido ao trabalhador.",
-        url: "./lista-postagens/detalhe-e5.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e5.html"
     },
     {
         title: "RECRUTAMENTO E SELEÇÃO",
         img: "../../assets/images/pages/curadoria/curadoria-6.jpg",
         desc: "Perguntas e Respostas sobre Recrutamento e Seleção. O recrutamento é um processo de atração que, por meio das redes de sociais...",
-        url: "./lista-postagens/detalhe-e6.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e6.html"
     },
     {
         title: "BENEFÍCIOS",
         img: "../../assets/images/pages/curadoria/curadoria-7.jpg",
         desc: "Benefício é uma forma extra de que a empresa tem de recompensar seus colaboradores pelo trabalho exercido na empresa.",
-        url: "./lista-postagens/detalhe-e7.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e7.html"
     },
     {
         title: "PROCESSO DE ADMISSÃO",
         img: "../../assets/images/pages/curadoria/curadoria-8.jpg",
         desc: "Admissão é um vínculo jurídico e um compromisso firmado entre o empregador e o empregado.",
-        url: "./lista-postagens/detalhe-e8.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e8.html"
     },
     {
         title: "DEPARTAMENTO PESSOAL",
         img: "../../assets/images/pages/curadoria/curadoria-9.webp",
         desc: "O Departamento Pessoal é o setor onde se cuida de toda a parte burocrática da empresa.",
-        url: "./lista-postagens/detalhe-e9.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e9.html"
     },
     {
         title: "TREINAMENTO E DESENVOLVIMENTO",
         img: "../../assets/images/pages/curadoria/curadoria-10.webp",
         desc: "Treinamento e desenvolvimento é um processo que busca treinar e desenvolver novos colaboradores de uma empresa.",
-        url: "./lista-postagens/detalhe-e10.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e10.html"
     },
     {
         title: "CULTURA ORGANIZACIONAL",
         img: "../../assets/images/pages/curadoria/curadoria-11.jpg",
         desc: "A cultura organizacional de uma empresa se refere às crenças, valores e comportamentos compartilhados pelos membros de uma equipe.",
-        url: "./lista-postagens/detalhe-e11.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e11.html"
     },
     {
         title: "HISTÓRIA DO RH",
         img: "../../assets/images/pages/curadoria/curadoria-12.jpg",
         desc: "A área de Recursos Humanos é relativamente recente, tendo surgido no início do século 20.",
-        url: "./lista-postagens/detalhe-e12.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e12.html"
     },
     {
         title: "ROTINAS DE ADIMISSÃO",
         img: "../../assets/images/pages/curadoria/curadoria-13.png",
         desc: "Navegar pelo processo de admissão de novos colaboradores pode ser complexo. Saiba quais são as etapas essenciais.",
-        url: "./lista-postagens/detalhe-e13.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e13.html"
     },
     {
         title: "GESTÃO DE BENEFÍCIOS",
         img: "../../assets/images/pages/curadoria/curadoria-14.png",
         desc: "Entenda a diferença entre benefícios legais e espontâneos e aprenda a criar um pacote de vantagens que vai além do obrigatório.",
-        url: "./lista-postagens/detalhe-e14.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e14.html"
     },
     {
         title: "O Guia Essencial de RH: Leis Trabalhistas, Recrutamento e Avaliação de Desempenho",
         img: "../../assets/images/pages/curadoria/curadoria-15.png",
         desc: "Navegue pelos pilares da gestão de pessoas com este guia completo. Abordamos desde as principais normas e leis trabalhistas.",
-        url: "./lista-postagens/detalhe-e15.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e15.html"
     },
     {
         title: "Guia Completo de Representação do Empregador: Direitos e Deveres nas Relações de Trabalho",
         img: "../../assets/images/pages/curadoria/curadoria-16.png",
         desc: "Entenda o que significa representar o empregador e como agir nas principais situações da relação de trabalho.",
-        url: "./lista-postagens/detalhe-e16.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e16.html"
     },
     {
         title: "Admissão e Demissão: O Guia Definitivo do RH para Processos Legais e Humanizados",
         img: "../../assets/images/pages/curadoria/curadoria-17.png",
         desc: "Este guia detalha cada etapa do processo de admissão e aborda todos os tipos de demissão, com foco em uma condução legal, responsável e humanizada.",
-        url: "./lista-postagens/detalhe-e17.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e17.html"
     },
     {
         title: "Cultura e Capacitação: Como Criar um Ambiente Organizacional Positivo e Investir em Treinamento e Desenvolvimento",
         img: "../../assets/images/pages/curadoria/curadoria-18.png",
         desc: "Descubra como o 'clima' da sua empresa impacta diretamente a produtividade e o bem-estar da equipe.",
-        url: "./lista-postagens/detalhe-e18.html"
+        url: "/pages/curadoria/lista-postagens/detalhe-e18.html"
     }
 ];
 
