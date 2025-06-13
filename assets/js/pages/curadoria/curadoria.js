@@ -492,3 +492,5 @@ document.getElementById('showMoreVideosBtn').addEventListener('click', function(
         arrow.classList.remove('open');
     }
 });
+
+
