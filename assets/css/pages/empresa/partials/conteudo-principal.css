@@ -6,6 +6,10 @@
     margin-bottom: 2rem;
 }
 
+.mobile-menu-btn {
+    display: none;
+}
+
 .search-bar {
     position: relative;
     flex-grow: 1;
@@ -59,4 +63,27 @@
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+@media (max-width: 992px) {
+    .main-header {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .search-bar {
+        order: 2;
+        max-width: none;
+        flex-basis: 100%;
+    }
+    .header-profile {
+        order: 1;
+        margin-left: auto;
+    }
+    .mobile-menu-btn {
+        display: block;
+        order: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
 }
