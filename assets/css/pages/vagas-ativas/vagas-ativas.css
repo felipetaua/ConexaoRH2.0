@@ -1,0 +1,13 @@
+@import url(./partials/content.css);
+@import url(./partials/layout-principal.css);
+@import url(./partials/responsividade.css);
+
+@import url(../../../css/pages/empresa/partials/barra-lateral.css);
+@import url(../../../css/pages/empresa/partials/submenu.css);
+
+@import url(../../../css/global/elements.css);
+@import url(../../../css/global/normalize.css);
+@import url(../../../css/global/variables.css);
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }

@@ -8,97 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="../../../../assets/css/pages/vagas/vagas.css">
+    <!-- css -->
+    <link rel="stylesheet" href="../../../../assets/css/pages/vagas-ativas/vagas-ativas.css">
     <link rel="stylesheet" href="../../../../assets/js/global/script.js">
-    <style>
-
-        /* --- Layout Principal (Reutilizado) --- */
-        .dashboard-container { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
-        .sidebar { background-color: var(--white-color); padding: 2rem 1.5rem; }
-        .main-content { padding: 2rem; overflow-y: auto; max-height: 100vh; }
-        
-        /* --- Barra Lateral (Reutilizada com modificações) --- */
-        .sidebar-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; }
-        .logo-icon { background-color: var(--primary-color); color: var(--white-color); padding: 0.5rem; border-radius: 8px; }
-        .logo-text { font-size: 1.5rem; font-weight: 700; }
-        .sidebar-menu h3 { font-size: 0.8rem; font-weight: 500; color: var(--text-light); text-transform: uppercase; margin: 1.5rem 0 1rem 0; }
-        .menu-item { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1rem; border-radius: 8px; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-light); }
-        .menu-item:hover, .menu-item.active { background-color: var(--primary-color); color: var(--white-color); }
-        .sidebar-footer { margin-top: auto; }
-        
-        /* Menu Expansível */
-        .menu-item-collapsible { padding: 0; }
-        .menu-item-trigger { display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
-        .menu-main-link { display: flex; align-items: center; gap: 1rem; }
-        .chevron-icon { transition: transform 0.3s ease-in-out; }
-        .menu-item-trigger.open .chevron-icon { transform: rotate(90deg); }
-        .submenu { list-style: none; padding-left: 1.5rem; overflow: hidden; max-height: 0; transition: max-height 0.4s ease-in-out; }
-        .submenu.open { max-height: 200px; }
-        .submenu-item { display: block; color: var(--text-light); padding: 0.75rem 1rem; border-radius: 6px; font-weight: 500; font-size: 0.9rem; position: relative; left: 24px; }
-        .submenu-item:hover { color: var(--primary-color); }
-        .submenu-item.active { color: var(--primary-color); font-weight: 600; }
-
-
-        /* --- Conteúdo da Página "Vagas Ativas" --- */
-        .page-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem; }
-        .page-header h1 { font-size: 2rem; font-weight: 700; }
-        .page-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; }
-        
-        .filter-select { padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); font-size: 1rem; color: var(--text-dark); background-color: var(--white-color); }
-        .btn { padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: background-color 0.2s; }
-        .btn-primary { background-color: var(--primary-color); color: var(--white-color); }
-
-        .jobs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
-
-        .job-summary-card {
-            background-color: var(--white-color);
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .job-summary-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(106, 90, 249, 0.1); }
-
-        .card-header { display: flex; justify-content: space-between; align-items: flex-start; padding: 1.5rem 1.5rem 1rem 1.5rem; }
-        .card-header h2 { font-size: 1.25rem; font-weight: 600; line-height: 1.4; }
-        .status-badge { background-color: var(--success-light); color: var(--success-color); font-size: 0.8rem; font-weight: 600; padding: 0.3rem 0.8rem; border-radius: 12px; }
-        
-        .card-body { padding: 0 1.5rem 1.5rem 1.5rem; flex-grow: 1; }
-        .card-metrics { display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-light); margin-bottom: 1.5rem; }
-        .card-metrics span { display: flex; align-items: center; gap: 0.75rem; }
-        
-        .candidate-avatars { display: flex; align-items: center; }
-        .candidate-avatars img {
-            width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid var(--white-color);
-        }
-        .candidate-avatars img:not(:first-child) { margin-left: -12px; }
-        .avatars-more {
-            width: 36px; height: 36px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary-color); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600; margin-left: -12px; border: 2px solid var(--white-color);
-        }
-        
-        .card-footer {
-            border-top: 1px solid var(--border-color);
-            padding: 1rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .hiring-manager { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; }
-        .hiring-manager img { width: 32px; height: 32px; border-radius: 50%; }
-
-        /* Responsividade */
-        @media (max-width: 992px) {
-            .dashboard-container { grid-template-columns: 1fr; }
-            .sidebar { position: fixed; left: 0; top: 0; bottom: 0; z-index: 1000; transform: translateX(-100%); }
-        }
-
-    </style>
 </head>
 <body>
     <div class="dashboard-container">
@@ -150,17 +62,8 @@
                     </a></li>
                 </ul>
 
-                <h3>Recrutadores</h3>
-                <ul>
-                    <li><a href="#" class="menu-item">
-                        <img src="https://i.pravatar.cc/150?img=11" alt="Recrutador" style="width: 24px; height: 24px; border-radius: 50%;">
-                        <span>Bagas Mahpie</span>
-                    </a></li>
-                    <li><a href="#" class="menu-item">
-                        <img src="https://i.pravatar.cc/150?img=12" alt="Recrutador" style="width: 24px; height: 24px; border-radius: 50%;">
-                        <span>Sir Dandy</span>
-                    </a></li>
-                </ul>
+                <h3>Outros</h3>
+                
             </nav>
 
             <div class="sidebar-footer">
