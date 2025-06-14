@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
+    <script defer src="../../../../assets/js/global/script.js"></script>
     <!-- <link rel="stylesheet" href="../../../../assets/css/pages/vagas-ativas/vagas-ativas.css"> -->
     <style>
         :root {
@@ -105,6 +106,12 @@
             justify-content: flex-end;
             align-items: center;
             gap: 1rem;
+        }
+
+        @media screen and (max-width: 992px) {
+            .dashboard-container { grid-template-columns: 1fr; }
+            .sidebar { position: fixed; left: 0; top: 0; bottom: 0; z-index: 1000; transform: translateX(-100%); }
+            .main-content { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -239,24 +246,5 @@
             </div>
         </main>
     </div>
-
-<script>
-    // Script para o menu lateral expansível
-    document.addEventListener('DOMContentLoaded', () => {
-        const vagasTrigger = document.getElementById('vagas-trigger');
-        if (vagasTrigger) {
-            // Deixa o menu aberto por padrão nesta página
-            const submenu = vagasTrigger.nextElementSibling;
-            vagasTrigger.classList.add('open');
-            submenu.classList.add('open');
-
-            vagasTrigger.addEventListener('click', (event) => {
-                event.preventDefault();
-                vagasTrigger.classList.toggle('open');
-                submenu.classList.toggle('open');
-            });
-        }
-    });
-</script>
 </body>
 </html>
