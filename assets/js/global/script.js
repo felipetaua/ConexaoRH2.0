@@ -20,16 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Seleciona o elemento que aciona o submenu
     const vagasTrigger = document.querySelector('.menu-item-trigger');
     const submenu = vagasTrigger ? vagasTrigger.nextElementSibling : null;
 
+    const currentPage = window.location.pathname.split('/').pop().toLowerCase().trim();
+
     // Abre automaticamente o submenu se estiver em uma das páginas de vagas
-    if (submenu && (
-        window.location.pathname.includes('/vagas/vagas.html') ||
-        window.location.pathname.includes('/vagas/ativo.html') ||
-        window.location.pathname.includes('/vagas/arquivadas.html')
-    )) {
+    if (
+        submenu &&
+        ['vagas.html', 'ativo.html', 'arquivadas.html'].includes(currentPage)
+    ) {
         vagasTrigger.classList.add('open', 'active');
         submenu.classList.add('open');
     }
@@ -67,16 +67,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Listener específico para o salário para formatar como moeda
     const salaryInput = document.getElementById('salary');
     const salaryPreview = document.getElementById('previewSalary');
-    
-    if (salaryInput && salaryPreview) {
-        salaryInput.addEventListener('input', () => {
+    const salaryHidden = document.getElementById('salaryHidden');
+
+    function updateSalaryPreview() {
+        if (salaryHidden && salaryHidden.checked) {
+            salaryPreview.innerHTML = `<span style="color:#888">Salário oculto</span>`;
+        } else if (salaryInput && salaryInput.value) {
             const value = parseFloat(salaryInput.value) || 0;
             const formattedSalary = value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             salaryPreview.innerHTML = `${formattedSalary} <span>/mês</span>`;
-        });
+        } else {
+            salaryPreview.innerHTML = salaryPreview.dataset.placeholder || '';
+        }
+    }
+
+    if (salaryInput && salaryPreview) {
+        salaryInput.addEventListener('input', updateSalaryPreview);
+    }
+    if (salaryHidden && salaryPreview) {
+        salaryHidden.addEventListener('change', updateSalaryPreview);
     }
 
     // Armazenar os textos placeholders iniciais
