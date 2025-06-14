@@ -1,5 +1,5 @@
 .avatar-upload { display: flex; align-items: center; gap: 1.5rem; }
-.avatar-upload img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
+.avatar-upload img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover;}
 .btn { padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; transition: all 0.2s ease; }
 .btn-primary { background-color: var(--primary-color); color: var(--white-color); }
 .btn-secondary { background-color: var(--white-color); color: var(--text-dark); border: 1px solid var(--border-color); }

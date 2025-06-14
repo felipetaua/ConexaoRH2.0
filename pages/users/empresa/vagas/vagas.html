@@ -39,7 +39,7 @@
                             <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                         </div>
                         <ul class="submenu">
-                            <li><a href="./vagas.html" class="submenu-item active">Criar vagas</a></li>
+                            <li><a href="./vagas.html" class="submenu-item act active">Criar vagas</a></li>
                             <li><a href="./ativo.html" class="submenu-item">Vagas Ativas</a></li>
                             <li><a href="./arquivadas.html" class="submenu-item">Arquivadas</a></li>
                         </ul>
@@ -63,17 +63,7 @@
                     </a></li>
                 </ul>
 
-                <h3>Recrutadores</h3>
-                <ul>
-                    <li><a href="#" class="menu-item">
-                        <img src="https://i.pravatar.cc/150?img=11" alt="Recrutador" style="width: 24px; height: 24px; border-radius: 50%;">
-                        <span>Bagas Mahpie</span>
-                    </a></li>
-                    <li><a href="#" class="menu-item">
-                        <img src="https://i.pravatar.cc/150?img=12" alt="Recrutador" style="width: 24px; height: 24px; border-radius: 50%;">
-                        <span>Sir Dandy</span>
-                    </a></li>
-                </ul>
+                <h3>Outros</h3>
             </nav>
 
             <div class="sidebar-footer">
@@ -127,6 +117,7 @@
                                         <option>Meio Período</option>
                                         <option>PJ</option>
                                         <option>Estágio</option>
+                                        <option>Jovem Aprendiz</option>
                                     </select>
                                 </div>
                             </div>
@@ -134,20 +125,24 @@
 
                         <section class="form-section">
                             <h2>Detalhes da Vaga</h2>
-                             <div class="form-group full-width">
+                            <div class="form-group full-width">
                                 <label for="jobDescription">Descrição da Vaga</label>
                                 <textarea id="jobDescription" placeholder="Fale sobre a vaga, a equipe e por que é um ótimo lugar para trabalhar..."></textarea>
                             </div>
                         </section>
                         
-                         <section class="form-section">
+                        <section class="form-section">
                             <h2>Remuneração</h2>
-                             <div class="form-grid">
-                                 <div class="form-group">
-                                     <label for="salary">Salário (mensal)</label>
-                                     <input type="number" id="salary" placeholder="Ex: 9000">
-                                 </div>
-                             </div>
+                            <div class="form-group full-width">
+                                <label for="salary">Remuneração</label>
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <input type="number" id="salary" name="salary" placeholder="Ex: 3500" min="0" step="any" style="flex:1;">
+                                    <label style="display: flex; align-items: center; gap: 0.4em; font-size: 0.98em;">
+                                        <input type="checkbox" id="salaryHidden" name="salaryHidden" style="accent-color: var(--primary-color);">
+                                        Salário oculto
+                                    </label>
+                                </div>
+                            </div>
                         </section>
 
                         <div class="form-actions">

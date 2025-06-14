@@ -1,0 +1,52 @@
+.page-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 2rem; }
+.page-header h1 { font-size: 2rem; font-weight: 700; }
+.page-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; }
+
+.filter-select { padding: 0.8rem 1rem; border-radius: 8px; border: 1px solid var(--border-color); font-size: 1rem; color: var(--text-dark); background-color: var(--white-color); }
+.btn { padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: background-color 0.2s; }
+.btn-primary { background-color: var(--primary-color); color: var(--white-color); }
+.btn-secondary { background-color: var(--primary-light); color: var(--primary-color); }
+.btn-secondary:hover { opacity: 0.9; }
+
+.jobs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.job-summary-card {
+    background-color: var(--white-color);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.job-summary-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(106, 90, 249, 0.1); }
+
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; padding: 1.5rem 1.5rem 1rem 1.5rem; }
+.card-header h2 { font-size: 1.25rem; font-weight: 600; line-height: 1.4; }
+.status-badge { background-color: var(--success-light); color: var(--success-color); font-size: 0.8rem; font-weight: 600; padding: 0.3rem 0.8rem; border-radius: 12px; }
+
+.card-body { padding: 0 1.5rem 1.5rem 1.5rem; flex-grow: 1; }
+.card-metrics { display: flex; flex-direction: column; gap: 0.75rem; color: var(--text-light); margin-bottom: 1.5rem; }
+.card-metrics span { display: flex; align-items: center; gap: 0.75rem; }
+
+.candidate-avatars { display: flex; align-items: center; }
+.candidate-avatars img {
+    width: 36px; height: 36px; border-radius: 50%; object-fit: cover; border: 2px solid var(--white-color);
+}
+.candidate-avatars img:not(:first-child) { margin-left: -12px; }
+.avatars-more {
+    width: 36px; height: 36px; border-radius: 50%; background-color: var(--primary-light); color: var(--primary-color); display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 600; margin-left: -12px; border: 2px solid var(--white-color);
+}
+
+.card-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.hiring-manager { display: flex; align-items: center; gap: 0.75rem; font-size: 0.9rem; }
+.hiring-manager img { width: 32px; height: 32px; border-radius: 50%; }

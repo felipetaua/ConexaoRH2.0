@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- <link rel="stylesheet" href="../../../../assets/css/pages/vagas-ativas/vagas-ativas.css"> -->
     <style>
-        /* CSS Reset e Variáveis de Cor (Mesma identidade visual) */
         :root {
             --primary-color: #6a5af9;
             --primary-light: #f0eefc;
@@ -31,7 +31,7 @@
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
 
-        /* --- Layout Principal (Reutilizado) --- */
+        /* --- Layout Principal  --- */
         .dashboard-container { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
         .sidebar { background-color: var(--white-color); padding: 2rem 1.5rem; }
         .main-content { padding: 2rem; overflow-y: auto; max-height: 100vh; }
@@ -135,9 +135,9 @@
                             <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                         </div>
                         <ul class="submenu">
-                            <li><a href="./vagas.html" class="submenu-item active">Criar vagas</a></li>
+                            <li><a href="./vagas.html" class="submenu-item ">Criar vagas</a></li>
                             <li><a href="./ativo.html" class="submenu-item">Vagas Ativas</a></li>
-                            <li><a href="./arquivadas.html" class="submenu-item">Arquivadas</a></li>
+                            <li><a href="./arquivadas.html" class="submenu-item active">Arquivadas</a></li>
                         </ul>
                     </li>
 
@@ -159,17 +159,7 @@
                     </a></li>
                 </ul>
 
-                <h3>Recrutadores</h3>
-                <ul>
-                    <li><a href="#" class="menu-item">
-                        <img src="https://i.pravatar.cc/150?img=11" alt="Recrutador" style="width: 24px; height: 24px; border-radius: 50%;">
-                        <span>Bagas Mahpie</span>
-                    </a></li>
-                    <li><a href="#" class="menu-item">
-                        <img src="https://i.pravatar.cc/150?img=12" alt="Recrutador" style="width: 24px; height: 24px; border-radius: 50%;">
-                        <span>Sir Dandy</span>
-                    </a></li>
-                </ul>
+                <h3>Outros</h3>
             </nav>
 
             <div class="sidebar-footer">
