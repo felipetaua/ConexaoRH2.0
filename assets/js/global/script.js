@@ -96,6 +96,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// --- Lógica para o Menu Móvel ---
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const sidebar = document.getElementById('sidebar');
+
+mobileMenuBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('show');
+});
+
+// Fechar o menu se clicar fora dele (em modo mobile)
+document.addEventListener('click', (event) => {
+    const isClickInsideSidebar = sidebar.contains(event.target);
+    const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
+    if (!isClickInsideSidebar && !isClickOnMenuBtn && sidebar.classList.contains('show')) {
+        sidebar.classList.remove('show');
+    }
+});
+
 // --- Lógica para o Sistema de Abas ---
 document.addEventListener('DOMContentLoaded', () => {
     const tabButtons = document.querySelectorAll('.tab-btn');

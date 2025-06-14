@@ -6,6 +6,10 @@
     margin-bottom: 2rem;
 }
 
+.mobile-menu-btn {
+    display: none;
+}
+
 .search-bar {
     position: relative;
     flex-grow: 1;
@@ -59,4 +63,43 @@
     height: 40px;
     border-radius: 50%;
     object-fit: cover;
+}
+
+@media (max-width: 992px) {
+    .dashboard-container {
+        grid-template-columns: 1fr;
+    }
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1000;
+        transform: translateX(-100%);
+        box-shadow: 10px 0 20px rgba(0,0,0,0.1);
+    }
+    .sidebar.show {
+        transform: translateX(0);
+    }
+    .main-header {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .search-bar {
+        order: 2;
+        max-width: none;
+        flex-basis: 100%;
+    }
+    .header-profile {
+        order: 1;
+        margin-left: auto;
+    }
+    .mobile-menu-btn {
+        display: block;
+        order: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    .main-banner h2 { max-width: 100%; font-size: 1.5rem; }
 }
