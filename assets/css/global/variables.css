@@ -40,6 +40,7 @@
     --border-color: #e5e5e5;
     --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     --success-color: #22c55e;
+    --success-light: #dcfce7;
     --warning-color: #f59e0b;
     --info-color: #3b82f6;
     --tag-new-bg: #e0f2fe;
@@ -47,4 +48,9 @@
 
     --archived-color: #a0a0a0;
     --archived-light: #f0f0f0;
+
+    /* --main-color: #6a5af9; */
+    /* --primary-light: #f0eefc; */
+    --border-color: #e5e5e5;
+
 }

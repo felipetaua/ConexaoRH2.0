@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const vagasTrigger = document.querySelector('.menu-item-trigger');
     const submenu = vagasTrigger ? vagasTrigger.nextElementSibling : null;
 
-    // Pega o nome do arquivo atual, em minúsculas e sem espaços
     const currentPage = window.location.pathname.split('/').pop().toLowerCase().trim();
 
     // Abre automaticamente o submenu se estiver em uma das páginas de vagas
