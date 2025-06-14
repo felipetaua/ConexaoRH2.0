@@ -1,10 +1,7 @@
-/* Contêiner principal do item de menu com submenu */
 .menu-item-collapsible {
-    /* Este li não precisa de padding, pois o trigger interno já terá */
     padding: 0;
 }
 
-/* O item que o usuário clica para abrir/fechar */
 .menu-item-trigger {
     display: flex;
     justify-content: space-between;
@@ -12,37 +9,35 @@
     cursor: pointer;
 }
 
-/* Agrupa o ícone e o texto principal para alinhamento */
 .menu-main-link {
     display: flex;
     align-items: center;
-    gap: 1rem; /* Mesmo espaçamento dos outros itens */
+    gap: 1rem; 
 }
-/* O ícone de seta */
 .chevron-icon {
     transition: transform 0.3s ease-in-out;
 }
 
-/* Rotação da seta quando o menu está aberto */
 .menu-item-trigger.open .chevron-icon {
     transform: rotate(90deg);
 }
 
-/* Estilo da lista do submenu */
 .submenu {
     list-style: none;
-    padding-left: 1.5rem; /* Indentação para os sub-itens */
+    padding-left: 1.5rem;
     overflow: hidden;
-    max-height: 0; /* Começa fechado */
+    max-height: 0; 
     transition: max-height 0.4s ease-in-out;
 }
 
-/* Classe para mostrar o submenu */
 .submenu.open {
-    max-height: 200px; /* Um valor alto o suficiente para caber os itens */
+    max-height: 200px;
 }
 
-/* Estilo de cada item dentro do submenu */
+.act {
+    color: var(--primary-color);
+}
+
 .submenu-item {
     display: block;
     color: var(--text-light);
@@ -51,7 +46,7 @@
     font-weight: 500;
     font-size: 0.9rem;
     position: relative;
-    left: 24px; /* Alinha com o texto do item pai */
+    left: 24px; 
 }
 
 .submenu-item:hover {
