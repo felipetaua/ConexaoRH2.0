@@ -67,16 +67,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Listener específico para o salário para formatar como moeda
     const salaryInput = document.getElementById('salary');
     const salaryPreview = document.getElementById('previewSalary');
-    
-    if (salaryInput && salaryPreview) {
-        salaryInput.addEventListener('input', () => {
+    const salaryHidden = document.getElementById('salaryHidden');
+
+    function updateSalaryPreview() {
+        if (salaryHidden && salaryHidden.checked) {
+            salaryPreview.innerHTML = `<span style="color:#888">Salário oculto</span>`;
+        } else if (salaryInput && salaryInput.value) {
             const value = parseFloat(salaryInput.value) || 0;
             const formattedSalary = value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             salaryPreview.innerHTML = `${formattedSalary} <span>/mês</span>`;
-        });
+        } else {
+            salaryPreview.innerHTML = salaryPreview.dataset.placeholder || '';
+        }
+    }
+
+    if (salaryInput && salaryPreview) {
+        salaryInput.addEventListener('input', updateSalaryPreview);
+    }
+    if (salaryHidden && salaryPreview) {
+        salaryHidden.addEventListener('change', updateSalaryPreview);
     }
 
     // Armazenar os textos placeholders iniciais

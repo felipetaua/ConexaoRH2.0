@@ -1,82 +1,110 @@
-/* --- Conteúdo da Página "Criar Vaga" --- */
-        .page-header { margin-bottom: 2rem; }
-        .page-header h1 { font-size: 2rem; font-weight: 700; }
-        .page-header p { color: var(--text-light); }
+.page-header { margin-bottom: 2rem; }
+.page-header h1 { font-size: 2rem; font-weight: 700; }
+.page-header p { color: var(--text-light); }
 
-        .create-job-layout {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 2rem;
-        }
-        
-        .form-column { display: flex; flex-direction: column; gap: 1.5rem; }
-        .form-section {
-            background-color: var(--white-color);
-            padding: 1.5rem 2rem;
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-        }
-        .form-section h2 {
-            font-size: 1.25rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
-        }
-        
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-        .form-group.full-width {
-            grid-column: 1 / -1;
-        }
-        
-        .form-group label {
-            font-size: 0.9rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
-        
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: 'Poppins', sans-serif;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px var(--primary-light);
-        }
-        
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        .form-actions {
-            grid-column: 1 / -1;
-            display: flex;
-            justify-content: flex-end;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        .btn {
-            padding: 0.8rem 1.8rem; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; border: none; transition: all 0.2s ease;
-        }
-        .btn-primary { background-color: var(--primary-color); color: var(--white-color); }
-        .btn-primary:hover { opacity: 0.9; }
-        .btn-secondary { background-color: var(--primary-light); color: var(--primary-color); }
-        .btn-secondary:hover { opacity: 0.9; }
+.create-job-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.form-column { display: flex; flex-direction: column; gap: 1.5rem; }
+.form-section {
+    background-color: var(--white-color);
+    padding: 1.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+}
+.form-section h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    padding: 0.8rem 1.8rem; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; border: none; transition: all 0.2s ease;
+}
+.btn-primary { background-color: var(--primary-color); color: var(--white-color); }
+.btn-primary:hover { opacity: 0.9; }
+.btn-secondary { background-color: var(--primary-light); color: var(--primary-color); }
+.btn-secondary:hover { opacity: 0.9; }
+
+.form-group input[type="checkbox"] {
+    accent-color: var(--primary-color);
+    width: 1.15em;
+    height: 1.15em;
+    border-radius: 4px;
+    margin-right: 0.4em;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+    box-shadow: 0 1px 4px rgba(83,114,240,0.08);
+    vertical-align: middle;
+}
+
+.form-group input[type="checkbox"]:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--primary-light);
+}
+
+.form-group label[for="salaryHidden"] {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--text-dark);
+    cursor: pointer;
+    user-select: none;
+}

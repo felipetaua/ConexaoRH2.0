@@ -127,6 +127,7 @@
                                         <option>Meio Período</option>
                                         <option>PJ</option>
                                         <option>Estágio</option>
+                                        <option>Jovem Aprendiz</option>
                                     </select>
                                 </div>
                             </div>
@@ -134,20 +135,24 @@
 
                         <section class="form-section">
                             <h2>Detalhes da Vaga</h2>
-                             <div class="form-group full-width">
+                            <div class="form-group full-width">
                                 <label for="jobDescription">Descrição da Vaga</label>
                                 <textarea id="jobDescription" placeholder="Fale sobre a vaga, a equipe e por que é um ótimo lugar para trabalhar..."></textarea>
                             </div>
                         </section>
                         
-                         <section class="form-section">
+                        <section class="form-section">
                             <h2>Remuneração</h2>
-                             <div class="form-grid">
-                                 <div class="form-group">
-                                     <label for="salary">Salário (mensal)</label>
-                                     <input type="number" id="salary" placeholder="Ex: 9000">
-                                 </div>
-                             </div>
+                            <div class="form-group full-width">
+                                <label for="salary">Remuneração</label>
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <input type="number" id="salary" name="salary" placeholder="Ex: 3500" min="0" step="any" style="flex:1;">
+                                    <label style="display: flex; align-items: center; gap: 0.4em; font-size: 0.98em;">
+                                        <input type="checkbox" id="salaryHidden" name="salaryHidden" style="accent-color: var(--primary-color);">
+                                        Salário oculto
+                                    </label>
+                                </div>
+                            </div>
                         </section>
 
                         <div class="form-actions">
