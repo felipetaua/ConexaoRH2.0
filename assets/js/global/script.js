@@ -20,16 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Seleciona o elemento que aciona o submenu
     const vagasTrigger = document.querySelector('.menu-item-trigger');
     const submenu = vagasTrigger ? vagasTrigger.nextElementSibling : null;
 
+    // Pega o nome do arquivo atual, em minúsculas e sem espaços
+    const currentPage = window.location.pathname.split('/').pop().toLowerCase().trim();
+
     // Abre automaticamente o submenu se estiver em uma das páginas de vagas
-    if (submenu && (
-        window.location.pathname.includes('/vagas/vagas.html') ||
-        window.location.pathname.includes('/vagas/ativo.html') ||
-        window.location.pathname.includes('/vagas/arquivadas.html')
-    )) {
+    if (
+        submenu &&
+        ['vagas.html', 'ativo.html', 'arquivadas.html'].includes(currentPage)
+    ) {
         vagasTrigger.classList.add('open', 'active');
         submenu.classList.add('open');
     }
