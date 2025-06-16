@@ -11,6 +11,8 @@
     
     <script defer src="../../../../assets/js/global/script.js"></script>
     <link rel="stylesheet" href="../../../../assets/css/pages/empresa/partials/conteudo-principal.css">
+    <link rel="stylesheet" href="../../../../assets/css/pages/empresa/partials/notificacoes-popup.css">
+    
     <style>
         :root {
             --primary-color: #2E62C2;
@@ -190,10 +192,50 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
                     <input type="text" placeholder="Buscar vagas ou candidatos...">
                 </div>
+
                 <div class="header-profile">
-                    <button class="notification-btn">
+                    <button class="notification-btn" id="notification-trigger">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
                     </button>
+
+                    <div class="notification-popup" id="notification-popup">
+                        <div class="popup-header">
+                            <h3>Notificações</h3>
+                        </div>
+                        <div class="popup-body">
+                            <div class="notification-card unread">
+                                <div class="notification-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                                </div>
+                                <div class="notification-content">
+                                    <p><strong>João da Silva</strong> se aplicou para a vaga de <strong>Eng. de Software</strong>.</p>
+                                    <div class="notification-timestamp">há 2 minutos</div>
+                                </div>
+                            </div>
+                            <div class="notification-card unread">
+                                <div class="notification-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2-2H6l-4 4V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5Z"></path><path d="M18 9h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2"></path><path d="m7 15-1 1 1 1"></path><path d="M10 15h4"></path></svg>
+                                </div>
+                                <div class="notification-content">
+                                    <p>Nova mensagem de <strong>Mariana Costa</strong> sobre a vaga de Analista.</p>
+                                    <div class="notification-timestamp">há 15 minutos</div>
+                                </div>
+                            </div>
+                            <div class="notification-card">
+                                <div class="notification-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                                </div>
+                                <div class="notification-content">
+                                    <p>Sua entrevista com <strong>Pedro Alencar</strong> foi reagendada.</p>
+                                    <div class="notification-timestamp">há 1 hora</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popup-footer">
+                            <a href="#">Ver todas as notificações</a>
+                        </div>
+                    </div>
+
                     <div class="user-info">
                         <img src="https://i.pravatar.cc/150?img=68" alt="Jason Ranti">
                     </div>
