@@ -8,12 +8,13 @@
 @import url(../../../css/pages/empresa/partials/barra-lateral.css);
 @import url(../../../css/pages/empresa/partials/submenu.css);
 @import url(../../../css/pages/empresa/partials/conteudo-principal.css);
+@import url(../../../css/pages/empresa/partials/notificacoes-popup.css);
 
 @import url(../../../css/global/elements.css);
 @import url(../../../css/global/normalize.css);
 @import url(../../../css/global/variables.css);
 
-body { background-color: var(--background-color); color: var(--text-dark); }
+body { color: var(--text-dark); }
 
 a {
     text-decoration: none;
