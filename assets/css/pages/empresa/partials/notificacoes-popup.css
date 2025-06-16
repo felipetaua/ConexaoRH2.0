@@ -118,3 +118,15 @@
     font-weight: 600;
     text-decoration: none;
 }
+
+@media screen and (max-width: 550px) {
+    .notification-popup.active {
+        align-items: center;
+    }
+    
+    .notification-popup {
+        width: auto;
+        margin: 0 16px;
+        top: calc(100% - 83vh)
+    }
+}
