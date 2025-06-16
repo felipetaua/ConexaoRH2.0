@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../../assets/css/pages/entrevistas/entrevistas.css">
 
     <script defer src="../../../assets/js/global/script.js"></script>
+    <script defer src="../../../assets/js/pages/entrevista/entrevista.js"></script>
 </head>
 <body>
     <div class="dashboard-container">
@@ -102,7 +103,7 @@
                     <h1>Agenda de Entrevistas</h1>
                     <p>Gerencie os próximos encontros com seus candidatos.</p>
                 </div>
-                <button class="btn btn-primary">
+                <button class="btn btn-primary" id="schedule-interview-btn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                     <span>Agendar Entrevista</span>
                 </button>
@@ -212,6 +213,68 @@
                 </div>
             </div>
         </main>
+    </div>
+
+    <div class="modal-overlay" id="schedule-interview-modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>Agendar Nova Entrevista</h2>
+                <button class="close-modal-btn" id="close-modal-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="candidate">Candidato(a)</label>
+                        <select id="candidate">
+                            <option>Selecione o candidato</option>
+                            <option>Juliana Martins</option>
+                            <option>Carlos Eduardo</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="job">Vaga</label>
+                        <select id="job">
+                            <option>Selecione a vaga</option>
+                            <option>UI/UX Designer Sênior</option>
+                            <option>Desenvolvedor(a) Full-Stack</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="interviewDate">Data da Entrevista</label>
+                        <input type="date" id="interviewDate" value="2025-06-16">
+                    </div>
+                    <div class="form-group">
+                        <label for="interviewTime">Horário</label>
+                        <input type="time" id="interviewTime" value="14:30">
+                    </div>
+                     <div class="form-group full-width">
+                        <label for="interviewers">Entrevistador(es)</label>
+                        <select id="interviewers">
+                            <option>Ana Oliveira (RH)</option>
+                            <option>Bruno Santos (Recrutador)</option>
+                            <option>Daniel Ferreira (Gerente de TI)</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="interviewType">Tipo de Entrevista</label>
+                        <select id="interviewType">
+                            <option>Triagem RH</option>
+                            <option>Entrevista Técnica</option>
+                            <option>Entrevista com Gestor</option>
+                            <option>Entrevista Final</option>
+                        </select>
+                    </div>
+                     <div class="form-group full-width">
+                        <label for="interviewNotes">Notas / Instruções para o candidato</label>
+                        <textarea id="interviewNotes" placeholder="Ex: Por favor, tenha seu portfólio pronto para apresentar. O link para a chamada será enviado 15 minutos antes."></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-cancel" id="cancel-btn">Cancelar</button>
+                <button class="btn btn-primary">Agendar e Enviar Convite</button>
+            </div>
+        </div>
     </div>
 </body>
 </html>
