@@ -96,7 +96,7 @@
         position: fixed;
         top: 1.2rem;
         left: 1.2rem;
-        z-index: 1100;
+        z-index: 990;
         background: #fff;
         border-radius: 50%;
         box-shadow: 0 2px 8px rgba(44,62,80,0.10);
