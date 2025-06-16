@@ -14,7 +14,7 @@
 @import url(../../../css/global/normalize.css);
 @import url(../../../css/global/variables.css);
 
-body { background-color: var(--background-color); color: var(--text-dark); }
+body { color: var(--text-dark); }
 
 a {
     text-decoration: none;
