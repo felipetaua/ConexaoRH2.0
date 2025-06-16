@@ -1,4 +1,3 @@
-/* Responsividade */
 @media (max-width: 1200px) {
     .interview-card { flex-direction: column; align-items: stretch; }
     .interview-date { border-right: none; border-bottom: 1px solid var(--border-color); text-align: left; padding: 1rem; display: flex; align-items: center; gap: 1rem; }
@@ -12,101 +11,79 @@
     .interview-info { flex-direction: column; align-items: flex-start; }
 }
 
-/* Adicione ou ajuste estas regras no final do seu arquivo CSS existente ou dentro das media queries apropriadas */
-
-/* --- Responsividade para o Cabeçalho da Página --- */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .page-header {
-        flex-direction: column; /* Empilha o título e o botão */
-        align-items: flex-start; /* Alinha os itens à esquerda */
-        gap: 1rem; /* Espaço entre título/descrição e botão */
+        flex-direction: column;
+        align-items: flex-start; 
+        gap: 1rem;
     }
 
-    .page-header > div:first-child { /* Div que contém H1 e P */
-        margin-bottom: 0; /* Remove margem se houver, pois o gap do flex-direction fará o espaçamento */
+    .page-header > div:first-child { 
+        margin-bottom: 0; 
     }
 
     .page-header .btn-primary {
-        width: 100%; /* Faz o botão ocupar toda a largura */
-        justify-content: center; /* Centraliza o texto e ícone no botão */
-    }
-}
-
-/* --- Responsividade para a Navegação por Abas --- */
-@media (max-width: 480px) {
-    .tabs-nav {
-        flex-wrap: wrap; /* Permite que os botões das abas quebrem linha */
-        justify-content: center; /* Centraliza os botões caso quebrem linha */
+        width: 100%; 
+        justify-content: center; 
     }
 
-    .tabs-nav .tab-btn {
-        flex-basis: calc(50% - 0.5rem); /* Faz com que 2 botões caibam por linha, com um pequeno espaço */
-        margin-bottom: 0.5rem; /* Espaço entre as linhas de botões */
-        text-align: center;
-        justify-content: center;
-    }
-}
-
-
-/* --- Responsividade para os Cards de Entrevista --- */
-@media (max-width: 768px) {
     .interview-card {
-        flex-direction: column; /* Empilha os elementos do card */
-        align-items: flex-start; /* Alinha os elementos do card à esquerda */
-        gap: 1rem; /* Espaçamento entre os elementos empilhados */
+        flex-direction: column;
+        align-items: flex-start; 
+        gap: 1rem;
     }
 
     .interview-date {
-        align-self: flex-start; /* Garante que a data fique no topo à esquerda */
-        margin-bottom: 0; /* Remove margem inferior, o gap do flex-direction cuidará disso */
-        padding: 0.5rem 0.8rem; /* Pode ajustar o padding se necessário */
+        align-self: flex-start; 
+        margin-bottom: 0; 
+        padding: 0.5rem 0.8rem;
     }
     .interview-date .day {
-        font-size: 1.5rem; /* Ajuste o tamanho da fonte se necessário */
+        font-size: 1.5rem;
     }
     .interview-date .month {
-        font-size: 0.8rem; /* Ajuste o tamanho da fonte se necessário */
+        font-size: 0.8rem;
     }
 
     .interview-info {
-        flex-direction: row; /* Mantém imagem e detalhes lado a lado, mas ajusta o alinhamento */
-        align-items: center; /* Centraliza verticalmente imagem e texto */
+        flex-direction: row; 
+        align-items: center; 
         width: 100%;
     }
     
     .interview-info img {
-        width: 40px; /* Ajuste o tamanho da imagem se necessário */
+        width: 40px; 
         height: 40px;
         margin-right: 0.75rem;
     }
 
     .candidate-details h3 {
-        font-size: 1.1rem; /* Ajuste o tamanho da fonte se necessário */
+        font-size: 1.1rem; 
     }
     .candidate-details p {
-        font-size: 0.85rem; /* Ajuste o tamanho da fonte se necessário */
+        font-size: 0.85rem; 
     }
 
     .interview-tags {
-        flex-direction: row; /* Mantém as tags em linha */
-        flex-wrap: wrap; /* Permite quebra de linha para as tags */
+        flex-direction: row; 
+        flex-wrap: wrap;
         gap: 0.5rem;
         width: 100%;
     }
 
     .interviewers {
-        justify-content: flex-start; /* Alinha os avatares à esquerda */
+        justify-content: flex-start; 
         width: 100%;
     }
     .interviewers img {
-        width: 30px; /* Ajuste o tamanho dos avatares dos entrevistadores */
+        width: 30px; 
         height: 30px;
     }
 
     .interview-actions {
         width: 100%;
-        flex-direction: column; /* Empilha os botões de ação */
-        align-items: stretch; /* Faz os botões ocuparem a largura total */
+        flex-direction: column; 
+        align-items: stretch;
         gap: 0.5rem;
     }
 
@@ -115,18 +92,36 @@
         justify-content: center;
     }
     .interview-actions .btn-icon {
-        align-self: flex-start; /* Alinha o botão de ícone à esquerda */
-        padding: 0.5rem; /* Ajuste o padding do botão de ícone */
+        align-self: flex-start; 
+        padding: 0.5rem;
+    }
+
+    .calendar-header h2 {
+        font-size: 1.3rem; 
+    }
+    .day-name {
+        font-size: 0.8rem;
+        padding-bottom: 0.4rem;
+    }
+    .calendar-day {
+        padding: 0.4rem; 
+        min-height: 70px;
+        font-size: 0.9rem;
+    }
+    .calendar-event {
+        font-size: 0.7rem;
+        padding: 2px 4px;
+        margin-top: 2px;
     }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
     .interview-info {
-        flex-direction: column; /* Em telas muito pequenas, empilha imagem e texto */
+        flex-direction: column;
         align-items: flex-start;
     }
     .interview-info img {
-        margin-bottom: 0.5rem; /* Espaço abaixo da imagem quando empilhada */
+        margin-bottom: 0.5rem;
     }
     .candidate-details h3 {
         font-size: 1rem;
@@ -135,33 +130,22 @@
         font-size: 0.8rem;
     }
     .tag {
-        font-size: 0.75rem; /* Reduzir tamanho da fonte das tags */
+        font-size: 0.75rem; 
         padding: 0.2rem 0.5rem;
     }
-}
 
-/* --- Responsividade para o Calendário --- */
-@media (max-width: 768px) {
-    .calendar-header h2 {
-        font-size: 1.3rem; /* Reduz o título do calendário */
+    .tabs-nav {
+        flex-wrap: wrap; 
+        justify-content: center; 
     }
-    .day-name {
-        font-size: 0.8rem; /* Nomes dos dias menores */
-        padding-bottom: 0.4rem;
-    }
-    .calendar-day {
-        padding: 0.4rem; /* Menor padding nos dias */
-        min-height: 70px; /* Altura menor para os dias */
-        font-size: 0.9rem;
-    }
-    .calendar-event {
-        font-size: 0.7rem; /* Fonte menor para eventos */
-        padding: 2px 4px;
-        margin-top: 2px;
-    }
-}
 
-@media (max-width: 480px) {
+    .tabs-nav .tab-btn {
+        flex-basis: calc(50% - 0.5rem); 
+        margin-bottom: 0.5rem; 
+        text-align: center;
+        justify-content: center;
+    }
+
     .calendar-header h2 {
         font-size: 1.1rem;
     }
@@ -169,14 +153,15 @@
         font-size: 0.7rem;
     }
     .calendar-day {
-        min-height: 50px; /* Altura ainda menor */
+        min-height: 50px; 
         font-size: 0.8rem;
     }
     .calendar-event {
         font-size: 0.65rem;
-        white-space: nowrap; /* Evita quebra de linha no nome do evento */
-        overflow: hidden; /* Esconde o que não couber */
-        text-overflow: ellipsis; /* Adiciona "..." ao final */
-        max-width: 90%; /* Garante que não ultrapasse muito o dia */
+        white-space: nowrap; 
+        overflow: hidden;
+        text-overflow: ellipsis; 
+        max-width: 90%;
     }
 }
+

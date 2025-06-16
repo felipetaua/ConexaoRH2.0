@@ -49,6 +49,12 @@
     left: 24px; 
 }
 
+.submenu-item.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+
 .submenu-item:hover {
     color: var(--primary-color);
 }

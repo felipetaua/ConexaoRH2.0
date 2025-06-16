@@ -2,6 +2,7 @@
 @import url(./partials/layout-principal.css);
 @import url(./partials/responsividade.css);
 @import url(./partials/team-grid.css);
+@import url(./partials/modal.css);
 
 @import url(../../../css/pages/empresa/partials/barra-lateral.css);
 @import url(../../../css/pages/empresa/partials/submenu.css);
