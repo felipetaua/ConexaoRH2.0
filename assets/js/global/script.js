@@ -133,3 +133,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+const notificationBtn = document.getElementById('notification-trigger');
+const notificationPopup = document.getElementById('notification-popup');
+
+// Adiciona um evento de 'click' ao botão
+notificationBtn.addEventListener('click', function (event) {
+    // Impede que o clique no botão feche o popup imediatamente
+    event.stopPropagation(); 
+    
+    // Adiciona ou remove a classe 'active' do popup
+    notificationPopup.classList.toggle('active');
+});
+
+// Adiciona um evento de 'click' a toda a janela para fechar o popup
+window.addEventListener('click', function (event) {
+    // Verifica se o popup está ativo e se o clique foi fora do popup
+    if (notificationPopup.classList.contains('active') && !notificationPopup.contains(event.target)) {
+        notificationPopup.classList.remove('active');
+    }
+});
