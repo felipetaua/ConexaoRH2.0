@@ -1,6 +1,7 @@
 @import url(./partials/content.css);
 @import url(./partials/layout-principal.css);
 @import url(./partials/responsividade.css);
+@import url(./partials/painel-candidatos.css);
 
 @import url(../../../css/pages/empresa/partials/barra-lateral.css);
 @import url(../../../css/pages/empresa/partials/submenu.css);
