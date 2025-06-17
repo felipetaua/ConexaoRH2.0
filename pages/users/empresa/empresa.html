@@ -20,9 +20,9 @@
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div class="logo-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                    <img class="logo-img" src="../../../assets/images/global/RHconexao-logo.svg" alt="logo RH Conexão">
                 </div>
-                <h1 class="logo-text">RecrutaPRO</h1>
+                <h1 class="logo-text">RH Conexão</h1>
             </div>
 
             <nav class="sidebar-menu">
@@ -196,7 +196,7 @@
                                 <div class="job-card-content">
                                     <span class="job-tag">UI/UX Design</span>
                                     <h4>Otimizando a Experiência do Usuário com Design</h4>
-                                     <div class="job-manager">
+                                    <div class="job-manager">
                                         <img src="https://i.pravatar.cc/150?img=35" alt="Manager">
                                         <span>Gerente: <b>Beyo Salto</b></span>
                                     </div>
@@ -297,7 +297,7 @@
                             </div>
                             <button class="follow-btn">Seguir</button>
                         </div>
-                         <div class="recruiter-item">
+                        <div class="recruiter-item">
                             <div class="recruiter-info">
                                 <img src="https://i.pravatar.cc/150?img=45" alt="Recruiter">
                                 <div>
@@ -307,7 +307,7 @@
                             </div>
                             <button class="follow-btn">Seguir</button>
                         </div>
-                         <div class="recruiter-item">
+                        <div class="recruiter-item">
                             <div class="recruiter-info">
                                 <img src="https://i.pravatar.cc/150?img=33" alt="Recruiter">
                                 <div>
@@ -323,62 +323,5 @@
             </div>
         </main>
     </div>
-
-<script>
-    
-
-
-    // --- Lógica para o Gráfico (Chart.js) ---
-    const ctx = document.getElementById('statsChart').getContext('2d');
-    const myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4'],
-            datasets: [{
-                label: 'Novos Candidatos',
-                data: [20, 35, 45, 30],
-                backgroundColor: [
-                    '#dcd8fd',
-                    '#dcd8fd',
-                    '#6a5af9', // Cor primária para a barra de maior valor
-                    '#dcd8fd',
-                ],
-                borderRadius: 8,
-                borderSkipped: false,
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: false
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    grid: {
-                        display: false
-                    },
-                    ticks: {
-                        display: false
-                    }
-                },
-                x: {
-                    grid: {
-                        display: false
-                    },
-                    ticks: {
-                        font: {
-                            family: "'Poppins', sans-serif",
-                        }
-                    }
-                }
-            }
-        }
-    });
-
-</script>
 </body>
 </html>

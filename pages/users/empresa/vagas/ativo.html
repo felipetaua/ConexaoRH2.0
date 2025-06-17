@@ -13,15 +13,16 @@
 
     <!-- js -->
     <script defer src="./../../../../assets/js/global/script.js"></script>
+    <script defer src="./../../../../assets/js/pages/vagas-ativas/vagas-ativas.js"></script>
 </head>
 <body>
     <div class="dashboard-container">
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div class="logo-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                    <img class="logo-img" src="../../../../assets/images/global/RHconexao-logo.svg" alt="logo RH Conexão">
                 </div>
-                <h1 class="logo-text">RecrutaPRO</h1>
+                <h1 class="logo-text">RH Conexão</h1>
             </div>
             <nav class="sidebar-menu">
                 <h3>Menu Principal</h3>
@@ -152,61 +153,87 @@
                 </div>
             </header>
 
-            <div class="jobs-grid">
-                <div class="job-summary-card">
-                    <div class="card-header">
-                        <h2>UI/UX Designer Sênior</h2>
-                        <span class="status-badge">Ativa</span>
+            <div class="job-listing-wrapper">
+                    <div class="job-summary-card">
+                        <div class="card-header">
+                            <h2>UI/UX Designer Sênior</h2>
+                            <span class="status-badge">Ativa</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-metrics">
+                                <span><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a3.002 3.002 0 015.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg> 47 Candidatos</span>
+                                <span><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> Publicada em 15/05/2025</span>
+                            </div>
+                            <div class="candidate-avatars">
+                                <img src="https://i.pravatar.cc/150?img=1" alt="candidato">
+                                <img src="https://i.pravatar.cc/150?img=2" alt="candidato">
+                                <img src="https://i.pravatar.cc/150?img=3" alt="candidato">
+                                <img src="https://i.pravatar.cc/150?img=4" alt="candidato">
+                                <span class="avatars-more">+43</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="hiring-manager">
+                                <img src="https://i.pravatar.cc/150?img=68" alt="gerente">
+                                <span>Ana Oliveira</span>
+                            </div>
+                            <a href="#" class="btn btn-secondary toggle-candidates-btn">Ver Candidatos</a>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <div class="card-metrics">
-                            <span><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a3.002 3.002 0 015.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg> 47 Candidatos</span>
-                            <span><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> Publicada em 15/05/2025</span>
-                        </div>
-                        <div class="candidate-avatars">
-                            <img src="https://i.pravatar.cc/150?img=1" alt="candidato">
-                            <img src="https://i.pravatar.cc/150?img=2" alt="candidato">
-                            <img src="https://i.pravatar.cc/150?img=3" alt="candidato">
-                            <img src="https://i.pravatar.cc/150?img=4" alt="candidato">
-                            <span class="avatars-more">+43</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="hiring-manager">
-                            <img src="https://i.pravatar.cc/150?img=68" alt="gerente">
-                            <span>Ana Oliveira</span>
-                        </div>
-                        <a href="#" class="btn btn-secondary">Ver Candidatos</a>
+                    <div class="candidate-list-container">
+                        <h3>Candidatos para esta Vaga</h3>
+                        <table class="candidate-table">
+                            <thead><tr><th>Candidato</th><th>Data da Aplicação</th><th>Status</th><th>Ação</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td><div class="candidate-info"><img src="https://i.pravatar.cc/150?img=1"><span>Carla Lima</span></div></td>
+                                    <td>16/06/2025</td>
+                                    <td><span class="status-tag status-entrevista">Entrevista</span></td>
+                                    <td><a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Ver Perfil</a></td>
+                                </tr>
+                                <tr>
+                                    <td><div class="candidate-info"><img src="https://i.pravatar.cc/150?img=2"><span>Ricardo Alves</span></div></td>
+                                    <td>15/06/2025</td>
+                                    <td><span class="status-tag status-triagem">Triagem</span></td>
+                                    <td><a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Ver Perfil</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
-                <div class="job-summary-card">
-                    <div class="card-header">
-                        <h2>Desenvolvedor(a) Full-Stack (Pleno)</h2>
-                        <span class="status-badge">Ativa</span>
+                <div class="job-listing-wrapper">
+                    <div class="job-summary-card">
+                        <div class="card-header">
+                            <h2>Desenvolvedor(a) Full-Stack (Pleno)</h2>
+                            <span class="status-badge">Ativa</span>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-metrics">
+                                <span><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a3.002 3.002 0 015.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg> 112 Candidatos</span>
+                                <span><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> Publicada em 10/05/2025</span>
+                            </div>
+                            <div class="candidate-avatars">
+                                <img src="https://i.pravatar.cc/150?img=5" alt="candidato">
+                                <img src="https://i.pravatar.cc/150?img=6" alt="candidato">
+                                <img src="https://i.pravatar.cc/150?img=7" alt="candidato">
+                                <img src="https://i.pravatar.cc/150?img=8" alt="candidato">
+                                <span class="avatars-more">+108</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="hiring-manager">
+                                <img src="https://i.pravatar.cc/150?img=15" alt="gerente">
+                                <span>Daniel Ferreira</span>
+                            </div>
+                            <a href="#" class="btn btn-secondary toggle-candidates-btn">Ver Candidatos</a>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <div class="card-metrics">
-                            <span><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a3.002 3.002 0 015.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg> 112 Candidatos</span>
-                            <span><svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg> Publicada em 10/05/2025</span>
-                        </div>
-                        <div class="candidate-avatars">
-                            <img src="https://i.pravatar.cc/150?img=5" alt="candidato">
-                            <img src="https://i.pravatar.cc/150?img=6" alt="candidato">
-                            <img src="https://i.pravatar.cc/150?img=7" alt="candidato">
-                            <img src="https://i.pravatar.cc/150?img=8" alt="candidato">
-                            <span class="avatars-more">+108</span>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <div class="hiring-manager">
-                            <img src="https://i.pravatar.cc/150?img=15" alt="gerente">
-                            <span>Daniel Ferreira</span>
-                        </div>
-                        <a href="#" class="btn btn-secondary">Ver Candidatos</a>
+                    <div class="candidate-list-container">
+                        <h3>Candidatos para esta Vaga</h3>
+                        <p>Nenhum candidato na fase final ainda.</p>
                     </div>
                 </div>
-            </div>
         </main>
     </div>
 

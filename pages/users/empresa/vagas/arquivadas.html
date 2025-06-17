@@ -41,8 +41,11 @@
         
         /* --- Barra Lateral (Reutilizada com modificações) --- */
         .sidebar-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; }
-        .logo-icon { background-color: var(--primary-color); color: var(--white-color); padding: 0.5rem; border-radius: 8px; }
-        .logo-text { font-size: 1.5rem; font-weight: 700; }
+        .logo-icon {color: var(--white-color); padding: 0.5rem; border-radius: 8px; }
+        .logo-img {
+            width: 54px;
+        }
+        .logo-text { font-size: 1.2rem; font-weight: 700; }
         .sidebar-menu h3 { font-size: 0.8rem; font-weight: 500; color: var(--text-light); text-transform: uppercase; margin: 1.5rem 0 1rem 0; }
         .menu-item { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1rem; border-radius: 8px; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-light); }
         .menu-item:hover, .menu-item.active { background-color: var(--primary-color); color: var(--white-color); }
@@ -122,9 +125,9 @@
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div class="logo-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                    <img class="logo-img" src="../../../../assets/images/global/RHconexao-logo.svg" alt="logo RH Conexão">
                 </div>
-                <h1 class="logo-text">RecrutaPRO</h1>
+                <h1 class="logo-text">RH Conexão</h1>
             </div>
 
             <nav class="sidebar-menu">

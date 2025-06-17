@@ -1,0 +1,46 @@
+.candidate-list-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(.4,0,.2,1);
+    padding: 0 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+.candidate-list-container.open {
+    max-height: 800px;
+    padding: 1.5rem;
+    margin-bottom: 50px;
+}
+.candidate-list-container h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.job-listing-wrapper {
+    margin-bottom: 40px;
+}
+
+/* Tabela de Candidatos */
+.candidate-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.candidate-table th, .candidate-table td {
+    text-align: left;
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--border-color);
+}
+.candidate-table th { font-size: 0.8rem; color: var(--text-light); font-weight: 500; text-transform: uppercase; }
+.candidate-table tr:last-child td { border-bottom: none; }
+
+.candidate-info { display: flex; align-items: center; gap: 1rem; font-weight: 500; }
+.candidate-info img { width: 36px; height: 36px; border-radius: 50%; }
+
+.status-tag { padding: 0.3rem 0.8rem; border-radius: 12px; font-size: 0.8rem; font-weight: 500; text-align: center; }
+.status-triagem { background-color: var(--warning-light); color: var(--warning-color); }
+.status-entrevista { background-color: var(--primary-light); color: var(--primary-color); }
+
+@media screen and (max-width: 550px) {
+    .candidate-list-container.open {
+        overflow-x: scroll;
+    }
+}
