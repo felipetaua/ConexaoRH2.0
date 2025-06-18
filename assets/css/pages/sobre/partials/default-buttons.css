@@ -12,5 +12,5 @@
 
 .hero-btn:hover,
 .subscribe button:hover {
-    background: #542dc3;
+    background: var(--blue);
 }
