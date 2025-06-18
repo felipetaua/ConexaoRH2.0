@@ -26,7 +26,7 @@
     position: absolute;
     top: 12px;
     right: 15px;
-    font-size: 20px;
+    font-size: 48px;
     cursor: pointer;
     border: none;
     background: none;
@@ -136,6 +136,6 @@
     }
 
     .close-modal {
-        font-size: 22px;
+        font-size: 48px;
     }
 }
