@@ -16,7 +16,8 @@
             --text-dark: #1C1C1E;
             --text-light: #FFFFFF;
             --text-secondary: #6E6E73;
-            --background-form: #FFFFFF;
+            --background-form: #1C1C1E; 
+            /* /#FFFFFF/ */
         }
 
         * {
@@ -34,7 +35,6 @@
             font-family: 'Inter', sans-serif;
             display: flex;
             min-height: 100vh;
-            overflow-y: hidden;
         }
 
         
@@ -48,6 +48,7 @@
             display: flex;
             flex-direction: column;
             justify-content: start; /* Centraliza o conteúdo verticalmente */
+            overflow-y: hidden;
         }
         
         .info-section .logo {
@@ -101,7 +102,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center; /* Centraliza o formulário verticalmente */
-            overflow-y: auto; /* Adiciona scroll se o conteúdo for maior que a tela */
+            /* overflow-y: auto; Adiciona scroll se o conteúdo for maior que a tela */
         }
         
         /* Centralizador do conteúdo do formulário */
