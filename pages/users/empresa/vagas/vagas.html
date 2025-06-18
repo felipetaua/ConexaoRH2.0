@@ -144,6 +144,31 @@
                 <div class="form-column">
                     <form>
                         <section class="form-section">
+                            <h2>Informações da Empresa</h2>
+                            <div class="form-grid">
+                                <div class="form-group full-width">
+                                    <label for="companyName">Nome/Razão Social</label>
+                                    <input type="text" id="companyName" placeholder="Digite o nome ou razão social da empresa">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="companyDescription">Breve Descrição da Empresa</label>
+                                    <textarea id="companyDescription" placeholder="Descreva brevemente a empresa"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="companyPhone">Telefone</label>
+                                    <input type="tel" id="companyPhone" placeholder="Ex: (XX) XXXXX-XXXX">
+                                </div>
+                                <div class="form-group">
+                                    <label for="companyEmail">E-mail de Contato</label>
+                                    <input type="email" id="companyEmail" placeholder="Ex: contato@empresa.com">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="companyAddress">Endereço (Opcional)</label>
+                                    <input type="text" id="companyAddress" placeholder="Digite o endereço da empresa">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="form-section">
                             <h2>Informações Principais</h2>
                             <div class="form-grid">
                                 <div class="form-group full-width">
@@ -182,8 +207,24 @@
                         <section class="form-section">
                             <h2>Detalhes da Vaga</h2>
                             <div class="form-group full-width">
-                                <label for="jobDescription">Descrição da Vaga</label>
+                                <label for="jobDescription">Descrição Detalhada da Vaga</label>
                                 <textarea id="jobDescription" placeholder="Fale sobre a vaga, a equipe e por que é um ótimo lugar para trabalhar..."></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="jobActivities">Atividades Relacionadas ao Cargo</label>
+                                <textarea id="jobActivities" placeholder="Liste as principais responsabilidades e atividades do cargo"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="workload">Carga Horária</label>
+                                <input type="text" id="workload" placeholder="Ex: 40 horas semanais, Segunda a Sexta das 8h às 18h">
+                            </div>
+                            <div class="form-group">
+                                <label for="benefits">Benefícios</label>
+                                <textarea id="benefits" placeholder="Liste os benefícios oferecidos, Ex: Vale Transporte, Vale Refeição, Plano de Saúde"></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="requiredSkills">Habilidades Requeridas</label>
+                                <textarea id="requiredSkills" placeholder="Liste as habilidades técnicas e comportamentais necessárias"></textarea>
                             </div>
                         </section>
                         
