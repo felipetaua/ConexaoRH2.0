@@ -16,7 +16,8 @@
             --text-dark: #1C1C1E;
             --text-light: #FFFFFF;
             --text-secondary: #6E6E73;
-            --background-form: #FFFFFF;
+            --background-form: #FFFFFF; 
+            /* /#FFFFFF/ */
         }
 
         * {
@@ -36,6 +37,8 @@
             min-height: 100vh;
         }
 
+        
+
         /* Seção de Informação (Esquerda) */
         .info-section {
             flex: 0.8; /* Controla a largura da coluna azul */
@@ -44,13 +47,13 @@
             padding: 3rem 4rem;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Centraliza o conteúdo verticalmente */
+            justify-content: start; /* Centraliza o conteúdo verticalmente */
+            overflow-y: hidden;
         }
         
         .info-section .logo {
             font-weight: 700;
             font-size: 1.5rem;
-            position: absolute; /* Posiciona o logo no topo */
             top: 3rem;
         }
 
@@ -99,7 +102,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center; /* Centraliza o formulário verticalmente */
-            overflow-y: auto; /* Adiciona scroll se o conteúdo for maior que a tela */
+            /* overflow-y: auto; Adiciona scroll se o conteúdo for maior que a tela */
         }
         
         /* Centralizador do conteúdo do formulário */
@@ -107,6 +110,7 @@
             max-width: 450px;
             width: 100%;
             margin: 0 auto; /* Centraliza o bloco do formulário na coluna */
+            overflow-y: scroll;
         }
         
         .form-content .stepper {
@@ -173,9 +177,7 @@
         .form-group label {
             display: block;
             font-weight: 500;
-            margin-bottom: 0.5rem;
             color: var(--text-dark);
-            font-size: 0.9rem;
         }
         .form-group input {
             width: 100%;
@@ -230,6 +232,7 @@
         /* Responsividade para telas menores */
         @media (max-width: 900px) {
             body {
+                overflow-y: scroll;
                 flex-direction: column; /* Empilha as colunas */
             }
             .info-section {
