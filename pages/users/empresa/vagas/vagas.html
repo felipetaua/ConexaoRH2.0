@@ -12,15 +12,17 @@
     <link rel="stylesheet" href="../../../../assets/css/pages/vagas/vagas.css">
 
     <script defer src="../../../../assets/js/global/script.js"></script>
+    <script defer src="../../../../assets/js/pages/vagas/vagas.js"></script>
+
 </head>
 <body>
     <div class="dashboard-container">
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div class="logo-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                    <img class="logo-img" src="../../../../assets/images/global/RHconexao-logo.svg" alt="logo RH Conexão">
                 </div>
-                <h1 class="logo-text">RecrutaPRO</h1>
+                <h1 class="logo-text">RH Conexão</h1>
             </div>
             <nav class="sidebar-menu">
                 <h3>Menu Principal</h3>
@@ -46,7 +48,7 @@
                     </li>
 
                     <li><a href="../candidatos.html" class="menu-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2-2H6l-4 4V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5Z"></path><path d="M18 9h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2"></path><path d="m7 15-1 1 1 1"></path><path d="M10 15h4"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M9.602 3.7c-1.154 1.937-.635 5.227 1.424 9.025.93 1.712.697 3.02.338 3.815-.982 2.178-3.675 2.799-6.525 3.456-1.964.454-1.839.87-1.839 4.004h-1.995l-.005-1.241c0-2.52.199-3.975 3.178-4.663 3.365-.777 6.688-1.473 5.09-4.418-4.733-8.729-1.35-13.678 3.732-13.678 3.321 0 5.97 2.117 5.97 6.167 0 3.555-1.949 6.833-2.383 7.833h-2.115c.392-1.536 2.499-4.366 2.499-7.842 0-5.153-5.867-4.985-7.369-2.458zm13.398 15.3h-3v-3h-2v3h-3v2h3v3h2v-3h3v-2z"/></svg>
                         <span>Candidatos</span>
                     </a></li>
                     <li><a href="../entrevistas.html" class="menu-item ">
@@ -135,28 +137,66 @@
                     </div>
                 </div>
             </header>
-            <div class="page-header">
+            <section class="page-header">
                 <h1>Criar Nova Vaga</h1>
                 <p>Preencha os detalhes abaixo para publicar uma nova oportunidade em seu portal de carreiras.</p>
-            </div>
+            </section>
 
             <div class="create-job-layout">
                 <div class="form-column">
                     <form>
                         <section class="form-section">
+                            <h2>Informações da Empresa</h2>
+                            <div class="form-grid">
+                                <div class="form-group full-width">
+                                    <label for="companyName">Nome/Razão Social</label>
+                                    <input type="text" id="companyName" placeholder="Digite o nome ou razão social da empresa">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="companyDescription">Breve Descrição da Empresa</label>
+                                    <textarea id="companyDescription" placeholder="Descreva brevemente a empresa"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="companyPhone">Telefone</label>
+                                    <input type="tel" id="companyPhone" placeholder="Ex: (XX) XXXXX-XXXX">
+                                </div>
+                                <div class="form-group">
+                                    <label for="companyEmail">E-mail de Contato</label>
+                                    <input type="email" id="companyEmail" placeholder="Ex: contato@empresa.com">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label for="companyAddress">Endereço (Opcional)</label>
+                                    <input type="text" id="companyAddress" placeholder="Digite o endereço da empresa">
+                                </div>
+                            </div>
+                        </section>
+                        <section class="form-section">
                             <h2>Informações Principais</h2>
                             <div class="form-grid">
                                 <div class="form-group full-width">
                                     <label for="jobTitle">Título da Vaga</label>
-                                    <input type="text" id="jobTitle" placeholder="Ex: Desenvolvedor(a) Full-Stack Sênior">
+                                    <input type="text" id="jobTitle" placeholder="Ex: Analista, Desenvolvedor, Vendedor, etc. ">
                                 </div>
                                 <div class="form-group">
                                     <label for="department">Departamento</label>
-                                    <input type="text" id="department" placeholder="Ex: Tecnologia e Produto">
+                                    <input type="text" id="department" placeholder="Ex: Tecnologia, Vendas, RH">
+                                </div>
+                                <div class="form-group">
+                                    <label for="jobIcon">Categoria</label>
+                                    <select id="jobIcon">
+                                        <option value="default" selected>Padrão</option>
+                                        <option value="tecnologia">Tecnologia</option>
+                                        <option value="vendas">Vendas</option>
+                                        <option value="saude">Saúde</option>
+                                        <option value="rh">RH </option>
+                                        <option value="marketing">Marketing </option>
+                                        <option value="design">Design</option>
+                                        <option value="agro">Agricultura</option>
+                                    </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="location">Localização</label>
-                                    <input type="text" id="location" placeholder="Ex: São Paulo, SP ou Remoto">
+                                    <input type="text" id="location" placeholder="Ex: Cidade, Estado ">
                                 </div>
                                 <div class="form-group">
                                     <label for="workModel">Modelo de Trabalho</label>
@@ -182,8 +222,24 @@
                         <section class="form-section">
                             <h2>Detalhes da Vaga</h2>
                             <div class="form-group full-width">
-                                <label for="jobDescription">Descrição da Vaga</label>
+                                <label for="jobDescription">Descrição Detalhada da Vaga</label>
                                 <textarea id="jobDescription" placeholder="Fale sobre a vaga, a equipe e por que é um ótimo lugar para trabalhar..."></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="jobActivities">Atividades Relacionadas ao Cargo</label>
+                                <textarea id="jobActivities" placeholder="Liste as principais responsabilidades e atividades do cargo"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="workload">Carga Horária</label>
+                                <input type="text" id="workload" placeholder="Ex: 40 horas semanais, Segunda a Sexta das 8h às 18h">
+                            </div>
+                            <div class="form-group">
+                                <label for="benefits">Benefícios</label>
+                                <textarea id="benefits" placeholder="Liste os benefícios oferecidos, Ex: Vale Transporte, Vale Refeição, Plano de Saúde"></textarea>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="requiredSkills">Habilidades Requeridas</label>
+                                <textarea id="requiredSkills" placeholder="Liste as habilidades técnicas e comportamentais necessárias"></textarea>
                             </div>
                         </section>
                         
@@ -212,7 +268,7 @@
                     <h2>Pré-visualização do Card</h2>
                     <article class="job-card">
                         <div class="job-header">
-                            <div class="job-icon">
+                            <div class="job-icon" id="previewIconContainer">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
                             </div>
                             <div class="job-title">

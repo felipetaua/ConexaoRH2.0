@@ -20,9 +20,9 @@
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div class="logo-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                    <img class="logo-img" src="../../../assets/images/global/RHconexao-logo.svg" alt="logo RH Conexão">
                 </div>
-                <h1 class="logo-text">RecrutaPRO</h1>
+                <h1 class="logo-text">RH Conexão</h1>
             </div>
 
             <nav class="sidebar-menu">
@@ -49,7 +49,7 @@
                     </li>
 
                     <li><a href="./candidatos.html" class="menu-item">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2-2H6l-4 4V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5Z"></path><path d="M18 9h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2"></path><path d="m7 15-1 1 1 1"></path><path d="M10 15h4"></path></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M9.602 3.7c-1.154 1.937-.635 5.227 1.424 9.025.93 1.712.697 3.02.338 3.815-.982 2.178-3.675 2.799-6.525 3.456-1.964.454-1.839.87-1.839 4.004h-1.995l-.005-1.241c0-2.52.199-3.975 3.178-4.663 3.365-.777 6.688-1.473 5.09-4.418-4.733-8.729-1.35-13.678 3.732-13.678 3.321 0 5.97 2.117 5.97 6.167 0 3.555-1.949 6.833-2.383 7.833h-2.115c.392-1.536 2.499-4.366 2.499-7.842 0-5.153-5.867-4.985-7.369-2.458zm13.398 15.3h-3v-3h-2v3h-3v2h3v3h2v-3h3v-2z"/></svg>
                         <span>Candidatos</span>
                     </a></li>
                     <li><a href="./entrevistas.html" class="menu-item ">
@@ -144,10 +144,10 @@
                     <section class="main-banner">
                         <span class="main-banner-sparkle">✦</span>
                         <h2>Otimize seu Processo Seletivo com Nossa Plataforma</h2>
-                        <button class="join-now-btn">
+                        <a href="./vagas/vagas.html" class="join-now-btn">
                             <span>Criar Nova Vaga</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-                        </button>
+                        </a>
                     </section>
 
                     <section class="stats-cards">
@@ -196,7 +196,7 @@
                                 <div class="job-card-content">
                                     <span class="job-tag">UI/UX Design</span>
                                     <h4>Otimizando a Experiência do Usuário com Design</h4>
-                                     <div class="job-manager">
+                                    <div class="job-manager">
                                         <img src="https://i.pravatar.cc/150?img=35" alt="Manager">
                                         <span>Gerente: <b>Beyo Salto</b></span>
                                     </div>
@@ -297,7 +297,7 @@
                             </div>
                             <button class="follow-btn">Seguir</button>
                         </div>
-                         <div class="recruiter-item">
+                        <div class="recruiter-item">
                             <div class="recruiter-info">
                                 <img src="https://i.pravatar.cc/150?img=45" alt="Recruiter">
                                 <div>
@@ -307,7 +307,7 @@
                             </div>
                             <button class="follow-btn">Seguir</button>
                         </div>
-                         <div class="recruiter-item">
+                        <div class="recruiter-item">
                             <div class="recruiter-info">
                                 <img src="https://i.pravatar.cc/150?img=33" alt="Recruiter">
                                 <div>
@@ -323,62 +323,5 @@
             </div>
         </main>
     </div>
-
-<script>
-    
-
-
-    // --- Lógica para o Gráfico (Chart.js) ---
-    const ctx = document.getElementById('statsChart').getContext('2d');
-    const myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Sem 1', 'Sem 2', 'Sem 3', 'Sem 4'],
-            datasets: [{
-                label: 'Novos Candidatos',
-                data: [20, 35, 45, 30],
-                backgroundColor: [
-                    '#dcd8fd',
-                    '#dcd8fd',
-                    '#6a5af9', // Cor primária para a barra de maior valor
-                    '#dcd8fd',
-                ],
-                borderRadius: 8,
-                borderSkipped: false,
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: false
-                }
-            },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    grid: {
-                        display: false
-                    },
-                    ticks: {
-                        display: false
-                    }
-                },
-                x: {
-                    grid: {
-                        display: false
-                    },
-                    ticks: {
-                        font: {
-                            family: "'Poppins', sans-serif",
-                        }
-                    }
-                }
-            }
-        }
-    });
-
-</script>
 </body>
 </html>
