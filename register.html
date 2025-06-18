@@ -34,7 +34,10 @@
             font-family: 'Inter', sans-serif;
             display: flex;
             min-height: 100vh;
+            overflow-y: hidden;
         }
+
+        
 
         /* Seção de Informação (Esquerda) */
         .info-section {
@@ -44,13 +47,12 @@
             padding: 3rem 4rem;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Centraliza o conteúdo verticalmente */
+            justify-content: start; /* Centraliza o conteúdo verticalmente */
         }
         
         .info-section .logo {
             font-weight: 700;
             font-size: 1.5rem;
-            position: absolute; /* Posiciona o logo no topo */
             top: 3rem;
         }
 
@@ -107,6 +109,7 @@
             max-width: 450px;
             width: 100%;
             margin: 0 auto; /* Centraliza o bloco do formulário na coluna */
+            overflow-y: scroll;
         }
         
         .form-content .stepper {
@@ -228,6 +231,7 @@
         /* Responsividade para telas menores */
         @media (max-width: 900px) {
             body {
+                overflow-y: scroll;
                 flex-direction: column; /* Empilha as colunas */
             }
             .info-section {
