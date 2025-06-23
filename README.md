@@ -51,3 +51,20 @@ A nova versão da plataforma foi criada para oferecer uma experiência intuitiva
 - Espaços dedicados à cultura, arte e clima organizacional
 - Integração futura com ferramentas de análise e banco de talentos
 
+## 📌 Status do Projeto
+
+> **Em desenvolvimento ativo**  
+> Versão atual: `2.0 - Estruturação das sessões principais finalizada`
+
+---
+
+## 📬 Contato
+
+Em caso de dúvidas, sugestões ou parcerias, entre em contato:
+
+- Desenvolvedor: **Tauã Felipe**
+- Email: [taua.felipee@gmail.com](mailto:taua.felipee@gmail.com)
+
+---
+
+© 2025 RH Conexão. Todos os direitos
