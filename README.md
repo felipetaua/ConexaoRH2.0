@@ -18,3 +18,9 @@ A nova versão da plataforma foi criada para oferecer uma experiência intuitiva
 - **Sessão de Abertura com Identidade Visual Renovada**  
   Destaque para o conceito *"Descubra as Soluções do RH Conexão 2.0"*, com uso de gradientes e efeitos visuais modernos.
 
+- **Serviços Oferecidos**  
+  Resumo objetivo e visualmente organizado dos principais serviços: Recrutamento, Clima Organizacional, Gestão de Talentos e Desenvolvimento Humano.
+
+- **Feedback e Avaliações**  
+  Espaço dedicado para comentários, avaliações e depoimentos de clientes/parceiros.
+
