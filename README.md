@@ -13,3 +13,8 @@ A nova versão da plataforma foi criada para oferecer uma experiência intuitiva
 - **Fomentar uma cultura organizacional baseada em clima, engajamento e performance**
 - **Promover o desenvolvimento humano com foco em competências e soft skills**
 
+## 🎯 Funcionalidades e Sessões Principais
+
+- **Sessão de Abertura com Identidade Visual Renovada**  
+  Destaque para o conceito *"Descubra as Soluções do RH Conexão 2.0"*, com uso de gradientes e efeitos visuais modernos.
+
