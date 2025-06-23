@@ -24,3 +24,16 @@ A nova versão da plataforma foi criada para oferecer uma experiência intuitiva
 - **Feedback e Avaliações**  
   Espaço dedicado para comentários, avaliações e depoimentos de clientes/parceiros.
 
+- **Área de Presentes & Arte**  
+  Um toque humanizado à plataforma, valorizando ações de engajamento com brindes, arte e cultura interna.
+
+- **Tecnologia e Interface**  
+  Desenvolvido com HTML, CSS e JavaScript puro. Efeitos de *Glassmorphism* e *gradientes suaves* utilizados para transmitir modernidade e sofisticação.
+
+## 🛠️ Tecnologias Utilizadas
+
+- `HTML5` para estrut
+
+
+
+
