@@ -32,8 +32,9 @@ A nova versão da plataforma foi criada para oferecer uma experiência intuitiva
 
 ## 🛠️ Tecnologias Utilizadas
 
-- `HTML5` para estrut
-
-
-
+- `HTML5` para estrutura semântica
+- `CSS3` com foco em estética moderna (Glassmorphism, Gradients)
+- `JavaScript` para interações dinâmicas
+- `FontAwesome` e `Google Fonts` para identidade visual rica e coesa
+- `Responsividade` planejada para todos os dispositivos
 
