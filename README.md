@@ -38,3 +38,9 @@ A nova versão da plataforma foi criada para oferecer uma experiência intuitiva
 - `FontAwesome` e `Google Fonts` para identidade visual rica e coesa
 - `Responsividade` planejada para todos os dispositivos
 
+## 🎯 Público-Alvo
+
+- Empresas que buscam otimizar processos de RH
+- Profissionais em busca de recolocação ou desenvolvimento
+- Parceiros interessados em soluções humanas e tecnológicas
+
