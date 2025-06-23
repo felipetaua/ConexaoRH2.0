@@ -44,3 +44,10 @@ A nova versão da plataforma foi criada para oferecer uma experiência intuitiva
 - Profissionais em busca de recolocação ou desenvolvimento
 - Parceiros interessados em soluções humanas e tecnológicas
 
+## 💡 Diferenciais
+
+- Plataforma com identidade visual própria, leve e fluida
+- Comunicação acessível, clara e profissional
+- Espaços dedicados à cultura, arte e clima organizacional
+- Integração futura com ferramentas de análise e banco de talentos
+
