@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../assets/images/global/RHconexao-icone.png" type="image/png">
+    <title>Crie sua conta - Conexão RH</title>
+    <script defer src="../../assets/js/pages/register/register.js"></script>
+    <link rel="stylesheet" href="../../assets/css/pages/register/register.css">
+</head>
+<body>
+
+    <div class="info-section">
+        <div class="logo">CONEXÃO RH</div>
+        <h1>A sua porta de entrada para o sucesso profissional.</h1>
+        <p>Conectamos empresas inovadoras aos melhores talentos do mercado. Crie sua conta e comece a sua jornada.</p>
+
+        <div class="testimonial-card">
+            <p>"A plataforma é intuitiva e me ajudou a encontrar o candidato ideal em menos de uma semana. Recomendo!"</p>
+            <div class="testimonial-author">
+                <span>Ana Silva, Gerente de RH</span>
+                <span class="stars">★★★★★</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="form-content">
+            <div class="stepper">
+                <div class="step active"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+            </div>
+
+            <h2>Vamos começar</h2>
+            <form id="rh-form">
+                <div class="form-group">
+                    <div class="user-type-group">
+                        <input type="radio" id="type-candidate" name="userType" value="candidate" checked>
+                        <label for="type-candidate">Sou Candidato</label>
+                        
+                        <input type="radio" id="type-company" name="userType" value="company">
+                        <label for="type-company">Sou Empresa</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label id="label-name" for="name">Nome Completo</label>
+                    <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+                </div>
+
+                <div class="form-group">
+                    <label id="label-doc" for="doc">CPF</label>
+                    <input type="text" id="doc" name="doc" placeholder="000.000.000-00" required>
+                    <div class="error-message" id="doc-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="celular">Celular</label>
+                    <input type="tel" id="celular" name="celular" placeholder="(00) 00000-0000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" id="endereco" name="endereco" placeholder="Sua cidade e estado" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Crie uma senha forte" required>
+                    <div id="password-strength">
+                        <div id="password-strength-bar"></div>
+                    </div>
+                    <div class="error-message" id="password-error"></div>
+                </div>
+
+                <button type="submit" class="submit-btn">Começar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
