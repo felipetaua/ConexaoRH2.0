@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../assets/images/global/RHconexao-icone.png" type="image/png">
     <title>Crie sua conta - Conexão RH</title>
     <style>
-        /* Importando uma fonte moderna */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-        /* Estilos Globais e Variáveis de Cor */
         :root {
             --primary-blue: #0052FF;
             --dark-blue: #0045d1;
@@ -30,24 +29,20 @@
             height: 100%;
         }
 
-        /* O layout de duas colunas é aplicado diretamente no Body */
         body {
             font-family: 'Inter', sans-serif;
             display: flex;
             min-height: 100vh;
         }
 
-        
-
-        /* Seção de Informação (Esquerda) */
         .info-section {
-            flex: 0.8; /* Controla a largura da coluna azul */
+            flex: 0.8; 
             background-color: var(--primary-blue);
             color: var(--text-light);
             padding: 3rem 4rem;
             display: flex;
             flex-direction: column;
-            justify-content: start; /* Centraliza o conteúdo verticalmente */
+            justify-content: start; 
             overflow-y: hidden;
         }
         
@@ -94,22 +89,19 @@
             color: #FFC700;
         }
 
-        /* Seção do Formulário (Direita) */
         .form-section {
-            flex: 1.2; /* Controla a largura da coluna branca */
+            flex: 1.2; 
             background-color: var(--background-form);
-            padding: 3rem 5%; /* Usa padding responsivo */
+            padding: 3rem 5%; 
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Centraliza o formulário verticalmente */
-            /* overflow-y: auto; Adiciona scroll se o conteúdo for maior que a tela */
+            justify-content: center; 
         }
         
-        /* Centralizador do conteúdo do formulário */
         .form-content {
             max-width: 450px;
             width: 100%;
-            margin: 0 auto; /* Centraliza o bloco do formulário na coluna */
+            margin: 0 auto;
             overflow-y: scroll;
         }
         
@@ -229,14 +221,13 @@
         .submit-btn:hover { background-color: var(--dark-blue); }
         .submit-btn::after { content: '→'; margin-left: 8px; font-size: 1.2rem; }
 
-        /* Responsividade para telas menores */
         @media (max-width: 900px) {
             body {
                 overflow-y: scroll;
-                flex-direction: column; /* Empilha as colunas */
+                flex-direction: column;
             }
             .info-section {
-                flex: none; /* Desativa o flex-basis */
+                flex: none; 
                 height: auto;
                 padding: 4rem 2rem;
                 text-align: center;
