@@ -4,10 +4,8 @@
 @import url(../../global/normalize.css);
 @import url(../../global/variables.css);
 
-
 :root {
-    --primary-orange: #F97341;
-    --dark-orange: #e5602f;
+    --orange-hover: #fc3200;
     --border-color: #E0E0E0;
     --text-dark: #1C1C1E;
     --text-light: #FFFFFF;
@@ -25,28 +23,25 @@ html {
     height: 100%;
 }
 
-/* O layout de duas colunas é aplicado diretamente no Body */
 body {
-    font-family: 'Inter', sans-serif;
     display: flex;
     min-height: 100vh;
 }
 
-/* Seção de Informação (Esquerda) */
 .info-section {
-    flex: 0.8; /* Controla a largura da coluna laranja */
+    flex: 0.8; 
     background-color: var(--orange);
     color: var(--text-light);
     padding: 3rem 4rem;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centraliza o conteúdo verticalmente */
+    justify-content: center; 
 }
 
 .info-section .logo {
     font-weight: 700;
     font-size: 1.5rem;
-    position: absolute; /* Posiciona o logo no topo */
+    position: absolute;
     top: 3rem;
 }
 
@@ -87,21 +82,20 @@ body {
     color: #FFC700;
 }
 
-/* Seção do Formulário (Direita) */
 .form-section {
-    flex: 1.2; /* Controla a largura da coluna branca */
+    flex: 1.2;
     background-color: var(--background-form);
-    padding: 3rem 5%; /* Usa padding responsivo */
+    padding: 3rem 5%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centraliza o formulário verticalmente */
-    overflow-y: auto; /* Adiciona scroll se o conteúdo for maior que a tela */
+    justify-content: center; 
+    overflow-y: auto;
 }
 
 .form-content {
     max-width: 400px;
     width: 100%;
-    margin: 0 auto; /* Centraliza o bloco do formulário na coluna */
+    margin: 0 auto;
 }
 
 .form-content h2 {
@@ -134,7 +128,7 @@ body {
 }
 .form-group input:focus {
     outline: none;
-    border-color: var(--primary-orange);
+    border-color: var(--orange);
     box-shadow: 0 0 0 3px rgba(249, 115, 65, 0.15);
 }
 
@@ -152,7 +146,7 @@ body {
     cursor: pointer;
 }
 .form-options a {
-    color: var(--primary-orange);
+    color: var(--orange);
     text-decoration: none;
     font-weight: 500;
 }
@@ -162,7 +156,7 @@ body {
 
 .submit-btn {
     width: 100%;
-    background-color: var(--primary-orange);
+    background-color: var(--orange);
     color: var(--text-light);
     padding: 1rem;
     border: none;
@@ -175,7 +169,7 @@ body {
     justify-content: center;
     align-items: center;
 }
-.submit-btn:hover { background-color: var(--dark-orange); }
+.submit-btn:hover { background-color: var(--orange-hover); }
 
 .signup-link {
     text-align: center;
@@ -183,7 +177,7 @@ body {
     color: var(--text-secondary);
 }
 .signup-link a {
-    color: var(--primary-orange);
+    color: var(--orange);
     font-weight: 600;
     text-decoration: none;
 }
