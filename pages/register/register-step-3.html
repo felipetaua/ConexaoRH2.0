@@ -23,14 +23,13 @@
         html { height: 100%; }
 
         body {
-            font-family: 'Inter', sans-serif;
             display: flex;
             min-height: 100vh;
         }
 
         .info-section {
             flex: 0.8;
-            background-color: var(----primary);
+            background-color: var(--primary);
             color: var(--text-light);
             padding: 3rem 4rem;
             display: flex;
@@ -87,13 +86,13 @@
         .stepper::before {
             content: '';
             position: absolute; top: 50%; left: 0; right: 0;
-            height: 2px; background-color: var(----primary);
+            height: 2px; background-color: var(--primary);
             transform: translateY(-50%); z-index: 1;
         }
         .step {
             width: 12px; height: 12px;
             border-radius: 50%;
-            background-color: var(----primary);
+            background-color: var(--primary);
             z-index: 2;
         }
         
@@ -137,7 +136,7 @@
 
         .action-card .icon {
             font-size: 2.5rem;
-            color: var(----primary);
+            color: var(--primary);
             margin-bottom: 1rem;
         }
 
@@ -158,7 +157,7 @@
 
         .dashboard-button {
             display: inline-block;
-            background-color: var(----primary);
+            background-color: var(--primary);
             color: var(--text-light);
             padding: 1rem 2.5rem;
             border-radius: 8px;
