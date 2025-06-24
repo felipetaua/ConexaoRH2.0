@@ -157,6 +157,10 @@ body {
     color: var(--text-light);
 }
 
+div .error-message {
+    color: #C62929;
+}
+
 .form-group { margin-bottom: 1.25rem; }
 .form-group label {
     display: block;
