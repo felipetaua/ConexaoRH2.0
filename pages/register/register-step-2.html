@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete seu Cadastro (Passo 2) - Conexão RH</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --primary: #2E62C2;
+            --primary-hover: #1937bd;
+            --border-color: #E0E0E0;
+            --light-border-color: #f0f0f0;
+            --text-dark: #1C1C1E;
+            --text-light: #FFFFFF;
+            --text-secondary: #6E6E73;
+            --background-form: #FFFFFF;
+            --background-secondary: #f7f7f7;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { height: 100%; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .info-section {
+            flex: 0.8;
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 3rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .info-section .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            position: absolute;
+            top: 3rem;
+        }
+
+        .info-section h1 {
+            font-size: 2.8rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            max-width: 450px;
+        }
+
+        .info-section p {
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 400px;
+            opacity: 0.9;
+        }
+
+        .form-section {
+            flex: 1.2;
+            background-color: var(--background-form);
+            padding: 3rem 5%;
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            overflow-y: auto;
+        }
+        
+        .form-content {
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto; 
+        }
+        
+        .stepper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 60%; 
+            margin: 0 auto 3rem auto;
+            position: relative;
+            height: 2px;
+            background-color: var(--border-color); 
+        }
+
+        .stepper::before {
+            content: '';
+            width: 50%;
+            position: absolute; top: 50%; left: 0; right: 0;
+            height: 2px; background-color: blue;
+            transform: translateY(-50%); z-index: 1;
+        }
+
+        .progress-line { 
+            position: absolute;
+            top: 0; 
+            left: 0;
+            height: 100%; 
+            background-color: var(--primary);
+            z-index: 1;
+            transition: width 0.3s ease;
+            width: 0%; 
+        }
+
+        .step {
+            width: 12px; height: 12px;
+            border-radius: 50%;
+            background-color: var(--border-color);
+            z-index: 2;
+            transition: background-color 0.3s ease;
+            flex-shrink: 0; 
+            position: relative; 
+        }
+        .step.completed { background-color: var(--primary); }
+        .step.active {
+            background-color: var(--text-light);
+            border: 2px solid var(--primary);
+            transform: scale(1.2);
+        }
+        
+        .form-content h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+        
+        .form-group { margin-bottom: 1.5rem; }
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            background-color: #fff;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(249, 115, 65, 0.15);
+        }
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .form-group select { appearance: none; background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e"); background-position: right 0.5rem center; background-repeat: no-repeat; background-size: 1.5em 1.5em; padding-right: 2.5rem; }
+
+        .file-upload-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.5rem;
+            background-color: var(--background-secondary);
+        }
+        .file-upload-wrapper input[type="file"] {
+            position: absolute;
+            width: 100%; height: 100%;
+            opacity: 0; cursor: pointer;
+        }
+        .file-upload-button {
+            background-color: var(--primary);
+            color: var(--text-light);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        .file-upload-text {
+            margin-left: 1rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        /* Botões de Navegação */
+        .form-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .form-buttons button {
+            flex: 1;
+            padding: 1rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+        .back-btn {
+            background-color: var(--light-border-color);
+            color: var(--text-secondary);
+            border-color: var(--border-color);
+        }
+        .back-btn:hover { background-color: var(--border-color); }
+        .submit-btn {
+            background-color: var(--primary);
+            color: var(--text-light);
+            border-color: var(--primary);
+        }
+        .submit-btn:hover { background-color: var(--primary-hover); }
+
+        /* Lógica para esconder/mostrar campos */
+        #company-fields { display: none; }
+
+        @media (max-width: 900px) {
+            body { flex-direction: column; }
+            .info-section { flex: none; height: auto; padding: 4rem 2rem; text-align: center; }
+            .info-section .logo, .info-section h1, .info-section p { position: static; margin-left: auto; margin-right: auto; }
+            .info-section h1 { font-size: 2rem; }
+            .form-section { flex: none; padding: 3rem 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="info-section">
+        <div class="logo">CONEXÃO RH</div>
+        <h1>Estamos quase lá!</h1>
+        <p>Complete seu perfil para que possamos conectar você às melhores oportunidades e talentos do mercado.</p>
+    </div>
+
+    <div class="form-section">
+        <div class="form-content">
+            <div class="stepper">
+                <div class="step completed"></div>
+                <div class="progress-line"></div>
+                <div class="step active"></div>
+                <div class="step"></div>
+            </div>
+
+            <h2>Complete seu perfil</h2>
+            
+            <div class="form-group">
+                <label>Confirmar tipo de cadastro</label>
+                <select id="userTypeSelector">
+                    <option value="candidate" selected>Sou Candidato</option>
+                    <option value="company">Sou Empresa</option>
+                </select>
+            </div>
+
+            <form id="step2-form">
+                <div id="candidate-fields">
+                    <div class="form-group">
+                        <label for="cv">Currículo (PDF, DOCX)</label>
+                        <div class="file-upload-wrapper">
+                             <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
+                             <span class="file-upload-button">Escolher arquivo</span>
+                             <span class="file-upload-text">Nenhum arquivo selecionado</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="area">Área de Interesse / Profissão</label>
+                        <input type="text" id="area" name="area" placeholder="Ex: Desenvolvedor Full-Stack, Analista de Marketing">
+                    </div>
+                    <div class="form-group">
+                        <label for="experience">Nível de Experiência</label>
+                        <select id="experience" name="experience">
+                            <option value="estagio">Estágio</option>
+                            <option value="junior">Júnior</option>
+                            <option value="pleno">Pleno</option>
+                            <option value="senior">Sênior</option>
+                            <option value="especialista">Especialista / Gestor</option>
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        <label for="linkedin">Perfil do LinkedIn (Opcional)</label>
+                        <input type="url" id="linkedin" name="linkedin" placeholder="https://www.linkedin.com/in/seu-perfil">
+                    </div>
+                </div>
+
+                <div id="company-fields">
+                    <div class="form-group">
+                        <label for="website">Site da Empresa</label>
+                        <input type="url" id="website" name="website" placeholder="https://www.suaempresa.com.br">
+                    </div>
+                    <div class="form-group">
+                        <label for="sector">Setor de Atuação</label>
+                        <input type="text" id="sector" name="sector" placeholder="Ex: Tecnologia, Varejo, Saúde">
+                    </div>
+                    <div class="form-group">
+                        <label for="employees">Número de Funcionários</label>
+                        <select id="employees" name="employees">
+                            <option value="1-10">1-10</option>
+                            <option value="11-50">11-50</option>
+                            <option value="51-200">51-200</option>
+                            <option value="201-1000">201-1000</option>
+                            <option value="1000+">Mais de 1000</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="about">Sobre a Empresa</label>
+                        <textarea id="about" name="about" placeholder="Descreva brevemente sua empresa, sua cultura e o que ela faz."></textarea>
+                    </div>
+                </div>
+
+                <div class="form-buttons">
+                    <button type="button" class="back-btn">Voltar</button>
+                    <button type="submit" class="submit-btn">Finalizar Cadastro</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userTypeSelector = document.getElementById('userTypeSelector');
+            const candidateFields = document.getElementById('candidate-fields');
+            const companyFields = document.getElementById('company-fields');
+            const cvInput = document.getElementById('cv');
+            const fileUploadText = document.querySelector('.file-upload-text');
+            const form = document.getElementById('step2-form');
+
+            // Função para alternar entre os formulários
+            function toggleFormFields() {
+                if (userTypeSelector.value === 'candidate') {
+                    candidateFields.style.display = 'block';
+                    companyFields.style.display = 'none';
+                } else {
+                    candidateFields.style.display = 'none';
+                    companyFields.style.display = 'block';
+                }
+            }
+            
+            // Atualiza o nome do arquivo de CV no campo
+            if (cvInput) {
+                cvInput.addEventListener('change', function() {
+                    if (this.files && this.files.length > 0) {
+                        fileUploadText.textContent = this.files[0].name;
+                    } else {
+                        fileUploadText.textContent = 'Nenhum arquivo selecionado';
+                    }
+                });
+            }
+
+            // Adiciona o listener para o seletor de tipo de usuário
+            userTypeSelector.addEventListener('change', toggleFormFields);
+
+            // Listener para o formulário
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                alert('Cadastro finalizado com sucesso! (Isso é uma demonstração)');
+                // Aqui você enviaria todos os dados (Passo 1 + Passo 2) para o servidor
+            });
+
+            // Inicializa o formulário com a visão correta
+            toggleFormFields();
+        });
+    </script>
+</body>
+</html>
