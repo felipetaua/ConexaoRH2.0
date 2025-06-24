@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 break;
             case 4:
             case 5:
-                color = '#0052FF';
+                color = '#2da848';
                 break;
         }
         strengthBar.style.width = password.length > 0 ? `${score * 20}%` : '0%';
