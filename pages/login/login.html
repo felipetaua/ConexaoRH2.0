@@ -1,67 +1,61 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="../../assets/css/pages/login/login.css">
+    <link rel="icon" href="../../assets/images/global/RHconexao-icone.png" type="image/png">
+    <title>Login - Conexão RH</title>
+    <link rel="stylesheet" href="./assets/css/pages/login/login.css">
 
-    <script defer src="../../assets/js/pages/login/login.js"></script>
-
-    <!-- miniatura -->
-    <link rel="icon" href="../../assets/images/global/RHconexao-icone.png" type="image/png">    <title>Conexão RH - Login</title>
+    <script defer src="../ConexaoRH/assets/js/pages/login/login.js"></script>
 </head>
-
 <body>
 
-    <div class="container" id="container">
-        <main class="form-container sign-up">
-            <form>
-                <h1>Crie sua Conta</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-                <span>ou utilize seu email para registrar-se</span>
-                <input type="text" placeholder="Nome">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Senha">
-                <button class="btnSign">Criar</button>
-            </form>
-        </main>
-        <main class="form-container sign-in">
-            <form>
-                <h1>Login</h1>
-                <div class="social-icons">
-                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
-                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
-                </div>
-                <span>ou utilize seu email e senha</span>
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Senha">
-                <a href="#">Esqueceu sua senha?</a>
-                <button onclick="main()" class="btnLogin">Entrar</button>
-            </form>
-        </main>
-        <main class="toggle-container">
-            <section class="toggle">
-                <aside class="toggle-panel toggle-left">
-                    <h1 class="toggleTitle">Seja Bem-Vindo!</h1>
-                    <p>Já possui uma conta? Que bacana! <br> Tenha acesso as nossas ferramentas efetuando o login.</p>
-                    <button class="hidden btnLoginAction" id="login">Entrar</button>
-                </aside>
-                <aside class="toggle-panel toggle-right">
-                    <h1 class="toggleTitle">Olá, Amigo!</h1>
-                    <p>Não possui uma conta? Sem problemas <br> Crie sua conta agora para aproveitar nossas ferramentas.</p>
-                    <button onclick="main()" class="hidden btnSignAction" id="register">Crie agora</button>
-                </aside>
-            </section>
-        </main>
-</body>
+    <div class="info-section">
+        <div class="logo">CONEXÃO RH</div>
+        <h1>Sua jornada para o sucesso continua aqui.</h1>
+        <p>Acesse sua conta para gerenciar vagas, encontrar candidatos ou descobrir a sua próxima oportunidade de carreira.</p>
 
+        <div class="testimonial-card">
+            <p>"A melhor plataforma para gestão de talentos que já utilizei. Simples, rápida e com resultados incríveis."</p>
+            <div class="testimonial-author">
+                <span>Marcos Andrade, CEO</span>
+                <span class="stars">★★★★★</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="form-content">
+            <h2>Bem-vindo de volta!</h2>
+            <p class="subtitle">Faça login para continuar.</p>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+                </div>
+
+                <div class="form-options">
+                    <label for="remember" class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        Lembrar-me
+                    </label>
+                    <a href="#">Esqueci minha senha</a>
+                </div>
+
+                <button type="submit" class="submit-btn">Entrar</button>
+            </form>
+
+            <p class="signup-link">
+                Não tem uma conta? <a href="#">Cadastre-se</a>
+            </p>
+        </div>
+    </div>
+</body>
 </html>
