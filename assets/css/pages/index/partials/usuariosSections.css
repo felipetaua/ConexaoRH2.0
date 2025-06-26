@@ -1,5 +1,4 @@
 .usuarioText {
-    
     font-size: 32px;
     display: flex;
     justify-content: center;
@@ -103,7 +102,6 @@
     }
 
     .cardsUser {
-        width: auto;
         padding: 20px;
     }
 }
