@@ -64,4 +64,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     digitarFrase();
+
+    const connectBtn = document.querySelector('.heroSection button[type="submit"]');
+    if (connectBtn) {
+        connectBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = '../../pages/register/register.html';
+        });
+    }
 });
