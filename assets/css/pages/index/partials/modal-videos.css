@@ -99,11 +99,16 @@
     .video-modal-body {
         flex-direction: column;
         gap: 18px;
-        padding: 16px 6vw 24px 6vw;
+        padding: 46px 6vw 24px 6vw;
+        height: 70vh;
     }
     .video-modal-player {
         width: 100%;
         min-width: 0;
         max-width: 100vw;
+    }
+
+    .video-modal-close {
+        top: 8px;
     }
 }
