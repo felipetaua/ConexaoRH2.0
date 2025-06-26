@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+@import url(../../global/normalize.css);
+@import url(../../global/variables.css);
+
 :root {
-    --primary: #2E62C2;
-    --primary-hover: #1937bd;
     --border-color: #E0E0E0;
     --light-border-color: #f0f0f0;
     --text-dark: #1C1C1E;
