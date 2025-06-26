@@ -364,4 +364,18 @@
     .functionalRow  {
         height: 4px;
     }
+
+    .parentText, .parentVacancy {
+        font-size: 1.8rem;
+    }
+
+    .parentTitle {
+        font-size: 1.3rem;
+    }
+
+    .parentFiveTitle {
+        font-size: 1.5rem;
+        width: 100%;
+        margin: auto;
+    }
 }
