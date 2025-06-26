@@ -73,15 +73,25 @@ document.addEventListener('DOMContentLoaded', function () {
         if (selected) {
             const title = selected.querySelector('h3').innerText.toLowerCase();
             if (title.includes('colaborador')) {
-                window.location.href = './pages/users/colaborador/colaborador.html';
+                window.location.href = './pages/register/register.html';
             } else if (title.includes('empresa')) {
-                window.location.href = './pages/users/empresa/empresa.html';
+                window.location.href = './pages/register/register.html';
             } else {
                 alert(`Você selecionou: ${selected.querySelector('h3').innerText}`);
             }
         } else {
             alert('Por favor, selecione um tipo de usuário.');
         }
+    });
+
+    document.querySelectorAll('.btnUser').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = 'pages/register/register.html';
+            }, 500); 
+        });
     });
 });
 
