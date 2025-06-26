@@ -249,6 +249,25 @@ div .error-message {
     color: var(--primary-hover, #0052ff);
 }
 
+.already-account-btn {
+    width: 100%;
+    background: none;
+    color: var(--white);
+    border: 2px solid var(--white);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    transition: background 0.2s, color 0.2s;
+}
+.already-account-btn:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
 @media (max-width: 900px) {
     body {
         overflow-y: scroll;

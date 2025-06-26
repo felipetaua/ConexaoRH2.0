@@ -178,3 +178,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const alreadyBtn = document.getElementById('alreadyAccountBtn');
+    if (alreadyBtn) {
+        alreadyBtn.addEventListener('click', function() {
+            window.location.href = '../../index.html';
+        });
+    }
+});
