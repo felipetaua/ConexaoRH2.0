@@ -83,6 +83,16 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Por favor, selecione um tipo de usuário.');
         }
     });
+
+    document.querySelectorAll('.btnUser').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+                window.location.href = 'pages/register/register.html';
+            }, 500); // tempo igual ao do transition no CSS
+        });
+    });
 });
 
 const videoCards = document.querySelectorAll('.card-list .card-item .card-link');
