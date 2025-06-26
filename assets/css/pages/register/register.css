@@ -215,6 +215,40 @@ div .error-message {
 .submit-btn:hover { background-color: var(--primary-hover); }
 .submit-btn::after { content: '→'; margin-left: 8px; font-size: 1.2rem; }
 
+.back-btn {
+    width: 100%;
+    background: none;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    transition: background 0.2s, color 0.2s;
+}
+.back-btn:hover {
+    background: var(--primary);
+    color: #fff;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 1.2rem;
+    font-size: 1rem;
+}
+.login-link a {
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.login-link a:hover {
+    color: var(--primary-hover, #0052ff);
+}
+
 @media (max-width: 900px) {
     body {
         overflow-y: scroll;
