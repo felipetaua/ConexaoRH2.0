@@ -145,10 +145,10 @@
         padding: 6px 0;
     }
     .cardsDepoimentos {
-        width: 98vw;
-        min-width: 220px;
+        width: 90vw;
+        min-width: 375px;
         max-width: 99vw;
-        height: auto;
+        height: 250px;
         padding: 7vw 2vw;
         border-radius: 18px;
     }
