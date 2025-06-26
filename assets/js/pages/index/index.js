@@ -166,3 +166,20 @@ function closeModal() {
     videoModalPlayer.innerHTML = '';
     document.body.style.overflow = '';
 }
+
+// Navegação dos depoimentos
+document.addEventListener('DOMContentLoaded', function() {
+    const depoimentsSection = document.querySelector('.depoimentsSection');
+    const btnPrev = document.getElementById('depoimentPrev');
+    const btnNext = document.getElementById('depoimentNext');
+    if (!depoimentsSection || !btnPrev || !btnNext) return;
+
+    const scrollAmount = () => depoimentsSection.offsetWidth * 0.7;
+
+    btnPrev.addEventListener('click', () => {
+        depoimentsSection.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+    });
+    btnNext.addEventListener('click', () => {
+        depoimentsSection.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+    });
+});

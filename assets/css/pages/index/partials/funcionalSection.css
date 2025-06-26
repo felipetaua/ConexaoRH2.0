@@ -33,7 +33,6 @@
     margin-bottom: 110px;
 }
 
-
 .cardOne {
     display: flex;
     justify-content: center;
@@ -241,32 +240,78 @@
 
 @media (max-width: 1024px) {
     .parentGrid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+        margin-bottom: 60px;
+    }
+
+    
+    .cardOne,
+    .cardTwo,
+    .cardThree,
+    .cardFour,
+    .cardFive {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        height: auto;
+        border-radius: 24px;
+        margin: 0;
+        background-size: cover;
+        background-position: center;
     }
 
     .cardOne {
-        height: 200px;
+        height: 253px;
     }
 
-    .cardTwo {
-        grid-column: span 1;
-        grid-row: auto;
-        height: 453px;
+    .cardOne { grid-column: 1 / 2; grid-row: 1 / 2; }
+    .cardTwo { grid-column: 2 / 3; grid-row: 1 / 3; height: 100%; }
+    .cardThree { grid-column: 1 / 3; grid-row: 3 / 4; }
+    .cardFour { grid-column: 1 / 2; grid-row: 2 / 3; }
+    .cardFive { grid-column: 2 / 3; grid-row: 4 / 5; }
+
+    .cardTwo, .cardThree, .cardFour, .cardFive {
+        min-height: 350px;
+        height: auto;
+        padding: 0.5em 8%;
     }
 
-    .cardThree {
-        grid-column: span 2;
-        grid-row: auto;
+    .parentTitle, .functionalTitle {
+        font-size: 1.3rem;
+        height: auto;
+        width: 100%;
     }
 
-    .cardFour {
-        grid-column: 2 span ;
-        grid-row: auto;
+    .funcionalText {
+        font-size: 1.05rem;
+        width: 100%;
+        height: auto;
     }
 
-    .cardFive {
-        grid-column: span 2;
-        grid-row: auto;
+    .parentText {
+        font-size: 2rem;
+    }
+
+    .parentVacancy {
+        font-size: 1.8rem;
+    }
+
+    .parentTitle {
+        font-size: 2.3rem;
+    }
+
+    .parentFiveTitle {
+        font-size: 1.8rem;
+        width: 100%;
+        margin: auto;
+    }
+
+    .parentBtn, .parentWhiteBtn {
+        width: 100%;
+        min-width: 0;
+        font-size: 1rem;
+        padding: 0.7em 2em;
     }
 }
 
@@ -285,6 +330,7 @@
         display: grid;
         grid-template-columns: 1fr;
         justify-items: center;
+        margin: 0 5%;
     }
 
     .cardTwo {
@@ -301,6 +347,10 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
+
+    .cardThree {
+        height: 500px;
+    }
     
     .contentFunctional {
         width: 100%;
@@ -308,14 +358,28 @@
 
     .functionalTitle {
         width: 100%;
-        font-size: 28px;
+        font-size: 32px;
     }
 
     .funcionalText {
-        font-size: 18px;
+        font-size: 24px;
     }
     
     .functionalRow  {
         height: 4px;
+    }
+
+    .parentText, .parentVacancy {
+        font-size: 1.8rem;
+    }
+
+    .parentTitle {
+        font-size: 1.3rem;
+    }
+
+    .parentFiveTitle {
+        font-size: 1.5rem;
+        width: 100%;
+        margin: auto;
     }
 }
