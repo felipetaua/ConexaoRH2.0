@@ -1,29 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const userTypeSimulator = document.getElementById('userTypeSimulator');
-    const candidateActions = document.getElementById('candidate-actions');
-    const companyActions = document.getElementById('company-actions');
+    const cvInput = document.getElementById('cv');
+    const fileUploadText = document.querySelector('.file-upload-text');
+    const fileUploadButton = document.querySelector('.file-upload-button');
 
-    const currentUserType = 'candidate'; 
-    userTypeSimulator.value = currentUserType;
-
-    function toggleActionCards() {
-        if (userTypeSimulator.value === 'candidate') {
-            candidateActions.style.display = 'block';
-            companyActions.style.display = 'none';
-        } else {
-            candidateActions.style.display = 'none';
-            companyActions.style.display = 'block';
-        }
-    }
-    
-    document.querySelectorAll('.action-card, .dashboard-button').forEach(item => {
-        item.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Navegando para a área correspondente... (Isso é uma demonstração)');
+    if (cvInput && fileUploadText && fileUploadButton) {
+        cvInput.addEventListener('change', function() {
+            if (this.files && this.files.length > 0) {
+                fileUploadText.textContent = this.files[0].name;
+            } else {
+                fileUploadText.textContent = 'Nenhum arquivo selecionado';
+            }
         });
-    });
 
-    toggleActionCards();
+        fileUploadButton.addEventListener('click', function() {
+            cvInput.click();
+        });
+    }
 
     const backBtn = document.querySelector('.back-btn');
     if (backBtn) {
@@ -59,21 +51,23 @@ document.addEventListener('DOMContentLoaded', function() {
             let valid = true;
 
             if (userTypeSelector.value === 'candidate') {
-                const cv = document.getElementById('cv');
-                const area = document.getElementById('area');
-                const experience = document.getElementById('experience');
-                if (!cv.value) valid = false;
-                if (!area.value.trim()) valid = false;
-                if (!experience.value) valid = false;
+                const cv = document.getElementById('cv'); // File input
+                const area = document.getElementById('area'); // Text input
+                const experience = document.getElementById('experience'); // Select
+
+                if (!cv || cv.files.length === 0) valid = false;
+                if (!area || !area.value.trim()) valid = false;
+                if (!experience || !experience.value) valid = false;
             } else {
-                const website = document.getElementById('website');
-                const sector = document.getElementById('sector');
-                const employees = document.getElementById('employees');
-                const about = document.getElementById('about');
-                if (!website.value.trim()) valid = false;
-                if (!sector.value.trim()) valid = false;
-                if (!employees.value) valid = false;
-                if (!about.value.trim()) valid = false;
+                const website = document.getElementById('website'); // URL input
+                const sector = document.getElementById('sector'); // Text input
+                const employees = document.getElementById('employees'); // Select
+                const about = document.getElementById('about'); // Textarea
+
+                if (!website || !website.value.trim()) valid = false;
+                if (!sector || !sector.value.trim()) valid = false;
+                if (!employees || !employees.value) valid = false;
+                if (!about || !about.value.trim()) valid = false;
             }
 
             if (valid) {
