@@ -14,7 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
             toggle.addEventListener('click', function() {
                 const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
                 input.setAttribute('type', type);
-                this.textContent = type === 'password' ? '👁️' : '🙈';
+                const icon = this.querySelector('i');
+                if (type === 'password') {
+                    icon.classList.remove('fa-eye-slash');
+                    icon.classList.add('fa-eye');
+                } else {
+                    icon.classList.remove('fa-eye');
+                    icon.classList.add('fa-eye-slash');
+                }
             });
         }
     }
