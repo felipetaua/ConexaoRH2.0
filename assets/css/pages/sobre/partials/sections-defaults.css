@@ -16,7 +16,7 @@
 }
 
 .evolution {
-    padding: 60px 10%;
+    padding: 60px 10% 0 10%;
     background: linear-gradient(145deg, #fff, #bdc5e6);
 }
 
@@ -39,7 +39,7 @@
 .timeline {
     position: relative;
     border-left: 3px solid var(--primary);
-    padding-left: 30px;
+    padding: 0 0 60px 30px;
 }
 
 .timeline-item {

@@ -1,10 +1,8 @@
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
-
 document.addEventListener('DOMContentLoaded', function() {
-    const loginForm = document.getElementById('login-form');
+    const resetPasswordForm = document.getElementById('reset-password-form');
+    const newPassword = document.getElementById('new-password');
+    const confirmPassword = document.getElementById('confirm-password');
+    const passwordError = document.getElementById('password-error');
 
     function setupPasswordToggle(wrapper) {
         const input = wrapper.querySelector('input');
@@ -12,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (input && toggle) {
             toggle.addEventListener('click', function() {
+                // alterna o atributo type
                 const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
                 input.setAttribute('type', type);
                 const icon = this.querySelector('i');
@@ -26,19 +25,24 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    if (loginForm) {
-        loginForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const identifier = document.getElementById('identifier').value.trim();
-            if (!identifier) {
-                alert('Por favor, preencha o campo de e-mail.');
+    if (resetPasswordForm) {
+        resetPasswordForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            passwordError.style.display = 'none';
+
+            if (newPassword.value !== confirmPassword.value) {
+                passwordError.style.display = 'block';
                 return;
             }
-            if (isValidEmail(identifier)) {
-                alert(`Login bem-sucedido para o e-mail: ${identifier} (Isso é uma demonstração)`);
-            } else {
-                alert('O identificador inserido não é um e-mail válido.');
+
+            if (newPassword.value.length < 8) {
+                alert('A senha deve ter no mínimo 8 caracteres.');
+                return;
             }
+
+            alert('Senha redefinida com sucesso! Você será redirecionado para a página de login.');
+            window.location.href = 'login.html';
         });
 
         document.querySelectorAll('.password-wrapper').forEach(setupPasswordToggle);

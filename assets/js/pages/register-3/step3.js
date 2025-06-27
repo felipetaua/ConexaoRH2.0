@@ -1,43 +1,38 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const userTypeSelector = document.getElementById('userTypeSelector');
-    const candidateFields = document.getElementById('candidate-fields');
-    const companyFields = document.getElementById('company-fields');
-    const cvInput = document.getElementById('cv');
-    const fileUploadText = document.querySelector('.file-upload-text');
-    const form = document.getElementById('step2-form');
+    const userTypeSimulator = document.getElementById('userTypeSimulator');
+    const candidateActions = document.getElementById('candidate-actions');
+    const companyActions = document.getElementById('company-actions');
 
-    // Função para alternar entre os formulários
-    function toggleFormFields() {
-        if (userTypeSelector.value === 'candidate') {
-            candidateFields.style.display = 'block';
-            companyFields.style.display = 'none';
+    const storedUserType = localStorage.getItem('conexaoRHUserType');
+
+    if (userTypeSimulator) {
+        if (storedUserType) {
+            userTypeSimulator.value = storedUserType;
         } else {
-            candidateFields.style.display = 'none';
-            companyFields.style.display = 'block';
+            userTypeSimulator.value = 'candidate';
+        }
+    }
+
+    function toggleActionCards() {
+        if (userTypeSimulator && userTypeSimulator.value === 'candidate') {
+            if (candidateActions) candidateActions.style.display = 'block';
+            if (companyActions) companyActions.style.display = 'none';
+        } else if (userTypeSimulator && userTypeSimulator.value === 'company') {
+            if (candidateActions) candidateActions.style.display = 'none';
+            if (companyActions) companyActions.style.display = 'block';
         }
     }
     
-    // Atualiza o nome do arquivo de CV no campo
-    if (cvInput) {
-        cvInput.addEventListener('change', function() {
-            if (this.files && this.files.length > 0) {
-                fileUploadText.textContent = this.files[0].name;
-            } else {
-                fileUploadText.textContent = 'Nenhum arquivo selecionado';
-            }
+    // The userTypeSimulator is hidden, so no need for a change listener for user interaction.
+    // Its value is set programmatically.
+
+    document.querySelectorAll('.action-card, .dashboard-button').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Navegando para a área correspondente... (Isso é uma demonstração)');
         });
-    }
-
-    // Adiciona o listener para o seletor de tipo de usuário
-    userTypeSelector.addEventListener('change', toggleFormFields);
-
-    // Listener para o formulário
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        alert('Cadastro finalizado com sucesso! (Isso é uma demonstração)');
-        // Aqui você enviaria todos os dados (Passo 1 + Passo 2) para o servidor
     });
 
-    // Inicializa o formulário com a visão correta
-    toggleFormFields();
+    // Initial call to set visibility based on the retrieved user type
+    toggleActionCards();
 });

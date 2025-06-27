@@ -162,8 +162,9 @@ document.addEventListener('DOMContentLoaded', () => {
             passwordError.textContent = 'Sua senha deve ter pelo menos 8 caracteres.';
         }
 
+        // Se tudo estiver válido, redireciona para o próximo passo
         if (isDocValid && password.length >= 8) {
-            alert('Cadastro realizado com sucesso! (Isso é uma demonstração)');
+            window.location.href = 'register-step-2.html';
         }
     });
 
