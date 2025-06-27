@@ -191,7 +191,7 @@ body {
 }
 
 .password-wrapper input {
-    padding-right: 2.5rem; /* Adiciona espaço para o ícone */
+    padding-right: 2.5rem; 
 }
 
 .password-wrapper .toggle-password {
@@ -201,8 +201,8 @@ body {
     transform: translateY(-50%);
     cursor: pointer;
     color: var(--text-secondary);
-    user-select: none; /* Evita a seleção do texto do ícone ao clicar */
-    width: 1em; /* Garante que o ícone não mude de largura ao trocar */
+    user-select: none;
+    width: 1em; 
     text-align: center;
 }
 
@@ -211,5 +211,27 @@ body {
     font-size: 0.85em;
     margin-top: 0.5rem;
     font-weight: 500;
-    display: none; /* Oculto por padrão, ativado via JS */
+    display: none;
+}
+
+.info-section-btn {
+    width: 100%;
+    max-width: 400px;
+    background: none;
+    color: var(--text-light);
+    border: 2px solid var(--text-light);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 3rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.2s, color 0.2s;
+}
+.info-section-btn:hover {
+    background-color: var(--text-light);
+    color: var(--orange);
 }
