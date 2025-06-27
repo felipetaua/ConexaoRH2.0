@@ -183,3 +183,33 @@ body {
     .signup-link a:hover {
     text-decoration: underline;
 }
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    padding-right: 2.5rem; /* Adiciona espaço para o ícone */
+}
+
+.password-wrapper .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: var(--text-secondary);
+    user-select: none; /* Evita a seleção do texto do ícone ao clicar */
+    width: 1em; /* Garante que o ícone não mude de largura ao trocar */
+    text-align: center;
+}
+
+.form-group .error-message {
+    color: #e74c3c;
+    font-size: 0.85em;
+    margin-top: 0.5rem;
+    font-weight: 500;
+    display: none; /* Oculto por padrão, ativado via JS */
+}
