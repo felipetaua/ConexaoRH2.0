@@ -242,11 +242,12 @@ div .error-message {
 .login-link a {
     color: var(--primary);
     font-weight: 600;
-    text-decoration: underline;
     transition: color 0.2s;
+    text-decoration: none;
 }
 .login-link a:hover {
     color: var(--primary-hover, #0052ff);
+    text-decoration: underline;
 }
 
 .already-account-btn {
@@ -264,8 +265,8 @@ div .error-message {
     transition: background 0.2s, color 0.2s;
 }
 .already-account-btn:hover {
-    background: var(--primary);
-    color: #fff;
+    background: var(--white);
+    color: var(--primary);
 }
 
 @media (max-width: 900px) {
