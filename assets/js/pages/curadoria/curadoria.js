@@ -95,21 +95,21 @@ function setupCuradoriaTabs() {
                 desc: 'Ferramentas e tendências para modernizar o setor de RH.',
                 img: '../../assets/images/pages/curadoria/curadoria-1.jpg',
                 meta: 'Tendências',
-                link: '#',
+                link: '/pages/curadoria/lista-postagens/detalhe-e14.html',
             },
             {
                 title: 'Gestão Humanizada',
                 desc: 'Como valorizar pessoas e resultados ao mesmo tempo.',
                 img: '../../assets/images/pages/curadoria/curadoria-2.jpg',
                 meta: 'Gestão',
-                link: '#',
+                link: '/pages/curadoria/lista-postagens/detalhe-e17.html',
             },
             {
                 title: 'RH Ágil',
                 desc: 'Adote metodologias ágeis no seu RH.',
                 img: '../../assets/images/pages/curadoria/curadoria-3.jpg',
                 meta: 'Inovação',
-                link: '#',
+                link: '/pages/curadoria/lista-postagens/detalhe-e15.html',
             }
         ],
         // Artigos
@@ -119,14 +119,14 @@ function setupCuradoriaTabs() {
                 desc: 'Estratégias práticas para manter os melhores profissionais.',
                 img: '../../assets/images/pages/curadoria/curadoria-4.png',
                 meta: 'Artigo',
-                link: '#',
+                link: '/pages/curadoria/lista-postagens/detalhe-e14.html',
             },
             {
                 title: 'Feedback Eficaz',
                 desc: 'Dicas para dar e receber feedbacks construtivos.',
                 img: '../../assets/images/pages/curadoria/curadoria-5.webp',
                 meta: 'Artigo',
-                link: '#',
+                link: '/pages/curadoria/lista-postagens/detalhe-e18.html',
             }
         ],
         // Colaborador
@@ -136,14 +136,14 @@ function setupCuradoriaTabs() {
                 desc: 'Dicas para crescer na carreira e se destacar.',
                 img: '../../assets/images/pages/curadoria/curadoria-6.jpg',
                 meta: 'Colaborador',
-                link: '#',
+                link: '/pages/curadoria/lista-postagens/detalhe-e2.html',
             },
             {
-                title: 'Saúde Mental',
-                desc: 'Como cuidar do bem-estar no ambiente de trabalho.',
+                title: 'Seus Direitos',
+                desc: 'Saiba seu direitos como trabalhador.',
                 img: '../../assets/images/pages/curadoria/curadoria-7.jpg',
                 meta: 'Colaborador',
-                link: '#',
+                link: '/pages/curadoria/lista-postagens/detalhe-e4.html',
             }
         ],
         // Empresa
@@ -153,14 +153,14 @@ function setupCuradoriaTabs() {
                 desc: 'Como criar um ambiente saudável e produtivo.',
                 img: '../../assets/images/pages/curadoria/curadoria-8.jpg',
                 meta: 'Empresa',
-                link: '#',
+                link: '/pages/curadoria/lista-postagens/detalhe-e11.html',
             },
             {
-                title: 'Diversidade e Inclusão',
+                title: 'Departamento Pessoal e Inclusão',
                 desc: 'A importância de equipes diversas para o sucesso.',
                 img: '../../assets/images/pages/curadoria/curadoria-9.webp',
                 meta: 'Empresa',
-                link: '#',
+                link: '/pages/curadoria/lista-postagens/detalhe-e9.html',
             }
         ],
         // Vídeos
@@ -171,7 +171,8 @@ function setupCuradoriaTabs() {
                 img: '../../assets/images/pages/curadoria/rh-1.png',
                 meta: 'Vídeo',
                 type: 'video',
-                index: 0 
+                index: 0 ,
+                link: '/pages/curadoria/lista-postagens/videos-e1.html',
             },
             {
                 title: 'Cultura Organizacional Tóxica: A Parábola dos Cinco Macacos',
