@@ -10,16 +10,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../../../assets/css/pages/configuracoes/configuracoes.css">
-    <script defer src="../../../assets/js/global/script.js"></script>
-    <script defer src="../../../assets/js/pages/configuracoes/configuracoes.js"></script>
+    <link rel="stylesheet" href="../../../../assets/css/pages/configuracoes/configuracoes.css">
+    <script defer src="../../../../assets/js/global/script.js"></script>
+    <script defer src="../../../../assets/js/pages/configuracoes/configuracoes.js"></script>
 </head>
 <body>
     <div class="dashboard-container">
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <div class="logo-icon">
-                    <img class="logo-img" src="../../../assets/images/global/RHconexao-logo.svg" alt="logo RH Conexão">
+                    <img class="logo-img" src="../../../../assets/images/global/RHconexao-logo.svg" alt="logo RH Conexão">
                 </div>
                 <h1 class="logo-text">RH Conexão</h1>
             </div>
@@ -157,7 +157,7 @@
                             Notificações
                         </a></li>
                         <li><a href="#plano" data-target="plano">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v1h14V4a1 1 0 0 0-1-1H2zm13 4H1v5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V7z"/><path d="M2 10a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z"/></svg>
                             Plano e Faturamento
                         </a></li>
                     </ul>
@@ -207,7 +207,10 @@
 
                     <section id="notificacoes" class="settings-pane">
                         <div class="settings-card">
-                            <div class="card-header"><h2>Preferências de Notificação</h2><p>Escolha como você deseja ser notificado sobre as atividades.</p></div>
+                            <div class="card-header">
+                                <h2>Preferências de Notificação</h2>
+                                <p>Escolha como você deseja ser notificado sobre as atividades.</p>
+                            </div>
                             <div class="card-body">
                                 <div class="notification-item">
                                     <div>
@@ -224,25 +227,25 @@
                                         <h3 style="font-size: 1rem; font-weight: 500;">Resumo Semanal</h3>
                                         <p style="font-size: 0.9rem; color: var(--text-light);">Receber um resumo das atividades da semana.</p>
                                     </div>
-                                     <div class="toggle-switch">
+                                    <div class="toggle-switch">
                                         <input type="checkbox" id="weekly-toggle">
                                         <label for="weekly-toggle"></label>
                                     </div>
                                 </div>
-                             </div>
+                            </div>
                         </div>
                     </section>
                     
                     <section id="plano" class="settings-pane">
                         <div class="settings-card">
                             <div class="card-header"><h2>Plano Atual</h2></div>
-                             <div class="card-body">
+                            <div class="card-body">
                                 <h3 style="font-size: 1.1rem;">Você está no plano <span style="color: var(--primary-color); font-weight: 600;">PRO</span>.</h3>
-                                 <p style="color: var(--text-light);">Sua assinatura será renovada em 08 de Julho de 2025.</p>
-                             </div>
-                             <div class="card-footer">
-                                 <button class="btn btn-secondary">Cancelar Assinatura</button>
-                                 <button class="btn btn-primary">Gerenciar Plano</button>
+                                <p style="color: var(--text-light);">Sua assinatura será renovada em 08 de Julho de 2025.</p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-secondary">Cancelar Assinatura</button>
+                                <button class="btn btn-primary">Gerenciar Plano</button>
                             </div>
                         </div>
                     </section>
