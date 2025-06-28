@@ -98,17 +98,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         calendar.render();
 
-        // --- CORREÇÃO PARA CALENDÁRIO EM ABA OCULTA ---
-        // O calendário precisa ser redimensionado quando a aba se torna visível.
-        // Usamos um MutationObserver para detectar a mudança de classe na aba.
         const calendarPane = document.getElementById('calendario');
         if (calendarPane) {
             const observer = new MutationObserver(() => {
                 if (calendarPane.classList.contains('active')) {
-                    // Adiciona um pequeno atraso para garantir que a animação da aba terminou
                     setTimeout(() => {
                         calendar.updateSize();
-                    }, 150); // 150ms é um valor seguro para a animação de fadeIn
+                    }, 150); 
                 }
             });
 
