@@ -23,6 +23,27 @@
     color: rgba(255, 255, 255, 0.2);
     transform: rotate(15deg);
 }
+
+.main-banner-2 {
+    background: linear-gradient(45deg, rgb(233, 47, 47) 0%, rgb(252, 94, 0) 50%, rgb(231, 189, 52) 100%) !important; 
+    color: var(--white-color);
+    padding: 2.5rem;
+    border-radius: 16px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-banner-ia {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    font-size: 10rem;
+    color: rgba(255, 255, 255, 0.2);
+    transform: rotate(15deg);
+}
+
 .main-banner h2 {
     font-size: 2rem;
     max-width: 60%;
@@ -41,7 +62,22 @@
     margin-top: 1rem;
     transition: transform 0.2s ease;
 }
-.join-now-btn:hover {
+
+.join-2-btn {
+    background-color: var(--white-color);
+    color: var(--orange-hover);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    transition: transform 0.2s ease;
+}
+.join-now-btn:hover, .join-2-btn:hover {
     transform: translateY(-2px);
 }
 
