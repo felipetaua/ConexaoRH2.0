@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../../../assets/images/global/RHconexao-logo.svg" type="image/png">
+    <title>Meu Currículo - Conexão RH</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Variáveis de Cor e Reset Básico (Unificado) --- */
+        :root {
+            --primary-color: #2E62C2;
+            --primary-light: #e3eaf8;
+            --background-color: #f8f8f8;
+            --white-color: #ffffff;
+            --text-dark: #1e1e1e;
+            --text-light: #7a7a7a;
+            --border-color: #e5e5e5;
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--background-color); color: var(--text-dark); }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- Layout Principal do Dashboard --- */
+        .dashboard-container { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
+        .sidebar { background-color: var(--white-color); padding: 2rem 1.5rem; }
+        .main-content { padding: 2rem; overflow-y: auto; max-height: 100vh; }
+        
+        /* --- Barra Lateral (Sidebar) --- */
+        .sidebar-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; }
+        .logo-img { width: 54px; }
+        .logo-text { font-size: 1.2rem; font-weight: 700; }
+        .sidebar-menu h3 { font-size: 0.8rem; font-weight: 500; color: var(--text-light); text-transform: uppercase; margin: 1.5rem 0 1rem 0; }
+        .menu-item { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1rem; border-radius: 8px; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-light); transition: background-color 0.2s, color 0.2s; }
+        .menu-item:hover, .menu-item.active { background-color: var(--primary-color); color: var(--white-color); }
+        .sidebar-footer { margin-top: auto; }
+
+        /* --- Estilos Gerais --- */
+        .btn { padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
+        .btn-primary { background-color: var(--primary-color); color: var(--white-color); }
+        .btn-primary:hover { background-color: #254d9b; }
+        .btn-secondary { background-color: var(--white-color); color: var(--text-dark); border: 1px solid var(--border-color); }
+        .btn-secondary:hover { background-color: #f5f5f5; }
+
+        .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem; }
+        .page-header h1 { font-size: 2rem; font-weight: 700; }
+        .header-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+        
+        /* --- Folha de Currículo --- */
+        .resume-sheet {
+            background-color: var(--white-color);
+            max-width: 800px; /* Largura similar a um A4 */
+            margin: 0 auto;
+            padding: 3rem;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* --- Cabeçalho do Currículo --- */
+        .resume-header {
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .resume-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin: 0;
+        }
+        .resume-header h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            margin-top: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        .resume-contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem 1.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        .resume-contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* --- Seções do Currículo --- */
+        .resume-section {
+            margin-bottom: 2rem;
+        }
+        .resume-section:last-child {
+            margin-bottom: 0;
+        }
+        .resume-section-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .resume-section p {
+            line-height: 1.7;
+            color: var(--text-dark);
+        }
+
+        /* --- Itens de Experiência/Educação --- */
+        .resume-item {
+            margin-bottom: 1.25rem;
+        }
+        .resume-item:last-child {
+            margin-bottom: 0;
+        }
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+        .item-header h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        .item-header span.date {
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        .item-subheader {
+            font-weight: 500;
+            color: var(--text-light);
+            margin: 0.25rem 0 0.5rem 0;
+        }
+
+        /* --- Lista de Competências --- */
+        .resume-skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .resume-skill {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* --- Estilos de Impressão --- */
+        @media print {
+            body {
+                background-color: var(--white-color);
+            }
+            .sidebar, .page-header {
+                display: none;
+            }
+            .dashboard-container {
+                display: block; /* Remove o grid */
+            }
+            .main-content {
+                padding: 0;
+                overflow: visible;
+                max-height: none;
+            }
+            .resume-sheet {
+                max-width: 100%;
+                margin: 0;
+                padding: 1cm;
+                box-shadow: none;
+                border-radius: 0;
+                border: none;
+            }
+        }
+
+        /* --- Responsividade da Tela --- */
+        @media (max-width: 992px) {
+            .dashboard-container { grid-template-columns: 1fr; }
+            .sidebar { position: fixed; transform: translateX(-100%); z-index: 1000; }
+        }
+        @media (max-width: 768px) {
+            .resume-sheet { padding: 1.5rem; }
+            .resume-header h1 { font-size: 2rem; }
+            .resume-header h2 { font-size: 1.1rem; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-icon">
+                    <img class="logo-img" src="../../../../assets/images/global/RHconexao-logo.svg" alt="logo RH Conexão">
+                </div>
+                <h1 class="logo-text">RH Conexão</h1>
+            </div>
+
+            <nav class="sidebar-menu">
+                <h3>Menu Principal</h3>
+                <ul>
+                    <li><a href="#" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                        <span>Meu Perfil</span>
+                    </a></li>
+                     <li><a href="#" class="menu-item active">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        <span>Currículo</span>
+                    </a></li>
+                    <li><a href="#" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+                        <span>Buscar Vagas</span>
+                    </a></li>
+                    <li><a href="./candidaturas.html" class="menu-item">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 2H8.6c-.4 0-.8.2-1.1.5-.3.3-.5.7-.5 1.1V21c0 .4.2.8.5 1.1.3.3.7.5 1.1.5h10.8c.4 0 .8-.2 1.1-.5.3-.3.5-.7.5-1.1V8.4L15.5 2z"></path><path d="M15 2v7h7"></path></svg>
+                        <span>Minhas Candidaturas</span>
+                    </a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="#" class="menu-item" style="color: #f95a5a;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    <span>Sair</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="page-header">
+                <h1>Meu Currículo</h1>
+                <div class="header-actions">
+                    <button class="btn btn-secondary" onclick="window.print()">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                        <span>Imprimir</span>
+                    </button>
+                    <a href="#" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                        <span>Atualizar Arquivo</span>
+                    </a>
+                </div>
+            </header>
+
+            <div class="resume-sheet">
+                <header class="resume-header">
+                    <h1>José Almeida</h1>
+                    <h2>Desenvolvedor Full-Stack Sênior</h2>
+                    <div class="resume-contact-info">
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>São Paulo, Brasil</span>
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>jose.almeida@email.com</span>
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>linkedin.com/in/josealmeida</span>
+                    </div>
+                </header>
+
+                <section class="resume-section">
+                    <h3 class="resume-section-title">Resumo Profissional</h3>
+                    <p>Desenvolvedor Full-Stack apaixonado por criar soluções inovadoras e escaláveis. Com 5 anos de experiência, tenho um profundo conhecimento em JavaScript, React, Node.js e metodologias ágeis. Busco constantemente aprender novas tecnologias para resolver problemas complexos e entregar produtos de alta qualidade que impactam positivamente os usuários.</p>
+                </section>
+
+                <section class="resume-section">
+                    <h3 class="resume-section-title">Experiência Profissional</h3>
+                    <div class="resume-item">
+                        <div class="item-header">
+                            <h3>Desenvolvedor Full-Stack Sênior</h3>
+                            <span class="date">Jun 2022 - Presente</span>
+                        </div>
+                        <p class="item-subheader">Tech Solutions Inc.</p>
+                        <p>Liderança técnica em projetos de desenvolvimento de aplicações web, utilizando React para o front-end e Node.js para o back-end, focando em performance e boas práticas de código.</p>
+                    </div>
+                     <div class="resume-item">
+                        <div class="item-header">
+                            <h3>Desenvolvedor Front-End</h3>
+                             <span class="date">Jan 2020 - Mai 2022</span>
+                        </div>
+                        <p class="item-subheader">Web Innovate</p>
+                        <p>Desenvolvimento de interfaces responsivas e interativas para clientes de diversos setores, melhorando a experiência do usuário e as taxas de conversão.</p>
+                    </div>
+                </section>
+
+                <section class="resume-section">
+                    <h3 class="resume-section-title">Formação Acadêmica</h3>
+                     <div class="resume-item">
+                        <div class="item-header">
+                            <h3>Bacharelado em Ciência da Computação</h3>
+                            <span class="date">2016 - 2019</span>
+                        </div>
+                        <p class="item-subheader">Universidade Federal de Tecnologia (UFT)</p>
+                    </div>
+                </section>
+
+                <section class="resume-section">
+                    <h3 class="resume-section-title">Principais Competências</h3>
+                    <div class="resume-skills-list">
+                        <span class="resume-skill">JavaScript (ES6+)</span>
+                        <span class="resume-skill">React & Redux</span>
+                        <span class="resume-skill">Node.js & Express</span>
+                        <span class="resume-skill">HTML5 & CSS3</span>
+                        <span class="resume-skill">SQL & NoSQL</span>
+                        <span class="resume-skill">Git & GitHub</span>
+                        <span class="resume-skill">Metodologias Ágeis</span>
+                        <span class="resume-skill">Docker</span>
+                         <span class="resume-skill">Figma</span>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+</body>
+</html>
