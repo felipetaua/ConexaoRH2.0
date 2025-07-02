@@ -9,8 +9,8 @@
 @import url(../../global/elements.css);
 @import url(../../global/normalize.css);
 
-@import url(../../pages/empresa/partials/conteudo-principal.css);
-@import url(../../pages/empresa/partials/notificacoes-popup.css);
+@import url(../../pages/colaborador/partials/menu.css);
+@import url(../../pages/colaborador/partials/notificações-popup.css);
 
 :root {
     --primary-color: #2E62C2;
