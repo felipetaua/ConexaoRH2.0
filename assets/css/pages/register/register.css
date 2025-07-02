@@ -61,6 +61,7 @@ body {
 .testimonial-card {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
+    margin-top: 5rem;
     padding: 1.5rem;
     max-width: 400px;
 }
@@ -272,7 +273,7 @@ div .error-message {
 .testimonial-slider {
     position: relative;
     max-width: 400px;
-    margin: 0 auto 2rem auto;
+    margin-bottom: 2rem ;
     width: 100%;
 }
 .testimonial-progress {
@@ -334,5 +335,8 @@ div .error-message {
 
     .testimonial-slider {
         max-width: 98vw;
+    }
+    .testimonial-card {
+        margin-top: 2rem;
     }
 }
