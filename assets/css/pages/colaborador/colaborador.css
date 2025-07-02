@@ -4,6 +4,10 @@
 @import url(./partials/listagem-vagas.css);
 @import url(./partials/responsividade.css);
 
+@import url(./partials/menu.css);
+@import url(./partials/notificações-popup.css);
+
+
 :root {
     --primary-color: #2E62C2; /* Cor principal do novo layout */
     --primary-light: #e3eaf8; /* Tom claro da cor principal */
