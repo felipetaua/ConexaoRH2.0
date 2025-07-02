@@ -1,0 +1,4 @@
+@media (max-width: 992px) {
+    .dashboard-container { grid-template-columns: 1fr; }
+    .sidebar { position: fixed; transform: translateX(-100%); z-index: 1000; }
+}
