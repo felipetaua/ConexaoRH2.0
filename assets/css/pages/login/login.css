@@ -250,7 +250,7 @@ body {
 .testimonial-progress-bar {
     height: 100%;
     width: 0%;
-    background: linear-gradient(90deg, #FFE0B2 0%, #FFF3E0 100%);
+    background: linear-gradient(90deg, #ff9c2b 0%, #f7a326 100%); /*#ffdba4 #fff8f2*/
     transition: width 0.2s linear;
 }
 @media (max-width: 900px) {
