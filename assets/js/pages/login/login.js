@@ -27,14 +27,28 @@ document.addEventListener('DOMContentLoaded', function() {
     let current = 0;
     const duration = 5000; 
 
-    function showTestimonial(idx) {
-        card.innerHTML = `
-            <p>${testimonials[idx].text}</p>
-            <div class="testimonial-author">
-                <span>${testimonials[idx].author}</span>
-                <span class="stars">${testimonials[idx].stars}</span>
-            </div>
-        `;
+    function showTestimonial(idx, animate = false) {
+        if (animate) {
+            card.classList.add('slide-right');
+            setTimeout(() => {
+                card.innerHTML = `
+                    <p>${testimonials[idx].text}</p>
+                    <div class="testimonial-author">
+                        <span>${testimonials[idx].author}</span>
+                        <span class="stars">${testimonials[idx].stars}</span>
+                    </div>
+                `;
+                card.classList.remove('slide-right');
+            }, 350);
+        } else {
+            card.innerHTML = `
+                <p>${testimonials[idx].text}</p>
+                <div class="testimonial-author">
+                    <span>${testimonials[idx].author}</span>
+                    <span class="stars">${testimonials[idx].stars}</span>
+                </div>
+            `;
+        }
     }
 
     function animateProgressBar() {
@@ -48,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function nextTestimonial() {
         current = (current + 1) % testimonials.length;
-        showTestimonial(current);
+        showTestimonial(current, true);
         animateProgressBar();
     }
 

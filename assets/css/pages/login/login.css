@@ -252,7 +252,24 @@ body {
     height: 100%;
     width: 0%;
     background: linear-gradient(90deg, #ff9c2b 0%, #f7a326 100%); /*#ffdba4 #fff8f2*/
-    transition: width 0.2s linear;
+    transition: width 0.3s linear;
+}
+.testimonial-card.slide-right {
+    animation: slideRight 0.35s cubic-bezier(.4,0,.2,1);
+}
+@keyframes slideRight {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    60% {
+        opacity: 0;
+        transform: translateX(60px) scale(0.96);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(80px) scale(0.96);
+    }
 }
 @media (max-width: 900px) {
     body {
