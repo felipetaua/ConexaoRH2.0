@@ -6,8 +6,8 @@
 @import url(./partials/responsividade.css);
 @import url(./partials/resultados.css);
 
-@import url('../../global/elements.css');
-@import url('../../global/normalize.css');
+@import url(../../global/elements.css);
+@import url(../../global/normalize.css);
 
 @import url(../../pages/empresa/partials/conteudo-principal.css);
 @import url(../../pages/empresa/partials/notificacoes-popup.css);
