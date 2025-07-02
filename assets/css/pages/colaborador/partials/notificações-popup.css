@@ -1,0 +1,132 @@
+.notification-area {
+    position: relative; /* Essencial para o posicionamento do popup */
+}
+
+.notification-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Para o ponto vermelho */
+}
+
+.notification-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Ponto vermelho indicando novas notificações */
+.notification-btn::after {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background-color: #e53935; /* Vermelho */
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    border: 2px solid var(--white-color);
+}
+
+.notification-popup {
+    position: absolute;
+    top: calc(100% - 85vh); /* Abaixo do botão com um espaçamento */
+    right: 0;
+    width: 380px;
+    max-height: 450px;
+    background-color: var(--white-color);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    display: none; /* Escondido por padrão */
+    flex-direction: column;
+    z-index: 1000;
+}
+
+/* Classe que o JavaScript adiciona para mostrar o popup */
+.notification-popup.active {
+    display: flex;
+}
+
+.popup-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.popup-header h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.popup-body {
+    overflow-y: auto; /* Adiciona scroll se as notificações forem muitas */
+    flex-grow: 1;
+}
+
+/* Reutilizando o estilo do card de notificação */
+.notification-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+}
+
+.notification-card:last-child {
+    border-bottom: none;
+}
+
+.notification-card:hover {
+    background-color: #f7f9fc;
+}
+
+.notification-card.unread {
+    background-color: #f0f8ff;
+}
+
+.notification-icon {
+    color: var(--primary-color);
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.notification-content p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.notification-timestamp {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 4px;
+}
+
+.popup-footer {
+    padding: 1rem;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    background-color: #fafafa;
+}
+
+.popup-footer a {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 550px) {
+    .notification-popup.active {
+        align-items: center;
+    }
+    
+    .notification-popup {
+        width: auto;
+        margin: 0 16px;
+        top: calc(100% - 83vh)
+    }
+}
