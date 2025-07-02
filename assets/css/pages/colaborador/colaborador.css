@@ -19,3 +19,8 @@
     --border-color: #e5e5e5;
     --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background-color: var(--background-color); color: var(--text-dark); }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }

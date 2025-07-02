@@ -15,8 +15,8 @@
 @import url(../colaborador/partials/barra-lateral.css);
 
 :root {
-    --primary-color: #2E62C2; /* Cor principal do novo layout */
-    --primary-light: #e3eaf8; /* Tom claro da cor principal */
+    --primary-color: #2E62C2; 
+    --primary-light: #e3eaf8;
     --background-color: #f8f8f8;
     --white-color: #ffffff;
     --text-dark: #1e1e1e;
