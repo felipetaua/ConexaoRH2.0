@@ -60,6 +60,7 @@ body {
     background: rgba(255, 255, 255, 0.15);
     border-radius: 12px;
     padding: 1.5rem;
+    margin-top: 5rem;
     max-width: 400px;
 }
 .testimonial-card p {
@@ -236,7 +237,7 @@ body {
 .testimonial-slider {
     position: relative;
     max-width: 400px;
-    margin: 0 auto 2rem auto;
+    margin-bottom: 1rem;
     width: 100%;
 }
 .testimonial-progress {
@@ -282,5 +283,9 @@ body {
 
     .testimonial-slider {
         max-width: 98vw;
+    }
+
+    .testimonial-card {
+        margin-top: 1rem;
     }
 }
