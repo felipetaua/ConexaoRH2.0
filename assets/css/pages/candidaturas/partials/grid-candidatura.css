@@ -1,0 +1,54 @@
+.applications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.application-card {
+    background-color: var(--white-color);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+.card-header h2 { 
+    font-size: 1.25rem; 
+    font-weight: 600; 
+    line-height: 1.4; 
+    margin-right: 1rem;
+}
+
+.status-badge { font-size: 0.8rem; font-weight: 600; padding: 0.3rem 0.8rem; border-radius: 12px; white-space: nowrap; }
+.status-badge.analise { background-color: var(--info-light); color: var(--info-color); }
+.status-badge.entrevista { background-color: var(--warning-light); color: var(--warning-color); }
+.status-badge.finalizado { background-color: var(--archived-light); color: var(--archived-color); }
+
+.card-body { 
+    padding: 0 1.5rem 1.5rem 1.5rem; 
+    flex-grow: 1; 
+}
+
+.card-info {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+}
+
+.card-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    background-color: #fafafa;
+}

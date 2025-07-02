@@ -1,0 +1,14 @@
+.tracker-step.completed .step-icon,
+.tracker-step.active .step-icon {
+    background-color: var(--primary-light);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+.tracker-step.active .step-icon {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.tracker-step.active .step-label {
+    color: var(--text-dark);
+    font-weight: 600;
+}
