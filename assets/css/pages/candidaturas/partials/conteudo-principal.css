@@ -1,0 +1,11 @@
+.page-header { margin-bottom: 2rem; }
+.page-header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 0.25rem;}
+.page-header p { font-size: 1.1rem; color: var(--text-light); }
+
+.btn { padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s; text-decoration: none; }
+.btn-primary { background-color: var(--primary-color); color: var(--white-color); }
+.btn-primary:hover { background-color: #254d9b; }
+.btn-secondary { background-color: var(--white-color); color: var(--text-dark); border: 1px solid var(--border-color); }
+.btn-secondary:hover { background-color: #f5f5f5; }
+.btn-danger { background-color: var(--danger-light); color: var(--danger-color); border: 1px solid var(--danger-light); }
+.btn-danger:hover { background-color: var(--danger-color); color: var(--white-color); }
