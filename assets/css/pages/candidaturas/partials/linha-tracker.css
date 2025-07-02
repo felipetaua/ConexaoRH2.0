@@ -1,0 +1,15 @@
+.tracker-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background-color: var(--border-color);
+    transform: translateY(-50%);
+    z-index: -1;
+    transition: background-color 0.3s ease;
+}
+.tracker-step.completed:not(:last-child)::after {
+    background-color: var(--primary-color);
+}
