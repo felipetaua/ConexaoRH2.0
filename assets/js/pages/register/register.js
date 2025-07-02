@@ -188,3 +188,71 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const testimonials = [
+        {
+            text: '"A plataforma é intuitiva e me ajudou a encontrar o candidato ideal em menos de uma semana. Recomendo!"',
+            author: 'Ana Silva, Gerente de RH',
+            stars: '★★★★★'
+        },
+        {
+            text: '"O cadastro foi rápido e já comecei a receber propostas de emprego. Excelente!"',
+            author: 'Lucas Pereira, Candidato',
+            stars: '★★★★★'
+        },
+        {
+            text: '"A equipe de suporte é muito atenciosa. Recomendo para empresas e profissionais."',
+            author: 'Fernanda Costa, Recrutadora',
+            stars: '★★★★★'
+        }
+    ];
+
+    const card = document.getElementById('testimonialCard');
+    const progressBar = document.getElementById('testimonialProgressBar');
+    let current = 0;
+    const duration = 5000; 
+
+    function showTestimonial(idx, animate = false) {
+        if (animate) {
+            card.classList.add('slide-right');
+            setTimeout(() => {
+                card.innerHTML = `
+                    <p>${testimonials[idx].text}</p>
+                    <div class="testimonial-author">
+                        <span>${testimonials[idx].author}</span>
+                        <span class="stars">${testimonials[idx].stars}</span>
+                    </div>
+                `;
+                card.classList.remove('slide-right');
+            }, 350);
+        } else {
+            card.innerHTML = `
+                <p>${testimonials[idx].text}</p>
+                <div class="testimonial-author">
+                    <span>${testimonials[idx].author}</span>
+                    <span class="stars">${testimonials[idx].stars}</span>
+                </div>
+            `;
+        }
+    }
+
+    function animateProgressBar() {
+        progressBar.style.transition = 'none';
+        progressBar.style.width = '0%';
+        setTimeout(() => {
+            progressBar.style.transition = `width ${duration}ms linear`;
+            progressBar.style.width = '100%';
+        }, 20);
+    }
+
+    function nextTestimonial() {
+        current = (current + 1) % testimonials.length;
+        showTestimonial(current, true);
+        animateProgressBar();
+    }
+
+    showTestimonial(current);
+    animateProgressBar();
+    setInterval(nextTestimonial, duration);
+});
