@@ -1,0 +1,7 @@
+.sidebar-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; }
+.logo-img { width: 54px; }
+.logo-text { font-size: 1.2rem; font-weight: 700; }
+.sidebar-menu h3 { font-size: 0.8rem; font-weight: 500; color: var(--text-light); text-transform: uppercase; margin: 1.5rem 0 1rem 0; }
+.menu-item { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1rem; border-radius: 8px; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-light); transition: background-color 0.2s, color 0.2s; }
+.menu-item:hover, .menu-item.active { background-color: var(--primary-color); color: var(--white-color); }
+.sidebar-footer { margin-top: auto; }

@@ -1,0 +1,45 @@
+.ai-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.ai-feature-card {
+    background-color: var(--white-color);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.feature-icon {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.feature-title h2 { font-size: 1.25rem; font-weight: 600; }
+.feature-title p { font-size: 0.9rem; color: var(--text-light); }
+
+.feature-content {
+    flex-grow: 1;
+    margin: 1rem 0;
+}
+
+.feature-content p {
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}

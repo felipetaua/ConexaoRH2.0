@@ -9,205 +9,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* --- Variáveis de Cor e Reset Básico (Unificado) --- */
-        :root {
-            --primary-color: #2E62C2;
-            --primary-light: #e3eaf8;
-            --background-color: #f8f8f8;
-            --white-color: #ffffff;
-            --text-dark: #1e1e1e;
-            --text-light: #7a7a7a;
-            --border-color: #e5e5e5;
-            --success-color: #22c55e;
-            --success-light: #dcfce7;
-            --warning-color: #f59e0b;
-            --warning-light: #fef9c3;
-            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
+    <!-- js -->
+    <script defer src="../../../../assets/js/global/script.js"></script>
+    <script defer src="../../../../assets/js/pages/ia/ia.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="../../../../assets/css/pages/ia/ia.css">
+    <style>        
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
         body { background-color: var(--background-color); color: var(--text-dark); }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
-
-        /* --- Layout Principal do Dashboard --- */
-        .dashboard-container { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; }
-        .sidebar { background-color: var(--white-color); padding: 2rem 1.5rem; }
-        .main-content { padding: 2rem; overflow-y: auto; max-height: 100vh; }
-        
-        /* --- Barra Lateral (Sidebar) --- */
-        .sidebar-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2.5rem; }
-        .logo-img { width: 54px; }
-        .logo-text { font-size: 1.2rem; font-weight: 700; }
-        .sidebar-menu h3 { font-size: 0.8rem; font-weight: 500; color: var(--text-light); text-transform: uppercase; margin: 1.5rem 0 1rem 0; }
-        .menu-item { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1rem; border-radius: 8px; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-light); transition: background-color 0.2s, color 0.2s; }
-        .menu-item:hover, .menu-item.active { background-color: var(--primary-color); color: var(--white-color); }
-        .sidebar-footer { margin-top: auto; }
-
-        /* --- Estilos Gerais --- */
-        .btn { padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
-        .btn-primary { background-color: var(--primary-color); color: var(--white-color); }
-        .btn-primary:hover { background-color: #254d9b; }
-        .btn-primary svg { transition: transform 0.3s ease; }
-        .btn-primary:hover svg { transform: rotate(10deg); }
-
-        .page-header { text-align: center; margin-bottom: 2.5rem; }
-        .page-header h1 { font-size: 2.25rem; font-weight: 700; color: var(--text-dark); }
-        .page-header p { font-size: 1.1rem; color: var(--text-light); max-width: 600px; margin: 0.5rem auto 0; }
-        
-        /* --- Layout da Página de IA --- */
-        .ai-features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .ai-feature-card {
-            background-color: var(--white-color);
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .feature-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-        .feature-icon {
-            background-color: var(--primary-light);
-            color: var(--primary-color);
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-        .feature-title h2 { font-size: 1.25rem; font-weight: 600; }
-        .feature-title p { font-size: 0.9rem; color: var(--text-light); }
-
-        .feature-content {
-            flex-grow: 1;
-            margin: 1rem 0;
-        }
-
-        .feature-content p {
-            color: var(--text-dark);
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-        
-        /* Inputs e Textareas */
-        .form-group { margin-bottom: 1rem; }
-        .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            font-size: 1rem;
-            font-family: 'Poppins', sans-serif;
-        }
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .feature-footer {
-            margin-top: auto;
-            border-top: 1px solid var(--border-color);
-            padding-top: 1.5rem;
-            text-align: right;
-        }
-
-        .ai-chat-section-header { 
-            text-align: center; 
-            margin-top: 1.5rem;
-            margin-bottom: 1.5rem; 
-        }
-        .ai-chat-section-header h2 { 
-            font-size: 1.75rem; 
-            font-weight: 600; 
-        }
-        .ai-chat-section-header p { 
-            color: var(--text-light); 
-            max-width: 500px; 
-            margin: 0.25rem auto 0; 
-        }
-
-        .chat-widget-container {
-            background-color: var(--white-color);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            box-shadow: var(--card-shadow);
-            overflow: hidden; 
-        }
-
-        .chat-widget-header {
-            background-color: var(--background-color);
-            padding: 0.75rem 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        .chat-widget-header .status-indicator {
-            width: 10px;
-            height: 10px;
-            background-color: var(--success-color);
-            border-radius: 50%;
-        }
-        .chat-widget-header span { 
-            font-weight: 600; 
-            color: var(--text-dark); 
-        }
-
-        .chat-widget-body {
-            height: 65vh; /* Altura do corpo do chat */
-            padding: 0;
-        }
-        #ai-chat-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        /* Resultados da IA */
-        .ai-results {
-            background-color: var(--background-color);
-            border: 1px dashed var(--border-color);
-            border-radius: 8px;
-            padding: 1rem;
-        }
-        .ai-results h3 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.75rem;
-        }
-        .result-item {
-            display: flex;
-            gap: 0.75rem;
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-        }
-        .result-item svg {
-            flex-shrink: 0;
-            margin-top: 4px;
-        }
-        .result-item.success svg { color: var(--success-color); }
-        .result-item.warning svg { color: var(--warning-color); }
-        
-        /* Responsividade */
-        @media (max-width: 992px) {
-            .dashboard-container { grid-template-columns: 1fr; }
-            .sidebar { position: fixed; transform: translateX(-100%); z-index: 1000; }
-        }
     </style>
 </head>
 <body>
@@ -270,6 +81,63 @@
         </aside>
 
         <main class="main-content">
+            <header class="main-header">
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+                <div class="search-bar">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+                    <input type="text" placeholder="Buscar vagas ou candidatos...">
+                </div>
+                <div class="header-profile">
+                    <button class="notification-btn" id="notification-trigger">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    </button>
+
+                    <div class="notification-popup" id="notification-popup">
+                        <div class="popup-header">
+                            <h3>Notificações</h3>
+                        </div>
+                        <div class="popup-body">
+                            <div class="notification-card unread">
+                                <div class="notification-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                                </div>
+                                <div class="notification-content">
+                                    <p><strong>João da Silva</strong> se aplicou para a vaga de <strong>Eng. de Software</strong>.</p>
+                                    <div class="notification-timestamp">há 2 minutos</div>
+                                </div>
+                            </div>
+                            <div class="notification-card unread">
+                                <div class="notification-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9a2 2 0 0 1-2-2H6l-4 4V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5Z"></path><path d="M18 9h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2"></path><path d="m7 15-1 1 1 1"></path><path d="M10 15h4"></path></svg>
+                                </div>
+                                <div class="notification-content">
+                                    <p>Nova mensagem de <strong>Mariana Costa</strong> sobre a vaga de Analista.</p>
+                                    <div class="notification-timestamp">há 15 minutos</div>
+                                </div>
+                            </div>
+                            <div class="notification-card">
+                                <div class="notification-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg>
+                                </div>
+                                <div class="notification-content">
+                                    <p>Sua entrevista com <strong>Pedro Alencar</strong> foi reagendada.</p>
+                                    <div class="notification-timestamp">há 1 hora</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="popup-footer">
+                            <a href="#">Ver todas as notificações</a>
+                        </div>
+                    </div>
+
+                    <div class="user-info">
+                        <img src="https://i.pravatar.cc/150?img=68" alt="Jason Ranti">
+                    </div>
+                </div>
+            </header>
+
             <header class="page-header">
                 <h1>Seu Assistente de Carreira IA</h1>
                 <p>Use nossa inteligência artificial para otimizar seu currículo, se preparar para entrevistas e encontrar a vaga perfeita.</p>
@@ -279,7 +147,11 @@
                 
                 <article class="ai-feature-card">
                     <div class="feature-header">
-                        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="m11.5 14-2.5 2.5 5 5"></path><path d="m15 12-1 1"></path></svg></div>
+                        <div class="feature-icon">
+                            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 4h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3m0 3h6m-6 7 2 2 4-4m-5-9v4h4V3h-4Z"/>
+                            </svg>
+                        </div>
                         <div class="feature-title">
                             <h2>Otimizador de Currículo</h2>
                             <p>Receba dicas para destacar seu CV.</p>
@@ -312,7 +184,9 @@
 
                 <article class="ai-feature-card">
                     <div class="feature-header">
-                        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18.5a9 9 0 1 0-9 0"/><path d="M12 2v8.5"/><circle cx="12" cy="12" r="2"/><path d="M12 12v8.5"/></svg></div>
+                        <div class="feature-icon"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 0 0-2 2v4m5-6h8M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2m0 0h3a2 2 0 0 1 2 2v4m0 0v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6m18 0s-4 2-9 2-9-2-9-2m9-2h.01"/>
+                        </svg></div>
                         <div class="feature-title">
                             <h2>Preparador de Entrevista</h2>
                             <p>Simule perguntas para uma vaga.</p>
@@ -338,7 +212,9 @@
 
                 <article class="ai-feature-card">
                     <div class="feature-header">
-                        <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/></svg></div>
+                        <div class="feature-icon"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7.171 12.906-2.153 6.411 2.672-.89 1.568 2.34 1.825-5.183m5.73-2.678 2.154 6.411-2.673-.89-1.568 2.34-1.825-5.183M9.165 4.3c.58.068 1.153-.17 1.515-.628a1.681 1.681 0 0 1 2.64 0 1.68 1.68 0 0 0 1.515.628 1.681 1.681 0 0 1 1.866 1.866c-.068.58.17 1.154.628 1.516a1.681 1.681 0 0 1 0 2.639 1.682 1.682 0 0 0-.628 1.515 1.681 1.681 0 0 1-1.866 1.866 1.681 1.681 0 0 0-1.516.628 1.681 1.681 0 0 1-2.639 0 1.681 1.681 0 0 0-1.515-.628 1.681 1.681 0 0 1-1.867-1.866 1.681 1.681 0 0 0-.627-1.515 1.681 1.681 0 0 1 0-2.64c.458-.361.696-.935.627-1.515A1.681 1.681 0 0 1 9.165 4.3ZM14 9a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
+                        </svg></div>
                         <div class="feature-title">
                             <h2>Carta de Apresentação</h2>
                             <p>Crie um rascunho em segundos.</p>

@@ -1,0 +1,28 @@
+@import url(./partials/barra-lateral.css);
+@import url(./partials/campos-forms.css);
+@import url(./partials/estilos-gerais.css);
+@import url(./partials/layout-ia.css);
+@import url(./partials/layout-principal.css);
+@import url(./partials/responsividade.css);
+@import url(./partials/resultados.css);
+
+@import url(../../global/elements.css);
+@import url(../../global/normalize.css);
+
+@import url(../../pages/colaborador/partials/menu.css);
+@import url(../../pages/colaborador/partials/notificações-popup.css);
+
+:root {
+    --primary-color: #2E62C2;
+    --primary-light: #e3eaf8;
+    --background-color: #f8f8f8;
+    --white-color: #ffffff;
+    --text-dark: #1e1e1e;
+    --text-light: #7a7a7a;
+    --border-color: #e5e5e5;
+    --success-color: #22c55e;
+    --success-light: #dcfce7;
+    --warning-color: #f59e0b;
+    --warning-light: #fef9c3;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
