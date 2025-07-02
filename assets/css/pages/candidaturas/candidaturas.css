@@ -1,0 +1,38 @@
+@import url(./partials/conteudo-principal.css);
+@import url(./partials/estados-tracker.css);
+@import url(./partials/grid-candidatura.css);
+@import url(./partials/linha-tracker.css);
+@import url(./partials/tracker-status.css);
+
+@import url(../../global/elements.css);
+@import url(../../global/normalize.css);
+
+@import url(../colaborador/partials/notificações-popup.css);
+@import url(../colaborador/partials/menu.css);
+@import url(../colaborador/partials/layout-principal.css);
+@import url(../colaborador/partials/barra-lateral.css);
+
+:root {
+    --primary-color: #2E62C2; /* Cor principal do novo layout */
+    --primary-light: #e3eaf8; /* Tom claro da cor principal */
+    --background-color: #f8f8f8;
+    --white-color: #ffffff;
+    --text-dark: #1e1e1e;
+    --text-light: #7a7a7a;
+    --border-color: #e5e5e5;
+    --success-color: #22c55e;
+    --danger-color: #ef4444;
+    --danger-light: #fee2e2;
+    --warning-color: #f59e0b;
+    --warning-light: #fef9c3;
+    --info-color: #3b82f6;
+    --info-light: #dbeafe;
+    --archived-color: #a0a0a0;
+    --archived-light: #f0f0f0;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+body { background-color: var(--background-color); color: var(--text-dark); }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
