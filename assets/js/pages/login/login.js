@@ -4,6 +4,58 @@ function isValidEmail(email) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+    const testimonials = [
+        {
+            text: '"A melhor plataforma para gestão de talentos que já utilizei. Simples, rápida e com resultados incríveis."',
+            author: 'Marcos Andrade, CEO',
+            stars: '★★★★★'
+        },
+        {
+            text: '"Encontrei minha vaga dos sonhos em poucos dias. Recomendo para todos os profissionais!"',
+            author: 'Juliana Souza, Analista de RH',
+            stars: '★★★★★'
+        },
+        {
+            text: '"A interface é intuitiva e o suporte é excelente. Facilitou muito o nosso recrutamento."',
+            author: 'Carlos Lima, Diretor de Pessoas',
+            stars: '★★★★★'
+        }
+    ];
+
+    const card = document.getElementById('testimonialCard');
+    const progressBar = document.getElementById('testimonialProgressBar');
+    let current = 0;
+    const duration = 5000; 
+
+    function showTestimonial(idx) {
+        card.innerHTML = `
+            <p>${testimonials[idx].text}</p>
+            <div class="testimonial-author">
+                <span>${testimonials[idx].author}</span>
+                <span class="stars">${testimonials[idx].stars}</span>
+            </div>
+        `;
+    }
+
+    function animateProgressBar() {
+        progressBar.style.transition = 'none';
+        progressBar.style.width = '0%';
+        setTimeout(() => {
+            progressBar.style.transition = `width ${duration}ms linear`;
+            progressBar.style.width = '100%';
+        }, 20);
+    }
+
+    function nextTestimonial() {
+        current = (current + 1) % testimonials.length;
+        showTestimonial(current);
+        animateProgressBar();
+    }
+
+    showTestimonial(current);
+    animateProgressBar();
+    setInterval(nextTestimonial, duration);
+
     const loginForm = document.getElementById('login-form');
 
     function setupPasswordToggle(wrapper) {
