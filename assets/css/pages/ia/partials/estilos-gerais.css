@@ -1,0 +1,9 @@
+.btn { padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
+.btn-primary { background-color: var(--primary-color); color: var(--white-color); }
+.btn-primary:hover { background-color: #254d9b; }
+.btn-primary svg { transition: transform 0.3s ease; }
+.btn-primary:hover svg { transform: rotate(10deg); }
+
+.page-header { text-align: center; margin-bottom: 2.5rem; }
+.page-header h1 { font-size: 2.25rem; font-weight: 700; color: var(--text-dark); }
+.page-header p { font-size: 1.1rem; color: var(--text-light); max-width: 600px; margin: 0.5rem auto 0; }

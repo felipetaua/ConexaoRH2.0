@@ -1,0 +1,19 @@
+.hero-section {
+    background-color: var(--white-color);
+    text-align: center;
+    padding: 3rem 1.5rem;
+    border-radius: 16px;
+    margin-bottom: 2.5rem;
+}
+.hero-section h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; }
+.hero-section p { font-size: 1.125rem; color: var(--text-light); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+.search-form { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; background-color: var(--background-color); padding: 1rem; border-radius: 12px; max-width: 900px; margin: 0 auto; border: 1px solid var(--border-color); }
+.search-input { display: flex; align-items: center; gap: 0.5rem; flex-grow: 1; }
+.search-input input, .search-input select { border: none; outline: none; padding: 0.75rem; font-size: 1rem; width: 100%; background: none; }
+.search-input input { min-width: 250px; }
+
+.btn { padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; border: none; transition: all 0.2s ease; }
+.btn-primary { background-color: var(--primary-color); color: var(--white-color); }
+.btn-primary:hover { opacity: 0.9; }
+.btn-secondary { background-color: transparent; color: var(--primary-color); border: 1px solid var(--primary-color); }
+.btn-secondary:hover { background-color: var(--primary-light); }

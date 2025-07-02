@@ -67,6 +67,7 @@
     flex-grow: 1;
 }
 
+/* Reutilizando o estilo do card de notificação */
 .notification-card {
     display: flex;
     align-items: flex-start;
