@@ -3,6 +3,8 @@
 @import url(./partials/grid-candidatura.css);
 @import url(./partials/linha-tracker.css);
 @import url(./partials/tracker-status.css);
+@import url(./partials/responsividade.css);
+
 
 @import url(../../global/elements.css);
 @import url(../../global/normalize.css);
