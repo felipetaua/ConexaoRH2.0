@@ -1,0 +1,17 @@
+@import url(./partials/barra-lateral.css);
+@import url(./partials/heroSction.css);
+@import url(./partials/layout-principal.css);
+@import url(./partials/listagem-vagas.css);
+@import url(./partials/responsividade.css);
+
+:root {
+    --primary-color: #2E62C2; /* Cor principal do novo layout */
+    --primary-light: #e3eaf8; /* Tom claro da cor principal */
+    --secondary-color: #f7b14a;
+    --background-color: #f8f8f8;
+    --white-color: #ffffff;
+    --text-dark: #1e1e1e;
+    --text-light: #7a7a7a;
+    --border-color: #e5e5e5;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
