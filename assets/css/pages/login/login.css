@@ -222,7 +222,7 @@ body {
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    margin-top: 3rem;
+    margin-top: 1rem;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -233,6 +233,26 @@ body {
     color: var(--orange);
 }
 
+.testimonial-slider {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto 2rem auto;
+    width: 100%;
+}
+.testimonial-progress {
+    width: 100%;
+    height: 5px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+.testimonial-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #FFE0B2 0%, #FFF3E0 100%);
+    transition: width 0.2s linear;
+}
 @media (max-width: 900px) {
     body {
         overflow-y: scroll;
@@ -258,5 +278,9 @@ body {
     .form-section {
         flex: none;
         padding: 3rem 2rem;
+    }
+
+    .testimonial-slider {
+        max-width: 98vw;
     }
 }
