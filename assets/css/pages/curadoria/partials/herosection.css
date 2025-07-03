@@ -1,8 +1,6 @@
 /* Hero */
 .hero {
     background: linear-gradient(145deg, #fff, #ffedd9);
-    padding: 60px 0;
-    
 }
 
 .hero .container {
