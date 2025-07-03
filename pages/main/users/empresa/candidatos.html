@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="../../../../assets/css/pages/candidatos/candidatos.css">
 
     <script defer src="../../../../assets/js/global/script.js"></script>
+    <script defer src="../../../../assets/js/pages/candidatos/candidatos.js"></script>
+
 </head>
 <body>
     <div class="dashboard-container">
@@ -145,7 +147,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
                                 Filtros
                             </button>
-                            <button class="btn btn-primary">+ Adicionar Candidato</button>
+                            <button class="btn btn-primary" id="openAddCandidateModal">+ Adicionar Candidato</button>
                         </div>
                     </div>
                     
@@ -247,6 +249,36 @@
                 </aside>
             </div>
         </main>
+    </div>
+
+    <div class="modal-overlay" id="addCandidateModal" style="display:none;">
+        <div class="modal-content">
+            <button class="close-modal" id="closeAddCandidateModal" aria-label="Fechar">&times;</button>
+            <h2>Adicionar Candidato</h2>
+            <form id="addCandidateForm">
+                <div class="form-group">
+                    <label for="candidateName">Nome</label>
+                    <input type="text" id="candidateName" name="candidateName" required>
+                </div>
+                <div class="form-group">
+                    <label for="candidateDate">Data da Aplicação</label>
+                    <input type="date" id="candidateDate" name="candidateDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="candidateStage">Etapa</label>
+                    <select id="candidateStage" name="candidateStage" required>
+                        <option value="triagem">Triagem</option>
+                        <option value="entrevista">Entrevista</option>
+                        <option value="rejeitados">Rejeitados</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="candidateRating">Avaliação (1-5)</label>
+                    <input type="number" id="candidateRating" name="candidateRating" min="1" max="5" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Adicionar</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
