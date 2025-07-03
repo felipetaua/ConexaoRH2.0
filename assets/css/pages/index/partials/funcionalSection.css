@@ -213,6 +213,11 @@
     z-index: 0;
 }
 
+.cardOne, .cardFive, .cardTwo, .cardThree, .cardFour{
+    text-decoration: none;
+    color: inherit;
+}
+
 .cardOne::before, .cardFive::before {
     content: '';
     position: absolute;
