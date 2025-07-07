@@ -27,7 +27,6 @@ const config = {
 // ScrollReveal().reveal('.cellA4', config);
 // ScrollReveal().reveal('.cellA5', config);
 
-// Overlay para menu mobile
 function criarMenuOverlay() {
     if (!document.querySelector('.menu-overlay')) {
         const overlay = document.createElement('div');
