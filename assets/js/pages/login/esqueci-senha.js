@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const card = document.getElementById('testimonialCard');
     const progressBar = document.getElementById('testimonialProgressBar');
     let current = 0;
-    const duration = 5000; // 5 segundos
+    const duration = 5000; 
 
     function showTestimonial(idx, animate = false) {
         if (animate) {

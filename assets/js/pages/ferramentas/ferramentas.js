@@ -71,3 +71,12 @@ function apagarFrase() {
 
 digitarFrase();
 
+document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.querySelector('.hero-btn');
+    if (btn) {
+        btn.addEventListener('click', function() {
+            window.location.href = 'https://chatgpt.com/g/g-6809798f94e48191b2c9216afd9c478e';
+        });
+    }
+});
+
