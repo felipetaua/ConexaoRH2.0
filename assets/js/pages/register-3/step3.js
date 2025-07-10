@@ -22,17 +22,5 @@ document.addEventListener('DOMContentLoaded', function() {
             if (companyActions) companyActions.style.display = 'block';
         }
     }
-    
-    // The userTypeSimulator is hidden, so no need for a change listener for user interaction.
-    // Its value is set programmatically.
-
-    document.querySelectorAll('.action-card, .dashboard-button').forEach(item => {
-        item.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Navegando para a área correspondente... (Isso é uma demonstração)');
-        });
-    });
-
-    // Initial call to set visibility based on the retrieved user type
     toggleActionCards();
 });

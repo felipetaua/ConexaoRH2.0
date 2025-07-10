@@ -138,33 +138,32 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     rhForm.addEventListener('submit', (e) => {
-        e.preventDefault();
         clearErrors();
+        let formIsValid = true;
 
         const selectedType = document.querySelector('input[name="userType"]:checked').value;
         const docValue = inputDoc.value.replace(/[^\d]+/g, ''); 
 
-        let isDocValid = false;
         if (selectedType === 'company') {
-            isDocValid = isValidCNPJ(docValue);
-            if (!isDocValid) {
+            if (!isValidCNPJ(docValue)) {
                 docError.textContent = 'Por favor, insira um CNPJ válido.';
+                formIsValid = false;
             }
         } else {
-            isDocValid = isValidCPF(docValue);
-            if (!isDocValid) {
+            if (!isValidCPF(docValue)) {
                 docError.textContent = 'Por favor, insira um CPF válido.';
+                formIsValid = false;
             }
         }
 
         const password = inputPassword.value;
         if (password.length < 8) {
             passwordError.textContent = 'Sua senha deve ter pelo menos 8 caracteres.';
+            formIsValid = false;
         }
 
-        // Se tudo estiver válido, redireciona para o próximo passo
-        if (isDocValid && password.length >= 8) {
-            window.location.href = 'register-step-2.html';
+        if (!formIsValid) {
+            e.preventDefault(); // Impede o envio do formulário se houver erros.
         }
     });
 

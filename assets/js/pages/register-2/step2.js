@@ -46,33 +46,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (step2Form) {
         step2Form.addEventListener('submit', function(e) {
-            e.preventDefault();
-
             let valid = true;
 
             if (userTypeSelector.value === 'candidate') {
-                const cv = document.getElementById('cv'); // File input
-                const area = document.getElementById('area'); // Text input
-                const experience = document.getElementById('experience'); // Select
+                const area = document.getElementById('area');
+                const experience = document.getElementById('experience');
 
-                if (!cv || cv.files.length === 0) valid = false;
-                if (!area || !area.value.trim()) valid = false;
-                if (!experience || !experience.value) valid = false;
+                if (!area.value.trim()) valid = false;
+                if (!experience.value) valid = false;
             } else {
-                const website = document.getElementById('website'); // URL input
-                const sector = document.getElementById('sector'); // Text input
-                const employees = document.getElementById('employees'); // Select
-                const about = document.getElementById('about'); // Textarea
+                const website = document.getElementById('website');
+                const sector = document.getElementById('sector');
+                const employees = document.getElementById('employees');
+                const about = document.getElementById('about');
 
-                if (!website || !website.value.trim()) valid = false;
-                if (!sector || !sector.value.trim()) valid = false;
-                if (!employees || !employees.value) valid = false;
-                if (!about || !about.value.trim()) valid = false;
+                if (!website.value.trim()) valid = false;
+                if (!sector.value.trim()) valid = false;
+                if (!employees.value) valid = false;
+                if (!about.value.trim()) valid = false;
             }
 
-            if (valid) {
-                window.location.href = 'register-step-3.html';
-            } else {
+            if (!valid) {
+                e.preventDefault();
                 alert('Por favor, preencha todos os campos obrigatórios antes de finalizar o cadastro.');
             }
         });
