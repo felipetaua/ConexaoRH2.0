@@ -29,15 +29,15 @@
             </div>
         </div>
 
-        <a href="../../index.html" class="info-section-btn">← Voltar para a tela inicial</a>
+        <a href="../../index.php" class="info-section-btn">← Voltar para a tela inicial</a>
     </div>
 
-    <div class="form-section">
+    <div class="form-section" >
         <div class="form-content">
             <h2>Bem-vindo de volta!</h2>
             <p class="subtitle">Faça login para continuar.</p>
             
-            <form id="login-form">
+            <form id="login-form" action="../../php/login_process.php" method="post">
                 <div class="form-group">
                     <label for="identifier">Seu e-mail</label>
                     <input type="text" id="identifier" name="identifier" placeholder="E-mail" required>
